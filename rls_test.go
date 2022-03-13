@@ -757,11 +757,6 @@ func groupInfos() map[string][]*taginfo.Taginfo {
 		{"DARKSiDERS", "game"},
 		{"D-Z0N3", "movie"},
 		{"MrSeeN-SiMPLE", ""},
-		/*
-			{"MV", "music"},
-			{"UVA", "music"},
-			{"VFi", "music"},
-		*/
 	} {
 		groups = append(groups, taginfo.Must(group.tag, "", "", "", group.typ, ""))
 	}
