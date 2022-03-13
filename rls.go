@@ -2,6 +2,7 @@
 package rls
 
 import (
+	"bytes"
 	"fmt"
 	"math"
 	"regexp"
@@ -85,10 +86,18 @@ func ParseString(src string) Release {
 //	v - tag type followed by colon and quoted capture value (Date:["2009", "", ""])
 //	s - normalized capture value (2009)
 //	e - tag type and normal value (as in s) surrounded by angle brackets (<Date:2009>)
+//	q - original captured value, quoted
 func (r Release) Format(f fmt.State, verb rune) {
 	switch verb {
-	case 's':
-	case 'o', 'e':
+	case 'q':
+		buf := new(bytes.Buffer)
+		for _, tag := range r.tags {
+			if _, err := fmt.Fprintf(buf, "%o", tag); err != nil {
+				panic(err)
+			}
+		}
+		fmt.Fprintf(f, "%q", buf.Bytes())
+	case 's', 'o', 'e':
 		for _, tag := range r.tags {
 			tag.Format(f, verb)
 		}

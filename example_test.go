@@ -9,7 +9,7 @@ import (
 func ExampleParse() {
 	const title = "The_Velvet_Underground-The_Complete_Matrix_Tapes-Reissue_Limited_Edition_Boxset-8LP-2019-NOiR"
 	r := rls.ParseString(title)
-	fmt.Printf("%q:\n", title)
+	fmt.Printf("%q:\n", r)
 	fmt.Printf("  type: %s\n", r.Type)
 	fmt.Printf("  artist: %s\n", r.Artist)
 	fmt.Printf("  title: %s\n", r.Title)
