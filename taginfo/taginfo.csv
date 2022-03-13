@@ -1,0 +1,703 @@
+Type,Tag,Title,Regexp,Other,ReleaseType,TypeExclusive
+arch,ARM64,,aarch[\-\._ ]?64|arm[\-\._ ]?64,,app,1
+arch,ARM,,arm32|(?-i:ARM),,app,1
+arch,64bit,,64[\-\._ ]?bit,,app,
+arch,32bit,,32[\-\._ ]?bit,,app,
+arch,16bit,,(?-i:16[\-\._ ]?[bB]it),,app,
+arch,DARWiN,Darwin (macOS),(?-i:DARW[iI]N),,app,1
+arch,ia64,Itanium,ia?64,,app,1
+arch,PPC,PowerPC,,,app,1
+arch,s390,IBM System/390,,,app,1
+arch,x86,,x86|intel32|i32,,app,1
+arch,x64,,x64|amd64,,app,1
+audio,AAC-LC,Advanced Audio Coding (LC),aac[\-\._ ]?lc,,,
+audio,AAC,Advanced Audio Coding,,,,
+audio,AC3D,,ac[\-\._ ]?3d,,movie,
+audio,Atmos,Dolby Atmos,,,movie,
+audio,24BIT,,(?-i:24BIT),,music,1
+audio,16BIT,,(?-i:16BIT),,music,1
+audio,CBR,Constant Bit Rate,,,music,1
+audio,DDPA,Dolby Digital+ Atmos (E-AC-3+Atmos),dd[p\+]a,,movie,
+audio,DDP,Dolby Digital+ (E-AC-3),dd[p\+]|e[\-\._ ]?ac3,,movie,
+audio,DD,Dolby Digital (AC-3),dd|ac3|dolby[\-\._ ]?digital,,movie,
+audio,DTS-HD.HRA,DTS (HD HRA),dts[\-\._ ]?hd[\-\._ ]?hra,,movie,
+audio,DTS-HD.HR,DTS (HD HR),dts[\-\._ ]?hd[\-\._ ]?hr,,movie,
+audio,DTS-HD.MA,DTS (HD MA),dts[\-\._ ]?hd[\-\._ ]?ma,,movie,
+audio,DTS-HD,DTS (HD),dts[\-\._ ]?hd[\-\._ ]?,,movie,
+audio,DTS-MA,DTS (MA),dts[\-\._ ]?ma[\-\._ ]?,,movie,
+audio,DTS-X,DTS (X),dts[\-\._ ]?x,,movie,
+audio,DTS,,,,movie,
+audio,DUAL.AUDIO,Dual Audio,dual(?:[\-\._ ]?audio)?,,movie,
+audio,EAC3D,,,,,
+audio,ES,Dolby Digital (ES),(?-i:ES),,movie,
+audio,EX,Dolby Digital (EX),(?-i:EX),,movie,
+audio,FLAC,Free Lossless Audio Codec,,,,
+audio,320Kbps,320 Kbps,320[\-\._ ]?kbps,,music,1
+audio,256Kbps,256 Kbps,256[\-\._ ]?kbps,,music,1
+audio,192Kbps,192 Kbps,192[\-\._ ]?kbps,,music,1
+audio,128Kbps,128 Kbps,128[\-\._ ]?kbps,,music,1
+audio,LiNE,Line,(?-i:L[iI]NE),,,
+audio,LOSSLESS,,(?-i:LOSSLESS),,,
+audio,LPCM,Linear Pulse-Code Modulation,,,,
+audio,MP3,,,,,
+audio,OGG,,,,,
+audio,OPUS,,,,,
+audio,TrueHD,Dolby TrueHD,(?:dolby[\-\._ ]?)?true[\-\._ ]?hd,,movie,
+audio,VBR,Variable Bit Rate,,,music,1
+channels,7.1,,7\.1(?:[\-\._ ]?audios)?,,,
+channels,7.0,,7\.0(?:[\-\._ ]?audios)?,,,
+channels,6.1,,6\.1(?:[\-\._ ]?audios)?,,,
+channels,6.0,,6\.0(?:[\-\._ ]?audios)?,,,
+channels,5.1,,5\.1(?:[\-\._ ]?audios)?,,,
+channels,5.0,,5\.0(?:[\-\._ ]?audios)?,,,
+channels,4.1,,4\.1(?:[\-\._ ]?audios)?,,,
+channels,4.0,,4\.0(?:[\-\._ ]?audios)?,,,
+channels,3.1,,3\.1(?:[\-\._ ]?audios)?,,,
+channels,3.0,,3\.0(?:[\-\._ ]?audios)?,,,
+channels,2.1,,2\.1(?:[\-\._ ]?audios)?,,,
+channels,2.0,,2\.0(?:[\-\._ ]?audios)?,,,
+channels,1.0,,1\.0(?:[\-\._ ]?audios)?,,,
+codec,AVC,Advanced Video Coding,avc(?:[\-\._ ]?1)?,,movie,
+codec,DiVX.SBC,DivX SBC,(?:divx[\-\._ ]?)?sbc,,movie,
+codec,DV,Dolby Vision,dolby[\-\._ ]vision|dovi|dv,,movie,
+codec,dxva,Direct-X Video Acceleration,,,movie,
+codec,H.265,,h[\-\._ ]?265,,movie,
+codec,H.264,,h[\-\._ ]?264,,movie,
+codec,H.263,,h[\-\._ ]?263,,movie,
+codec,H.262,,h[\-\._ ]?2[26]2,,movie,
+codec,H.261,,h[\-\._ ]?261,,movie,
+codec,HDR10+,High Dynamic Range (10-bit+),hdr[\-\.]?10\+|10\+[\-\.]?bit|hdr10plus,,movie,
+codec,HDR10,High Dynamic Range (10-bit),hdr[\-\.]?10|10[\-\.]?bit,,movie,
+codec,HDR+,High Dynamic Range+,hdr\+,,movie,
+codec,HDR,High Dynamic Range,,,movie,
+codec,HEVC,High Efficiency Video Coding,,,movie,
+codec,MPEG-2,,mpe?g(?:[\-\._ ]?2)?,,movie,
+codec,SDR,Standard Dynamic Range,,,movie,
+codec,VC-1,,vc[\-\._ ]?1,,movie,
+codec,VP9,,vp[\-\._ ]?9,,movie,
+codec,VP8,,vp[\-\._ ]?8,,movie,
+codec,VP7,,vp[\-\._ ]?7,,movie,
+codec,x265,,x[\-\._ ]?265,,movie,
+codec,x264.HQ,,x[\-\._ ]?264[\-\._ ]?hq,,movie,
+codec,x264,,x[\-\._ ]?264,,movie,
+codec,XViD,Xvid,,,movie,
+collection,ABC,American Broadcasting Company,,,,
+collection,ACA.NEOGEO,Neo Geo Classics,aca[\-\._ ]?neo[\-\._ ]?geo,,game,1
+collection,ALL4,All 4,,,,
+collection,AMZN,Amazon,amzn|amazon(?:hd)?,,,
+collection,ArtStation,,art[\-\._ ]?station(?:[\-\._ ]?com)?,,education,1
+collection,AT-X,Anime Theatre X,at[\-\._ ]?x,,series,
+collection,ATVP,Apple TV+,atv[p\+],,,
+collection,B-Global,Bilibili Global,b[\-\._ ]?global,,,
+collection,BBC,British Broadcasting Corporation,,,,
+collection,BOOM,Boomerang,,,,
+collection,CBC,Canadian Broadcasting Corporation,,,,
+collection,CBS,CBS Corporation,,,,
+collection,CBT.Nuggets,CBT Nuggets,cbt[\-\._ ]?nuggets(?:[\-\._ ]?com)?,,education,1
+collection,CC,Comedy Central,,,,
+collection,CPOP,Chinese Pop,,,music,1
+collection,CRAV,Crave,,,,
+collection,Criterion.Collection,Criterion Collection,(?i:the[\-\._ ])?(?i:criterion(?:[\-\._ ]?(?:collection|edition))?),,movie,
+collection,CRKL,Crackle,,,,
+collection,CR,Crunchyroll,,,,
+collection,CW,The CW,,,,
+collection,CX,Fuji TV,,,,
+collection,DCU,DC Universe,,,,
+collection,DI.FM,Digitally Imported FM,di[\-\._ ]?fm|(?-i:DI),,music,1
+collection,DigitalTutors,,digital[\-\._ ]?tutors(?:[\-\._ ]?com)?,,education,1
+collection,DSCP,Discovery+,dsc[p\+],,,
+collection,DSNP,Disney+,dsn[p+],,,
+collection,DSNY,Disney,,,,
+collection,eBook,,ebooks?,,book,
+collection,eShop,Nintendo eShop,,,game,1
+collection,FBWatch,Facebook Watch,,,,
+collection,FE,Freeform,,,,
+collection,3FM,NPO 3FM,,,music,1
+collection,FOX,Fox Broadcasting Company,(?-i:FOX),,,
+collection,FREEWEB,Freeweb,,,music,1
+collection,FUNi,Funimation,,,,
+collection,GOG,Good Old Games,gog(?:[\-\._ ]?(?:edition|classic))?,,game,1
+collection,Gumroad,,gum[\-\._ ]?road(?:[\-\._ ]?com)?,,education,1
+collection,Hitradio.MSOne,Hitradio MS One,hitradio[\-\._ ]?ms[\-\._ ]?one,,music,1
+collection,HMAX,HBO Max,,,,
+collection,HTSR,Hotstar,,,,
+collection,HULU,Hulu Networks,,,,
+collection,IBM.Press,IBM Press,ibm[\-\._ ]?press,,education,1
+collection,IDT.Radio,ID&T Radio,idt[\-\._ ]?radio,,music,1
+collection,iGN.com,,ign\.com,,,
+collection,IMAX,,(?-i:IMAX),,,
+collection,iPlayer,BBC iPlayer,(?-i:iP)(?:layer)?,,,
+collection,iTunes,,(?-i:iT)(?:unes)?,,,
+collection,JAV,Japanese Adult Video,,,,
+collection,JPOP,Japanese Pop,,,music,1
+collection,LIFE,Lifetime,(?-i:LIFE(?:TIME)?),,,
+collection,LinkedIn.Learning,LinkedIn Learning,linkedin[\-\._ ]?learning,,education,1
+collection,LinuxCBT,,linux[\-\._ ]?cbt(?:[\-\._ ]?com)?,,education,1
+collection,Lynda,,lynda(?:[\-\._ ]?com)?,,education,1
+collection,MTV,MTV Networks,,,,
+collection,MUBI,Mubi,,,,
+collection,NBC,National Broadcasting Company,,,,
+collection,NF,Netflix,(?-i:NF)|netflix(?:[\-\._ ]originals)?,,,
+collection,NHKG,NHK General TV,,,,
+collection,NICK,Nickelodeon,(?-i:N[iI]CK),,,
+collection,OAR,Original Aspect Ratio,,,,
+collection,OREILLY,O'Reilly,o[\-\._ ]?reilly(?:[\-\._ ]?com)?,,education,1
+collection,Packt,,,,education,1
+collection,PCOK,Peacock,,,,
+collection,Percipio,,percipio(?:[\-\._ ]?com)?,,education,1
+collection,PLURALSiGHT,Pluralsight,plural[\-\._ ]?sight(?:[\-\._ ]?com)?,,education,1
+collection,PMTP,Paramount+,pmt[p\+],,,
+collection,PPV,Pay-Per-View,ppv(?:[\-\._ ]?rip)?,,episode,
+collection,PSN,PlayStation Network,,,game,1
+collection,Puresound.FM,Puresound FM,puresound[\-\._ ]?fm,,music,1
+collection,RED,YouTube Red,(?-i:RED),,,
+collection,ROKU,Roku,,,,
+collection,SF,Shout Factory!,(?-i:SF),,,
+collection,SiriusXM,Sirius XM,sirius[\-\._ ]?xm,,music,1
+collection,Skillshare,,skillshare(?:[\-\._ ]?com)?,,education,1
+collection,Sonic.Academy,Sonic Academy,sonic[\-\._ ]?academy(?:[\-\._ ]?com)?,,education,1
+collection,STAN,Stan,,,,
+collection,STV,Straight-to-Video,,,movie,
+collection,STZ,STARZ,st(?:ar)?z,,,
+collection,TrainSimple,,train[\-\._ ]?simple(?:[\-\._ ]?com)?,,education,1
+collection,Truefire,,truefire(?:[\-\._ ]?com)?,,education,1
+collection,TutsPlus,,tutsplus(?:[\-\._ ]?com)?,,education,1
+collection,TVNZ,,,,,
+collection,Udemy,,,,education,1
+collection,Video2Brain,,video2brain(?:[\-\._ ]?com)?,,education,1
+collection,VTC,,,,education,1
+collection,WAKA,Wakanim,,,,
+collection,WiiWare,WiiWare Shop,,,game,1
+collection,Wiley,,wiley(?:[\-\._ ]?com)?,,education,1
+collection,XBLA,Xbox Live Arcade,,,game,1
+collection,XXX,Adult,(?-i:XXX),,,
+collection,YOUTUBE,YouTube,(?-i:YOUTUBE)|(?-i:YT),,,
+container,AVI,Audio Video Interleave (AVI),,,,
+container,AZW3,Kindle eBook (AZW),azw3?,,book,
+container,CBR,Comic Book Archive (CBR),,,comic,
+container,CBZ,Comic Book Archive (CBZ),,,comic,1
+container,DIVX,DivX,,,movie,
+container,ePub,,,,book,
+container,FLV,Flash Video,,,movie,
+container,F4V,Flash 4 Video (F4V),,,movie,
+container,ISO,ISO 9660,,,,
+container,3LP,,,,movie,
+container,MKV,Matroska (MKV),,,movie,
+container,MOBI,Mobipocket eBook (MOBI),,,book,
+container,MOV,QuickTime Movie,,,movie,
+container,MP4,MPEG-4 Part 14 (MP4),,,movie,
+container,M4V,,,,movie,
+container,PDF,Portable Document Format (PDF),,,book,
+container,WMV,Windows Media Video (WMV),,,movie,
+cut,Censored.Cut,Censored,censored(?:[\-\._ ]cut)?,,movie,
+cut,Directors.Cut,Director's,director[\-\._ ']?s[\-\._ ]cut|(?-i:DC),,movie,
+cut,Extended.Cut,Extended,extended(?:[\-\._ ](?:version|edition|cut))?,,,
+cut,Final.Cut,Final,final[\-\._ ]cut,,movie,
+cut,International.Cut,International,international[\-\._ ]cut,,movie,
+cut,Original.Version,Original,original[\-\._ ](?:version|edition|cut),,,
+cut,Theatrical.Cut,Theatrical,theatrical(?:[\-\._ ]cut)?,,movie,
+cut,Uncensored.Cut,Uncensored,uncensored(?:[\-\._ ]cut)?,,movie,
+cut,Uncut,,uncut|ungek[uü]e?rzt,,movie,
+cut,Unrated.Cut,Unrated,unrated(?:[\-\._ ]cut)?,,movie,
+edition,Bonus.Edition,Bonus,bonus[\-\._ ]edition,,music,1
+edition,Club.Edition,Club,club[\-\._ ]edition,,music,1
+edition,Collectors.Edition,Collectors,collector[[\-\._ ']?s[\-\._ ]edition,,movie,
+edition,Complete.Edition,Complete,(?-i:Complete[\-\._ ]Edition),,game,1
+edition,Definitive.Edition,Definitive,(?:the[\-\._ ]?)?definitive[\-\._ ]edition,,game,1
+edition,Deluxe.Edition,Deluxe,deluxe[\-\._ ]edition,,,
+edition,Despecialized,,,,movie,1
+edition,Expanded.Edition,Expanded,expanded(?:[\-\._ ](?:version|edition|cut))?,,movie,
+edition,Fan.Edit,Fan,fan[\-\._ ]edit,,movie,1
+edition,JA,Japanese Edition,(?-i:JA),,music,1
+edition,Limited.Edition,Limited,limited(?:[\-\._ ]edition)?,,,
+edition,Noir.Edition,Noir,noir[\-\._ ]edition,,movie,1
+edition,Open.Matte,Open Matte,open[\-\._ ]matte,,movie,1
+edition,Remastered.Edition,Remastered,remaster(?:ed)?(?:[\-\._ ]edition)?,,,
+edition,Restored.Edition,Restored,restored(?:[\-\._ ]edition)?,,movie,
+edition,Special.Edition,Special,special[\-\._ ]edition|edicion[\-\._ ]especial,,movie,
+edition,Super.Deluxe,Super Deluxe,super[\-\._ ]deluxe,,movie,
+edition,Ultimate.Edition,Ultimate,ultimate[\-\._ ]edition,,movie,
+edition,$1.Anniversary.Edition,Anniversary ($1),(\d+(?:th|st|nd|rd))[\-\._ ]anniversary(?:[\-\._ ]edition)?,,movie,
+ext,aac,Advanced Audio Coding (aac),(?-i:aac),,music,
+ext,asf,Advanced Systems Format (asf),,,movie,
+ext,asx,Advanced Stream Redirector (asx),,,movie,
+ext,avc,Advanced Video Coding (avc),,,movie,
+ext,avi,Audio Video Interleave (avi),,,movie,
+ext,bin,Binary (bin),,,app,
+ext,bz2,BZip2 (bz2),,,app,
+ext,cbr,Comic Book (CBR),,,comic,1
+ext,cbz,Comic Book (CBZ),,,comic,1
+ext,dat,Data (dat),,,app,
+ext,divx,DivX,[bd]ivx,,movie,
+ext,dvr-ms,Microsoft Digital Video Recording (dvr-ms),,,movie,
+ext,dv,Digital Video (dv),,,movie,
+ext,flac,Free Lossless Audio Codec (flac),(?-i:flac),,music,
+ext,fli,FLIC Animation (fli),,,movie,
+ext,flv,FLV,,,movie,
+ext,3gp,3rd Generation Partnership Project (3gp),,,movie,
+ext,gz,GZip (gz),,,app,
+ext,ifo,IFO,,,movie,
+ext,img,IMG,,,app,
+ext,iso,ISO 9660 (iso),,,,
+ext,m4a,MPEG-4 Audio (m4a),,,music,
+ext,mk3d,MK3D,,,movie,
+ext,mkv,Matroska (mkv),,,movie,
+ext,mov,MOV,,,movie,
+ext,mp4,MP4,(?-i:mp4),,movie,
+ext,mp3,MP3,(?-i:mp3),,music,
+ext,mpg,MPEG,mpe?g,,movie,
+ext,m2ts,BluRay Disc (m2ts),,,movie,
+ext,m3u,M3U,,,music,
+ext,m4v,M4V,,,movie,
+ext,m2v,M2V,,,movie,
+ext,nrg,NRG,,,app,
+ext,nsv,NSV,,,movie,
+ext,nuv,NUV,,,movie,
+ext,ogm,OGM,,,movie,
+ext,ogv,OGV,,,movie,
+ext,pva,PVA,,,series,
+ext,qt,QuickTime (qt),,,movie,
+ext,rar,Roshal Archive (rar),,,,
+ext,raw,RAW,,,movie,
+ext,rmvb,Real Media (rmvb),,,movie,
+ext,rm,Real Media (rm),,,movie,
+ext,strm,Stream (strm),,,game,1
+ext,svq3,SVQ3,,,movie,
+ext,tar.bz2,BZip2 TAR (tar.bz2),,,app,
+ext,tar.gz,GZip TAR (tar.gz),,,app,
+ext,tar,TAR,,,app,
+ext,torrent,Torrent,,,,
+ext,ts,TS,,,movie,
+ext,ty,TY,,,movie,
+ext,viv,VIV,,,movie,
+ext,vob,VOB,,,movie,
+ext,vp3,VP3,,,movie,
+ext,webm,WebM,,,movie,
+ext,wmv,WMV,,,movie,
+ext,wpl,WPL,,,music,
+ext,wtv,WTV,,,movie,
+ext,xvid,Xvid,,,movie,
+ext,7z,7-Zip (7z),,,app,
+ext,zip,Zip,,,,
+genre,Action,,,,movie,
+genre,Adventure,,,,movie,
+genre,Animation,,,,movie,
+genre,Anime,,,(?-i:AN[iI]ME),movie,
+genre,Biography,,,,movie,
+genre,Comedy,,,,movie,
+genre,Concert,,,,movie,
+genre,Crime,,,,movie,
+genre,Documentary,,do[ck](?:u(?:mentary)?)?,(?-i:DO[CK]U?),movie,
+genre,Drama,,,,movie,
+genre,Family,,,,movie,
+genre,Fantasy,,,,movie,
+genre,Film-Noir,,film[\-\._ ]?noir,,movie,
+genre,Food,,,,movie,
+genre,Game-Show,,game[\-\._ ]?show,,series,
+genre,History,,,,movie,
+genre,Horror,,,,movie,
+genre,Musical,,,,movie,
+genre,Music,,,,movie,
+genre,Mystery,,,,movie,
+genre,News,,,,series,
+genre,Reality-TV,,reality[\-\._ ]?tv,,series,
+genre,Romance,,,,movie,
+genre,Sci-Fi,,sci[\-\._ ]?fi|science[\-\._ ]?fiction,,movie,
+genre,Short,,,,movie,
+genre,Sport,,,,movie,
+genre,Stand-Up,,stand[\-\._ ]?up,,movie,
+genre,Talk-Show,,talk[\-\._ ]?show,,series,
+genre,Thriller,,,,movie,
+genre,Travel,,,,movie,
+genre,War,,,,movie,
+genre,Western,,,,movie,
+language,AUDiO.ADDON,Audio Addon,audio[\-\._ ]?addon,,,
+language,BALTIC,Baltic,,,,
+language,BRAZiLiAN,Brazilian,,,,
+language,BULGARiAN,Bulgarian,(?i:bulgarian)|BG,,,
+language,CHiNESE,Chinese,CH[iI]N[eE]S[eE]|CN,,,
+language,CHS,Chinese (simplified),(?i:chinese[\-\._ ]?simplified)|CHS,,,
+language,CHT,Chinese (traditional),(?i:chinese[\-\._ ]?traditional)|CHT,,,
+language,CZECH,Czech,CZECH|CZ,,,
+language,DANiSH,Danish,(?i:danish)|DK,,,
+language,DL,Dual Language,(?i:dual[\-\._ ]?language)|DL,,,
+language,DUBBED,Dubbed,(?i:dubbed),,,
+language,DUTCH,Dutch,(?i:dutch|flemish)|NL,,,
+language,ENGLiSH,English,(?i:eng(?:lish)?)|EN,,,
+language,ESTONiAN,Estonian,(?i:estonian)|EE,,,
+language,FiNNiSH,Finnish,(?i:finnish)|FI,,,
+language,FRENCH,French,(?i:french)|FRE|FR,,,
+language,GERMAN,German,(?i:german)|DE,,,
+language,GREEK,Greek,GREEK|(?i:gr),,,
+language,HARDSUB,Subs (hard),(?:hardsub),,,
+language,HC,Hardcoded,(?i:hard[\-\._ ]?coded|hc),,,
+language,HiNDI,Hindi,(?i:hindi)|HI,,,
+language,HUNGARiAN,Hungarian,(?i:hun(?:garian)?)|HU,,,
+language,iCELANDiC,Icelandic,(?i:icelandic),,,
+language,iTALiAN,Italian,(?i:ita(?:lian)?),,,
+language,JAPANESE,Japanese,(?i:japanese),,,
+language,KOREAN,Korean,K[oO]R[eE][aA]N|KR,,,
+language,LATiN,Latin,,,,
+language,MANDARiN,Mandarin,,,,
+language,MULTILANG,Multi (lang),,,,
+language,MULTiSUB,Subs (multi),(?i:multiple[\-\._ ]subtitles?|multi[\-\._ ]?subs?),,,
+language,MULTi,Multi,(?i:multi(?:[\-\._ ]?(?:lingual|language)))|MULT[iI],,,
+language,NORDiC,Nordic,N[oO]RD[iI]C,,,
+language,NORWEGiAN,Norwegian,(?i:nor(?:wegian)?)|NO,,,
+language,POLiSH,Polish,(?i:polish)|PL,,,
+language,PORTUGUESE,Portuguese,(?i:portuguese)|PT,,,
+language,ROMANiAN,Romanian,(?i:romanian)|RO,,,
+language,RUSSiAN,Russian,(?i:rus(?:ssian)?)|RU,,,
+language,SPANiSH,Spanish,(?i:spa(?:nish)?)|SPA|ES,,,
+language,SUBBED,Subbed,(?i:subbed),,,
+language,SUBFORCED,Subbed (forced),(?i:subforced|forcedsub),,,
+language,SUBPACK,Subs (pack),(?i:subs?[\-\._ ]?pack),,,
+language,SWEDiSH,Swedish,(?i:swe(?:dish)?)|SE,,,
+language,SYNCED,Synced,(?i:synced),,,
+language,TURKiSH,Turkish,(?i:turkish)|TR,,,
+language,UKRAiNiAN,Ukrainian,(?i:ukrainian)|UA,,,
+language,UNSUBBED,Unsubbed,(?i:unsubbed),,,
+language,VF2,VFF et VFQ,(?i:vf2|fr2),,,
+language,VFB,Version Francophone Belge,(?i:vfb),,,
+language,VFF,Version Francophone Français,(?i:vf?f|truefrench),,,
+language,VFI,Version Francophone Internationale,(?i:vfi),,,
+language,VFO,Version Francophone Originale,(?i:vf?o),,,
+language,VFQ,Version Francophone Québécoise,(?i:vf?q),,,
+language,VOSTEN,Version Originale Sous-Titrée en Anglais,(?i:vosten),,,
+language,VOSTFR,Version Originale Sous-Titrée en Français,(?i:vostfr),,,
+language,YUGOSLOViAN,Yugoslovian,(?i:yugoslovian)|YU,,,
+language,$1$2UB$3,$2ubs ($1$3),(?-i:([A-Zi]*)([SD])UB([A-Zi]*)),,,
+language,MULTi$2,Multi ($2),(?i:multi)[\-\._ ]?(\d+),,,
+other,ADVANCE,Advance,adv(?:anced?)?,,music,1
+other,AI.Upscale,Upscaled (AI),ai[\-\._ ]upscaled?,,movie,
+other,BONUS.TRACKS,Bonus Tracks,bonus[\-\._ ]tracks?,,music,1
+other,BONUS,Bonus,(?-i:BONUS),,,
+other,BOOKWARE,Bookware,,,education,1
+other,BOOTLEG,Bootleg,,,music,1
+other,BOXSET,Boxset,,,series,
+other,CFW,Custom Firmware,,,game,1
+other,COMMENTARY,Commentary,(?:with[\-\._ ])commentary|(?-i:C[oO]MM[eE]NT[aA]RY),,movie,
+other,COMPLETE,Complete,,,movie,
+other,CONVERT,Convert,(?-i:CONVERT),,,
+other,COVER,Cover,(?:DVD)?(?-i:C[oO]V[eE]RS?),,,
+other,CRACKED,Cracked,,,app,
+other,CRACKFiX,Fix (crack),crack[\-\._ ]?fix,,app,
+other,CUSTOM,Custom,(?-i:C[uU]ST[oO]M),,,
+other,3D,,,,movie,1
+other,Digital.Extras,Extras (digital),digital[\-\._ ]extras,,movie,
+other,DIRFIX,Fix (directory),dir[\-\._ ]?[df]ix?,,,
+other,Discography,,,,music,1
+other,DLC,,(?:(?:plus|including|incl|inc)[\-\._ ]?)?dlc(?:[\-\._ ]unlocker)?,,game,1
+other,EAC,Exact Audio Copy,(?-i:EAC),,music,1
+other,EXTRAS,Extras,(?:(?:plus|including|incl|inc)[\-\._ ]?)?extras,,,
+other,FiNAL,Final,(?-i:F[iI]N[aA]L),,,
+other,FiX,Fix,(?-i:F[iI]X),,,
+other,FS,Fullscreen,(?-i:FS),,,
+other,Half-SBS,3D (half side-by-side),h(?:alf)?[\-\._ ]?sbs,,movie,1
+other,HiGHLiGHTS,Highlights,(?-i:H[iI]GHL[iI]GHTS),,,
+other,HiRES,High Resolution,(?-i:H[iI]RES),,,
+other,HOTFiX,Hotfix,hot[\-\._ ]?fix,,app,
+other,HOU,3D (half-over/half-under),,,movie,1
+other,HR,High Res,high[\-\._ ]?res|hr,,movie,
+other,HYBRiD,Hybrid,,,movie,
+other,IMAGESET,Image Set,image[\-\._ ]?set,,,
+other,IMPORT,Import,,,music,1
+other,Incl.Crack,Crack,(?:(?:incl?|and)[\-\._ ]?)?crack(?:[\-\._ ](?:only|for))?,,app,
+other,Incl.Keygen,Keygen,(?:(?:incl?|and)[\-\._ ])?key[\-\._ ]?(?:generator|gen|(?:(?:file[\-\._ ])?)?maker)(?:[\-\._ ](?:only|for))?,,app,
+other,Incl.Offline.Crack,Offline Crack,(?:(?:incl?|and)[\-\._ ]?)?offline[\-\._ ]?crack(?:[\-\._ ](?:only|for))?,,app,
+other,Incl.Patchtool,Patchtool,(?:(?:incl?|and)[\-\._ ]?)?patch[\-\._ ]?tool(?:[\-\._ ](?:only|for))?,,app,
+other,Incl.Patch,Patch,(?:(?:incl?|and)[\-\._ ]?)?patch(?:[\-\._ ](?:only|for))?,,app,
+other,Incl.Serial,Serial,(?:(?:incl?|and)[\-\._ ]?)?serial(?:[\-\._ ](?:only|for))?,,app,
+other,iNJECT,Console Inject,(?-i:[iI]NJ[eE]CT),,game,1
+other,INTERNAL,Internal,(?-i:[iI]NT)|internal,int,,
+other,KONTAKT,Samples (Kontakt),(?-i:KONTAKT),,music,1
+other,LD,Line Dubbed,,,,
+other,MD,Mic Dubbed,(?-i:MD),,,
+other,minimalNR,Minimal Noise-Reduction,,,movie,1
+other,MULTiFORMAT,Multiformat,,,music,1
+other,NFOFiX,Fix (nfo),i?nfo[\-\._ ]?fix,,,
+other,NoCD,Crack (no CD),,,game,1
+other,NUKED,Nuked,nuked?,,,
+other,ONESIDED,Vinyl (onesided),,,music,1
+other,OST,Soundtrack (OST),(?:original[\-\._ ](?:motion[\-\._ ]picture[\-\._ ])?)?soundtrack|ost,,music,1
+other,PATCHED,Patched,,,app,
+other,PROMO,Promo,,,music,
+other,PROOFFiX,Fix (proof),,,,
+other,PROOF,Proof,(?-i:PROOF),,,
+other,PROPER,Proper,,,,
+other,RARFiX,Fix (rar),,,,
+other,READNFO,Read NFO,read[\-\._ ]?i?nfo,,,
+other,REAL.PROPER,Proper (real),real[\-\._ ]?proper,,,
+other,REGiSTERED,Registered,registered|regged,,app,1
+other,REISSUE,Reissue,,,music,
+other,REMAKE,Remake,(?-i:REMAKE),,,
+other,REMASTERED,Remastered,remaster(?:ed)?,,,
+other,REMiX,Remix,re[\-\._ ]?mix(?:e[sd])?,,music,1
+other,REMUX,Remux,,,,
+other,REPACK,Repack,repack(?:ed)?,,,
+other,RERELEASE,Re-release,re[\-\._ ]?release,,music,1
+other,RERiP,Re-rip,re[\-\._ ]?rip,,,
+other,RETAiL,Retail,,,,
+other,RiP,Rip,(?-i:RiP),,,
+other,SAMPLEFiX,Fix (sample),,,movie,
+other,SAMPLER,Sampler,(?:album[\-\._ ]?)?sampler,,music,1
+other,SBS,3D (side-by-side),,,movie,1
+other,Serial.Fix,Fix (serial),serial[\-\._ ]?fix,,app,
+other,Special.Features,Special Features,(?:(?:with|incl?)[\-\._ ])?special[\-\._ ]features,,movie,
+other,Strategy.Guide,Strategy Guide,strategy[\-\._ ]?guide,,book,1
+other,SUB100,Sub 100,sub[\-\._ ]?100,,app,
+other,SYNCFiX,Fix (sync),,,movie,
+other,TRACKFiX,Fix (track),track[\-\._ ]?fix,,music,1
+other,TUTORiAL,Tutorial,(?-i:T[uU]T[oO]R[iI][aA]L),,education,1
+other,UNRELEASED,Unreleased,,,music,1
+other,UPDATE,Update,,,app,
+other,UPSCALED,Upscaled,upscaled?,,movie,1
+other,VC,Virtual Console,,,game,1
+other,VERTICAL,Vertical,(?-i:V[eE]RT[iI]C[aA]L),,,
+other,Virtual.Crack,Crack (virtual),virtual[\-\._ ]?crack,,game,1
+other,VIRUS.FREE,,virus[\-\._ ]free,,app,
+other,VR180,,vr[\-\._ ]?180,,movie,
+other,VR,,,,movie,
+other,WORKING,Working,(?-i:W[oO]RK[iI]NG),,app,
+other,WS,Widescreen,widescreen|ws,,movie,
+other,$1X,,((?:19|20)[\d|x])x,,music,1
+other,Plus.$2.Trainer,Trainer ($2),(?:plus[\-\._ ])?(\d\d?)[\-\._ ]?trainer,,game,1
+platform,AIX,,,,app,1
+platform,ANDROiD,Android,(?-i:ANDRO[iI]D),,app,
+platform,DOS,,(?-i:DOS),,app,1
+platform,3DS,Nintendo 3DS,(?-i:3DS),,game,1
+platform,DSi,Nintendo DSi,,,game,1
+platform,FC,Nintendo Famicom,,,game,1
+platform,FreeBSD,,free[\-\._ ]?bsd,,app,1
+platform,GBA,Nintendo Gameboy Advanced,,,game,1
+platform,GB,Nintendo Gameboy,,,game,1
+platform,GCN,Nintendo GameCube (North America),,,game,1
+platform,HP-UX,,hp[\-\._ ]?ux,,app,1
+platform,IRIX,,,,app,1
+platform,Linux,,,,app,
+platform,MacOSX,,(?:mac[\-\._ ]?)?osx,,app,
+platform,MacOS,,mac[\-\._ ]?os,,app,
+platform,MEGACD,Sega Mega-CD,[ms]ega[\-\._ ]?cd,,game,1
+platform,N64,Nintendo 64,,,game,1
+platform,NDS,Nintendo DS,,,game,1
+platform,NES,Nintendo Entertainment System,,,game,1
+platform,NGC,Nintendo GameCube (Japan),,,game,1
+platform,NGPC,Neo Geo Pocket Color,,,game,1
+platform,NG,Neo Geo,ng|neo[\-\._ ]?geo,,game,1
+platform,NSW,Nintendo Switch,ns[wp]|xci,,game,1
+platform,OpenBSD,,open[\-\._ ]?bsd,,app,1
+platform,PC,,(?-i:PC),,app,
+platform,PS5,PlayStation 5,ps[\-\._ ]?5,,game,1
+platform,PS4,PlayStation 4,ps[\-\._ ]?4,,game,1
+platform,PS3,PlayStation 3,ps[\-\._ ]?3,,game,1
+platform,PS2,PlayStation 2,ps[\-\._ ]?(?:2|rip),,game,1
+platform,PS1,PlayStation 1,ps[\-\._ ]?[x1]|(?-i:PS),,game,1
+platform,PSP,PlayStation Portable,,,game,1
+platform,PSV,PlayStation Vita,psv(?:ita)?,,game,1
+platform,SFC,Nintendo Super Famicom,,,game,1
+platform,SNES,Super Nintendo Entertainment System,,,game,1
+platform,Solaris.Intel,Solaris (Intel),solaris[\-\._ ]intel,,app,1
+platform,Solaris.Sparc,Solaris (SPARC),solaris[\-\._ ]sparc,,app,1
+platform,TG16,TurboGrafx 16,tg[\-\._ ]?16|pce(?:[\-\._ ]?(?:cd))?,,game,1
+platform,VVD,V.Flash (VTech V.Disc),,,game,1
+platform,WiiU,Nintendo Wii U,wii[\-\._ ]?u,,game,1
+platform,Wii,Nintendo Wii,,,game,1
+platform,Win95NT4,Windows 95/NT4,(for[\-\._ ])?(?:windows|win)[\-\._ ]?95[\-\._ ]?nt4,,app,
+platform,Win9xNT4,Windows 9x/NT4,(for[\-\._ ])?(?:windows|win)[\-\._ ]?9x[\-\._ ]?nt4,,app,
+platform,Win95NT,Windows 95/NT,(for[\-\._ ])?(?:windows|win)[\-\._ ]?95[\-\._ ]?nt,,app,
+platform,Win9xNT,Windows 9x/NT,(for[\-\._ ])?(?:windows|win)[\-\._ ]?9x[\-\._ ]?nt,,app,
+platform,Win311,Windows 3.11,(for[\-\._ ])?(?:windows|win)[\-\._ ]?3[\-\._ ]?11,,app,
+platform,WinAll,Windows (all),(for[\-\._ ])?(?:windows|win)[\-\._ ]?all,,app,
+platform,WinNT4,Windows NT4,(for[\-\._ ])?(?:windows|win)[\-\._ ]?nt4,,app,
+platform,Win98,Windows 98,(for[\-\._ ])?(?:windows|win)[\-\._ ]?98,,app,
+platform,Win95,Windows 95,(for[\-\._ ])?(?:windows|win)[\-\._ ]?95,,app,
+platform,Win64,Windows (x64),(for[\-\._ ])?(?:windows|win)[\-\._ ]?64,,app,
+platform,Win32,Windows (x86),(for[\-\._ ])?(?:windows|win)[\-\._ ]?32,,app,
+platform,WinME,Windows ME,(for[\-\._ ])?(?:windows|win)[\-\._ ]?me,,app,
+platform,WinNT,Windows NT,(for[\-\._ ])?(?:windows|win)[\-\._ ]?nt,,app,
+platform,WinPE,Windows PE,(based[\-\._ ]on[\-\._ ])?(?:windows|win)[\-\._ ]?pe,,app,
+platform,Win9x,Windows 9x,(for[\-\._ ])?(?:windows|win)[\-\._ ]?9x,,app,
+platform,XBOX360,Xbox 360,xbox[\-\._ ]?360,,game,1
+platform,XBOXONE,Xbox One,xbox[\-\._ ]?one,,game,1
+platform,XBOX,Xbox,xbox(?:rip)?,,game,1
+region,R0,Global (R0),,,movie,
+region,R1,United States (R1),,,movie,
+region,R2,Europe (R2),,,movie,
+region,R3,Southeast Asia (R3),,,movie,
+region,R4,Latin America (R4),,,movie,
+region,R5,Africa (R5),,,movie,
+region,R6,China (R6),,,movie,
+region,R7,Media (R7),,,movie,
+region,R8,International (R8),,,movie,
+region,R9,Any (R9),,,movie,
+region,UK,United Kingom,(?-i:UK),,,
+region,AUS,Australia,(?-i:AUS),,,
+region,CAN,Canada,(?-i:CAN),,,
+region,CEE,Central and Eastern Europe,,,,
+region,EUR,Europe,,,,
+region,FRA,France,(?-i:FRA|FRE),,,
+region,GER,Germany,(?-i:GER),,,
+region,INT,International,(?-i:INT),,,
+region,JPN,Japan,jpn|(?-i:JAP|JP),,,
+region,KOR,South Korea,(?-i:KOR),,,
+region,NOR,Norway,(?-i:NOR),,,
+region,POL,Poland,(?-i:POL),,,
+region,USA,United States,(?-i:US|USA),,,
+resolution,PN.Selector,PAL/NTSC Selector,p(?:al)?[\-\._ ]?n(?:tsc)?[\-\._ ]selector,,game,1
+resolution,DCI4K,DCI 4k,dci[\-\._ ]?4k|4096x2160,,,
+resolution,DCI2K,DCI 2k,dci[\-\._ ]?2k|2048x1080,,,
+resolution,4320p,UltraHD 8K (4320p),4320p|7680x4320,,,
+resolution,2880p,5k (2880p),2880p|5k|5120x2880,,,
+resolution,2160p,UltraHD 4K (2160p),2160p|3840x2160|4k,,,
+resolution,1800p,QHD+ (1800p),1800p|3200x1800,,,
+resolution,1440p,QHD (1440p),1440p|2560x1440,,,
+resolution,1080p,FullHD (1080p),1080[ip]|1920x1080,,,
+resolution,900p,HD+ (900p),900[ip]|1600x900,,,
+resolution,720p,HD (720p),720[ip]|1280x720,,,
+resolution,576p,PAL (576p),576[ip]|720x576|pal,,,
+resolution,540p,qHD (540p),540[ip]|960x540,,,
+resolution,480p,NTSC (480p),480[ip]|720x480|848x480|854x480|ntsc,,,
+resolution,360p,nHD (360p),360[ip]|640x360,,,
+resolution,$1p,Other ($1p),([123]\d{3})p,,,
+size,BD50,BD (50GB),bd[\-\._ ]?50,,movie,
+size,BD25,BD (25GB),bd[\-\._ ]?25,,movie,
+size,BD9,BD (9GB),bd[\-\._ ]?9,,movie,
+size,BD5,BD (5GB),bd[\-\._ ]?5,,movie,
+size,BDRW,BD (RW),bd[\-\._ ]?rw,,movie,
+size,BDR,BD (R),bd[\-\._ ]?r,,movie,
+size,CDRW,CD (RW),cd[\-\._ ]?rw,,music,
+size,CDR,CD (R),cd[\-\._ ]?r,,music,
+size,DVD9,DVD (9GB),dvd[\-\._ ]?9,,movie,
+size,DVD5,DVD (5GB),dvd[\-\._ ]?5,,movie,
+size,DVDRW,DVD (RW),dvd[\-\._ ]?rw,,movie,
+size,DVDR,DVD (R),dvd[\-\._ ]?r,,movie,
+size,FULLDVD,DVD (full),,,game,1
+size,MCD,CD (music),m[\-\._ ]?cd,,music,1
+size,MDVD9,DVD (9GB music),m[\-\._ ]?dvd[\-\._ ]?9,,music,1
+size,MDVD5,DVD (5GB music),m[\-\._ ]?dvd[\-\._ ]?5,,music,1
+size,MDVDRW,DVD (RW music),m[\-\._ ]?dvd(?:[\-\._ ]?rw),,music,1
+size,MDVDR,DVD (R music),m[\-\._ ]?dvd(?:[\-\._ ]?r),,music,1
+size,MDVD,DVD (music),m[\-\._ ]?dvd,,music,1
+size,512MS,MemoryStick (512mb),,,game,1
+size,$1$2,$1 $2,(\d+(?:\.\d+)?)[\-\._ ]?([kmgt]i?b),,movie,
+source,AHDTV,High-Definition TV (analog),,,movie,
+source,All.Access.Cheat,All Access Cheat,all[\-\._ ]access[\-\._ ](?:cheats?|save),,game,1
+source,AUDiOBOOK,Audiobook,a(?:udio[\-\._ ]?)?books?,,audiobook,1
+source,BDRiP,BluRay (rip),b[dr]?[\-\._ ]?rip,,movie,
+source,BDSCR,BluRay (screener),b[dr][\-\._ ]?scr(?:eener)?,,movie,1
+source,BluRay3D,,blu[\-\._ ]?ray[\-\._ ]?3d|bd3d,,movie,1
+source,BluRayRiP,BluRay (rip),,,movie,
+source,BluRay,,blu[\-\._ ]?ray|bd,,movie,
+source,BRDRip,BluRay Disc (rip),,,movie,
+source,CABLE,Radio (cable),(?-i:CABLE),,music,1
+source,CAMRiP,CAM (rip),cam[\-\._ ]?rip,,movie,
+source,CAM,,(?-i:CAM),,movie,
+source,CDA,Audio CD,,,music,1
+source,CDEP,Extended Play (CD),cdep|epcd,,music,1
+source,CDLP,Limited Play (CD),,,music,1
+source,CDM,Compact Disc Maxi Single,,,music,1
+source,CDREP,CD (reproduced),,,music,1
+source,CDRiP,Compact Disc (rip),cd[\-\._ ]?rip,,music,1
+source,CDSP,Standard Play (CD),,,music,1
+source,CDS,Compact Disc Single,cds|cd[\-\._ ]?single,,music,
+source,CD,Compact Disc,cd[\-\._ ]?(?:album)?,,music,
+source,CloneCD,Clone (CD),clone[\-\._ ]?cd,,game,1
+source,CloneDVD,Clone (DVD),clone[\-\._ ]?dvd,,game,1
+source,COMiC,Comic,(?:classic[\-\._ ])?comics?,,comic,1
+source,CVD,China Video Disc,,,movie,
+source,DAT,Datacable,(?-i:DAT),,music,1
+source,DCPRiP,Digital Cinema Package (rip),dcp[\-\._ ]?rip,,movie,
+source,DCP,Digital Cinema Package,,,movie,
+source,DDCRiP,Digital Distribution Copy (rip),ddc[\-\._ ]?rip,,music,
+source,DDC,Digital Distribution Copy,,,music,
+source,Digipak,Digipak CD,,,music,1
+source,DSRiP,Digital Satellite (rip),ds[\-\._ ]?rip|dsr,,,
+source,DS,Digital Satellite,,,,
+source,DTheater,,,,movie,
+source,DTHRiP,Satellite (DTH rip),dth[\-\._ ]?rip,,,
+source,DTH,Satellite (DTH),,,,
+source,DTSD,DTS (dual language),,,,
+source,3DTV,,,,movie,
+source,DTVRiP,Digital TV (rip),dtv[\-\._ ]?rip,,,
+source,DTV,Digital TV,,,,
+source,DVBC,Digital Video Broadcasting (cable),dvb[\-\._ ]?c,,music,
+source,DVBRiP,Digital Video Broadcasting (rip),dvb[\-\._ ]?rip,,,
+source,DVBS,Digital Video Broadcasting (satellite),dvb[\-\._ ]?s,,music,
+source,DVBT,Digital Video Broadcasting (terrestial),dvb[\-\._ ]?t,,music,
+source,DVB,Digital Video Brodacasting,,,music,
+source,DVDA,Audio DVD,,,music,1
+source,DVDRiP,Digital Video Disc (rip),dvd[\-\._ ]?rip,,movie,
+source,DVDSCRRiP,Digital Video Disc (screener rip),(?:dvd[\-\._ ]?)?scr(?:eener)?[\-\._ ]?rip,,movie,1
+source,DVDSCR,Digital Video Disc (screener),(?:dvd[\-\._ ]?)?scr(?:eener)?,,movie,1
+source,DVDS,Digital Video Disc (single),dvds(?:ingle)?,,music,1
+source,DVD,Digital Video Disc,dvd,,movie,
+source,DVTV,Digital Versatile Television,,,,
+source,EP,Extended Play,(?-i:EP),,music,1
+source,FESTiVAL,Festival,(?-i:F[eE]ST[iI]V[aA]L),,movie,
+source,FM,,(?-i:FM),,music,1
+source,HAiTiAN,Hatian,(?i:haitian)|HT,,,
+source,HDCAM,CAM (HD),hd[-\._ ]?cam,,movie,
+source,HDDVDRiP,High-Definition Digital Video Disc (rip),hd[\-\._ ]?dvd[\-\._ ]?rip,,movie,
+source,HDDVD,High-Definition Digital Video Disc,hd[\-\._ ]?dvd,,movie,
+source,HDRiP,High-Definition TV (rip),hd(?:tv)?[\-\._ ]?rip,,movie,
+source,HDTC,Telecine (HD),hd[\-\._ ]?tc,,movie,
+source,HDTS,Telesync (HD),hd[\-\._ ]?ts,,movie,
+source,HDTV,High-Definition TV,,,,
+source,IVTC,Inverse Telecine,,,music,
+source,LASERDiSC,LaserDisc,,,movie,
+source,LP,Limited Play,(?-i:LP),,music,1
+source,MAGAZiNE,Magazine,(?-i:MAGAZ[iI]NE),,magazine,1
+source,MBluRay,Music BluRay,m(?:usic)?[\-\._ ]?blu[\-\._ ]?ray|mbd,,music,1
+source,35mm,Film (35mm),,,movie,1
+source,PDTV,Pure Digital TV,,,,
+source,PDVD,Digital Video Disc (pirated),,,movie,1
+source,PS2CD,PlayStation 2 (CD),,,game,1
+source,PS2DVD,PlayStation 2 (DVD),,,game,1
+source,PSXPSP,PlayStation 1 to PlayStation Portable Backup,,,game,1
+source,RADIO,Radio,(?-i:R[aA]D[iI][oO]),,music,1
+source,SATRiP,Satellite (rip),sat[\-\._ ]?rip,,,
+source,SAT,Satellite Radio,(?-i:SAT),,music,
+source,SBD,Soundboard,(?-i:SBD|DAB),,music,1
+source,SCAN,Comic (scan),(?-i:SCAN),,comic,1
+source,SCD,Sample CD,,,music,1
+source,SDTV,TV (SD),,,,
+source,SFCloneCD,Clone (StarForce CD),sf[\-\._ ]?clone[\-\._ ]?cd,,game,1
+source,SFCloneDVD,Clone (StarForce DVD),sf[\-\._ ]?clone[\-\._ ]?dvd,,game,1
+source,SFClone,Clone (StarForce),sf[\-\._ ]?clone,,game,1
+source,SINGLE,Single,(?-i:S[iI]NGLE|SI),,music,1
+source,SP,Standard Play,(?-i:SP),,music,1
+source,STREAM,Stream,(?-i:STREAM),,music,1
+source,SVCDRiP,Super Video CD (rip),svcd[\-\._ ]?rip,,music,
+source,SVCD,Super Video CD,,,music,
+source,TAPE,Tape,(?-i:TAPE),,music,1
+source,TC,Telecine,telecine|tc,,movie,
+source,TS,Telesync,telesync|ts,,movie,
+source,TVHSRiP,TV HS (rip),tvhs[\-\._ ]?rip,,,
+source,TVRiP,TV (rip),tv[\-\._ ]?rip,,,
+source,UHD.BDRiP,Ultra High-Definiton BluRay (rip),uhd[\-\._ ]?(?:bd)?rip,,movie,
+source,UHD.BluRay,Ultra High-Definiton BluRay,uhd(?:[\-\._ ]?(?:blu[\-\._ ]?ray|bd))?,,movie,
+source,UHDTV,Ultra High-Definition TV,,,,
+source,UMDMOVIE,Universal Media Disc Movie,,,,
+source,UMDRiP,Universal Media Disc (rip),umd[\-\._ ]?rip,,game,1
+source,UMD,Universal Media Disc,,,game,1
+source,VCDRiP,Video CD (rip),vcd[\-\._ ]?rip,,movie,
+source,VCD,Video CD,,,movie,
+source,VHSRiP,VHS (rip),vhs[\-\._ ]?rip,,movie,
+source,VHS,,,,movie,
+source,ViNYLRiP,Vinyl (rip),,,music,1
+source,ViNYL,Vinyl,vinyl|vl,,music,1
+source,VLS,Vinyl (single),vls,,music,1
+source,VODRiP,Video-on-Demand (rip),vod[\-\._ ]?rip,,movie,
+source,VOD,Video-on-Demand,,,movie,
+source,WEB-DL,Web (DL),web[\-\._ ]?dl,,movie,
+source,WEB-HD,Web (HD),web[\-\._ ]?hd,,movie,
+source,WEBFLAC,Web (FLAC),,,music,1
+source,WebHDRiP,Web (HD rip),,,movie,
+source,WEBRiP,Web (rip),web[\-\._ ]?rip,,movie,
+source,WEBSCR,Web (screener),web[\-\._ ]?scr(?:eener)?,,movie,1
+source,WebUHD,Web (UHD),,,movie,
+source,WEB,Web,,,,
+source,Whitelabel,Whitelabel Promo,whitelabel|wlp,,music,1
+source,WORKPRiNT,Workprint,workprint|wp,,movie,1
+source,XBOXDVD,Xbox (DVD),,,game,1
+source,$1INCH.ViNYL,Vinyl ($i inch),(\d\d?)[\-\._ ]?inch(?:[\-\._ ]?vinyl)?,,music,1
