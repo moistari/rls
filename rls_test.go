@@ -399,7 +399,7 @@ func TestExport_taginfo(t *testing.T) {
 			})
 		}
 	}
-	sort.Slice(all, func(i, j int) bool {
+	sort.SliceStable(all, func(i, j int) bool {
 		var cmp int
 		a, b := all[i], all[j]
 		for _, f := range []func() int{

@@ -85,18 +85,21 @@ collection,ABC,American Broadcasting Company,,,,
 collection,ACA.NEOGEO,Neo Geo Classics,aca[\-\._ ]?neo[\-\._ ]?geo,,game,1
 collection,ALL4,All 4,,,,
 collection,AMZN,Amazon,amzn|amazon(?:hd)?,,,
+collection,Apress,,,,education,1
 collection,ArtStation,,art[\-\._ ]?station(?:[\-\._ ]?com)?,,education,1
 collection,AT-X,Anime Theatre X,at[\-\._ ]?x,,series,
 collection,ATVP,Apple TV+,atv[p\+],,,
 collection,B-Global,Bilibili Global,b[\-\._ ]?global,,,
 collection,BBC,British Broadcasting Corporation,,,,
 collection,BOOM,Boomerang,,,,
+collection,Career.Academy,Career Academy,career[\-\._ ]?academy,,education,1
 collection,CBC,Canadian Broadcasting Corporation,,,,
 collection,CBS,CBS Corporation,,,,
 collection,CBT.Nuggets,CBT Nuggets,cbt[\-\._ ]?nuggets(?:[\-\._ ]?com)?,,education,1
 collection,CC,Comedy Central,,,,
 collection,CPOP,Chinese Pop,,,music,1
 collection,CRAV,Crave,,,,
+collection,CreativeLive,,,,education,1
 collection,Criterion.Collection,Criterion Collection,(?i:the[\-\._ ])?(?i:criterion(?:[\-\._ ]?(?:collection|edition))?),,movie,
 collection,CRKL,Crackle,,,,
 collection,CR,Crunchyroll,,,,
@@ -130,6 +133,9 @@ collection,iPlayer,BBC iPlayer,(?-i:iP)(?:layer)?,,,
 collection,iTunes,,(?-i:iT)(?:unes)?,,,
 collection,JAV,Japanese Adult Video,,,,
 collection,JPOP,Japanese Pop,,,music,1
+collection,KelbyOne,,kelby(?:[\-\._ ]?(?:one|training))?,,education,1
+collection,Learnable.com,,learnable[\-\._ ]?com,,education,1
+collection,LearnNowOnline,,,,education,1
 collection,LIFE,Lifetime,(?-i:LIFE(?:TIME)?),,,
 collection,LinkedIn.Learning,LinkedIn Learning,linkedin[\-\._ ]?learning,,education,1
 collection,LinuxCBT,,linux[\-\._ ]?cbt(?:[\-\._ ]?com)?,,education,1
@@ -154,11 +160,14 @@ collection,RED,YouTube Red,(?-i:RED),,,
 collection,ROKU,Roku,,,,
 collection,SF,Shout Factory!,(?-i:SF),,,
 collection,SiriusXM,Sirius XM,sirius[\-\._ ]?xm,,music,1
+collection,Skillfeed,,,,education,1
 collection,Skillshare,,skillshare(?:[\-\._ ]?com)?,,education,1
 collection,Sonic.Academy,Sonic Academy,sonic[\-\._ ]?academy(?:[\-\._ ]?com)?,,education,1
 collection,STAN,Stan,,,,
 collection,STV,Straight-to-Video,,,movie,
 collection,STZ,STARZ,st(?:ar)?z,,,
+collection,Total.Training,Total Training,total[\-\._ ]?training,,education,1
+collection,TrainSignal,,,,education,1
 collection,TrainSimple,,train[\-\._ ]?simple(?:[\-\._ ]?com)?,,education,1
 collection,Truefire,,truefire(?:[\-\._ ]?com)?,,education,1
 collection,TutsPlus,,tutsplus(?:[\-\._ ]?com)?,,education,1
