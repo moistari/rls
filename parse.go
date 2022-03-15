@@ -232,7 +232,7 @@ func (b *TagBuilder) Build(tags []Tag, end int) Release {
 // init fixes the initial tag set.
 func (b *TagBuilder) init(r *Release) {
 	// determine earliest pivot
-	m, pivot := b.pivots(r, TagTypeDate, TagTypeSource, TagTypeSeries, TagTypeResolution)
+	m, pivot := b.pivots(r, TagTypeDate, TagTypeSource, TagTypeSeries, TagTypeResolution, TagTypeVersion)
 	date, series := m[TagTypeDate], m[TagTypeSeries]
 	// reset/collect dates
 	if date != -1 {
@@ -250,7 +250,7 @@ func (b *TagBuilder) init(r *Release) {
 		case series == -1:
 			i = date
 		}
-		b.fixAmazonMD(r, i)
+		b.fixSpecial(r, i)
 	}
 	// get first text prior to pivot
 	end := b.end(r, pivot)
@@ -340,11 +340,14 @@ func (b *TagBuilder) fixBad(r *Release, start, i int) {
 	}
 }
 
-// fixAmazonMD fixes "Amazon" and "MD" captures before i.
-func (b *TagBuilder) fixAmazonMD(r *Release, i int) {
+// fixSpecial fixes special collection and other tags before i.
+func (b *TagBuilder) fixSpecial(r *Release, i int) {
 	for ; i > 0; i-- {
-		if (r.tags[i-1].Is(TagTypeCollection) && r.tags[i-1].Collection() == "AMZN" && strings.ToLower(r.tags[i-1].Text()) == "amazon") ||
-			(r.tags[i-1].Is(TagTypeOther) && r.tags[i-1].Other() == "MD") {
+		typ, c, o, s := r.tags[i-1].TagType(), r.tags[i-1].Collection(), r.tags[i-1].Other(), strings.ToLower(r.tags[i-1].Text())
+		switch {
+		case typ == TagTypeCollection && c == "AMZN" && s == "amazon",
+			typ == TagTypeCollection && c == "CC",
+			typ == TagTypeOther && o == "MD":
 			r.tags[i-1] = r.tags[i-1].As(TagTypeText, nil)
 		}
 	}

@@ -23,8 +23,8 @@ import (
 func TestParseRelease(t *testing.T) {
 	p := NewTagParser(taginfo.All(groupInfos()), DefaultLexers()...)
 	m := make(map[string]bool)
-	for n, test := range rlsTests(t) {
-		i := n
+	for n, tt := range rlsTests(t) {
+		i, test := n, tt
 		name := fmt.Sprintf("%s/%d", test.exp.Type, i)
 		if strings.HasPrefix(name, "/") {
 			name = "unknown" + name

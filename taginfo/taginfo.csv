@@ -478,6 +478,7 @@ platform,Linux,,,,app,
 platform,MacOSX,,(?:mac[\-\._ ]?)?osx,,app,
 platform,MacOS,,mac[\-\._ ]?os,,app,
 platform,MEGACD,Sega Mega-CD,[ms]ega[\-\._ ]?cd,,game,1
+platform,MultiOS,Multi OS,,,app,1
 platform,N64,Nintendo 64,,,game,1
 platform,NDS,Nintendo DS,,,game,1
 platform,NES,Nintendo Entertainment System,,,game,1
