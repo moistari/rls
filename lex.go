@@ -61,12 +61,12 @@ func DefaultLexers() []Lexer {
 		),
 		NewGroupLexer(),
 		// --------------- multi ---------------
-		NewRegexpLexer(TagTypeSize),
-		NewRegexpLexer(TagTypePlatform),
-		NewRegexpLexer(TagTypeArch),
-		NewRegexpLexer(TagTypeSource),
-		NewRegexpLexer(TagTypeResolution),
-		NewRegexpSourceLexer(TagTypeCollection),
+		NewRegexpLexer(TagTypeSize, true),
+		NewRegexpLexer(TagTypePlatform, true),
+		NewRegexpLexer(TagTypeArch, true),
+		NewRegexpLexer(TagTypeSource, true),
+		NewRegexpLexer(TagTypeResolution, true),
+		NewRegexpSourceLexer(TagTypeCollection, true),
 		NewSeriesLexer(
 			// s02, S01E01
 			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]?(?:e(?P<e>\d{1,3}))?\b`,
@@ -135,15 +135,15 @@ func DefaultLexers() []Lexer {
 			// 17.12.15, 20-9-9
 			`(?i)^(?P<YY>[12]\d)[\-\._ ](?P<01>\d\d?)[\-\._ ](?P<02>\d\d?)\b`,
 		),
-		NewRegexpSourceLexer(TagTypeCodec),
+		NewRegexpSourceLexer(TagTypeCodec, true),
 		NewAudioLexer(),
-		NewRegexpLexer(TagTypeChannels),
-		NewRegexpLexer(TagTypeOther),
-		NewRegexpLexer(TagTypeCut),
-		NewRegexpLexer(TagTypeEdition),
-		NewRegexpLexer(TagTypeLanguage),
-		NewRegexpLexer(TagTypeRegion),
-		NewRegexpLexer(TagTypeContainer),
+		NewRegexpLexer(TagTypeChannels, true),
+		NewRegexpLexer(TagTypeOther, true),
+		NewRegexpLexer(TagTypeCut, true),
+		NewRegexpLexer(TagTypeEdition, true),
+		NewRegexpLexer(TagTypeLanguage, false),
+		NewRegexpLexer(TagTypeRegion, true),
+		NewRegexpLexer(TagTypeContainer, true),
 		NewGenreLexer(),
 		NewIDLexer(),
 		NewEpisodeLexer(),
@@ -678,13 +678,17 @@ func NewExtLexer() Lexer {
 }
 
 // NewRegexpLexer creates a tag lexer for a regexp.
-func NewRegexpLexer(typ TagType) TagLexer {
+func NewRegexpLexer(typ TagType, ignoreCase bool) TagLexer {
 	var f taginfo.FindFunc
 	var re *regexp.Regexp
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
 			info := infos[strings.ToLower(typ.String())]
-			re, f = regexp.MustCompile(reutil.Taginfo(`^ib`, info...)), taginfo.Find(info...)
+			s := `^ib`
+			if !ignoreCase {
+				s = `^b`
+			}
+			re, f = regexp.MustCompile(reutil.Taginfo(s, info...)), taginfo.Find(info...)
 		},
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if m := re.FindSubmatch(buf[i:n]); m != nil {
@@ -696,13 +700,17 @@ func NewRegexpLexer(typ TagType) TagLexer {
 }
 
 // NewRegexpSourceLexer creates a tag lexer for a regexp.
-func NewRegexpSourceLexer(typ TagType) TagLexer {
+func NewRegexpSourceLexer(typ TagType, ignoreCase bool) TagLexer {
 	var f taginfo.FindFunc
 	var re *regexp.Regexp
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
 			info := infos[strings.ToLower(typ.String())]
-			re, f = regexp.MustCompile(reutil.Taginfo("^i", info...)+`(?:\b|[\-\._ ])`), taginfo.Find(info...)
+			s := `^i`
+			if !ignoreCase {
+				s = `^i`
+			}
+			re, f = regexp.MustCompile(reutil.Taginfo(s, info...)+`(?:\b|[\-\._ ])`), taginfo.Find(info...)
 		},
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if m := re.FindSubmatch(src[i:n]); m != nil {
