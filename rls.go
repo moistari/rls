@@ -814,16 +814,7 @@ func compareTitle(a, b string) func() int {
 	}
 }
 
-// isBreakDelim returns if r is a break delimiter (same as any, excluding '-').
-func isBreakDelim(r rune) bool {
-	switch r {
-	case '\t', '\n', '\f', '\r', ' ', '(', ')', '+', ',' /*, '-'*/, '.', '_', '[', '/', '\\', ']', '{', '}', '~':
-		return true
-	}
-	return false
-}
-
-// isAnyDelim returns if r is a delimiter (any).
+// isAnyDelim returns true if r is any delimiter.
 func isAnyDelim(r rune) bool {
 	switch r {
 	case '\t', '\n', '\f', '\r', ' ', '(', ')', '+', ',', '-', '.', '_', '[', '/', '\\', ']', '{', '}', '~':
@@ -832,8 +823,18 @@ func isAnyDelim(r rune) bool {
 	return false
 }
 
-// isTitleTrimDelim returns if r is a title trim delimiter (any delim execpt
-// '.', '+").
+// isBreakDelim returns true if r is a break delimiter (same as any, excluding
+// '-').
+func isBreakDelim(r rune) bool {
+	switch r {
+	case '\t', '\n', '\f', '\r', ' ', '(', ')', '+', ',' /*, '-'*/, '.', '_', '[', '/', '\\', ']', '{', '}', '~':
+		return true
+	}
+	return false
+}
+
+// isTitleTrimDelim returns true if r is a title trim delimiter (any delim
+// execpt '.', '+").
 func isTitleTrimDelim(r rune) bool {
 	switch r {
 	case '\t', '\n', '\f', '\r', ' ', '(', ')' /*, '+'*/, ',', '-' /*, '.'*/, '_', '[', '/', '\\', ']', '{', '}', '~':
@@ -842,7 +843,8 @@ func isTitleTrimDelim(r rune) bool {
 	return false
 }
 
-// compareTitleNumber compares a, b as numbers if both are numbers (such as VI or 6).
+// compareTitleNumber compares a, b as numbers if both are numbers or roman
+// numerals (such as VI or 6).
 func compareTitleNumber(a, b string, i int) int {
 	ai, arom, aok := convNumber(a)
 	bi, brom, bok := convNumber(b)
@@ -880,8 +882,7 @@ func parseRoman(s string) (int, bool) {
 	var i, r int
 	for j := 0; j < len(s); j++ {
 		switch r = roman(s[j]); {
-		case r == 0,
-			j < len(s)-2 && r < roman(s[j+1]) && roman(s[j+1]) < roman(s[j+2]):
+		case r == 0, j < len(s)-2 && r < roman(s[j+1]) && roman(s[j+1]) < roman(s[j+2]):
 			return -1, false
 		case j < len(s)-1 && r < roman(s[j+1]):
 			i -= r
@@ -949,22 +950,24 @@ func Find(tags []Tag, s string, count int, verb rune, types ...TagType) ([]Tag, 
 	return v, i
 }
 
-// Clean transforms text to its decomposed Clean form (NKD) and then removes
-// all non-spacing marks, converts all spaces to ' ', and removes '\''.
+// Clean is a text transformer chain that transforms text to its textual
+// decomposed clean form (NFD), removing all non-spacing marks, converting all
+// spaces to ' ', removing '\'', collapsing adjacent spaces into a single ' ',
+// and finally returning the canonical normalized form (NFC).
 //
 // See: https://go.dev/blog/normalization
 var Clean = transform.Chain(
 	norm.NFD,
-	spacer{},
+	collapser{},
 	norm.NFC,
 )
 
-// spacer is a transform.Transformer that converts all space chars to ' ',
-// removes '\'', and collapses spaces next to each other.
-type spacer struct{}
+// collapser is a transform.Transformer that converts all space chars to ' ',
+// removes '\'', and collapses adjacent spaces to a single space.
+type collapser struct{}
 
 // Transform satisfies the transform.Transformer interface.
-func (spacer) Transform(dst, src []byte, atEOF bool) (int, int, error) {
+func (collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 	var i, l, j, n int
 	var prev, r rune
 	b, s, d := make([]byte, utf8.UTFMax), len(src), len(dst)
@@ -989,4 +992,5 @@ func (spacer) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 	return n, i, nil
 }
 
-func (spacer) Reset() {}
+// Reset satisfies the transform.Transformer interface.
+func (collapser) Reset() {}
