@@ -367,6 +367,8 @@ func (b *TagBuilder) fixSpecial(r *Release, i int) {
 		case typ == TagTypeCollection && c == "AMZN" && s == "amazon",
 			typ == TagTypeCollection && c == "CC",
 			typ == TagTypeCollection && c == "RED",
+			typ == TagTypeSource && r.tags[i-1].Text() == "Web",
+			typ == TagTypeCut && r.tags[i-1].Text() == "Uncut",
 			typ == TagTypeOther && o == "MD":
 			r.tags[i-1] = r.tags[i-1].As(TagTypeText, nil)
 		}

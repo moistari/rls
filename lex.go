@@ -515,8 +515,9 @@ func NewGenreLexer() Lexer {
 
 // NewGroupLexer creates a tag lexer for a group.
 func NewGroupLexer() Lexer {
-	const delim, invalid = '-', ` _.()[]+`
+	const delim, invalid = '-', ` _.()[]{}+`
 	year, group := regexp.MustCompile(`\b(19|20)\d{2}\b`), regexp.MustCompile(`(?i)^[a-z_ ]{4,10}$`)
+	bracket := regexp.MustCompile(`^[\]\)\}]`)
 	var groupf, otherf taginfo.FindFunc
 	var re, special *regexp.Regexp
 	var shortTags map[string]bool
@@ -550,14 +551,15 @@ func NewGroupLexer() Lexer {
 			// locate delimiter and check valid group
 			if j := bytes.LastIndexByte(buf[l:n], delim); j != -1 {
 				s := src[l+j+1 : n]
-				if grp := bytes.Trim(s, " \t_"); len(grp) != 0 && (!bytes.ContainsAny(s, invalid) || (len(s) <= 14 && group.Match(grp))) {
-					if !shortTags[string(grp)] {
-						return start, append(
-							end,
-							NewTag(TagTypeGroup, nil, src[l+j+1:n], grp),
-							NewTag(TagTypeDelim, nil, src[l+j:l+j+1], []byte{delim}),
-						), i, l + j, false
-					}
+				if grp := bytes.Trim(s, " \t_"); len(grp) != 0 &&
+					(!bytes.ContainsAny(s, invalid) || (len(s) <= 14 && group.Match(grp))) &&
+					!shortTags[string(grp)] &&
+					(len(end) == 0 || !bracket.MatchString(end[len(end)-1].Text())) {
+					return start, append(
+						end,
+						NewTag(TagTypeGroup, nil, src[l+j+1:n], grp),
+						NewTag(TagTypeDelim, nil, src[l+j:l+j+1], []byte{delim}),
+					), i, l + j, false
 				}
 			}
 			return start, end, i, n, false
