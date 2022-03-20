@@ -788,6 +788,9 @@ func compareIntString(a, b string) func() int {
 func compareTitle(a, b string) func() int {
 	const cutset = "\t\n\f\r -._,()[]{}+\\/~"
 	return func() int {
+		if a == "" && b == "" {
+			return 0
+		}
 		if s, _, err := transform.String(Clean, a); err == nil {
 			a = s
 		}
@@ -803,7 +806,7 @@ func compareTitle(a, b string) func() int {
 			start, min = 1, 1
 		}
 		for i := start; i < start+min && i < len(av) && i < len(bv); i++ {
-			if cmp := compareTitleNumber(strings.Trim(av[i], cutset), strings.Trim(bv[i], cutset)); cmp != 0 {
+			if cmp := compareTitleNumber(strings.Trim(av[i], cutset), strings.Trim(bv[i], cutset), i); cmp != 0 {
 				return cmp
 			}
 		}
@@ -840,26 +843,33 @@ func isTitleTrimDelim(r rune) bool {
 }
 
 // compareTitleNumber compares a, b as numbers if both are numbers (such as VI or 6).
-func compareTitleNumber(a, b string) int {
-	i, aok := convNumber(a)
-	j, bok := convNumber(b)
+func compareTitleNumber(a, b string, i int) int {
+	ai, arom, aok := convNumber(a)
+	bi, brom, bok := convNumber(b)
+	abad := i == 0 && arom && aok && (ai == 1 || ai == 5 || ai == 50)
+	bbad := i == 0 && brom && bok && (bi == 1 || bi == 5 || bi == 50)
 	switch {
-	case aok && bok && i < j, aok && !bok:
+	case abad && bbad:
+	case aok && bbad:
 		return -1
-	case aok && bok && j < i, bok && !aok:
-		return 1
+	case bok && abad:
+		return +1
+	case aok && bok && ai < bi, aok && !bok && !abad:
+		return -1
+	case aok && bok && bi < ai, bok && !aok && !bbad:
+		return +1
 	}
 	return strings.Compare(a, b)
 }
 
 // convNumber attempts to convert a int or roman numeral.
-func convNumber(s string) (int, bool) {
+func convNumber(s string) (int, bool, bool) {
 	if i, err := strconv.Atoi(s); err == nil {
-		return i, true
+		return i, false, true
 	} else if i, ok := parseRoman(s); ok && i < 100 {
-		return i, true
+		return i, true, true
 	}
-	return 0, false
+	return 0, false, false
 }
 
 // parseRoman parses roman numerals.
