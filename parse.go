@@ -175,7 +175,7 @@ type TagBuilder struct {
 // NewTagBuilder creates a new release builder.
 func NewTagBuilder() *TagBuilder {
 	return &TagBuilder{
-		missing: regexp.MustCompile(`[A-Z][\. ][A-Z](?:[\. ][A-Z])*[\. ]?\b`),
+		missing: regexp.MustCompile(`\b[A-Z][\. ][A-Z](?:[\. ][A-Z])*[\. ]?\b`),
 		bad:     regexp.MustCompile(`[^A-Z][-\. ][A-Z]\.($|[^A-Z])`),
 		fix:     regexp.MustCompile(`([A-Z])\.`),
 		spaces:  regexp.MustCompile(`\s+`),
@@ -256,6 +256,7 @@ func (b *TagBuilder) init(r *Release) {
 	end := b.end(r, pivot)
 	// reset language/other/arch/platform prior to end
 	_ = b.reset(r, end, TagTypeLanguage, TagTypeOther, TagTypeArch, TagTypePlatform)
+	b.fixFirst(r)
 	start := b.start(r, 0)
 	b.fixBad(r, start, end)
 	b.fixNoText(r, end)
@@ -307,6 +308,24 @@ func (b *TagBuilder) end(r *Release, i int) int {
 	for ; i > 0 && !r.tags[i-1].Is(TagTypeText); i-- {
 	}
 	return i
+}
+
+// fixFirst fixes the first non text tag if it was badly matched.
+func (b *TagBuilder) fixFirst(r *Release) {
+	var i int
+	// seek
+	for ; i < r.end && r.tags[i].Is(TagTypeWhitespace, TagTypeDelim); i++ {
+	}
+	if i != r.end && r.tags[i].Is(
+		TagTypeCut,
+		TagTypeEdition,
+		TagTypeOther,
+		TagTypeSource,
+		TagTypePlatform,
+		TagTypeArch,
+	) {
+		r.tags[i] = r.tags[i].As(TagTypeText, nil)
+	}
 }
 
 // fixBad fixes bad collection/language/other/arch/platform tags before i.

@@ -7,33 +7,41 @@
   site: "mountain"
   sum: "ABCD1234"
   pass: "secret"
-"[[key1:value1]]a": # 4
+"A.DOCUMENTARY": # 4
+  title: "A DOCUMENTARY"
+"[[key1:value1]]a": # 5
   title: "a"
   meta: "key1:value1"
-"[[key1:value1]]a[[key2:value2]]": # 5
+"[[key1:value1]]a[[key2:value2]]": # 6
   title: "a"
   meta: "key1:value1 key2:value2"
-"a[[key1:value1]]": # 6
+"a[[key1:value1]]": # 7
   title: "a"
   meta: "key1:value1"
-"foo\nbar": # 7
+"foo\nbar": # 8
   title: "foo bar"
-"LA.GUERRE.DE.100.ANS.FRENCH-PETANK": # 8
+"I.AND.THE.KING": # 9
+  title: "I AND THE KING"
+"LA.GUERRE.DE.100.ANS.FRENCH-PETANK": # 10
   title: "LA GUERRE DE 100 ANS"
   language: "FRENCH"
   group: "PETANK"
-"S H I E L D was C O O L": # 9
+"S H I E L D was C O O L": # 11
   title: "S.H.I.E.L.D. was C.O.O.L."
-"[BBT-RMX]_Servant_x_Service": # 10
+"[BBT-RMX]_Servant_x_Service": # 12
   title: "Servant x Service"
   site: "BBT-RMX"
-"SketchUp.Pro.22.0.316-REPACK.ME": # 11
+"SketchUp.Pro.22.0.316-REPACK.ME": # 13
   title: "SketchUp Pro 22 0 316-REPACK ME"
-"Vol.I.V": # 12
+"TEST.A.Documentary": # 14
+  title: "TEST A Documentary"
+"Vol.I.V": # 15
   title: "Vol I.V."
-"You.I.Me": # 13
+"WITHNAIL.AND.I": # 16
+  title: "WITHNAIL AND I"
+"You.I.Me": # 17
   title: "You I Me"
-"22 Jump Street (2014) 720p BrRip x264 - YIFY": # 14
+"22 Jump Street (2014) 720p BrRip x264 - YIFY": # 18
   type: "movie"
   title: "22 Jump Street"
   source: "BDRiP"
@@ -41,7 +49,7 @@
   year: 2014
   codec: "x264"
   group: "YIFY"
-"31.A.3D.Rob.Zombie.Film.UNCUT.German.2016.DL.1080p.BluRay.x264-ETM": # 15
+"31.A.3D.Rob.Zombie.Film.UNCUT.German.2016.DL.1080p.BluRay.x264-ETM": # 19
   type: "movie"
   title: "31 A 3D Rob Zombie Film"
   source: "BluRay"
@@ -51,7 +59,7 @@
   cut: "Uncut"
   language: "GERMAN DL"
   group: "ETM"
-"50.50.2011.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR.mkv": # 16
+"50.50.2011.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR.mkv": # 20
   type: "movie"
   title: "50 50"
   source: "BluRay"
@@ -63,7 +71,7 @@
   other: "REMUX"
   group: "FraMeSToR"
   ext: "mkv"
-"1492.Conquest.of.Paradise.1992.SWEDiSH.SUBPACK.BluRay-SiN_iNT": # 17
+"1492.Conquest.of.Paradise.1992.SWEDiSH.SUBPACK.BluRay-SiN_iNT": # 21
   type: "movie"
   title: "1492 Conquest of Paradise"
   source: "BluRay"
@@ -71,7 +79,7 @@
   other: "INTERNAL"
   language: "SWEDiSH SUBPACK"
   group: "SiN"
-"2001.A.Space.Odyssey.1968.2160p.UHD.BluRay.DD+5.1.DoVi.x265-c0kE": # 18
+"2001.A.Space.Odyssey.1968.2160p.UHD.BluRay.DD+5.1.DoVi.x265-c0kE": # 22
   type: "movie"
   title: "2001 A Space Odyssey"
   source: "UHD.BluRay"
@@ -81,7 +89,7 @@
   audio: "DDP"
   channels: "5.1"
   group: "c0kE"
-"2012 2009 x264 720p Esub BluRay 6.0 Dual Audio English Hindi GOPISAHI": # 19
+"2012 2009 x264 720p Esub BluRay 6.0 Dual Audio English Hindi GOPISAHI": # 23
   type: "movie"
   title: "2012"
   source: "BluRay"
@@ -93,7 +101,7 @@
   language: "ENGLiSH HiNDI"
   group: "GOPISAHI"
   unused: "Esub"
-"2012(2009).1080p.Dual Audio(Hindi+English) 5.1 Audios": # 20
+"2012(2009).1080p.Dual Audio(Hindi+English) 5.1 Audios": # 24
   type: "movie"
   title: "2012"
   resolution: "1080p"
@@ -101,7 +109,7 @@
   audio: "DUAL.AUDIO"
   channels: "5.1"
   language: "HiNDI ENGLiSH"
-"2012 (2009) 1080p BrRip x264 - 1.7GB - YIFY": # 21
+"2012 (2009) 1080p BrRip x264 - 1.7GB - YIFY": # 25
   type: "movie"
   title: "2012"
   source: "BDRiP"
@@ -110,7 +118,7 @@
   codec: "x264"
   size: "1.7GB"
   group: "YIFY"
-"2047 - Sights of Death (2014) 720p BrRip x264 - YIFY": # 22
+"2047 - Sights of Death (2014) 720p BrRip x264 - YIFY": # 26
   type: "movie"
   title: "2047 - Sights of Death"
   source: "BDRiP"
@@ -118,7 +126,7 @@
   year: 2014
   codec: "x264"
   group: "YIFY"
-"2048.Nowhere.to.Run.2017.1080p.BluRay.DD2.0.x264-decibeL": # 23
+"2048.Nowhere.to.Run.2017.1080p.BluRay.DD2.0.x264-decibeL": # 27
   type: "movie"
   title: "2048 Nowhere to Run"
   source: "BluRay"
@@ -128,7 +136,7 @@
   audio: "DD"
   channels: "2.0"
   group: "decibeL"
-" \t[[a_meta:thing1]] {{ secret }}-[[ other: thing2 ]]\t (anime) 2048.something_up.-.1977.xvid_iso(1998)dvdr(amazonhd)-[[site:.my.site.]] [[foo: bar_ ]]  .[ ABCD1234 ].m2ts  \t": # 24
+" \t[[a_meta:thing1]] {{ secret }}-[[ other: thing2 ]]\t (anime) 2048.something_up.-.1977.xvid_iso(1998)dvdr(amazonhd)-[[site:.my.site.]] [[foo: bar_ ]]  .[ ABCD1234 ].m2ts  \t": # 28
   type: "movie"
   title: "2048 something up - 1977"
   collection: "AMZN"
@@ -142,7 +150,7 @@
   sum: "ABCD1234"
   pass: "secret"
   ext: "m2ts"
-"8-Bit.Christmas.(2021)(2160p.HMAX-WEBRip.DoVi HDR.x265.crf18.S97.E-AC3.5.1.Atmos)[cTurtle-4K].torrent": # 25
+"8-Bit.Christmas.(2021)(2160p.HMAX-WEBRip.DoVi HDR.x265.crf18.S97.E-AC3.5.1.Atmos)[cTurtle-4K].torrent": # 29
   type: "movie"
   title: "8-Bit Christmas"
   source: "WEBRiP"
@@ -156,11 +164,11 @@
   site: "cTurtle-4K"
   ext: "torrent"
   unused: "crf18"
-"a file.mkv": # 26
+"a file.mkv": # 30
   type: "movie"
   title: "a file"
   ext: "mkv"
-"A.River.Runs.Through.It.1992.Remastered.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR": # 27
+"A.River.Runs.Through.It.1992.Remastered.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR": # 31
   type: "movie"
   title: "A River Runs Through It"
   source: "BluRay"
@@ -171,7 +179,7 @@
   channels: "5.1"
   other: "REMASTERED REMUX"
   group: "FraMeSToR"
-"A.Very.Harold.And.Kumar.3D.Christmas.2011.FRENCH.3D.HSBS.MULTISUBS.1080p.BluRay.x264.HQ-TUSAHD": # 28
+"A.Very.Harold.And.Kumar.3D.Christmas.2011.FRENCH.3D.HSBS.MULTISUBS.1080p.BluRay.x264.HQ-TUSAHD": # 32
   type: "movie"
   title: "A Very Harold And Kumar 3D Christmas"
   source: "BluRay"
@@ -181,12 +189,12 @@
   other: "3D Half-SBS"
   language: "FRENCH MULTiSUB"
   group: "TUSAHD"
-"Adam.Carolla.Not.Taco.Bell.Material.2019.WEB-DL": # 29
+"Adam.Carolla.Not.Taco.Bell.Material.2019.WEB-DL": # 33
   type: "movie"
   title: "Adam Carolla Not Taco Bell Material"
   source: "WEB-DL"
   year: 2019
-"Ainbo.Spirit.of.the.Amazon.2021.DUTCH.1080p.WEB.h264-ADRENALiNE": # 30
+"Ainbo.Spirit.of.the.Amazon.2021.DUTCH.1080p.WEB.h264-ADRENALiNE": # 34
   type: "movie"
   title: "Ainbo Spirit of the Amazon"
   source: "WEB"
@@ -195,7 +203,7 @@
   codec: "H.264"
   language: "DUTCH"
   group: "ADRENALiNE"
-"Akira (2016) - UpScaled - 720p - DesiSCR-Rip - Hindi - x264 - AC3 - 5.1 - Mafiaking - M2Tv": # 31
+"Akira (2016) - UpScaled - 720p - DesiSCR-Rip - Hindi - x264 - AC3 - 5.1 - Mafiaking - M2Tv": # 35
   type: "movie"
   title: "Akira"
   resolution: "720p"
@@ -207,13 +215,13 @@
   language: "HiNDI"
   group: "M2Tv"
   unused: "DesiSCR Rip Mafiaking"
-"Amazon.1990.DVD.720p": # 32
+"Amazon.1990.DVD.720p": # 36
   type: "movie"
   title: "Amazon"
   source: "DVD"
   resolution: "720p"
   year: 1990
-"Annabelle.2014.1080p.PROPER.HC.WEBRip.x264.AAC.2.0-RARBG": # 33
+"Annabelle.2014.1080p.PROPER.HC.WEBRip.x264.AAC.2.0-RARBG": # 37
   type: "movie"
   title: "Annabelle"
   source: "WEBRiP"
@@ -225,7 +233,7 @@
   other: "PROPER"
   language: "HC"
   group: "RARBG"
-"Annabelle.2014.HC.HDRip.XViD.AC3-juggs[ETRG]": # 34
+"Annabelle.2014.HC.HDRip.XViD.AC3-juggs[ETRG]": # 38
   type: "movie"
   title: "Annabelle"
   source: "HDRiP"
@@ -235,7 +243,7 @@
   language: "HC"
   group: "juggs"
   site: "ETRG"
-"Ant-Man.2015.3D.1080p.BRRip.Half-SBS.x264.AAC-m2g": # 35
+"Ant-Man.2015.3D.1080p.BRRip.Half-SBS.x264.AAC-m2g": # 39
   type: "movie"
   title: "Ant-Man"
   source: "BDRiP"
@@ -245,7 +253,7 @@
   audio: "AAC"
   other: "3D Half-SBS"
   group: "m2g"
-"Ant-Man.and.the.Wasp.2018.Digital.Extras.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTG.mkv": # 36
+"Ant-Man.and.the.Wasp.2018.Digital.Extras.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTG.mkv": # 40
   type: "movie"
   title: "Ant-Man and the Wasp"
   source: "WEB-DL"
@@ -258,7 +266,7 @@
   other: "Digital.Extras"
   group: "NTG"
   ext: "mkv"
-"Austin.Powers.The.Spy.Who.Shagged.Me.1999.BluRay.1080p.TrueHD.5.1.VC-1.REMUX-FraMeSToR.mkv": # 37
+"Austin.Powers.The.Spy.Who.Shagged.Me.1999.BluRay.1080p.TrueHD.5.1.VC-1.REMUX-FraMeSToR.mkv": # 41
   type: "movie"
   title: "Austin Powers The Spy Who Shagged Me"
   source: "BluRay"
@@ -270,7 +278,7 @@
   other: "REMUX"
   group: "FraMeSToR"
   ext: "mkv"
-"Avengers: Endgame 2019 IMAX 2160p DSN+ WEB-DL TrueHD 7.1 Atmos DoVi HDR HEVC-SiC": # 38
+"Avengers: Endgame 2019 IMAX 2160p DSN+ WEB-DL TrueHD 7.1 Atmos DoVi HDR HEVC-SiC": # 42
   type: "movie"
   title: "Avengers: Endgame"
   source: "WEB-DL"
@@ -281,7 +289,7 @@
   audio: "TrueHD Atmos"
   channels: "7.1"
   group: "SiC"
-"Batman.Hush.2019.UHD.BluRay.2160p.DTS-HD.MA.5.1.HEVC.REMUX-FraMeSToR": # 39
+"Batman.Hush.2019.UHD.BluRay.2160p.DTS-HD.MA.5.1.HEVC.REMUX-FraMeSToR": # 43
   type: "movie"
   title: "Batman Hush"
   source: "UHD.BluRay"
@@ -292,7 +300,7 @@
   channels: "5.1"
   other: "REMUX"
   group: "FraMeSToR"
-"Beavis.and.Butt-Head.The.Mike.Judge.Collectors.Edition.D03.R2.PAL.DVD5.TVV-Grzechsin": # 40
+"Beavis.and.Butt-Head.The.Mike.Judge.Collectors.Edition.D03.R2.PAL.DVD5.TVV-Grzechsin": # 44
   type: "movie"
   title: "Beavis and Butt-Head"
   subtitle: "The Mike Judge Collectors Edition"
@@ -303,7 +311,7 @@
   region: "R2"
   group: "Grzechsin"
   unused: "TVV"
-"Beavis.and.Butt-Head.The.Mike.Judge.Collectors.Edition.R2.PAL.9xDVD.BOX.TVV-Grzechsin": # 41
+"Beavis.and.Butt-Head.The.Mike.Judge.Collectors.Edition.R2.PAL.9xDVD.BOX.TVV-Grzechsin": # 45
   type: "movie"
   title: "Beavis and Butt-Head"
   subtitle: "The Mike Judge Collectors Edition"
@@ -314,7 +322,7 @@
   region: "R2"
   group: "Grzechsin"
   unused: "BOX TVV"
-"Ben Hur 2016 TELESYNC x264 AC3 MAXPRO": # 42
+"Ben Hur 2016 TELESYNC x264 AC3 MAXPRO": # 46
   type: "movie"
   title: "Ben Hur"
   source: "TS"
@@ -322,7 +330,7 @@
   codec: "x264"
   audio: "DD"
   group: "MAXPRO"
-"Black Sabbath The End of the End 2017 720p WEB H264-STRiFE{{reAmy0r0vphpzAnch0it5tZoykb6mZ5s}}": # 43
+"Black Sabbath The End of the End 2017 720p WEB H264-STRiFE{{reAmy0r0vphpzAnch0it5tZoykb6mZ5s}}": # 47
   type: "movie"
   title: "Black Sabbath The End of the End"
   source: "WEB"
@@ -331,7 +339,7 @@
   codec: "H.264"
   group: "STRiFE"
   pass: "reAmy0r0vphpzAnch0it5tZoykb6mZ5s"
-"Blade.Runner.2049.2017.1080p.WEB-DL.DD5.1.H264-FGT-[rarbg.to]": # 44
+"Blade.Runner.2049.2017.1080p.WEB-DL.DD5.1.H264-FGT-[rarbg.to]": # 48
   type: "movie"
   title: "Blade Runner 2049"
   source: "WEB-DL"
@@ -342,7 +350,7 @@
   channels: "5.1"
   group: "FGT"
   site: "rarbg.to"
-"Brave.2012.German.Subbed.DVDRip.XViD.LiNE-UNiQUE": # 45
+"Brave.2012.German.Subbed.DVDRip.XViD.LiNE-UNiQUE": # 49
   type: "movie"
   title: "Brave"
   source: "DVDRiP"
@@ -351,7 +359,7 @@
   audio: "LiNE"
   language: "GERMAN SUBBED"
   group: "UNiQUE"
-"Brave.2012.R5.DVDRip.XViD.LiNE-UNiQUE": # 46
+"Brave.2012.R5.DVDRip.XViD.LiNE-UNiQUE": # 50
   type: "movie"
   title: "Brave"
   source: "DVDRiP"
@@ -360,7 +368,7 @@
   audio: "LiNE"
   region: "R5"
   group: "UNiQUE"
-"BURN-E.2008.BluRay.1080p.DD5.1-EX.AVC.REMUX-FraMeSToR.mkv": # 47
+"BURN-E.2008.BluRay.1080p.DD5.1-EX.AVC.REMUX-FraMeSToR.mkv": # 51
   type: "movie"
   title: "BURN-E"
   source: "BluRay"
@@ -372,7 +380,7 @@
   other: "REMUX"
   group: "FraMeSToR"
   ext: "mkv"
-"Coco.Avant.Chanel.2009.FRENCH.NORDiCSUBS.COMPLETE.BDR-CULTBDR": # 48
+"Coco.Avant.Chanel.2009.FRENCH.NORDiCSUBS.COMPLETE.BDR-CULTBDR": # 52
   type: "movie"
   title: "Coco Avant Chanel"
   year: 2009
@@ -380,7 +388,7 @@
   language: "FRENCH NORDiCSUBS"
   size: "BDR"
   group: "CULTBDR"
-"Cold.Pursuit.2019.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR": # 49
+"Cold.Pursuit.2019.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR": # 53
   type: "movie"
   title: "Cold Pursuit"
   source: "UHD.BluRay"
@@ -391,14 +399,14 @@
   channels: "7.1"
   other: "REMUX"
   group: "FraMeSToR"
-"cool stuff: the next generation (yeah [tag!] bluray) -group.mkv": # 50
+"cool stuff: the next generation (yeah [tag!] bluray) -group.mkv": # 54
   type: "movie"
   title: "cool stuff: the next generation"
   source: "BluRay"
   group: "group"
   ext: "mkv"
   unused: "yeah tag!"
-"Crank.2006.EXTENDED.DIRFIX.MULTI.COMPLETE.UHD.BLURAY-MONUMENT": # 51
+"Crank.2006.EXTENDED.DIRFIX.MULTI.COMPLETE.UHD.BLURAY-MONUMENT": # 55
   type: "movie"
   title: "Crank"
   source: "UHD.BluRay"
@@ -407,7 +415,7 @@
   cut: "Extended.Cut"
   language: "MULTi"
   group: "MONUMENT"
-"(Comedy) Netflix Originals - Dave Chappelle - Deep in the Heart of Texas (2017) 1080p WEBRip DD5.1 x264-TrollHD.mkv": # 52
+"(Comedy) Netflix Originals - Dave Chappelle - Deep in the Heart of Texas (2017) 1080p WEBRip DD5.1 x264-TrollHD.mkv": # 56
   type: "movie"
   title: "Dave Chappelle - Deep in the Heart of Texas"
   source: "WEBRiP"
@@ -420,7 +428,7 @@
   genre: "Comedy"
   group: "TrollHD"
   ext: "mkv"
-"(Comedy) Netflix Originals - Dave Chappelle - The Age of Spin (2017) 1080p WEBRip DD5.1 x264-TrollHD.mkv": # 53
+"(Comedy) Netflix Originals - Dave Chappelle - The Age of Spin (2017) 1080p WEBRip DD5.1 x264-TrollHD.mkv": # 57
   type: "movie"
   title: "Dave Chappelle - The Age of Spin"
   source: "WEBRiP"
@@ -433,14 +441,14 @@
   genre: "Comedy"
   group: "TrollHD"
   ext: "mkv"
-"Dawn.of.the.Planet.of.the.Apes.2014.HDRip.XViD-EVO": # 54
+"Dawn.of.the.Planet.of.the.Apes.2014.HDRip.XViD-EVO": # 58
   type: "movie"
   title: "Dawn of the Planet of the Apes"
   source: "HDRiP"
   year: 2014
   codec: "XViD"
   group: "EVO"
-"Dawn.Of.The.Planet.of.The.Apes.2014.1080p.WEB-DL.DD51.H264-RARBG": # 55
+"Dawn.Of.The.Planet.of.The.Apes.2014.1080p.WEB-DL.DD51.H264-RARBG": # 59
   type: "movie"
   title: "Dawn Of The Planet of The Apes"
   source: "WEB-DL"
@@ -450,7 +458,7 @@
   audio: "DD"
   channels: "5.1"
   group: "RARBG"
-"Deerskin.2019.1080p.BluRay.EAC3.x264-ZQ.mkv": # 56
+"Deerskin.2019.1080p.BluRay.EAC3.x264-ZQ.mkv": # 60
   type: "movie"
   title: "Deerskin"
   source: "BluRay"
@@ -460,7 +468,7 @@
   audio: "DDP"
   group: "ZQ"
   ext: "mkv"
-"Der.Denver.Clan.Staffel4.DVD7.German.FS.PAL.DVDR-RSG": # 57
+"Der.Denver.Clan.Staffel4.DVD7.German.FS.PAL.DVDR-RSG": # 61
   type: "movie"
   title: "Der Denver Clan Staffel4"
   source: "DVD"
@@ -470,7 +478,7 @@
   language: "GERMAN"
   size: "DVDR"
   group: "RSG"
-"Dinosaur 13 2014 WEBrip XviD AC3 MiLLENiUM": # 58
+"Dinosaur 13 2014 WEBrip XviD AC3 MiLLENiUM": # 62
   type: "movie"
   title: "Dinosaur 13"
   source: "WEBRiP"
@@ -478,7 +486,7 @@
   codec: "XViD"
   audio: "DD"
   group: "MiLLENiUM"
-"Dr.No.1962.INTERNAL.2160p.WEB.H265-DEFLATE": # 59
+"Dr.No.1962.INTERNAL.2160p.WEB.H265-DEFLATE": # 63
   type: "movie"
   title: "Dr No"
   source: "WEB"
@@ -487,7 +495,7 @@
   codec: "H.265"
   other: "INTERNAL"
   group: "DEFLATE"
-"Dr..Strangelove.or:.How.I.Learned.to.Stop.Worrying.and.Love.the.Bomb.1964.BluRay.1080p.DTS.5.1.x264.dxva-RHPSmusic": # 60
+"Dr..Strangelove.or:.How.I.Learned.to.Stop.Worrying.and.Love.the.Bomb.1964.BluRay.1080p.DTS.5.1.x264.dxva-RHPSmusic": # 64
   type: "movie"
   title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
   source: "BluRay"
@@ -497,14 +505,14 @@
   audio: "DTS"
   channels: "5.1"
   group: "RHPSmusic"
-"Dracula.Untold.TS.XViD.AC3.MrSeeN-SiMPLE": # 61
+"Dracula.Untold.TS.XViD.AC3.MrSeeN-SiMPLE": # 65
   type: "movie"
   title: "Dracula Untold"
   source: "TS"
   codec: "XViD"
   audio: "DD"
   group: "MrSeeN-SiMPLE"
-"[Dekinai]_Dungeon_Ni_Deai_O_Motomeru_No_Wa_Machigatte_Iru_Darouka_~Familia_Myth~_(2015)_[BD_1080p_x264_10bit_-_FLAC_2_0]": # 62
+"[Dekinai]_Dungeon_Ni_Deai_O_Motomeru_No_Wa_Machigatte_Iru_Darouka_~Familia_Myth~_(2015)_[BD_1080p_x264_10bit_-_FLAC_2_0]": # 66
   type: "movie"
   title: "Dungeon Ni Deai O Motomeru No Wa Machigatte Iru Darouka"
   subtitle: "Familia Myth"
@@ -515,7 +523,7 @@
   audio: "FLAC"
   channels: "2.0"
   site: "Dekinai"
-"E.T.the.Extra-Terrestrial.1982.UHD.BluRay.2160p.DTS-X.7.1.HEVC.REMUX-FraMeSToR": # 63
+"E.T.the.Extra-Terrestrial.1982.UHD.BluRay.2160p.DTS-X.7.1.HEVC.REMUX-FraMeSToR": # 67
   type: "movie"
   title: "E.T. the Extra-Terrestrial"
   source: "UHD.BluRay"
@@ -526,7 +534,7 @@
   channels: "7.1"
   other: "REMUX"
   group: "FraMeSToR"
-"Eliza Graves (2014) Dual Audio WEB-DL 720p MKV x264": # 64
+"Eliza Graves (2014) Dual Audio WEB-DL 720p MKV x264": # 68
   type: "movie"
   title: "Eliza Graves"
   source: "WEB-DL"
@@ -535,7 +543,7 @@
   codec: "x264"
   audio: "DUAL.AUDIO"
   container: "MKV"
-"Fargo.1996.SF.20th.Anniversary.Edition.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-RU4HD": # 65
+"Fargo.1996.SF.20th.Anniversary.Edition.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-RU4HD": # 69
   type: "movie"
   title: "Fargo"
   source: "BluRay"
@@ -548,7 +556,7 @@
   other: "REMUX"
   edition: "20th.Anniversary.Edition"
   group: "RU4HD"
-"Faster, Pussycat ! Kill ! Kill !.1965.Russ Meyer.VOSTFR.Blu-Ray .Liosaa.720p (RU) / Popo": # 66
+"Faster, Pussycat ! Kill ! Kill !.1965.Russ Meyer.VOSTFR.Blu-Ray .Liosaa.720p (RU) / Popo": # 70
   type: "movie"
   title: "Faster, Pussycat ! Kill ! Kill !"
   source: "BluRay"
@@ -557,7 +565,19 @@
   language: "VOSTFR RUSSiAN"
   group: "Popo"
   unused: "Russ Meyer Liosaa"
-"Fear.and.Loathing.in.Las.Vegas.1998.The.Criterion.Collection.1080p.BluRay.DTS.x264-HiFi": # 67
+"FAT.A.Documentary.2019.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTG.mkv": # 71
+  type: "movie"
+  title: "FAT A Documentary"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "AMZN"
+  year: 2019
+  codec: "H.264"
+  audio: "DDP"
+  channels: "5.1"
+  group: "NTG"
+  ext: "mkv"
+"Fear.and.Loathing.in.Las.Vegas.1998.The.Criterion.Collection.1080p.BluRay.DTS.x264-HiFi": # 72
   type: "movie"
   title: "Fear and Loathing in Las Vegas"
   source: "BluRay"
@@ -567,7 +587,7 @@
   codec: "x264"
   audio: "DTS"
   group: "HiFi"
-"[ValdikSS]_First_Squad_The_Morment_Of_Truth_[720x576_h264_dvdscr_eng_hardsub].mkv": # 68
+"[ValdikSS]_First_Squad_The_Morment_Of_Truth_[720x576_h264_dvdscr_eng_hardsub].mkv": # 73
   type: "movie"
   title: "First Squad The Morment Of Truth"
   source: "DVDSCR"
@@ -576,12 +596,12 @@
   language: "ENGLiSH HARDSUB"
   site: "ValdikSS"
   ext: "mkv"
-"\t foo\nbar\n\f\r1080p \t\nbluray\n\t": # 69
+"\t foo\nbar\n\f\r1080p \t\nbluray\n\t": # 74
   type: "movie"
   title: "foo bar"
   source: "BluRay"
   resolution: "1080p"
-"Fussball.1.Bundesliga.2011-2012.04.Spieltag.Hannover.96.vs.FSV.Mainz.05.GERMAN.WS.HDTV.720p.x264-SPORTSBAR": # 70
+"Fussball.1.Bundesliga.2011-2012.04.Spieltag.Hannover.96.vs.FSV.Mainz.05.GERMAN.WS.HDTV.720p.x264-SPORTSBAR": # 75
   type: "movie"
   title: "Fussball 1 Bundesliga 2011"
   source: "HDTV"
@@ -592,7 +612,7 @@
   language: "GERMAN"
   group: "SPORTSBAR"
   unused: "04 Spieltag Hannover 96 vs FSV Mainz 05"
-"Ghost.in.the.Shell.2017.UHD.BluRay.2160p.TrueHD.Atmos.7.1.HEVC.REMUX-FraMeSToR.mkv": # 71
+"Ghost.in.the.Shell.2017.UHD.BluRay.2160p.TrueHD.Atmos.7.1.HEVC.REMUX-FraMeSToR.mkv": # 76
   type: "movie"
   title: "Ghost in the Shell"
   source: "UHD.BluRay"
@@ -604,19 +624,19 @@
   other: "REMUX"
   group: "FraMeSToR"
   ext: "mkv"
-"Guardians of the Galaxy (2014) Dual Audio DVDRip AVI": # 72
+"Guardians of the Galaxy (2014) Dual Audio DVDRip AVI": # 77
   type: "movie"
   title: "Guardians of the Galaxy"
   source: "DVDRiP"
   year: 2014
   audio: "DUAL.AUDIO"
   container: "AVI"
-"Guardians of the Galaxy (CamRip / 2014)": # 73
+"Guardians of the Galaxy (CamRip / 2014)": # 78
   type: "movie"
   title: "Guardians of the Galaxy"
   source: "CAMRiP"
   year: 2014
-"Guardians Of The Galaxy 2014 R6 720p HDCAM x264-JYK": # 74
+"Guardians Of The Galaxy 2014 R6 720p HDCAM x264-JYK": # 79
   type: "movie"
   title: "Guardians Of The Galaxy"
   source: "HDCAM"
@@ -625,7 +645,7 @@
   codec: "x264"
   region: "R6"
   group: "JYK"
-"Haandbold.EHF.Cup.Herrer.GOG.vs.Saint.Raphael.DANiSH.720p.HDTV.x264-SKANK": # 75
+"Haandbold.EHF.Cup.Herrer.GOG.vs.Saint.Raphael.DANiSH.720p.HDTV.x264-SKANK": # 80
   type: "movie"
   title: "Haandbold EHF Cup Herrer GOG vs Saint Raphael"
   source: "HDTV"
@@ -633,21 +653,21 @@
   codec: "x264"
   language: "DANiSH"
   group: "SKANK"
-"(horror)Heart-.Burn+.-.h-264.D-Z0N3 {{ secret }}": # 76
+"(horror)Heart-.Burn+.-.h-264.D-Z0N3 {{ secret }}": # 81
   type: "movie"
   title: "Heart- Burn+"
   codec: "H.264"
   genre: "Horror"
   group: "D-Z0N3"
   pass: "secret"
-"Hercules (2014) WEBDL DVDRip XviD-MAX": # 77
+"Hercules (2014) WEBDL DVDRip XviD-MAX": # 82
   type: "movie"
   title: "Hercules"
   source: "WEB-DL"
   year: 2014
   codec: "XViD"
   group: "MAX"
-"Hercules.2014.EXTENDED.1080p.WEB-DL.DD5.1.H264-RARBG": # 78
+"Hercules.2014.EXTENDED.1080p.WEB-DL.DD5.1.H264-RARBG": # 83
   type: "movie"
   title: "Hercules"
   subtitle: "EXTENDED"
@@ -659,7 +679,7 @@
   channels: "5.1"
   cut: "Extended.Cut"
   group: "RARBG"
-"Hercules (2014) 1080p BrRip H264 - YIFY": # 79
+"Hercules (2014) 1080p BrRip H264 - YIFY": # 84
   type: "movie"
   title: "Hercules"
   source: "BDRiP"
@@ -667,7 +687,7 @@
   year: 2014
   codec: "H.264"
   group: "YIFY"
-"Hercules.2014.Extended.Cut.HDRip.XViD-juggs[ETRG]": # 80
+"Hercules.2014.Extended.Cut.HDRip.XViD-juggs[ETRG]": # 85
   type: "movie"
   title: "Hercules"
   source: "HDRiP"
@@ -676,7 +696,7 @@
   cut: "Extended.Cut"
   group: "juggs"
   site: "ETRG"
-"Ice.Age.Collision.Course.2016.READNFO.720p.HDRIP.BD5.X264.AC3.TiTAN": # 81
+"Ice.Age.Collision.Course.2016.READNFO.720p.HDRIP.BD5.X264.AC3.TiTAN": # 86
   type: "movie"
   title: "Ice Age Collision Course"
   source: "HDRiP"
@@ -687,7 +707,7 @@
   other: "READNFO"
   size: "BD5"
   group: "TiTAN"
-"Interstellar (2014) CAM ENG x264 AAC-CPG": # 82
+"Interstellar (2014) CAM ENG x264 AAC-CPG": # 87
   type: "movie"
   title: "Interstellar"
   source: "CAM"
@@ -696,13 +716,13 @@
   audio: "AAC"
   language: "ENGLiSH"
   group: "CPG"
-"Jack.And.The.Cuckoo-Clock.Heart.2013.BRRip XViD": # 83
+"Jack.And.The.Cuckoo-Clock.Heart.2013.BRRip XViD": # 88
   type: "movie"
   title: "Jack And The Cuckoo-Clock Heart"
   source: "BDRiP"
   year: 2013
   codec: "XViD"
-"Jay.and.Silent.Bob.Strike.Back.2001.BluRay.1080p.DTS.x264.dxva-wsp®": # 84
+"Jay.and.Silent.Bob.Strike.Back.2001.BluRay.1080p.DTS.x264.dxva-wsp®": # 89
   type: "movie"
   title: "Jay and Silent Bob Strike Back"
   source: "BluRay"
@@ -711,7 +731,7 @@
   codec: "x264 dxva"
   audio: "DTS"
   group: "wsp®"
-"IMAX.-.Journey.to.the.South.Pacific.2013.2160p.UHD.BluRay.DTS-HD.MA.7.1.HDR10+.x265-DON": # 85
+"IMAX.-.Journey.to.the.South.Pacific.2013.2160p.UHD.BluRay.DTS-HD.MA.7.1.HDR10+.x265-DON": # 90
   type: "movie"
   title: "Journey to the South Pacific"
   source: "UHD.BluRay"
@@ -722,7 +742,7 @@
   audio: "DTS-HD.MA"
   channels: "7.1"
   group: "DON"
-"Jurassic.World.Fallen.Kingdom.2018.UHD.BluRay.2160p.DTSX.7.1.HEVC.REMUX-FraMeSToR": # 86
+"Jurassic.World.Fallen.Kingdom.2018.UHD.BluRay.2160p.DTSX.7.1.HEVC.REMUX-FraMeSToR": # 91
   type: "movie"
   title: "Jurassic World Fallen Kingdom"
   source: "UHD.BluRay"
@@ -733,7 +753,7 @@
   channels: "7.1"
   other: "REMUX"
   group: "FraMeSToR"
-"Kiss the blood off my hands - (Norman FOSTER) - 1948 - VOSTFR - Dvdrip-x264 - kerfiche": # 87
+"Kiss the blood off my hands - (Norman FOSTER) - 1948 - VOSTFR - Dvdrip-x264 - kerfiche": # 92
   type: "movie"
   title: "Kiss the blood off my hands"
   source: "DVDRiP"
@@ -742,7 +762,7 @@
   language: "VOSTFR"
   group: "kerfiche"
   unused: "Norman FOSTER"
-"Kung.Pow.Enter.the.Fist.2002 Extras.1080p.WEBRip.x265M.HEVC.10bit.AC3.5.1-SAMPA": # 88
+"Kung.Pow.Enter.the.Fist.2002 Extras.1080p.WEBRip.x265M.HEVC.10bit.AC3.5.1-SAMPA": # 93
   type: "movie"
   title: "Kung Pow Enter the Fist"
   source: "WEBRiP"
@@ -754,14 +774,14 @@
   other: "EXTRAS"
   group: "SAMPA"
   unused: "x265M"
-"La.Planete.Des.Singes.L'affrontement.TRUEFRENCH.720p.x264.HDLIGHT\t": # 89
+"La.Planete.Des.Singes.L'affrontement.TRUEFRENCH.720p.x264.HDLIGHT\t": # 94
   type: "movie"
   title: "La Planete Des Singes L'affrontement"
   resolution: "720p"
   codec: "x264"
   language: "VFF"
   group: "HDLIGHT"
-"Lets.Be.Cops.2014.BRRip.XViD-juggs[ETRG]": # 90
+"Lets.Be.Cops.2014.BRRip.XViD-juggs[ETRG]": # 95
   type: "movie"
   title: "Lets Be Cops"
   source: "BDRiP"
@@ -769,7 +789,7 @@
   codec: "XViD"
   group: "juggs"
   site: "ETRG"
-"Lucy 2014 Dual-Audio 720p WEBRip 1400Mb": # 91
+"Lucy 2014 Dual-Audio 720p WEBRip 1400Mb": # 96
   type: "movie"
   title: "Lucy"
   source: "WEBRiP"
@@ -777,20 +797,20 @@
   year: 2014
   audio: "DUAL.AUDIO"
   size: "1400MB"
-"Movie.Title.2015.DVD-R-Pate": # 92
+"Movie.Title.2015.DVD-R-Pate": # 97
   type: "movie"
   title: "Movie Title"
   year: 2015
   size: "DVDR"
   group: "Pate"
-"Mr..&.Mrs..Smith-2005(720p)-NOGROUP[ettv]": # 93
+"Mr..&.Mrs..Smith-2005(720p)-NOGROUP[ettv]": # 98
   type: "movie"
   title: "Mr. & Mrs. Smith"
   resolution: "720p"
   year: 2005
   group: "NOGROUP"
   site: "ettv"
-"Mr. Nobody 2009 Theatrical Cut 1080p BluRay Remux AVC DTS-HD MA 5.1 -236@BHD    ": # 94
+"Mr. Nobody 2009 Theatrical Cut 1080p BluRay Remux AVC DTS-HD MA 5.1 -236@BHD    ": # 99
   type: "movie"
   title: "Mr. Nobody"
   subtitle: "Theatrical Cut"
@@ -803,14 +823,14 @@
   other: "REMUX"
   cut: "Theatrical.Cut"
   group: "236@BHD"
-"One Shot [2014] DVDRip XViD-ViCKY": # 95
+"One Shot [2014] DVDRip XViD-ViCKY": # 100
   type: "movie"
   title: "One Shot"
   source: "DVDRiP"
   year: 2014
   codec: "XViD"
   group: "ViCKY"
-"Pirates.of.the.Caribbean.On.Stranger.Tides.2011.BluRay.1080p.AVC.DTS-HDMA.7.1.REMUX-FraMeSToR": # 96
+"Pirates.of.the.Caribbean.On.Stranger.Tides.2011.BluRay.1080p.AVC.DTS-HDMA.7.1.REMUX-FraMeSToR": # 101
   type: "movie"
   title: "Pirates of the Caribbean On Stranger Tides"
   source: "BluRay"
@@ -821,7 +841,7 @@
   channels: "7.1"
   other: "REMUX"
   group: "FraMeSToR"
-"Quality for Movie.Title.2004.PAL.DVD9-IL.Anonymous-DownRev": # 97
+"Quality for Movie.Title.2004.PAL.DVD9-IL.Anonymous-DownRev": # 102
   type: "movie"
   title: "Quality for Movie Title"
   resolution: "576p"
@@ -829,7 +849,7 @@
   size: "DVD9"
   group: "DownRev"
   unused: "IL Anonymous"
-"Rashômon.1950.1080p.Criterion.Collection.BluRay.FLAC.x264-decibeL.mkv": # 98
+"Rashômon.1950.1080p.Criterion.Collection.BluRay.FLAC.x264-decibeL.mkv": # 103
   type: "movie"
   title: "Rashômon"
   source: "BluRay"
@@ -840,7 +860,7 @@
   audio: "FLAC"
   group: "decibeL"
   ext: "mkv"
-"RED.2010.UHD.BluRay.2160p.TrueHD.Atmos.7.1.HEVC.REMUX-FraMeSToR": # 99
+"RED.2010.UHD.BluRay.2160p.TrueHD.Atmos.7.1.HEVC.REMUX-FraMeSToR": # 104
   type: "movie"
   title: "RED"
   source: "UHD.BluRay"
@@ -851,7 +871,7 @@
   channels: "7.1"
   other: "REMUX"
   group: "FraMeSToR"
-"RED.2.2013.UHD.BluRay.2160p.TrueHD.Atmos.7.1.HEVC.REMUX-FraMeSToR": # 100
+"RED.2.2013.UHD.BluRay.2160p.TrueHD.Atmos.7.1.HEVC.REMUX-FraMeSToR": # 105
   type: "movie"
   title: "RED 2"
   source: "UHD.BluRay"
@@ -862,7 +882,7 @@
   channels: "7.1"
   other: "REMUX"
   group: "FraMeSToR"
-"Red.Sonja.Queen.Of.Plagues.2016.BDRip.x264-W4F[PRiME]": # 101
+"Red.Sonja.Queen.Of.Plagues.2016.BDRip.x264-W4F[PRiME]": # 106
   type: "movie"
   title: "Red Sonja Queen Of Plagues"
   source: "BDRiP"
@@ -870,7 +890,7 @@
   codec: "x264"
   group: "W4F"
   site: "PRiME"
-"Return.To.Snowy.River.1988.iNTERNAL.DVDRip.x264-W4F[PRiME]": # 102
+"Return.To.Snowy.River.1988.iNTERNAL.DVDRip.x264-W4F[PRiME]": # 107
   type: "movie"
   title: "Return To Snowy River"
   source: "DVDRiP"
@@ -879,7 +899,7 @@
   other: "INTERNAL"
   group: "W4F"
   site: "PRiME"
-"\tRomeo + \tJuliet 1996 BluRay 1080p DTS-HD MA 5.1 AVC REMUX-FraMeSToR    ": # 103
+"\tRomeo + \tJuliet 1996 BluRay 1080p DTS-HD MA 5.1 AVC REMUX-FraMeSToR    ": # 108
   type: "movie"
   title: "Romeo + Juliet"
   source: "BluRay"
@@ -890,7 +910,7 @@
   channels: "5.1"
   other: "REMUX"
   group: "FraMeSToR"
-"Run Lola Run AKA Lola Rennt 1998 1080p BluRay x264 DTS With Commentary-Slappy ": # 104
+"Run Lola Run AKA Lola Rennt 1998 1080p BluRay x264 DTS With Commentary-Slappy ": # 109
   type: "movie"
   title: "Run Lola Run AKA Lola Rennt"
   source: "BluRay"
@@ -900,7 +920,7 @@
   audio: "DTS"
   other: "COMMENTARY"
   group: "Slappy"
-"Scouts.vs.Zombies.Handbuch.zur.Zombie.Apokalypse.2015.German.AC3.DL.1080p.BluRay.x264-EXQUiSiTE": # 105
+"Scouts.vs.Zombies.Handbuch.zur.Zombie.Apokalypse.2015.German.AC3.DL.1080p.BluRay.x264-EXQUiSiTE": # 110
   type: "movie"
   title: "Scouts vs Zombies Handbuch zur Zombie Apokalypse"
   source: "BluRay"
@@ -910,7 +930,7 @@
   audio: "DD"
   language: "GERMAN DL"
   group: "EXQUiSiTE"
-"Sin.City.A.Dame.to.Kill.For.2014.1080p.BluRay.x264-SPARKS": # 106
+"Sin.City.A.Dame.to.Kill.For.2014.1080p.BluRay.x264-SPARKS": # 111
   type: "movie"
   title: "Sin City A Dame to Kill For"
   source: "BluRay"
@@ -918,7 +938,7 @@
   year: 2014
   codec: "x264"
   group: "SPARKS"
-"Song Of The South 1946 V2 1080p 35mm DD 2.0 x264-RESTORED.mkv": # 107
+"Song Of The South 1946 V2 1080p 35mm DD 2.0 x264-RESTORED.mkv": # 112
   type: "movie"
   title: "Song Of The South"
   source: "35mm"
@@ -930,7 +950,7 @@
   channels: "2.0"
   group: "RESTORED"
   ext: "mkv"
-"Star Wars - Return of the Jedi (1983).4K83.35mm.minimalNR.v1.4.UHD.2160p.mkv": # 108
+"Star Wars - Return of the Jedi (1983).4K83.35mm.minimalNR.v1.4.UHD.2160p.mkv": # 113
   type: "movie"
   title: "Star Wars - Return of the Jedi"
   source: "35mm"
@@ -940,7 +960,7 @@
   other: "minimalNR"
   group: "4K83"
   ext: "mkv"
-"Star.Wars.Episode.VI.Return.of.the.Jedi.1983.4K83.minimalNR.v1.6.2160p.35mm.DD2.0.x265-TN1": # 109
+"Star.Wars.Episode.VI.Return.of.the.Jedi.1983.4K83.minimalNR.v1.6.2160p.35mm.DD2.0.x265-TN1": # 114
   type: "movie"
   title: "Star Wars Episode VI Return of the Jedi"
   source: "35mm"
@@ -953,7 +973,7 @@
   other: "minimalNR"
   group: "TN1"
   unused: "4K83"
-"[UTW-TMD]_Summer_Wars_[BD][h264-720p][TrueHD5.1][9F311DAB].mkv": # 110
+"[UTW-TMD]_Summer_Wars_[BD][h264-720p][TrueHD5.1][9F311DAB].mkv": # 115
   type: "movie"
   title: "Summer Wars"
   source: "BluRay"
@@ -964,12 +984,12 @@
   site: "UTW-TMD"
   sum: "9F311DAB"
   ext: "mkv"
-"Teenage Mutant Ninja Turtles (HdRip / 2014)": # 111
+"Teenage Mutant Ninja Turtles (HdRip / 2014)": # 116
   type: "movie"
   title: "Teenage Mutant Ninja Turtles"
   source: "HDRiP"
   year: 2014
-"Teenage.Mutant.Ninja.Turtles.2014.720p.HDRip.x264.AC3.5.1-RARBG": # 112
+"Teenage.Mutant.Ninja.Turtles.2014.720p.HDRip.x264.AC3.5.1-RARBG": # 117
   type: "movie"
   title: "Teenage Mutant Ninja Turtles"
   source: "HDRiP"
@@ -979,7 +999,7 @@
   audio: "DD"
   channels: "5.1"
   group: "RARBG"
-"Teenage.Mutant.Ninja.Turtles.2014.HDRip.XviD.MP3-RARBG": # 113
+"Teenage.Mutant.Ninja.Turtles.2014.HDRip.XviD.MP3-RARBG": # 118
   type: "movie"
   title: "Teenage Mutant Ninja Turtles"
   source: "HDRiP"
@@ -987,7 +1007,7 @@
   codec: "XViD"
   audio: "MP3"
   group: "RARBG"
-"The.Boss.2016.UNRATED.720p.BRRip.x264.AAC-ETRG": # 114
+"The.Boss.2016.UNRATED.720p.BRRip.x264.AAC-ETRG": # 119
   type: "movie"
   title: "The Boss"
   subtitle: "UNRATED"
@@ -998,7 +1018,7 @@
   audio: "AAC"
   cut: "Unrated.Cut"
   group: "ETRG"
-"The.Bourne.Legacy.2012.UHD.BluRay.2160p.DTS.X.7.1.HEVC.REMUX": # 115
+"The.Bourne.Legacy.2012.UHD.BluRay.2160p.DTS.X.7.1.HEVC.REMUX": # 120
   type: "movie"
   title: "The Bourne Legacy"
   source: "UHD.BluRay"
@@ -1008,14 +1028,14 @@
   audio: "DTS-X"
   channels: "7.1"
   other: "REMUX"
-"The.English.Patient.BluRay.1996.German.DTS": # 116
+"The.English.Patient.BluRay.1996.German.DTS": # 121
   type: "movie"
   title: "The English Patient"
   source: "BluRay"
   year: 1996
   audio: "DTS"
   language: "GERMAN"
-"The.Frighteners.15th.Anniversary.Edition.Director's.Cut.1996.1080p.BluRay.DTS.x264.D-Z0N3.mkv": # 117
+"The.Frighteners.15th.Anniversary.Edition.Director's.Cut.1996.1080p.BluRay.DTS.x264.D-Z0N3.mkv": # 122
   type: "movie"
   title: "The Frighteners"
   source: "BluRay"
@@ -1027,7 +1047,7 @@
   edition: "15th.Anniversary.Edition"
   group: "D-Z0N3"
   ext: "mkv"
-"The Hateful Eight (2015) 720p BluRay - x265 HEVC - 999MB - ShAaN": # 118
+"The Hateful Eight (2015) 720p BluRay - x265 HEVC - 999MB - ShAaN": # 123
   type: "movie"
   title: "The Hateful Eight"
   source: "BluRay"
@@ -1036,7 +1056,7 @@
   codec: "x265 HEVC"
   size: "999MB"
   group: "ShAaN"
-"The.Hunt.For.Red.October.1990.BluRay.1080p.DTS.x264.dxva-deciBeL.mkv": # 119
+"The.Hunt.For.Red.October.1990.BluRay.1080p.DTS.x264.dxva-deciBeL.mkv": # 124
   type: "movie"
   title: "The Hunt For Red October"
   source: "BluRay"
@@ -1046,7 +1066,7 @@
   audio: "DTS"
   group: "deciBeL"
   ext: "mkv"
-"The.Jungle.Book.2016.3D.1080p.BRRip.SBS.x264.AAC-ETRG": # 120
+"The.Jungle.Book.2016.3D.1080p.BRRip.SBS.x264.AAC-ETRG": # 125
   type: "movie"
   title: "The Jungle Book"
   source: "BDRiP"
@@ -1056,7 +1076,7 @@
   audio: "AAC"
   other: "3D SBS"
   group: "ETRG"
-"The Purge: Election Year (2016) HC - 720p HDRiP - 900MB - ShAaNi": # 121
+"The Purge: Election Year (2016) HC - 720p HDRiP - 900MB - ShAaNi": # 126
   type: "movie"
   title: "The Purge: Election Year"
   source: "HDRiP"
@@ -1065,7 +1085,7 @@
   language: "HC"
   size: "900MB"
   group: "ShAaNi"
-"The.Secret.Life.of.Pets.2016.HDRiP.AAC-LC.x264-LEGi0N": # 122
+"The.Secret.Life.of.Pets.2016.HDRiP.AAC-LC.x264-LEGi0N": # 127
   type: "movie"
   title: "The Secret Life of Pets"
   source: "HDRiP"
@@ -1073,7 +1093,7 @@
   codec: "x264"
   audio: "AAC-LC"
   group: "LEGi0N"
-"The Shaukeens 2014 Hindi (1CD) DvDScr x264 AAC...Hon3y [ DDR ]": # 123
+"The Shaukeens 2014 Hindi (1CD) DvDScr x264 AAC...Hon3y [ DDR ]": # 128
   type: "movie"
   title: "The Shaukeens"
   source: "DVDSCR"
@@ -1084,7 +1104,7 @@
   language: "HiNDI"
   group: "Hon3y"
   site: "DDR"
-"The.Treasure.of.the.Sierra.Madre.1948.BluRay.1080p.FLAC.1.0.VC-1.REMUX-FraMeSToR": # 124
+"The.Treasure.of.the.Sierra.Madre.1948.BluRay.1080p.FLAC.1.0.VC-1.REMUX-FraMeSToR": # 129
   type: "movie"
   title: "The Treasure of the Sierra Madre"
   source: "BluRay"
@@ -1095,7 +1115,7 @@
   channels: "1.0"
   other: "REMUX"
   group: "FraMeSToR"
-"The.Wizard.of.Oz.1939.70th.Anniversary.Ultimate.Collectors.Edition.1080p.BluRay.REMUX.VC-1.TrueHD.5.1-TL": # 125
+"The.Wizard.of.Oz.1939.70th.Anniversary.Ultimate.Collectors.Edition.1080p.BluRay.REMUX.VC-1.TrueHD.5.1-TL": # 130
   type: "movie"
   title: "The Wizard of Oz"
   subtitle: "70th Anniversary Ultimate Collectors Edition"
@@ -1109,7 +1129,7 @@
   edition: "70th.Anniversary.Edition Collectors.Edition"
   group: "TL"
   unused: "Ultimate"
-"The.Wolf.of.Wall.Street.2013.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.REMUX-FraMeSToR": # 126
+"The.Wolf.of.Wall.Street.2013.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.REMUX-FraMeSToR": # 131
   type: "movie"
   title: "The Wolf of Wall Street"
   source: "UHD.BluRay"
@@ -1120,20 +1140,20 @@
   channels: "5.1"
   other: "REMUX"
   group: "FraMeSToR"
-"These.Final.Hours.2013.WBBRip XViD": # 127
+"These.Final.Hours.2013.WBBRip XViD": # 132
   type: "movie"
   title: "These Final Hours"
   year: 2013
   codec: "XViD"
   group: "WBBRip"
-"THX.DTS.Dolby.Digital.Audio.Experience.Tester.DVDR-WANTED": # 128
+"THX.DTS.Dolby.Digital.Audio.Experience.Tester.DVDR-WANTED": # 133
   type: "movie"
   title: "THX"
   audio: "DTS DD"
   size: "DVDR"
   group: "WANTED"
   unused: "Audio Experience Tester"
-"tick, tick...BOOM! 2021 1080p NF WEB-DL DDP 5.1 Atmos H.264-CMRG    ": # 129
+"tick, tick...BOOM! 2021 1080p NF WEB-DL DDP 5.1 Atmos H.264-CMRG    ": # 134
   type: "movie"
   title: "tick, tick...BOOM!"
   source: "WEB-DL"
@@ -1144,7 +1164,7 @@
   audio: "DDP Atmos"
   channels: "5.1"
   group: "CMRG"
-"Tom_And_Jerry_The_Collection_12DVD-DUTCH_COVER-ToP": # 130
+"Tom_And_Jerry_The_Collection_12DVD-DUTCH_COVER-ToP": # 135
   type: "movie"
   title: "Tom And Jerry The Collection"
   source: "DVD"
@@ -1152,14 +1172,14 @@
   other: "COVER"
   language: "DUTCH"
   group: "ToP"
-"Toontrack.dfh.SUPERIOR.Vintage.Addon.Limited.Edition.DVDR.D1-DYNAMiCS": # 131
+"Toontrack.dfh.SUPERIOR.Vintage.Addon.Limited.Edition.DVDR.D1-DYNAMiCS": # 136
   type: "movie"
   title: "Toontrack dfh SUPERIOR Vintage Addon"
   disc: "D01"
   edition: "Limited.Edition"
   size: "DVDR"
   group: "DYNAMiCS"
-"UEFA.Super.Cup.FC.Bayern.Muenchen.vs.FC.Sevilla.2020.GERMAN.720p.HDTV.x264-SKYHD": # 132
+"UEFA.Super.Cup.FC.Bayern.Muenchen.vs.FC.Sevilla.2020.GERMAN.720p.HDTV.x264-SKYHD": # 137
   type: "movie"
   title: "UEFA Super Cup FC Bayern Muenchen vs FC Sevilla"
   source: "HDTV"
@@ -1168,7 +1188,18 @@
   codec: "x264"
   language: "GERMAN"
   group: "SKYHD"
-"Venom Let There Be Carnage 2021 2160p UHD Blu-ray Remux HEVC DoVi TrueHD Atmos 7.1-BdC.mkv": # 133
+"Uncut Gems 2019 Criterion Collection UHD 2160P Bluray DoVi TrueHD Atmos7 1 HDR10+ HEVC X265-FZHD": # 138
+  type: "movie"
+  title: "Uncut Gems"
+  source: "BluRay"
+  resolution: "2160p"
+  collection: "Criterion.Collection"
+  year: 2019
+  codec: "DV HDR10+ HEVC x265"
+  audio: "TrueHD Atmos"
+  channels: "7.1"
+  group: "FZHD"
+"Venom Let There Be Carnage 2021 2160p UHD Blu-ray Remux HEVC DoVi TrueHD Atmos 7.1-BdC.mkv": # 139
   type: "movie"
   title: "Venom Let There Be Carnage"
   source: "UHD.BluRay"
@@ -1180,14 +1211,14 @@
   other: "REMUX"
   group: "BdC"
   ext: "mkv"
-"War Dogs (2016) HDTS 600MB - NBY": # 134
+"War Dogs (2016) HDTS 600MB - NBY": # 140
   type: "movie"
   title: "War Dogs"
   source: "HDTS"
   year: 2016
   size: "600MB"
   group: "NBY"
-"We're.the.Millers.2013.Extended.Cut.1080p.BluRay.DTS.x264-DON.mkv": # 135
+"We're.the.Millers.2013.Extended.Cut.1080p.BluRay.DTS.x264-DON.mkv": # 141
   type: "movie"
   title: "We're the Millers"
   subtitle: "Extended Cut"
@@ -1199,7 +1230,7 @@
   cut: "Extended.Cut"
   group: "DON"
   ext: "mkv"
-"What.Happened.to.Monday.UNCUT.German.DL.AC3.Dubbed.720p.WEBRiP.x264-PsO": # 136
+"What.Happened.to.Monday.UNCUT.German.DL.AC3.Dubbed.720p.WEBRiP.x264-PsO": # 142
   type: "movie"
   title: "What Happened to Monday"
   source: "WEBRiP"
@@ -1209,7 +1240,7 @@
   cut: "Uncut"
   language: "GERMAN DL DUBBED"
   group: "PsO"
-"Withnail.And.I.1987.REPACK.BluRay.1080p.FLAC.1.0.AVC.REMUX-FraMeSToR": # 137
+"Withnail.And.I.1987.REPACK.BluRay.1080p.FLAC.1.0.AVC.REMUX-FraMeSToR": # 143
   type: "movie"
   title: "Withnail And I"
   source: "BluRay"
@@ -1220,14 +1251,14 @@
   channels: "1.0"
   other: "REPACK REMUX"
   group: "FraMeSToR"
-"WWE Hell in a Cell 2014 HDTV x264 SNHD": # 138
+"WWE Hell in a Cell 2014 HDTV x264 SNHD": # 144
   type: "movie"
   title: "WWE Hell in a Cell"
   source: "HDTV"
   year: 2014
   codec: "x264"
   group: "SNHD"
-"X-Men.Days.of.Future.Past.2014.1080p.WEB-DL.DD5.1.H264-RARBG": # 139
+"X-Men.Days.of.Future.Past.2014.1080p.WEB-DL.DD5.1.H264-RARBG": # 145
   type: "movie"
   title: "X-Men Days of Future Past"
   source: "WEB-DL"
@@ -1237,7 +1268,7 @@
   audio: "DD"
   channels: "5.1"
   group: "RARBG"
-"Zack.und.Miri.Make.a.Porno.DVDRiP.MD.German.XViD-CIS": # 140
+"Zack.und.Miri.Make.a.Porno.DVDRiP.MD.German.XViD-CIS": # 146
   type: "movie"
   title: "Zack und Miri Make a Porno"
   source: "DVDRiP"
@@ -1245,7 +1276,7 @@
   other: "MD"
   language: "GERMAN"
   group: "CIS"
-"Zombie.Bloody.Demons.UNCUT.GERMAN.1987.DL.1080p.BluRay.x264-GOREHOUNDS": # 141
+"Zombie.Bloody.Demons.UNCUT.GERMAN.1987.DL.1080p.BluRay.x264-GOREHOUNDS": # 147
   type: "movie"
   title: "Zombie Bloody Demons"
   source: "BluRay"
@@ -1255,7 +1286,7 @@
   cut: "Uncut"
   language: "GERMAN DL"
   group: "GOREHOUNDS"
-"Zombie Shark The Swimming Dead French 2015 AC3 BDRiP x264-XF": # 142
+"Zombie Shark The Swimming Dead French 2015 AC3 BDRiP x264-XF": # 148
   type: "movie"
   title: "Zombie Shark The Swimming Dead"
   source: "BDRiP"
@@ -1264,7 +1295,7 @@
   audio: "DD"
   language: "FRENCH"
   group: "XF"
-"1-2-3.Istanbul.S01E04.GERMAN.DOKU.WS.dTV.XviD-GEO": # 143
+"1-2-3.Istanbul.S01E04.GERMAN.DOKU.WS.dTV.XviD-GEO": # 149
   type: "episode"
   title: "1-2-3 Istanbul"
   source: "DTV"
@@ -1275,7 +1306,7 @@
   language: "GERMAN"
   genre: "Documentary"
   group: "GEO"
-"And.Just.Like.That....S01.1080p.HMAX.WEB-DL.DD5.1.x264-NTb.torrent": # 144
+"And.Just.Like.That....S01.1080p.HMAX.WEB-DL.DD5.1.x264-NTb.torrent": # 150
   type: "series"
   title: "And Just Like That..."
   source: "WEB-DL"
@@ -1287,7 +1318,7 @@
   channels: "5.1"
   group: "NTb"
   ext: "torrent"
-"Beverly.Hills.90210.S04DVD7.German.DVDR-ITG": # 145
+"Beverly.Hills.90210.S04DVD7.German.DVDR-ITG": # 151
   type: "series"
   title: "Beverly Hills 90210"
   source: "DVD"
@@ -1296,7 +1327,7 @@
   language: "GERMAN"
   size: "DVDR"
   group: "ITG"
-"Big.Mouth.S02.1080p.WEB.EAC3.51.x264-BTN": # 146
+"Big.Mouth.S02.1080p.WEB.EAC3.51.x264-BTN": # 152
   type: "series"
   title: "Big Mouth"
   source: "WEB"
@@ -1306,7 +1337,7 @@
   audio: "DDP"
   channels: "5.1"
   group: "BTN"
-"breaking.bad.s01e01.720p.bluray.x264-reward": # 147
+"breaking.bad.s01e01.720p.bluray.x264-reward": # 153
   type: "episode"
   title: "breaking bad"
   source: "BluRay"
@@ -1315,7 +1346,7 @@
   episode: 1
   codec: "x264"
   group: "reward"
-"Clickbait.2021.S01.2160p.NF.WEBRiP.DDPA5.1.HDR.x265-182K": # 148
+"Clickbait.2021.S01.2160p.NF.WEBRiP.DDPA5.1.HDR.x265-182K": # 154
   type: "series"
   title: "Clickbait"
   source: "WEBRiP"
@@ -1327,14 +1358,14 @@
   audio: "DDPA"
   channels: "5.1"
   group: "182K"
-"[HorribleSubs] Clockwork Planet - 10 [480p].mkv": # 149
+"[HorribleSubs] Clockwork Planet - 10 [480p].mkv": # 155
   type: "episode"
   title: "Clockwork Planet"
   resolution: "480p"
   episode: 10
   site: "HorribleSubs"
   ext: "mkv"
-"Community.s02e20.rus.eng.720p.Kybik.v.Kybe": # 150
+"Community.s02e20.rus.eng.720p.Kybik.v.Kybe": # 156
   type: "episode"
   title: "Community"
   subtitle: "Kybik v Kybe"
@@ -1342,7 +1373,7 @@
   series: 2
   episode: 20
   language: "RUSSiAN ENGLiSH"
-"Core.Kyoto.S05E16.Tatami.The.Flooring.Underlying.Japanese.Culture.HDTV.x264-DARKFLiX": # 151
+"Core.Kyoto.S05E16.Tatami.The.Flooring.Underlying.Japanese.Culture.HDTV.x264-DARKFLiX": # 157
   type: "episode"
   title: "Core Kyoto"
   subtitle: "Tatami The Flooring Underlying Japanese Culture"
@@ -1351,14 +1382,14 @@
   episode: 16
   codec: "x264"
   group: "DARKFLiX"
-"[HorribleSubs] Detective Conan - 862 [1080p].mkv": # 152
+"[HorribleSubs] Detective Conan - 862 [1080p].mkv": # 158
   type: "episode"
   title: "Detective Conan"
   resolution: "1080p"
   episode: 862
   site: "HorribleSubs"
   ext: "mkv"
-"Doctor.Who.2005.8x11.Dark.Water.720p.HDTV.x264-FoV[rartv]": # 153
+"Doctor.Who.2005.8x11.Dark.Water.720p.HDTV.x264-FoV[rartv]": # 159
   type: "episode"
   title: "Doctor Who"
   subtitle: "Dark Water"
@@ -1370,7 +1401,7 @@
   codec: "x264"
   group: "FoV"
   site: "rartv"
-"doctor_who_2005.8x12.death_in_heaven.720p_hdtv_x264-fov": # 154
+"doctor_who_2005.8x12.death_in_heaven.720p_hdtv_x264-fov": # 160
   type: "episode"
   title: "doctor who"
   subtitle: "death in heaven"
@@ -1381,7 +1412,7 @@
   episode: 12
   codec: "x264"
   group: "fov"
-"Doogie.Howser.MD.S02E05.DVDRip.XviD-FFNDVD": # 155
+"Doogie.Howser.MD.S02E05.DVDRip.XviD-FFNDVD": # 161
   type: "episode"
   title: "Doogie Howser MD"
   source: "DVDRiP"
@@ -1389,7 +1420,7 @@
   episode: 5
   codec: "XViD"
   group: "FFNDVD"
-"Downton Abbey 5x06 HDTV x264-FoV [eztv]": # 156
+"Downton Abbey 5x06 HDTV x264-FoV [eztv]": # 162
   type: "episode"
   title: "Downton Abbey"
   source: "HDTV"
@@ -1398,7 +1429,7 @@
   codec: "x264"
   group: "FoV"
   site: "eztv"
-"Exosquad.1993.S01S02.COMPLETE.x264-PTM": # 157
+"Exosquad.1993.S01S02.COMPLETE.x264-PTM": # 163
   type: "series"
   title: "Exosquad"
   year: 1993
@@ -1406,7 +1437,7 @@
   codec: "x264"
   other: "COMPLETE"
   group: "PTM"
-"Fairy.Tail.E009.Natsu.verschlingt.ein.Dorf.German.2009.ANiME.DL.BDRiP.x264-STARS": # 158
+"Fairy.Tail.E009.Natsu.verschlingt.ein.Dorf.German.2009.ANiME.DL.BDRiP.x264-STARS": # 164
   type: "episode"
   title: "Fairy Tail"
   subtitle: "Natsu verschlingt ein Dorf"
@@ -1417,7 +1448,7 @@
   language: "GERMAN DL"
   genre: "Anime"
   group: "STARS"
-"Family.Guy.BOXSET.NORDiC.576p.1080p.WEB-DL.H.264.DD2.0-TWASERiES": # 159
+"Family.Guy.BOXSET.NORDiC.576p.1080p.WEB-DL.H.264.DD2.0-TWASERiES": # 165
   type: "series"
   title: "Family Guy"
   source: "WEB-DL"
@@ -1428,13 +1459,13 @@
   other: "BOXSET"
   language: "NORDiC"
   group: "TWASERiES"
-"Game of Thrones - 4x03 - Breaker of Chains": # 160
+"Game of Thrones - 4x03 - Breaker of Chains": # 166
   type: "episode"
   title: "Game of Thrones"
   subtitle: "Breaker of Chains"
   series: 4
   episode: 3
-"Gotham.S01E05.Viper.WEB-DL.x264.AAC": # 161
+"Gotham.S01E05.Viper.WEB-DL.x264.AAC": # 167
   type: "episode"
   title: "Gotham"
   subtitle: "Viper"
@@ -1443,14 +1474,14 @@
   episode: 5
   codec: "x264"
   audio: "AAC"
-"[SubsPlease]_Higurashi_no_Naku_Koro_ni_Sotsu_-_09_(1080p)_[C00D6C68]": # 162
+"[SubsPlease]_Higurashi_no_Naku_Koro_ni_Sotsu_-_09_(1080p)_[C00D6C68]": # 168
   type: "episode"
   title: "Higurashi no Naku Koro ni Sotsu"
   resolution: "1080p"
   episode: 9
   site: "SubsPlease"
   sum: "C00D6C68"
-"Hold.The.Sunset.S01E00.Christmas.Special.720p.HDTV.X264-MTB": # 163
+"Hold.The.Sunset.S01E00.Christmas.Special.720p.HDTV.X264-MTB": # 169
   type: "series"
   title: "Hold The Sunset"
   subtitle: "Christmas Special"
@@ -1459,7 +1490,7 @@
   series: 1
   codec: "x264"
   group: "MTB"
-"HollyRandall.15.03.09.Black.Angelika.and.Nick.Lang.Take.Me.Home.Tonight.XXX.1080p.x264-GAGViD": # 164
+"HollyRandall.15.03.09.Black.Angelika.and.Nick.Lang.Take.Me.Home.Tonight.XXX.1080p.x264-GAGViD": # 170
   type: "episode"
   title: "HollyRandall"
   subtitle: "Black Angelika and Nick Lang Take Me Home Tonight"
@@ -1470,7 +1501,7 @@
   day: 9
   codec: "x264"
   group: "GAGViD"
-"Important Things With Demetri Martin (2009) S01 (1080p DVDRip AI Upscale x265 10bit AC3 2.0 - JBENT)[TAoE]": # 165
+"Important Things With Demetri Martin (2009) S01 (1080p DVDRip AI Upscale x265 10bit AC3 2.0 - JBENT)[TAoE]": # 171
   type: "series"
   title: "Important Things With Demetri Martin"
   source: "DVDRiP"
@@ -1483,7 +1514,7 @@
   other: "AI.Upscale"
   group: "JBENT"
   site: "TAoE"
-"iZombie.S02E10.Zombie.High.German.DD51.Dubbed.DL.720p.BD.x264-TVS{{s3cre7p455wd!}}": # 166
+"iZombie.S02E10.Zombie.High.German.DD51.Dubbed.DL.720p.BD.x264-TVS{{s3cre7p455wd!}}": # 172
   type: "episode"
   title: "iZombie"
   subtitle: "Zombie High"
@@ -1497,7 +1528,7 @@
   language: "GERMAN DUBBED DL"
   group: "TVS"
   pass: "s3cre7p455wd!"
-"Jimmy.Kimmel.Live.2019.12.19.Margot.Robbie.John.Kasich.White.Reaper.720p.HULU.WEB-DL.AAC2.0.H.264-monkee.mkv": # 167
+"Jimmy.Kimmel.Live.2019.12.19.Margot.Robbie.John.Kasich.White.Reaper.720p.HULU.WEB-DL.AAC2.0.H.264-monkee.mkv": # 173
   type: "episode"
   title: "Jimmy Kimmel Live"
   subtitle: "Margot Robbie John Kasich White Reaper"
@@ -1512,7 +1543,7 @@
   channels: "2.0"
   group: "monkee"
   ext: "mkv"
-"Jimmy Kimmel Live 2020 09 24 Norman Reedus 720p WEB-DL AAC 2.0 H-264-BAE": # 168
+"Jimmy Kimmel Live 2020 09 24 Norman Reedus 720p WEB-DL AAC 2.0 H-264-BAE": # 174
   type: "episode"
   title: "Jimmy Kimmel Live"
   subtitle: "Norman Reedus"
@@ -1525,7 +1556,7 @@
   audio: "AAC"
   channels: "2.0"
   group: "BAE"
-"Marvel's.Agents.of.S.H.I.E.L.D.S02E01.Shadows.1080p.WEB-DL.DD5.1": # 169
+"Marvel's.Agents.of.S.H.I.E.L.D.S02E01.Shadows.1080p.WEB-DL.DD5.1": # 175
   type: "episode"
   title: "Marvel's Agents of S.H.I.E.L.D."
   subtitle: "Shadows"
@@ -1535,7 +1566,7 @@
   episode: 1
   audio: "DD"
   channels: "5.1"
-"Marvels Agents of S H I E L D S02E05 HDTV x264-KILLERS [eztv]": # 170
+"Marvels Agents of S H I E L D S02E05 HDTV x264-KILLERS [eztv]": # 176
   type: "episode"
   title: "Marvels Agents of S.H.I.E.L.D."
   source: "HDTV"
@@ -1544,7 +1575,7 @@
   codec: "x264"
   group: "KILLERS"
   site: "eztv"
-"Marvels Agents of S.H.I.E.L.D. S02E06 HDTV x264-KILLERS[ettv]": # 171
+"Marvels Agents of S.H.I.E.L.D. S02E06 HDTV x264-KILLERS[ettv]": # 177
   type: "episode"
   title: "Marvels Agents of S.H.I.E.L.D."
   source: "HDTV"
@@ -1553,7 +1584,7 @@
   codec: "x264"
   group: "KILLERS"
   site: "ettv"
-"[RaX]Mezzo(DSA)_-_05_-_[x264_ogg]_[585d9971].mkv": # 172
+"[RaX]Mezzo(DSA)_-_05_-_[x264_ogg]_[585d9971].mkv": # 178
   type: "episode"
   title: "Mezzo"
   episode: 5
@@ -1563,7 +1594,7 @@
   sum: "585d9971"
   ext: "mkv"
   unused: "DSA"
-"[Conclave-Mendoi]_Mobile_Suit_Gundam_00_S2_-_01v2_[1280x720_H.264_AAC][4863FBE8].mkv": # 173
+"[Conclave-Mendoi]_Mobile_Suit_Gundam_00_S2_-_01v2_[1280x720_H.264_AAC][4863FBE8].mkv": # 179
   type: "episode"
   title: "Mobile Suit Gundam 00"
   resolution: "720p"
@@ -1575,7 +1606,7 @@
   site: "Conclave-Mendoi"
   sum: "4863FBE8"
   ext: "mkv"
-"Mobile_Suit_Gundam_00_Season_2_Ep07_A_Reunion_and_a_Parting_[1080p,BluRay,x264]_-_THORA.mkv": # 174
+"Mobile_Suit_Gundam_00_Season_2_Ep07_A_Reunion_and_a_Parting_[1080p,BluRay,x264]_-_THORA.mkv": # 180
   type: "episode"
   title: "Mobile Suit Gundam 00"
   subtitle: "A Reunion and a Parting"
@@ -1586,7 +1617,7 @@
   codec: "x264"
   group: "THORA"
   ext: "mkv"
-"Mr.Robot.S01.PROPER.VOSTFR.720p.WEB-DL.DD5.1.H264-ARK01": # 175
+"Mr.Robot.S01.PROPER.VOSTFR.720p.WEB-DL.DD5.1.H264-ARK01": # 181
   type: "series"
   title: "Mr Robot"
   source: "WEB-DL"
@@ -1598,7 +1629,7 @@
   other: "PROPER"
   language: "VOSTFR"
   group: "ARK01"
-"Mr Robot S02E11 German DD 51 Synced DL 1080p AmazonHD x264-TVS": # 176
+"Mr Robot S02E11 German DD 51 Synced DL 1080p AmazonHD x264-TVS": # 182
   type: "episode"
   title: "Mr Robot"
   resolution: "1080p"
@@ -1610,7 +1641,7 @@
   channels: "5.1"
   language: "GERMAN SYNCED DL"
   group: "TVS"
-"NFL 2019 10 06 Chicago Bears vs Oakland Raiders Highlights 720p HEVC x265-MeGusta": # 177
+"NFL 2019 10 06 Chicago Bears vs Oakland Raiders Highlights 720p HEVC x265-MeGusta": # 183
   type: "episode"
   title: "NFL"
   subtitle: "Chicago Bears vs Oakland Raiders Highlights"
@@ -1620,14 +1651,14 @@
   day: 6
   codec: "HEVC x265"
   group: "MeGusta"
-"Party.Planner.with.David.Tutera.S01E46.Dr..Zhivago-A-Go-Go.720p": # 178
+"Party.Planner.with.David.Tutera.S01E46.Dr..Zhivago-A-Go-Go.720p": # 184
   type: "episode"
   title: "Party Planner with David Tutera"
   subtitle: "Dr. Zhivago-A-Go-Go"
   resolution: "720p"
   series: 1
   episode: 46
-"Peacemaker (2022) S01E08 It's Cow or Never (1080p HMAX Webrip x265 10bit AC3 5.1 - JBENT)[TAoE].mkv": # 179
+"Peacemaker (2022) S01E08 It's Cow or Never (1080p HMAX Webrip x265 10bit AC3 5.1 - JBENT)[TAoE].mkv": # 185
   type: "episode"
   title: "Peacemaker"
   subtitle: "It's Cow or Never"
@@ -1643,7 +1674,7 @@
   group: "JBENT"
   site: "TAoE"
   ext: "mkv"
-"RealityLovers.17.04.01.Arya.Fae.Aryas.Pool.Day.XXX.VR180.1920p.MP4-GUSH": # 180
+"RealityLovers.17.04.01.Arya.Fae.Aryas.Pool.Day.XXX.VR180.1920p.MP4-GUSH": # 186
   type: "episode"
   title: "RealityLovers"
   subtitle: "Arya Fae Aryas Pool Day"
@@ -1655,7 +1686,7 @@
   other: "VR180"
   container: "MP4"
   group: "GUSH"
-"Rugrats.S04E03.Vacation.NTSC.DVD.DD2.0.MPEG2.REMUX.mkv": # 181
+"Rugrats.S04E03.Vacation.NTSC.DVD.DD2.0.MPEG2.REMUX.mkv": # 187
   type: "episode"
   title: "Rugrats"
   subtitle: "Vacation"
@@ -1668,7 +1699,7 @@
   channels: "2.0"
   other: "REMUX"
   ext: "mkv"
-"Schitt's Creek (2015) - S04E01 - Dead Guy in Room 4 (1080p AMZN WEB-DL x265 MONOLITH).mkv": # 182
+"Schitt's Creek (2015) - S04E01 - Dead Guy in Room 4 (1080p AMZN WEB-DL x265 MONOLITH).mkv": # 188
   type: "episode"
   title: "Schitt's Creek"
   subtitle: "Dead Guy in Room 4"
@@ -1681,7 +1712,7 @@
   codec: "x265"
   group: "MONOLITH"
   ext: "mkv"
-"[chibi-Doki] Seikon no Qwaser - 13v0 (Uncensored Director's Cut) [988DB090].mkv": # 183
+"[chibi-Doki] Seikon no Qwaser - 13v0 (Uncensored Director's Cut) [988DB090].mkv": # 189
   type: "episode"
   title: "Seikon no Qwaser"
   episode: 13
@@ -1690,7 +1721,7 @@
   site: "chibi-Doki"
   sum: "988DB090"
   ext: "mkv"
-"Skins.S06E10.Finale.German.DD20.Dubbed.DL.720p.AmazonHD.x264-TVS": # 184
+"Skins.S06E10.Finale.German.DD20.Dubbed.DL.720p.AmazonHD.x264-TVS": # 190
   type: "episode"
   title: "Skins"
   subtitle: "Finale"
@@ -1703,7 +1734,7 @@
   channels: "2.0"
   language: "GERMAN DUBBED DL"
   group: "TVS"
-"Solar.Opposites.S00E04.A.Very.Solar.Holiday.Opposites.Special.1080p.HULU.WEB-DL.DDP5.1.H.264-NTb.mkv": # 185
+"Solar.Opposites.S00E04.A.Very.Solar.Holiday.Opposites.Special.1080p.HULU.WEB-DL.DDP5.1.H.264-NTb.mkv": # 191
   type: "episode"
   title: "Solar Opposites"
   subtitle: "A Very Solar Holiday Opposites Special"
@@ -1716,12 +1747,12 @@
   channels: "5.1"
   group: "NTb"
   ext: "mkv"
-"Sons.of.Anarchy.S01E03": # 186
+"Sons.of.Anarchy.S01E03": # 192
   type: "episode"
   title: "Sons of Anarchy"
   series: 1
   episode: 3
-"[720pMkv.Com]_sons.of.anarchy.s05e10.480p.BluRay.x264-GAnGSteR": # 187
+"[720pMkv.Com]_sons.of.anarchy.s05e10.480p.BluRay.x264-GAnGSteR": # 193
   type: "episode"
   title: "sons of anarchy"
   source: "BluRay"
@@ -1731,7 +1762,7 @@
   codec: "x264"
   group: "GAnGSteR"
   site: "720pMkv.Com"
-"[ www.Speed.cd ] -Sons.of.Anarchy.S07E07.720p.HDTV.X264-DIMENSION": # 188
+"[ www.Speed.cd ] -Sons.of.Anarchy.S07E07.720p.HDTV.X264-DIMENSION": # 194
   type: "episode"
   title: "Sons of Anarchy"
   source: "HDTV"
@@ -1741,7 +1772,7 @@
   codec: "x264"
   group: "DIMENSION"
   site: "www.Speed.cd"
-"Soul.Eater.Ep.01-51.Complete.German.AC3.DL.720p.BluRay.x264-AST4u": # 189
+"Soul.Eater.Ep.01-51.Complete.German.AC3.DL.720p.BluRay.x264-AST4u": # 195
   type: "episode"
   title: "Soul Eater"
   source: "BluRay"
@@ -1752,7 +1783,7 @@
   other: "COMPLETE"
   language: "GERMAN DL"
   group: "AST4u"
-"Soul.Eater.Ep.02.German.AC3.DL.720p.BluRay.x264-AST4u": # 190
+"Soul.Eater.Ep.02.German.AC3.DL.720p.BluRay.x264-AST4u": # 196
   type: "episode"
   title: "Soul Eater"
   source: "BluRay"
@@ -1762,7 +1793,7 @@
   audio: "DD"
   language: "GERMAN DL"
   group: "AST4u"
-"South.Park.S01D02.COMPLETE.BLURAY-HD_Leaks": # 191
+"South.Park.S01D02.COMPLETE.BLURAY-HD_Leaks": # 197
   type: "series"
   title: "South Park"
   source: "BluRay"
@@ -1770,7 +1801,7 @@
   disc: "D02"
   other: "COMPLETE"
   group: "HD_Leaks"
-"South.Park.S01.-.S22.COMPLETE.(1080p.BluRay.x265.HEVC.10bit.AAC.5.1.RCVR).torrent": # 192
+"South.Park.S01.-.S22.COMPLETE.(1080p.BluRay.x265.HEVC.10bit.AAC.5.1.RCVR).torrent": # 198
   type: "series"
   title: "South Park"
   source: "BluRay"
@@ -1782,7 +1813,7 @@
   other: "COMPLETE"
   group: "RCVR"
   ext: "torrent"
-"South Park S18E05 HDTV x264-KILLERS [eztv]": # 193
+"South Park S18E05 HDTV x264-KILLERS [eztv]": # 199
   type: "episode"
   title: "South Park"
   source: "HDTV"
@@ -1791,7 +1822,7 @@
   codec: "x264"
   group: "KILLERS"
   site: "eztv"
-"SpankedSchoolGirl.E57.Nervous.Wait.XXX.HR.WMV-KTR": # 194
+"SpankedSchoolGirl.E57.Nervous.Wait.XXX.HR.WMV-KTR": # 200
   type: "episode"
   title: "SpankedSchoolGirl"
   subtitle: "Nervous Wait"
@@ -1800,7 +1831,7 @@
   other: "HR"
   container: "WMV"
   group: "KTR"
-"Superstore S02 1080p Amazon WEB-DL DD+ 5.1 x264-TrollHD": # 195
+"Superstore S02 1080p Amazon WEB-DL DD+ 5.1 x264-TrollHD": # 201
   type: "series"
   title: "Superstore"
   source: "WEB-DL"
@@ -1811,7 +1842,7 @@
   audio: "DDP"
   channels: "5.1"
   group: "TrollHD"
-"The Big Bang Theory S08E06 HDTV XviD-LOL [eztv]": # 196
+"The Big Bang Theory S08E06 HDTV XviD-LOL [eztv]": # 202
   type: "episode"
   title: "The Big Bang Theory"
   source: "HDTV"
@@ -1820,7 +1851,7 @@
   codec: "XViD"
   group: "LOL"
   site: "eztv"
-"The.Drunk.And.On.Drugs.Happy.Funtime.Hour.S01.WS.DSRip.XviD.torrent": # 197
+"The.Drunk.And.On.Drugs.Happy.Funtime.Hour.S01.WS.DSRip.XviD.torrent": # 203
   type: "series"
   title: "The Drunk And On Drugs Happy Funtime Hour"
   source: "DSRiP"
@@ -1828,7 +1859,7 @@
   codec: "XViD"
   other: "WS"
   ext: "torrent"
-"The Flash 2014 S01E01 HDTV x264-LOL[ettv]": # 198
+"The Flash 2014 S01E01 HDTV x264-LOL[ettv]": # 204
   type: "episode"
   title: "The Flash"
   source: "HDTV"
@@ -1838,7 +1869,7 @@
   codec: "x264"
   group: "LOL"
   site: "ettv"
-"The.IT.Crowd.S00E01.The.Internet.is.Coming.1080p.AMZN.WEB-DL.DDP2.0.H.264-PHOENiX.mkv": # 199
+"The.IT.Crowd.S00E01.The.Internet.is.Coming.1080p.AMZN.WEB-DL.DDP2.0.H.264-PHOENiX.mkv": # 205
   type: "episode"
   title: "The IT Crowd"
   subtitle: "The Internet is Coming"
@@ -1851,7 +1882,7 @@
   channels: "2.0"
   group: "PHOENiX"
   ext: "mkv"
-"The Missing 1x01 Pilot HDTV x264-FoV [eztv]": # 200
+"The Missing 1x01 Pilot HDTV x264-FoV [eztv]": # 206
   type: "episode"
   title: "The Missing"
   subtitle: "Pilot"
@@ -1861,7 +1892,7 @@
   codec: "x264"
   group: "FoV"
   site: "eztv"
-"The Simpsons S26E05 HDTV x264 PROPER-LOL [eztv]": # 201
+"The Simpsons S26E05 HDTV x264 PROPER-LOL [eztv]": # 207
   type: "episode"
   title: "The Simpsons"
   source: "HDTV"
@@ -1871,7 +1902,7 @@
   other: "PROPER"
   group: "LOL"
   site: "eztv"
-"The Simpsons (1989) S33E12 Pixelated and Afraid (1080p HULU Webrip x265 10bit EAC3 5 1 - Goki)[TAoE]": # 202
+"The Simpsons (1989) S33E12 Pixelated and Afraid (1080p HULU Webrip x265 10bit EAC3 5 1 - Goki)[TAoE]": # 208
   type: "episode"
   title: "The Simpsons"
   subtitle: "Pixelated and Afraid"
@@ -1886,7 +1917,7 @@
   channels: "5.1"
   group: "Goki"
   site: "TAoE"
-"The Walking Dead S05E03 720p HDTV x264-ASAP[ettv]": # 203
+"The Walking Dead S05E03 720p HDTV x264-ASAP[ettv]": # 209
   type: "episode"
   title: "The Walking Dead"
   source: "HDTV"
@@ -1896,7 +1927,7 @@
   codec: "x264"
   group: "ASAP"
   site: "ettv"
-"The.Walking.Dead.S05E03.1080p.WEB-DL.DD5.1.H.264-Cyphanix[rartv]": # 204
+"The.Walking.Dead.S05E03.1080p.WEB-DL.DD5.1.H.264-Cyphanix[rartv]": # 210
   type: "episode"
   title: "The Walking Dead"
   source: "WEB-DL"
@@ -1908,7 +1939,7 @@
   channels: "5.1"
   group: "Cyphanix"
   site: "rartv"
-"The.X-Files.S01-S03.DKsubs.1080p.BluRay.HEVC.x265": # 205
+"The.X-Files.S01-S03.DKsubs.1080p.BluRay.HEVC.x265": # 211
   type: "series"
   title: "The X-Files"
   subtitle: "DKsubs"
@@ -1916,7 +1947,7 @@
   resolution: "1080p"
   series: 1
   codec: "HEVC x265"
-"The.X-Files.S01E01-E03.DKsubs.1080p.BluRay.HEVC.x265": # 206
+"The.X-Files.S01E01-E03.DKsubs.1080p.BluRay.HEVC.x265": # 212
   type: "episode"
   title: "The X-Files"
   subtitle: "DKsubs"
@@ -1925,7 +1956,7 @@
   series: 1
   episode: 1
   codec: "HEVC x265"
-"thomas.and.friends.s19e09_s20e14.convert.hdtv.x264-w4f[eztv].mkv": # 207
+"thomas.and.friends.s19e09_s20e14.convert.hdtv.x264-w4f[eztv].mkv": # 213
   type: "episode"
   title: "thomas and friends"
   subtitle: "convert"
@@ -1936,7 +1967,7 @@
   group: "w4f"
   site: "eztv"
   ext: "mkv"
-"Toast.of.London.S00E01.Pilot.The.Unspeakable.Play.1080p.NF.WEB-DL.DD+2.0.x264-AJP69.mkv": # 208
+"Toast.of.London.S00E01.Pilot.The.Unspeakable.Play.1080p.NF.WEB-DL.DD+2.0.x264-AJP69.mkv": # 214
   type: "episode"
   title: "Toast of London"
   subtitle: "Pilot The Unspeakable Play"
@@ -1949,14 +1980,14 @@
   channels: "2.0"
   group: "AJP69"
   ext: "mkv"
-"Tokyo Ghoul: RE S2 - Episode 4 VOSTFR (1080p)": # 209
+"Tokyo Ghoul: RE S2 - Episode 4 VOSTFR (1080p)": # 215
   type: "episode"
   title: "Tokyo Ghoul: RE"
   resolution: "1080p"
   series: 2
   episode: 4
   language: "VOSTFR"
-"Trinity.Seven.S01.E12.German.2014.ANiME.DTS.DL.1080p.BluRay.x264-ShadowTX.mkv": # 210
+"Trinity.Seven.S01.E12.German.2014.ANiME.DTS.DL.1080p.BluRay.x264-ShadowTX.mkv": # 216
   type: "episode"
   title: "Trinity Seven"
   source: "BluRay"
@@ -1970,7 +2001,7 @@
   genre: "Anime"
   group: "ShadowTX"
   ext: "mkv"
-"UFC.179.PPV.HDTV.x264-Ebi[rartv]": # 211
+"UFC.179.PPV.HDTV.x264-Ebi[rartv]": # 217
   type: "episode"
   title: "UFC 179"
   source: "HDTV"
@@ -1978,7 +2009,7 @@
   codec: "x264"
   group: "Ebi"
   site: "rartv"
-"VTC.S01E01.FRENCH.1080p.WEB.H264-PROPJOE": # 212
+"VTC.S01E01.FRENCH.1080p.WEB.H264-PROPJOE": # 218
   type: "episode"
   title: "VTC"
   source: "WEB"
@@ -1988,7 +2019,7 @@
   codec: "H.264"
   language: "FRENCH"
   group: "PROPJOE"
-"Winx.Club.S06E16.Die.Zombie-Invasion.GERMAN.DUBBED.DL.720p.WEB-DL.h264-pbw": # 213
+"Winx.Club.S06E16.Die.Zombie-Invasion.GERMAN.DUBBED.DL.720p.WEB-DL.h264-pbw": # 219
   type: "episode"
   title: "Winx Club"
   subtitle: "Die Zombie-Invasion"
@@ -1999,7 +2030,7 @@
   codec: "H.264"
   language: "GERMAN DUBBED DL"
   group: "pbw"
-"World's End Harem (Shuumatsu no Harem) S01E08 (2022 Airing) AT-X 2021 1080i HDTV AAC 2.0 English Subbed -ZR-.mkv": # 214
+"World's End Harem (Shuumatsu no Harem) S01E08 (2022 Airing) AT-X 2021 1080i HDTV AAC 2.0 English Subbed -ZR-.mkv": # 220
   type: "episode"
   title: "World's End Harem"
   subtitle: "2022 Airing"
@@ -2015,7 +2046,7 @@
   group: "ZR"
   ext: "mkv"
   unused: "Shuumatsu no Harem"
-"WWE Hell in a Cell 2014 PPV WEB-DL x264-WD -={ SPARROW }=-": # 215
+"WWE Hell in a Cell 2014 PPV WEB-DL x264-WD -={ SPARROW }=-": # 221
   type: "episode"
   title: "WWE Hell in a Cell"
   source: "WEB-DL"
@@ -2024,7 +2055,7 @@
   codec: "x264"
   group: "WD"
   site: "SPARROW"
-"WWE Monday Night Raw 3rd Nov 2014 HDTV x264-Sir Paul": # 216
+"WWE Monday Night Raw 3rd Nov 2014 HDTV x264-Sir Paul": # 222
   type: "episode"
   title: "WWE Monday Night Raw"
   source: "HDTV"
@@ -2033,7 +2064,7 @@
   day: 3
   codec: "x264"
   group: "Sir Paul"
-"WWE Monday Night Raw 2014 11 10 WS PDTV x264-RKOFAN1990 -={SPARROW}=-": # 217
+"WWE Monday Night Raw 2014 11 10 WS PDTV x264-RKOFAN1990 -={SPARROW}=-": # 223
   type: "episode"
   title: "WWE Monday Night Raw"
   source: "PDTV"
@@ -2044,13 +2075,13 @@
   other: "WS"
   group: "RKOFAN1990"
   site: "SPARROW"
-"Zébra.2009.S00.x264-group": # 218
+"Zébra.2009.S00.x264-group": # 224
   type: "series"
   title: "Zébra"
   year: 2009
   codec: "x264"
   group: "group"
-"Axel.Rudi.Pell.Live.Over.Europe.2008.2DiSCS.PAL.MDVD-R-DHI": # 219
+"Axel.Rudi.Pell.Live.Over.Europe.2008.2DiSCS.PAL.MDVD-R-DHI": # 225
   type: "music"
   title: "Axel Rudi Pell Live Over Europe"
   resolution: "576p"
@@ -2058,7 +2089,7 @@
   disc: "2DiSCS"
   size: "MDVDR"
   group: "DHI"
-"DJ.Krush.History.of.DJ.Krush.2007.BOXSET.3DISCS.COMPLETE.NTSC.MDVDR-CMS": # 220
+"DJ.Krush.History.of.DJ.Krush.2007.BOXSET.3DISCS.COMPLETE.NTSC.MDVDR-CMS": # 226
   type: "music"
   title: "DJ Krush History of DJ Krush"
   resolution: "480p"
@@ -2067,7 +2098,7 @@
   other: "BOXSET COMPLETE"
   size: "MDVDR"
   group: "CMS"
-"Lil_Yachty-Split__Whole_Time-DDC-1080p-x264-2020-SRPx": # 221
+"Lil_Yachty-Split__Whole_Time-DDC-1080p-x264-2020-SRPx": # 227
   type: "music"
   artist: "Lil Yachty"
   title: "Split"
@@ -2077,19 +2108,19 @@
   year: 2020
   codec: "x264"
   group: "SRPx"
-"112-Pleasure_And_Pain-(Adv._Promo)-2005-C4_INT": # 222
+"112-Pleasure_And_Pain-(Adv._Promo)-2005-C4_INT": # 228
   type: "music"
   artist: "112"
   title: "Pleasure And Pain"
   year: 2005
   other: "ADVANCE PROMO INTERNAL"
   group: "C4"
-"(a)(b)(c).mp3": # 223
+"(a)(b)(c).mp3": # 229
   type: "music"
   artist: "a"
   title: "(b) c"
   ext: "mp3"
-"Airwalk_Ft_Stina_G._-_Energy-(DRIZ9802-28)-320kbps_Vinyl-1998-PUTA": # 224
+"Airwalk_Ft_Stina_G._-_Energy-(DRIZ9802-28)-320kbps_Vinyl-1998-PUTA": # 230
   type: "music"
   artist: "Airwalk Ft Stina G"
   title: "Energy"
@@ -2098,14 +2129,14 @@
   audio: "320Kbps"
   id: "DRIZ9802-28"
   group: "PUTA"
-"Alcest-BBC_Sessions-Proper-2012-GRM": # 225
+"Alcest-BBC_Sessions-Proper-2012-GRM": # 231
   type: "music"
   artist: "Alcest"
   title: "BBC Sessions"
   year: 2012
   other: "PROPER"
   group: "GRM"
-"Alesso_Feat_Tove_Lo-Heroes_(We_Could_Be)-DDC-720p-x264-2014-ZViD": # 226
+"Alesso_Feat_Tove_Lo-Heroes_(We_Could_Be)-DDC-720p-x264-2014-ZViD": # 232
   type: "music"
   artist: "Alesso Feat Tove Lo"
   title: "Heroes"
@@ -2115,7 +2146,7 @@
   year: 2014
   codec: "x264"
   group: "ZViD"
-"B_recordings--instant-(supercheap-03)-2VLS1998-kW": # 227
+"B_recordings--instant-(supercheap-03)-2VLS1998-kW": # 233
   type: "music"
   artist: "B recordings"
   title: "instant"
@@ -2124,7 +2155,7 @@
   year: 1998
   disc: "2x"
   group: "kW"
-"Bad_Religion-Stranger_Than_Fiction_Deluxe_Edition_Remastered_-BONUS_TRACKS-WEB-2018-ENTiTLED": # 228
+"Bad_Religion-Stranger_Than_Fiction_Deluxe_Edition_Remastered_-BONUS_TRACKS-WEB-2018-ENTiTLED": # 234
   type: "music"
   artist: "Bad Religion"
   title: "Stranger Than Fiction"
@@ -2133,7 +2164,7 @@
   other: "REMASTERED BONUS.TRACKS"
   edition: "Deluxe.Edition"
   group: "ENTiTLED"
-"Blak_Jak_Feat_T-Pain-Ball_Out-Promo-CDS-2006-IMT": # 229
+"Blak_Jak_Feat_T-Pain-Ball_Out-Promo-CDS-2006-IMT": # 235
   type: "music"
   artist: "Blak Jak Feat T-Pain"
   title: "Ball Out"
@@ -2141,7 +2172,7 @@
   year: 2006
   other: "PROMO"
   group: "IMT"
-"Caracola-Vamos_Vamos_(Sommarkrysset_08-02-08)-x264-2008-VFi": # 230
+"Caracola-Vamos_Vamos_(Sommarkrysset_08-02-08)-x264-2008-VFi": # 236
   type: "music"
   artist: "Caracola"
   title: "Vamos Vamos"
@@ -2149,7 +2180,7 @@
   year: 2008
   codec: "x264"
   group: "VFi"
-"Copamore-Across_the_Line_(feat_Mikey_Shyne)-WEB-2017-JUSTiFY": # 231
+"Copamore-Across_the_Line_(feat_Mikey_Shyne)-WEB-2017-JUSTiFY": # 237
   type: "music"
   artist: "Copamore"
   title: "Across the Line"
@@ -2157,7 +2188,7 @@
   source: "WEB"
   year: 2017
   group: "JUSTiFY"
-"Cosy_Bang_Bang-Live_Au_Festival_Des_Eurockeennes_(2015-07-03)-FR-x264-2015-iUF": # 232
+"Cosy_Bang_Bang-Live_Au_Festival_Des_Eurockeennes_(2015-07-03)-FR-x264-2015-iUF": # 238
   type: "music"
   artist: "Cosy Bang Bang"
   title: "Live Au Festival Des Eurockeennes"
@@ -2168,7 +2199,7 @@
   codec: "x264"
   language: "FRENCH"
   group: "iUF"
-"Counting+Crows+-+2003+-+Films+About+Ghosts+(The+Best+of...)+[EAC+FLAC]+(miok)+[WWRG]": # 233
+"Counting+Crows+-+2003+-+Films+About+Ghosts+(The+Best+of...)+[EAC+FLAC]+(miok)+[WWRG]": # 239
   type: "music"
   artist: "Counting Crows"
   title: "Films About Ghosts"
@@ -2178,7 +2209,7 @@
   other: "EAC"
   group: "miok"
   site: "WWRG"
-"DJ_Exodus_-_Double_Down_Radio_083__Incl_Masta_Monk_and_DJ_Montone_Guestmix-SAT-01-07-2022-TALiON": # 234
+"DJ_Exodus_-_Double_Down_Radio_083__Incl_Masta_Monk_and_DJ_Montone_Guestmix-SAT-01-07-2022-TALiON": # 240
   type: "music"
   artist: "DJ Exodus"
   title: "Double Down Radio 083"
@@ -2188,7 +2219,15 @@
   month: 1
   day: 7
   group: "TALiON"
-"DJ_Luke_Nasty-OTW_(feat_Yung_Booke_Money_Man_Ace_Hood_Boosie_BadAzz_and_T-Pain)_Remix-SINGLE-WEB-2016-ENRAGED": # 235
+"(DJ_Isaac)-Thriller_DJ_Isaac_Hardstyle_Remix_(Telejunkie_Videomix_SVCD)__iPZViD-MV": # 241
+  type: "music"
+  artist: "DJ Isaac"
+  title: "Thriller DJ Isaac Hardstyle Remix"
+  subtitle: "Telejunkie Videomix"
+  source: "SVCD"
+  group: "MV"
+  unused: "iPZViD"
+"DJ_Luke_Nasty-OTW_(feat_Yung_Booke_Money_Man_Ace_Hood_Boosie_BadAzz_and_T-Pain)_Remix-SINGLE-WEB-2016-ENRAGED": # 242
   type: "music"
   artist: "DJ Luke Nasty"
   title: "OTW"
@@ -2197,7 +2236,15 @@
   year: 2016
   other: "REMiX"
   group: "ENRAGED"
-"Eminem-cleaning_out_my_closet_(live_on_106_and_park)-(tHaCuBe-svcd-2002)-kvz": # 236
+"E.M.D.-Baby_Goodbye_(at_Melodifestivalen_Final_2009)-x264-2009-MV": # 243
+  type: "music"
+  artist: "E.M.D."
+  title: "Baby Goodbye"
+  subtitle: "at Melodifestivalen Final 2009"
+  year: 2009
+  codec: "x264"
+  group: "MV"
+"Eminem-cleaning_out_my_closet_(live_on_106_and_park)-(tHaCuBe-svcd-2002)-kvz": # 244
   type: "music"
   artist: "Eminem"
   title: "cleaning out my closet"
@@ -2206,7 +2253,7 @@
   year: 2002
   group: "kvz"
   unused: "tHaCuBe"
-"Freddie_McGregor-Roots_Man_Skanking-(CTLP_889)-REISSUE-LP-FLAC-201X-YARD": # 237
+"Freddie_McGregor-Roots_Man_Skanking-(CTLP_889)-REISSUE-LP-FLAC-201X-YARD": # 245
   type: "music"
   artist: "Freddie McGregor"
   title: "Roots Man Skanking"
@@ -2215,21 +2262,21 @@
   other: "REISSUE 201X"
   id: "CTLP 889"
   group: "YARD"
-"Giveon+-+When+It&#039;s+All+Said+And+Done...+Take+Time+(2021)+Mp3+320kbps+[PMEDIA]+⭐️": # 238
+"Giveon+-+When+It&#039;s+All+Said+And+Done...+Take+Time+(2021)+Mp3+320kbps+[PMEDIA]+⭐️": # 246
   type: "music"
   artist: "Giveon"
   title: "When It's All Said And Done... Take Time"
   year: 2021
   audio: "MP3 320Kbps"
   site: "PMEDIA"
-"Hawk-H.A.W.K-2002-SUT_INT": # 239
+"Hawk-H.A.W.K-2002-SUT_INT": # 247
   type: "music"
   artist: "Hawk"
   title: "H.A.W.K."
   year: 2002
   other: "INTERNAL"
   group: "SUT"
-"Howard_Stern_Show_-_Metallica-SiriusXM-SAT-08-12-2020-POWDER": # 240
+"Howard_Stern_Show_-_Metallica-SiriusXM-SAT-08-12-2020-POWDER": # 248
   type: "music"
   artist: "Howard Stern Show"
   title: "Metallica"
@@ -2239,7 +2286,7 @@
   month: 8
   day: 12
   group: "POWDER"
-"Keane-Bedshaped-CDS3-2004-TWCMP3": # 241
+"Keane-Bedshaped-CDS3-2004-TWCMP3": # 249
   type: "music"
   artist: "Keane"
   title: "Bedshaped"
@@ -2247,20 +2294,20 @@
   year: 2004
   disc: "3x"
   group: "TWCMP3"
-"Michael Jackson - Discography (1967-2009) [FLAC]": # 242
+"Michael Jackson - Discography (1967-2009) [FLAC]": # 250
   type: "music"
   artist: "Michael Jackson"
   title: "Discography"
   subtitle: "1967"
   year: 2009
   audio: "FLAC"
-"Oasis-(Whats_the_Story)_Morning_Glory-1995-FADA": # 243
+"Oasis-(Whats_the_Story)_Morning_Glory-1995-FADA": # 251
   type: "music"
   artist: "Oasis"
   title: "(Whats the Story) Morning Glory"
   year: 1995
   group: "FADA"
-"Placebo+-+Black+Market+Music+(2000+-+Alternative+Rock)+[Flac+24-192+LP]": # 244
+"Placebo+-+Black+Market+Music+(2000+-+Alternative+Rock)+[Flac+24-192+LP]": # 252
   type: "music"
   artist: "Placebo"
   title: "Black Market Music"
@@ -2268,7 +2315,7 @@
   year: 2000
   audio: "FLAC"
   unused: "Alternative Rock 24 192"
-"Remady_Pandr-No_Superstar_(Remixes)-WEB2009-iFA_INT": # 245
+"Remady_Pandr-No_Superstar_(Remixes)-WEB2009-iFA_INT": # 253
   type: "music"
   artist: "Remady Pandr"
   title: "No Superstar"
@@ -2276,7 +2323,7 @@
   year: 2009
   other: "REMiX INTERNAL"
   group: "iFA"
-"Stranger_Cole--Storybook_Revisited-(BSRCD907)-WEB-2019-BABAS": # 246
+"Stranger_Cole--Storybook_Revisited-(BSRCD907)-WEB-2019-BABAS": # 254
   type: "music"
   artist: "Stranger Cole"
   title: "Storybook Revisited"
@@ -2284,7 +2331,7 @@
   year: 2019
   id: "BSRCD907"
   group: "BABAS"
-"T_O_N_-Jungle_Vibe-(8719729715073)-SINGLE-WEB-2020-KLIN": # 247
+"T_O_N_-Jungle_Vibe-(8719729715073)-SINGLE-WEB-2020-KLIN": # 255
   type: "music"
   artist: "T.O.N."
   title: "Jungle Vibe"
@@ -2292,7 +2339,7 @@
   year: 2020
   id: "8719729715073"
   group: "KLIN"
-"T-Pain-Rappa_Ternt_Sanga-CD-FLAC-2005-PERFECT": # 248
+"T-Pain-Rappa_Ternt_Sanga-CD-FLAC-2005-PERFECT": # 256
   type: "music"
   artist: "T-Pain"
   title: "Rappa Ternt Sanga"
@@ -2300,7 +2347,7 @@
   year: 2005
   audio: "FLAC"
   group: "PERFECT"
-"T-Pain - The Lost Remixes (2020) Mp3 320kbps [PMEDIA] ⭐️": # 249
+"T-Pain - The Lost Remixes (2020) Mp3 320kbps [PMEDIA] ⭐️": # 257
   type: "music"
   artist: "T-Pain"
   title: "The Lost Remixes"
@@ -2308,7 +2355,7 @@
   audio: "MP3 320Kbps"
   other: "REMiX"
   site: "PMEDIA"
-"the cc - a (the remix) 1999.mp3": # 250
+"the cc - a (the remix) 1999.mp3": # 258
   type: "music"
   artist: "the cc"
   title: "a"
@@ -2316,7 +2363,7 @@
   year: 1999
   other: "REMiX"
   ext: "mp3"
-"The.French.Foreign.Legion-Thoughts(produced by beatz)(CDZ 1243-ABC).2019-WEB": # 251
+"The.French.Foreign.Legion-Thoughts(produced by beatz)(CDZ 1243-ABC).2019-WEB": # 259
   type: "music"
   artist: "The French Foreign Legion"
   title: "Thoughts"
@@ -2324,7 +2371,7 @@
   source: "WEB"
   year: 2019
   id: "CDZ 1243-ABC"
-"The Lonely Island - Turtleneck And Chain (Deluxe Version) 2011 Hip Hop 320kbps CBR MP3 [VX] [P2PDL]": # 252
+"The Lonely Island - Turtleneck And Chain (Deluxe Version) 2011 Hip Hop 320kbps CBR MP3 [VX] [P2PDL]": # 260
   type: "music"
   artist: "The Lonely Island"
   title: "Turtleneck And Chain"
@@ -2334,7 +2381,7 @@
   group: "VX"
   site: "P2PDL"
   unused: "Hip Hop"
-"The_Smashing_Pumpkins-(Rotten_Apples)_Greatest_Hits-CD-FLAC-2001-FiXIE": # 253
+"The_Smashing_Pumpkins-(Rotten_Apples)_Greatest_Hits-CD-FLAC-2001-FiXIE": # 261
   type: "music"
   artist: "The Smashing Pumpkins"
   title: "(Rotten Apples) Greatest Hits"
@@ -2342,7 +2389,7 @@
   year: 2001
   audio: "FLAC"
   group: "FiXIE"
-"The_Velvet_Underground-The_Complete_Matrix_Tapes-Reissue_Limited_Edition_Boxset-8LP-2019-NOiR": # 254
+"The_Velvet_Underground-The_Complete_Matrix_Tapes-Reissue_Limited_Edition_Boxset-8LP-2019-NOiR": # 262
   type: "music"
   artist: "The Velvet Underground"
   title: "The Complete Matrix Tapes"
@@ -2352,35 +2399,14 @@
   other: "REISSUE BOXSET"
   edition: "Limited.Edition"
   group: "NOiR"
-"The Title.(2011).MsT": # 255
-  type: "music"
-  title: "The Title"
-  year: 2011
-  group: "MsT"
-"(DJ_Isaac)-Thriller_DJ_Isaac_Hardstyle_Remix_(Telejunkie_Videomix_SVCD)__iPZViD-MV": # 256
-  type: "music"
-  artist: "DJ Isaac"
-  title: "Thriller DJ Isaac Hardstyle Remix"
-  subtitle: "Telejunkie Videomix"
-  source: "SVCD"
-  group: "MV"
-  unused: "iPZViD"
-"E.M.D.-Baby_Goodbye_(at_Melodifestivalen_Final_2009)-x264-2009-MV": # 257
-  type: "music"
-  artist: "E.M.D."
-  title: "Baby Goodbye"
-  subtitle: "at Melodifestivalen Final 2009"
-  year: 2009
-  codec: "x264"
-  group: "MV"
-"Urban_Psycho_Resistance-To_Hate_and_Forget-10_inch-EP-20xx-DPS": # 258
+"Urban_Psycho_Resistance-To_Hate_and_Forget-10_inch-EP-20xx-DPS": # 263
   type: "music"
   artist: "Urban Psycho Resistance"
   title: "To Hate and Forget"
   source: "10INCH.ViNYL"
   other: "20XX"
   group: "DPS"
-"VA_-_100_Percent_Hardstyle__Selected_by_Zenith_DJ-CD2003-SND": # 259
+"VA_-_100_Percent_Hardstyle__Selected_by_Zenith_DJ-CD2003-SND": # 264
   type: "music"
   artist: "VA"
   title: "100 Percent Hardstyle"
@@ -2388,7 +2414,7 @@
   source: "CD"
   year: 2003
   group: "SND"
-"VA_-_Hellz_Army_EP_(APOC_001)-2xVinyl-2000-RSQ": # 260
+"VA_-_Hellz_Army_EP_(APOC_001)-2xVinyl-2000-RSQ": # 265
   type: "music"
   artist: "VA"
   title: "Hellz Army"
@@ -2397,14 +2423,14 @@
   disc: "2x"
   id: "APOC 001"
   group: "RSQ"
-"Yabby_You-Fire_In_Kingston-VL-7inch-197x-RAC": # 261
+"Yabby_You-Fire_In_Kingston-VL-7inch-197x-RAC": # 266
   type: "music"
   artist: "Yabby You"
   title: "Fire In Kingston"
   source: "ViNYL"
   other: "197X"
   group: "RAC"
-"Yelawolf-lets_roll_(jimmy_kimmel_live_2011-12-01)-720p-x264-2011-uva": # 262
+"Yelawolf-lets_roll_(jimmy_kimmel_live_2011-12-01)-720p-x264-2011-uva": # 267
   type: "music"
   artist: "Yelawolf"
   title: "lets roll"
@@ -2415,7 +2441,12 @@
   day: 1
   codec: "x264"
   group: "uva"
-"Adobe.XD.CC.2019.v21.0.12.X64.Multilingual-WEBiSO": # 263
+"The Title.(2011).MsT": # 268
+  type: "music"
+  title: "The Title"
+  year: 2011
+  group: "MsT"
+"Adobe.XD.CC.2019.v21.0.12.X64.Multilingual-WEBiSO": # 269
   type: "app"
   title: "Adobe XD CC"
   arch: "x64"
@@ -2423,7 +2454,7 @@
   version: "v21.0.12"
   language: "MULTi"
   group: "WEBiSO"
-"Atlassian.Fisheye.and.Crucible.v4.7.0.MultiOS.Incl.KeyMaker.and.Patch.15TH.BIRTHDAY-DVT": # 264
+"Atlassian.Fisheye.and.Crucible.v4.7.0.MultiOS.Incl.KeyMaker.and.Patch.15TH.BIRTHDAY-DVT": # 270
   type: "app"
   title: "Atlassian Fisheye and Crucible"
   platform: "MultiOS"
@@ -2431,75 +2462,75 @@
   other: "Incl.Keygen Incl.Patch"
   group: "DVT"
   unused: "15TH BIRTHDAY"
-"Dead.Dungeon.v1.0.11-SiMPLEX": # 265
+"Dead.Dungeon.v1.0.11-SiMPLEX": # 271
   type: "app"
   title: "Dead Dungeon"
   version: "v1.0.11"
   group: "SiMPLEX"
-"Depraved.v1.1a_56.Update.v1.1d.57-SiMPLEX": # 266
+"Depraved.v1.1a_56.Update.v1.1d.57-SiMPLEX": # 272
   type: "app"
   title: "Depraved"
   version: "v1.1a_56"
   other: "UPDATE"
   group: "SiMPLEX"
-"Field.3D.v1.20.KEYMAKER.ONLY-PROPHECY": # 267
+"Field.3D.v1.20.KEYMAKER.ONLY-PROPHECY": # 273
   type: "app"
   title: "Field 3D"
   version: "v1.20"
   other: "Incl.Keygen"
   group: "PROPHECY"
-"ARK.Survival.Evolved.Extinction-CODEX": # 268
+"ARK.Survival.Evolved.Extinction-CODEX": # 274
   type: "game"
   title: "ARK Survival Evolved Extinction"
   group: "CODEX"
-"Call.Of.Duty.2.PAL.XBOX360.RETAiL.COVERS-DiMiTRY": # 269
+"Call.Of.Duty.2.PAL.XBOX360.RETAiL.COVERS-DiMiTRY": # 275
   type: "game"
   title: "Call Of Duty 2"
   platform: "XBOX360"
   resolution: "576p"
   other: "RETAiL COVER"
   group: "DiMiTRY"
-"Chrome.SpecForce.CD2.PROPER.iNCL.PATCHTOOL.READ.NFO.SFClone-MiRROR": # 270
+"Chrome.SpecForce.CD2.PROPER.iNCL.PATCHTOOL.READ.NFO.SFClone-MiRROR": # 276
   type: "game"
   title: "Chrome SpecForce"
   source: "SFClone"
   disc: "CD2"
   other: "PROPER Incl.Patchtool READNFO"
   group: "MiRROR"
-"Command_And_Conquer_Generals_v1.05.NoCD.Proper-Alpha_Team": # 271
+"Command_And_Conquer_Generals_v1.05.NoCD.Proper-Alpha_Team": # 277
   type: "game"
   title: "Command And Conquer Generals"
   version: "v1.05"
   other: "NoCD PROPER"
   group: "Alpha_Team"
-"Crusty.Demons.Freestyle.Moto.X.USA.DVDRiP.XBOX-GGS": # 272
+"Crusty.Demons.Freestyle.Moto.X.USA.DVDRiP.XBOX-GGS": # 278
   type: "game"
   title: "Crusty Demons Freestyle Moto X"
   platform: "XBOX"
   source: "DVDRiP"
   region: "USA"
   group: "GGS"
-"Dead_Cells_Update_v1.17.2_NSW-SUXXORS": # 273
+"Dead_Cells_Update_v1.17.2_NSW-SUXXORS": # 279
   type: "game"
   title: "Dead Cells"
   platform: "NSW"
   version: "v1.17.2"
   other: "UPDATE"
   group: "SUXXORS"
-"Diablo_III_Eternal_Collection_Update_v2.6.9.68709_NSW-VENOM": # 274
+"Diablo_III_Eternal_Collection_Update_v2.6.9.68709_NSW-VENOM": # 280
   type: "game"
   title: "Diablo III Eternal Collection"
   platform: "NSW"
   version: "v2.6.9.68709"
   other: "UPDATE"
   group: "VENOM"
-"Earth.Defense.Force.Insect.Armageddon.NTSC.XBOX360-COMPLEX": # 275
+"Earth.Defense.Force.Insect.Armageddon.NTSC.XBOX360-COMPLEX": # 281
   type: "game"
   title: "Earth Defense Force Insect Armageddon"
   platform: "XBOX360"
   resolution: "480p"
   group: "COMPLEX"
-"Gamecube.USA.NTSC.Working.For.Wii.iNTERNAL.Part.1.(.torrent": # 276
+"Gamecube.USA.NTSC.Working.For.Wii.iNTERNAL.Part.1.(.torrent": # 282
   type: "game"
   title: "Gamecube"
   platform: "Wii"
@@ -2508,12 +2539,12 @@
   region: "USA"
   ext: "torrent"
   unused: "Working For Part 1"
-"Graveyard.Keeper.Collectors.Edition-DARKSiDERS": # 277
+"Graveyard.Keeper.Collectors.Edition-DARKSiDERS": # 283
   type: "game"
   title: "Graveyard Keeper"
   edition: "Collectors.Edition"
   group: "DARKSiDERS"
-"SAMURAI_SHODOWN_MULTI_Update_v1.90_NSW-SUXXORS": # 278
+"SAMURAI_SHODOWN_MULTI_Update_v1.90_NSW-SUXXORS": # 284
   type: "game"
   title: "SAMURAI SHODOWN"
   platform: "NSW"
@@ -2521,26 +2552,26 @@
   other: "UPDATE"
   language: "MULTi"
   group: "SUXXORS"
-"Super_Mario_3D_World_plus_Bowsers_Fury_Update_v1.1.0_NSW-VENOM": # 279
+"Super_Mario_3D_World_plus_Bowsers_Fury_Update_v1.1.0_NSW-VENOM": # 285
   type: "game"
   title: "Super Mario 3D World plus Bowsers Fury"
   platform: "NSW"
   version: "v1.1.0"
   other: "UPDATE"
   group: "VENOM"
-"The.Swindle.eShop.NSW-SUXXORS": # 280
+"The.Swindle.eShop.NSW-SUXXORS": # 286
   type: "game"
   title: "The Swindle"
   platform: "NSW"
   collection: "eShop"
   group: "SUXXORS"
-"UEFA_Challenge_PAL-NTSC_Selector_PS2-KALISTO": # 281
+"UEFA_Challenge_PAL-NTSC_Selector_PS2-KALISTO": # 287
   type: "game"
   title: "UEFA Challenge"
   platform: "PS2"
   resolution: "PN.Selector"
   group: "KALISTO"
-"C.S..Lewis.-.Die.Chroniken.von.Narnia-Der.Koenig.von.Narnia.Bd.2.2013.German.Retail.EPUB.eBook-BitBook": # 282
+"C.S..Lewis.-.Die.Chroniken.von.Narnia-Der.Koenig.von.Narnia.Bd.2.2013.German.Retail.EPUB.eBook-BitBook": # 288
   type: "book"
   artist: "C.S. Lewis"
   title: "Die Chroniken von Narnia-Der Koenig von Narnia Bd 2"
@@ -2550,14 +2581,14 @@
   language: "GERMAN"
   container: "ePub"
   group: "BitBook"
-"Zelda.Majoras.Mask.Strategy.Guide.N64.(iGN.com).Retail.eBook-MAGBUSTERS": # 283
+"Zelda.Majoras.Mask.Strategy.Guide.N64.(iGN.com).Retail.eBook-MAGBUSTERS": # 289
   type: "book"
   title: "Zelda Majoras Mask Strategy Guide N64"
   platform: "N64"
   collection: "iGN.com"
   other: "Strategy.Guide RETAiL"
   group: "MAGBUSTERS"
-"Wolf_Schneider-Geo_Grosse_Reportagen-DE-AUDIOBOOK-3CD-FLAC-2007-oNePiEcE": # 284
+"Wolf_Schneider-Geo_Grosse_Reportagen-DE-AUDIOBOOK-3CD-FLAC-2007-oNePiEcE": # 290
   type: "audiobook"
   artist: "Wolf Schneider"
   title: "Geo Grosse Reportagen"
@@ -2567,18 +2598,18 @@
   audio: "FLAC"
   language: "GERMAN"
   group: "oNePiEcE"
-"Harry+Potter+Audio+Books+1-7;+Read+by+Stephen+Fry+[MP3]": # 285
+"Harry+Potter+Audio+Books+1-7;+Read+by+Stephen+Fry+[MP3]": # 291
   type: "audiobook"
   title: "Harry Potter 1-7"
   subtitle: "Read by Stephen Fry"
   source: "AUDiOBOOK"
   audio: "MP3"
-"HarryPotter Audio Books 1-6 [UK version] [Stephen Fry]": # 286
+"HarryPotter Audio Books 1-6 [UK version] [Stephen Fry]": # 292
   type: "audiobook"
   title: "HarryPotter 1-6 UK version Stephen Fry"
   source: "AUDiOBOOK"
   region: "UK"
-"Zack_Zombie_-_Ombytta_Roller-AUDiOBOOK-WEB-SE-2021-OLDSWE_iNT": # 287
+"Zack_Zombie_-_Ombytta_Roller-AUDiOBOOK-WEB-SE-2021-OLDSWE_iNT": # 293
   type: "audiobook"
   artist: "Zack Zombie"
   title: "Ombytta Roller"
@@ -2587,17 +2618,17 @@
   other: "INTERNAL"
   language: "SWEDiSH"
   group: "OLDSWE"
-"PLURALSIGHT.3DS.MAX.RIGGING.FUNDAMENTALS-JGTiSO": # 288
+"PLURALSIGHT.3DS.MAX.RIGGING.FUNDAMENTALS-JGTiSO": # 294
   type: "education"
   title: "3DS MAX RIGGING FUNDAMENTALS"
   collection: "PLURALSiGHT"
   group: "JGTiSO"
-"Pluralsight.com.3ds.Max.Shading.and.Texturing.Fundamentals-iNKiSO": # 289
+"Pluralsight.com.3ds.Max.Shading.and.Texturing.Fundamentals-iNKiSO": # 295
   type: "education"
   title: "3ds Max Shading and Texturing Fundamentals"
   collection: "PLURALSiGHT"
   group: "iNKiSO"
-"[REQ]Wiley.Canon.EOS.90D.For.Dummies.2020.RETAiL.ePub.eBook-LiBRiCiDE.torrent": # 290
+"[REQ]Wiley.Canon.EOS.90D.For.Dummies.2020.RETAiL.ePub.eBook-LiBRiCiDE.torrent": # 296
   type: "education"
   title: "Canon EOS 90D For Dummies"
   collection: "Wiley"
@@ -2607,32 +2638,32 @@
   group: "LiBRiCiDE"
   req: 1
   ext: "torrent"
-"VTC.Oracle.10g-CFE": # 291
+"VTC.Oracle.10g-CFE": # 297
   type: "education"
   title: "Oracle 10g"
   collection: "VTC"
   group: "CFE"
-"Lynda.com.Setting.Up.MySQL.5.for.PHP.in.Windows.sub100-ViH": # 292
+"Lynda.com.Setting.Up.MySQL.5.for.PHP.in.Windows.sub100-ViH": # 298
   type: "education"
   title: "Setting Up MySQL 5 for PHP in Windows"
   collection: "Lynda"
   other: "SUB100"
   group: "ViH"
-"Rick and Morty 020 (2016) (digital) (d'argh-Empire).cbr": # 293
+"Rick and Morty 020 (2016) (digital) (d'argh-Empire).cbr": # 299
   type: "comic"
   title: "Rick and Morty 020"
   year: 2016
   group: "Empire"
   ext: "cbr"
   unused: "digital d'argh"
-"Rick and Morty Presents - Krombopulos Michael (2018) (digital) (d'argh-Empire).cbr": # 294
+"Rick and Morty Presents - Krombopulos Michael (2018) (digital) (d'argh-Empire).cbr": # 300
   type: "comic"
   title: "Rick and Morty Presents - Krombopulos Michael"
   year: 2018
   group: "Empire"
   ext: "cbr"
   unused: "digital d'argh"
-"Wolverine.And.The.X.Men.Vol.1.No.26.May.2013.SCAN.Comic.eBook-iNTENSiTY (REQ)": # 295
+"Wolverine.And.The.X.Men.Vol.1.No.26.May.2013.SCAN.Comic.eBook-iNTENSiTY (REQ)": # 301
   type: "comic"
   title: "Wolverine And The X Men"
   source: "SCAN"
@@ -2643,14 +2674,14 @@
   episode: 26
   group: "iNTENSiTY"
   req: 1
-"X-Men.vol1.no22(CBR)[thesite]": # 296
+"X-Men.vol1.no22(CBR)[thesite]": # 302
   type: "comic"
   title: "X-Men"
   series: 1
   episode: 22
   container: "CBR"
   site: "thesite"
-"L.Elephant.N26.2019.FRENCH.RETAiL.MAGAZiNE.eBook-PRiNTER": # 297
+"L.Elephant.N26.2019.FRENCH.RETAiL.MAGAZiNE.eBook-PRiNTER": # 303
   type: "magazine"
   title: "L Elephant N26"
   source: "MAGAZiNE"
@@ -2659,7 +2690,7 @@
   other: "RETAiL"
   language: "FRENCH"
   group: "PRiNTER"
-"Mens.Health.September.2017.PORTUGUESE.HYBRiD.MAGAZiNE.eBook-PAPERCLiPS": # 298
+"Mens.Health.September.2017.PORTUGUESE.HYBRiD.MAGAZiNE.eBook-PAPERCLiPS": # 304
   type: "magazine"
   title: "Mens Health"
   source: "MAGAZiNE"
