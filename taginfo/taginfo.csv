@@ -399,7 +399,7 @@ other,DIRFIX,Fix (directory),dir[\-\._ ]?[df]ix?,,,
 other,Discography,,,,music,1
 other,DLC,,(?:(?:plus|including|incl|inc)[\-\._ ]?)?dlc(?:[\-\._ ]unlocker)?,,game,1
 other,EAC,Exact Audio Copy,(?-i:EAC),,music,1
-other,EXTRAS,Extras,(?:(?:plus|including|incl|inc)[\-\._ ]?)?extras,,,
+other,EXTRAS,Extras,(?:(?:plus|including|incl|inc)[\-\._ ]?)?extras(?:[\-\._ ]?only)?,,,
 other,FiNAL,Final,(?-i:F[iI]N[aA]L),,,
 other,FiX,Fix,(?-i:F[iI]X),,,
 other,FS,Fullscreen,(?-i:FS),,,
@@ -446,6 +446,7 @@ other,REMiX,Remix,re[\-\._ ]?mix(?:e[sd])?,,music,1
 other,REMUX,Remux,,,,
 other,REPACK,Repack,repack(?:ed)?,,,
 other,RERELEASE,Re-release,re[\-\._ ]?release,,music,1
+other,REREPACK,Re-repack,rerepack|repack2,,,
 other,RERiP,Re-rip,re[\-\._ ]?rip,,,
 other,RETAiL,Retail,,,,
 other,RiP,Rip,(?-i:RiP),,,
