@@ -93,6 +93,7 @@ collection,B-Global,Bilibili Global,b[\-\._ ]?global,,,
 collection,BBC,British Broadcasting Corporation,,,,
 collection,BCORE,Bravia Core,,,movie,1
 collection,BOOM,Boomerang,,,,
+collection,BRAVO,Bravo,(?-i:BRAVO?),,,
 collection,Career.Academy,Career Academy,career[\-\._ ]?academy,,education,1
 collection,CBC,Canadian Broadcasting Corporation,,,,
 collection,CBS,CBS Corporation,,,,
