@@ -221,7 +221,17 @@
   source: "DVD"
   resolution: "720p"
   year: 1990
-"Annabelle.2014.1080p.PROPER.HC.WEBRip.x264.AAC.2.0-RARBG": # 37
+"Annabelle.2014.HC.HDRip.XViD.AC3-juggs[ETRG]": # 37
+  type: "movie"
+  title: "Annabelle"
+  source: "HDRiP"
+  year: 2014
+  codec: "XViD"
+  audio: "DD"
+  language: "HC"
+  group: "juggs"
+  site: "ETRG"
+"Annabelle.2014.1080p.PROPER.HC.WEBRip.x264.AAC.2.0-RARBG": # 38
   type: "movie"
   title: "Annabelle"
   source: "WEBRiP"
@@ -233,16 +243,6 @@
   other: "PROPER"
   language: "HC"
   group: "RARBG"
-"Annabelle.2014.HC.HDRip.XViD.AC3-juggs[ETRG]": # 38
-  type: "movie"
-  title: "Annabelle"
-  source: "HDRiP"
-  year: 2014
-  codec: "XViD"
-  audio: "DD"
-  language: "HC"
-  group: "juggs"
-  site: "ETRG"
 "Ant-Man.2015.3D.1080p.BRRip.Half-SBS.x264.AAC-m2g": # 39
   type: "movie"
   title: "Ant-Man"
@@ -678,7 +678,24 @@
   year: 2014
   codec: "XViD"
   group: "MAX"
-"Hercules.2014.EXTENDED.1080p.WEB-DL.DD5.1.H264-RARBG": # 84
+"Hercules.2014.Extended.Cut.HDRip.XViD-juggs[ETRG]": # 84
+  type: "movie"
+  title: "Hercules"
+  source: "HDRiP"
+  year: 2014
+  codec: "XViD"
+  cut: "Extended.Cut"
+  group: "juggs"
+  site: "ETRG"
+"Hercules (2014) 1080p BrRip H264 - YIFY": # 85
+  type: "movie"
+  title: "Hercules"
+  source: "BDRiP"
+  resolution: "1080p"
+  year: 2014
+  codec: "H.264"
+  group: "YIFY"
+"Hercules.2014.EXTENDED.1080p.WEB-DL.DD5.1.H264-RARBG": # 86
   type: "movie"
   title: "Hercules"
   subtitle: "EXTENDED"
@@ -690,23 +707,6 @@
   channels: "5.1"
   cut: "Extended.Cut"
   group: "RARBG"
-"Hercules (2014) 1080p BrRip H264 - YIFY": # 85
-  type: "movie"
-  title: "Hercules"
-  source: "BDRiP"
-  resolution: "1080p"
-  year: 2014
-  codec: "H.264"
-  group: "YIFY"
-"Hercules.2014.Extended.Cut.HDRip.XViD-juggs[ETRG]": # 86
-  type: "movie"
-  title: "Hercules"
-  source: "HDRiP"
-  year: 2014
-  codec: "XViD"
-  cut: "Extended.Cut"
-  group: "juggs"
-  site: "ETRG"
 "Ice.Age.Collision.Course.2016.READNFO.720p.HDRIP.BD5.X264.AC3.TiTAN": # 87
   type: "movie"
   title: "Ice Age Collision Course"
@@ -1041,7 +1041,15 @@
   title: "Teenage Mutant Ninja Turtles"
   source: "HDRiP"
   year: 2014
-"Teenage.Mutant.Ninja.Turtles.2014.720p.HDRip.x264.AC3.5.1-RARBG": # 122
+"Teenage.Mutant.Ninja.Turtles.2014.HDRip.XviD.MP3-RARBG": # 122
+  type: "movie"
+  title: "Teenage Mutant Ninja Turtles"
+  source: "HDRiP"
+  year: 2014
+  codec: "XViD"
+  audio: "MP3"
+  group: "RARBG"
+"Teenage.Mutant.Ninja.Turtles.2014.720p.HDRip.x264.AC3.5.1-RARBG": # 123
   type: "movie"
   title: "Teenage Mutant Ninja Turtles"
   source: "HDRiP"
@@ -1050,14 +1058,6 @@
   codec: "x264"
   audio: "DD"
   channels: "5.1"
-  group: "RARBG"
-"Teenage.Mutant.Ninja.Turtles.2014.HDRip.XviD.MP3-RARBG": # 123
-  type: "movie"
-  title: "Teenage Mutant Ninja Turtles"
-  source: "HDRiP"
-  year: 2014
-  codec: "XViD"
-  audio: "MP3"
   group: "RARBG"
 "The.Boss.2016.UNRATED.720p.BRRip.x264.AAC-ETRG": # 124
   type: "movie"
@@ -2213,14 +2213,7 @@
   disc: "2DiSCS"
   size: "MDVDR"
   group: "DHI"
-"Alcest-BBC_Sessions-Proper-2012-GRM": # 237
-  type: "music"
-  artist: "Alcest"
-  title: "BBC Sessions"
-  year: 2012
-  other: "PROPER"
-  group: "GRM"
-"DJ.Krush.History.of.DJ.Krush.2007.BOXSET.3DISCS.COMPLETE.NTSC.MDVDR-CMS": # 238
+"DJ.Krush.History.of.DJ.Krush.2007.BOXSET.3DISCS.COMPLETE.NTSC.MDVDR-CMS": # 237
   type: "music"
   title: "DJ Krush History of DJ Krush"
   resolution: "480p"
@@ -2229,6 +2222,11 @@
   other: "BOXSET COMPLETE"
   size: "MDVDR"
   group: "CMS"
+"The Title.(2011).MsT": # 238
+  type: "music"
+  title: "The Title"
+  year: 2011
+  group: "MsT"
 "Lil_Yachty-Split__Whole_Time-DDC-1080p-x264-2020-SRPx": # 239
   type: "music"
   artist: "Lil Yachty"
@@ -2260,7 +2258,14 @@
   audio: "320Kbps"
   id: "DRIZ9802-28"
   group: "PUTA"
-"Alesso_Feat_Tove_Lo-Heroes_(We_Could_Be)-DDC-720p-x264-2014-ZViD": # 243
+"Alcest-BBC_Sessions-Proper-2012-GRM": # 243
+  type: "music"
+  artist: "Alcest"
+  title: "BBC Sessions"
+  year: 2012
+  other: "PROPER"
+  group: "GRM"
+"Alesso_Feat_Tove_Lo-Heroes_(We_Could_Be)-DDC-720p-x264-2014-ZViD": # 244
   type: "music"
   artist: "Alesso Feat Tove Lo"
   title: "Heroes"
@@ -2270,7 +2275,7 @@
   year: 2014
   codec: "x264"
   group: "ZViD"
-"B_recordings--instant-(supercheap-03)-2VLS1998-kW": # 244
+"B_recordings--instant-(supercheap-03)-2VLS1998-kW": # 245
   type: "music"
   artist: "B recordings"
   title: "instant"
@@ -2279,7 +2284,7 @@
   year: 1998
   disc: "2x"
   group: "kW"
-"Bad_Religion-Stranger_Than_Fiction_Deluxe_Edition_Remastered_-BONUS_TRACKS-WEB-2018-ENTiTLED": # 245
+"Bad_Religion-Stranger_Than_Fiction_Deluxe_Edition_Remastered_-BONUS_TRACKS-WEB-2018-ENTiTLED": # 246
   type: "music"
   artist: "Bad Religion"
   title: "Stranger Than Fiction"
@@ -2288,7 +2293,7 @@
   other: "REMASTERED BONUS.TRACKS"
   edition: "Deluxe.Edition"
   group: "ENTiTLED"
-"Blak_Jak_Feat_T-Pain-Ball_Out-Promo-CDS-2006-IMT": # 246
+"Blak_Jak_Feat_T-Pain-Ball_Out-Promo-CDS-2006-IMT": # 247
   type: "music"
   artist: "Blak Jak Feat T-Pain"
   title: "Ball Out"
@@ -2296,7 +2301,15 @@
   year: 2006
   other: "PROMO"
   group: "IMT"
-"Copamore-Across_the_Line_(feat_Mikey_Shyne)-WEB-2017-JUSTiFY": # 247
+"Caracola-Vamos_Vamos_(Sommarkrysset_08-02-08)-x264-2008-VFi": # 248
+  type: "music"
+  artist: "Caracola"
+  title: "Vamos Vamos"
+  subtitle: "Sommarkrysset 08-02-08"
+  year: 2008
+  codec: "x264"
+  group: "VFi"
+"Copamore-Across_the_Line_(feat_Mikey_Shyne)-WEB-2017-JUSTiFY": # 249
   type: "music"
   artist: "Copamore"
   title: "Across the Line"
@@ -2304,7 +2317,7 @@
   source: "WEB"
   year: 2017
   group: "JUSTiFY"
-"Cosy_Bang_Bang-Live_Au_Festival_Des_Eurockeennes_(2015-07-03)-FR-x264-2015-iUF": # 248
+"Cosy_Bang_Bang-Live_Au_Festival_Des_Eurockeennes_(2015-07-03)-FR-x264-2015-iUF": # 250
   type: "music"
   artist: "Cosy Bang Bang"
   title: "Live Au Festival Des Eurockeennes"
@@ -2315,7 +2328,7 @@
   codec: "x264"
   language: "FRENCH"
   group: "iUF"
-"Counting+Crows+-+2003+-+Films+About+Ghosts+(The+Best+of...)+[EAC+FLAC]+(miok)+[WWRG]": # 249
+"Counting+Crows+-+2003+-+Films+About+Ghosts+(The+Best+of...)+[EAC+FLAC]+(miok)+[WWRG]": # 251
   type: "music"
   artist: "Counting Crows"
   title: "Films About Ghosts"
@@ -2325,7 +2338,7 @@
   other: "EAC"
   group: "miok"
   site: "WWRG"
-"DJ_Exodus_-_Double_Down_Radio_083__Incl_Masta_Monk_and_DJ_Montone_Guestmix-SAT-01-07-2022-TALiON": # 250
+"DJ_Exodus_-_Double_Down_Radio_083__Incl_Masta_Monk_and_DJ_Montone_Guestmix-SAT-01-07-2022-TALiON": # 252
   type: "music"
   artist: "DJ Exodus"
   title: "Double Down Radio 083"
@@ -2335,7 +2348,7 @@
   month: 1
   day: 7
   group: "TALiON"
-"(DJ_Isaac)-Thriller_DJ_Isaac_Hardstyle_Remix_(Telejunkie_Videomix_SVCD)__iPZViD-MV": # 251
+"(DJ_Isaac)-Thriller_DJ_Isaac_Hardstyle_Remix_(Telejunkie_Videomix_SVCD)__iPZViD-MV": # 253
   type: "music"
   artist: "DJ Isaac"
   title: "Thriller DJ Isaac Hardstyle Remix"
@@ -2343,7 +2356,7 @@
   source: "SVCD"
   group: "MV"
   unused: "iPZViD"
-"DJ_Luke_Nasty-OTW_(feat_Yung_Booke_Money_Man_Ace_Hood_Boosie_BadAzz_and_T-Pain)_Remix-SINGLE-WEB-2016-ENRAGED": # 252
+"DJ_Luke_Nasty-OTW_(feat_Yung_Booke_Money_Man_Ace_Hood_Boosie_BadAzz_and_T-Pain)_Remix-SINGLE-WEB-2016-ENRAGED": # 254
   type: "music"
   artist: "DJ Luke Nasty"
   title: "OTW"
@@ -2352,7 +2365,7 @@
   year: 2016
   other: "REMiX"
   group: "ENRAGED"
-"E.M.D.-Baby_Goodbye_(at_Melodifestivalen_Final_2009)-x264-2009-MV": # 253
+"E.M.D.-Baby_Goodbye_(at_Melodifestivalen_Final_2009)-x264-2009-MV": # 255
   type: "music"
   artist: "E.M.D."
   title: "Baby Goodbye"
@@ -2360,7 +2373,7 @@
   year: 2009
   codec: "x264"
   group: "MV"
-"Eminem-cleaning_out_my_closet_(live_on_106_and_park)-(tHaCuBe-svcd-2002)-kvz": # 254
+"Eminem-cleaning_out_my_closet_(live_on_106_and_park)-(tHaCuBe-svcd-2002)-kvz": # 256
   type: "music"
   artist: "Eminem"
   title: "cleaning out my closet"
@@ -2369,7 +2382,7 @@
   year: 2002
   group: "kvz"
   unused: "tHaCuBe"
-"Freddie_McGregor-Roots_Man_Skanking-(CTLP_889)-REISSUE-LP-FLAC-201X-YARD": # 255
+"Freddie_McGregor-Roots_Man_Skanking-(CTLP_889)-REISSUE-LP-FLAC-201X-YARD": # 257
   type: "music"
   artist: "Freddie McGregor"
   title: "Roots Man Skanking"
@@ -2378,21 +2391,21 @@
   other: "REISSUE 201X"
   id: "CTLP 889"
   group: "YARD"
-"Giveon+-+When+It&#039;s+All+Said+And+Done...+Take+Time+(2021)+Mp3+320kbps+[PMEDIA]+⭐️": # 256
+"Giveon+-+When+It&#039;s+All+Said+And+Done...+Take+Time+(2021)+Mp3+320kbps+[PMEDIA]+⭐️": # 258
   type: "music"
   artist: "Giveon"
   title: "When It's All Said And Done... Take Time"
   year: 2021
   audio: "MP3 320Kbps"
   site: "PMEDIA"
-"Hawk-H.A.W.K-2002-SUT_INT": # 257
+"Hawk-H.A.W.K-2002-SUT_INT": # 259
   type: "music"
   artist: "Hawk"
   title: "H.A.W.K."
   year: 2002
   other: "INTERNAL"
   group: "SUT"
-"Howard_Stern_Show_-_Metallica-SiriusXM-SAT-08-12-2020-POWDER": # 258
+"Howard_Stern_Show_-_Metallica-SiriusXM-SAT-08-12-2020-POWDER": # 260
   type: "music"
   artist: "Howard Stern Show"
   title: "Metallica"
@@ -2402,7 +2415,7 @@
   month: 8
   day: 12
   group: "POWDER"
-"Keane-Bedshaped-CDS3-2004-TWCMP3": # 259
+"Keane-Bedshaped-CDS3-2004-TWCMP3": # 261
   type: "music"
   artist: "Keane"
   title: "Bedshaped"
@@ -2410,20 +2423,20 @@
   year: 2004
   disc: "3x"
   group: "TWCMP3"
-"Michael Jackson - Discography (1967-2009) [FLAC]": # 260
+"Michael Jackson - Discography (1967-2009) [FLAC]": # 262
   type: "music"
   artist: "Michael Jackson"
   title: "Discography"
   subtitle: "1967"
   year: 2009
   audio: "FLAC"
-"Oasis-(Whats_the_Story)_Morning_Glory-1995-FADA": # 261
+"Oasis-(Whats_the_Story)_Morning_Glory-1995-FADA": # 263
   type: "music"
   artist: "Oasis"
   title: "(Whats the Story) Morning Glory"
   year: 1995
   group: "FADA"
-"Placebo+-+Black+Market+Music+(2000+-+Alternative+Rock)+[Flac+24-192+LP]": # 262
+"Placebo+-+Black+Market+Music+(2000+-+Alternative+Rock)+[Flac+24-192+LP]": # 264
   type: "music"
   artist: "Placebo"
   title: "Black Market Music"
@@ -2431,7 +2444,7 @@
   year: 2000
   audio: "FLAC"
   unused: "Alternative Rock 24 192"
-"Remady_Pandr-No_Superstar_(Remixes)-WEB2009-iFA_INT": # 263
+"Remady_Pandr-No_Superstar_(Remixes)-WEB2009-iFA_INT": # 265
   type: "music"
   artist: "Remady Pandr"
   title: "No Superstar"
@@ -2439,7 +2452,7 @@
   year: 2009
   other: "REMiX INTERNAL"
   group: "iFA"
-"Stranger_Cole--Storybook_Revisited-(BSRCD907)-WEB-2019-BABAS": # 264
+"Stranger_Cole--Storybook_Revisited-(BSRCD907)-WEB-2019-BABAS": # 266
   type: "music"
   artist: "Stranger Cole"
   title: "Storybook Revisited"
@@ -2447,7 +2460,7 @@
   year: 2019
   id: "BSRCD907"
   group: "BABAS"
-"T_O_N_-Jungle_Vibe-(8719729715073)-SINGLE-WEB-2020-KLIN": # 265
+"T_O_N_-Jungle_Vibe-(8719729715073)-SINGLE-WEB-2020-KLIN": # 267
   type: "music"
   artist: "T.O.N."
   title: "Jungle Vibe"
@@ -2455,7 +2468,7 @@
   year: 2020
   id: "8719729715073"
   group: "KLIN"
-"T-Pain-Rappa_Ternt_Sanga-CD-FLAC-2005-PERFECT": # 266
+"T-Pain-Rappa_Ternt_Sanga-CD-FLAC-2005-PERFECT": # 268
   type: "music"
   artist: "T-Pain"
   title: "Rappa Ternt Sanga"
@@ -2463,7 +2476,7 @@
   year: 2005
   audio: "FLAC"
   group: "PERFECT"
-"T-Pain - The Lost Remixes (2020) Mp3 320kbps [PMEDIA] ⭐️": # 267
+"T-Pain - The Lost Remixes (2020) Mp3 320kbps [PMEDIA] ⭐️": # 269
   type: "music"
   artist: "T-Pain"
   title: "The Lost Remixes"
@@ -2471,7 +2484,7 @@
   audio: "MP3 320Kbps"
   other: "REMiX"
   site: "PMEDIA"
-"the cc - a (the remix) 1999.mp3": # 268
+"the cc - a (the remix) 1999.mp3": # 270
   type: "music"
   artist: "the cc"
   title: "a"
@@ -2479,7 +2492,7 @@
   year: 1999
   other: "REMiX"
   ext: "mp3"
-"The.French.Foreign.Legion-Thoughts(produced by beatz)(CDZ 1243-ABC).2019-WEB": # 269
+"The.French.Foreign.Legion-Thoughts(produced by beatz)(CDZ 1243-ABC).2019-WEB": # 271
   type: "music"
   artist: "The French Foreign Legion"
   title: "Thoughts"
@@ -2487,7 +2500,7 @@
   source: "WEB"
   year: 2019
   id: "CDZ 1243-ABC"
-"The Lonely Island - Turtleneck And Chain (Deluxe Version) 2011 Hip Hop 320kbps CBR MP3 [VX] [P2PDL]": # 270
+"The Lonely Island - Turtleneck And Chain (Deluxe Version) 2011 Hip Hop 320kbps CBR MP3 [VX] [P2PDL]": # 272
   type: "music"
   artist: "The Lonely Island"
   title: "Turtleneck And Chain"
@@ -2497,7 +2510,7 @@
   group: "VX"
   site: "P2PDL"
   unused: "Hip Hop"
-"The_Smashing_Pumpkins-(Rotten_Apples)_Greatest_Hits-CD-FLAC-2001-FiXIE": # 271
+"The_Smashing_Pumpkins-(Rotten_Apples)_Greatest_Hits-CD-FLAC-2001-FiXIE": # 273
   type: "music"
   artist: "The Smashing Pumpkins"
   title: "(Rotten Apples) Greatest Hits"
@@ -2505,7 +2518,7 @@
   year: 2001
   audio: "FLAC"
   group: "FiXIE"
-"The_Velvet_Underground-The_Complete_Matrix_Tapes-Reissue_Limited_Edition_Boxset-8LP-2019-NOiR": # 272
+"The_Velvet_Underground-The_Complete_Matrix_Tapes-Reissue_Limited_Edition_Boxset-8LP-2019-NOiR": # 274
   type: "music"
   artist: "The Velvet Underground"
   title: "The Complete Matrix Tapes"
@@ -2515,14 +2528,14 @@
   other: "REISSUE BOXSET"
   edition: "Limited.Edition"
   group: "NOiR"
-"Urban_Psycho_Resistance-To_Hate_and_Forget-10_inch-EP-20xx-DPS": # 273
+"Urban_Psycho_Resistance-To_Hate_and_Forget-10_inch-EP-20xx-DPS": # 275
   type: "music"
   artist: "Urban Psycho Resistance"
   title: "To Hate and Forget"
   source: "10INCH.ViNYL"
   other: "20XX"
   group: "DPS"
-"VA_-_100_Percent_Hardstyle__Selected_by_Zenith_DJ-CD2003-SND": # 274
+"VA_-_100_Percent_Hardstyle__Selected_by_Zenith_DJ-CD2003-SND": # 276
   type: "music"
   artist: "VA"
   title: "100 Percent Hardstyle"
@@ -2530,7 +2543,7 @@
   source: "CD"
   year: 2003
   group: "SND"
-"VA_-_Hellz_Army_EP_(APOC_001)-2xVinyl-2000-RSQ": # 275
+"VA_-_Hellz_Army_EP_(APOC_001)-2xVinyl-2000-RSQ": # 277
   type: "music"
   artist: "VA"
   title: "Hellz Army"
@@ -2539,14 +2552,14 @@
   disc: "2x"
   id: "APOC 001"
   group: "RSQ"
-"Yabby_You-Fire_In_Kingston-VL-7inch-197x-RAC": # 276
+"Yabby_You-Fire_In_Kingston-VL-7inch-197x-RAC": # 278
   type: "music"
   artist: "Yabby You"
   title: "Fire In Kingston"
   source: "ViNYL"
   other: "197X"
   group: "RAC"
-"Yelawolf-lets_roll_(jimmy_kimmel_live_2011-12-01)-720p-x264-2011-uva": # 277
+"Yelawolf-lets_roll_(jimmy_kimmel_live_2011-12-01)-720p-x264-2011-uva": # 279
   type: "music"
   artist: "Yelawolf"
   title: "lets roll"
@@ -2557,19 +2570,6 @@
   day: 1
   codec: "x264"
   group: "uva"
-"The Title.(2011).MsT": # 278
-  type: "music"
-  title: "The Title"
-  year: 2011
-  group: "MsT"
-"Caracola-Vamos_Vamos_(Sommarkrysset_08-02-08)-x264-2008-VFi": # 279
-  type: "music"
-  artist: "Caracola"
-  title: "Vamos Vamos"
-  subtitle: "Sommarkrysset 08-02-08"
-  year: 2008
-  codec: "x264"
-  group: "VFi"
 "Adobe.XD.CC.2019.v21.0.12.X64.Multilingual-WEBiSO": # 280
   type: "app"
   title: "Adobe XD CC"
@@ -2695,7 +2695,14 @@
   platform: "PS2"
   resolution: "PN.Selector"
   group: "KALISTO"
-"C.S..Lewis.-.Die.Chroniken.von.Narnia-Der.Koenig.von.Narnia.Bd.2.2013.German.Retail.EPUB.eBook-BitBook": # 299
+"Zelda.Majoras.Mask.Strategy.Guide.N64.(iGN.com).Retail.eBook-MAGBUSTERS": # 299
+  type: "book"
+  title: "Zelda Majoras Mask Strategy Guide N64"
+  platform: "N64"
+  collection: "iGN.com"
+  other: "Strategy.Guide RETAiL"
+  group: "MAGBUSTERS"
+"C.S..Lewis.-.Die.Chroniken.von.Narnia-Der.Koenig.von.Narnia.Bd.2.2013.German.Retail.EPUB.eBook-BitBook": # 300
   type: "book"
   artist: "C.S. Lewis"
   title: "Die Chroniken von Narnia-Der Koenig von Narnia Bd 2"
@@ -2705,14 +2712,18 @@
   language: "GERMAN"
   container: "ePub"
   group: "BitBook"
-"Zelda.Majoras.Mask.Strategy.Guide.N64.(iGN.com).Retail.eBook-MAGBUSTERS": # 300
-  type: "book"
-  title: "Zelda Majoras Mask Strategy Guide N64"
-  platform: "N64"
-  collection: "iGN.com"
-  other: "Strategy.Guide RETAiL"
-  group: "MAGBUSTERS"
-"Wolf_Schneider-Geo_Grosse_Reportagen-DE-AUDIOBOOK-3CD-FLAC-2007-oNePiEcE": # 301
+"Harry+Potter+Audio+Books+1-7;+Read+by+Stephen+Fry+[MP3]": # 301
+  type: "audiobook"
+  title: "Harry Potter 1-7"
+  subtitle: "Read by Stephen Fry"
+  source: "AUDiOBOOK"
+  audio: "MP3"
+"HarryPotter Audio Books 1-6 [UK version] [Stephen Fry]": # 302
+  type: "audiobook"
+  title: "HarryPotter 1-6 UK version Stephen Fry"
+  source: "AUDiOBOOK"
+  region: "UK"
+"Wolf_Schneider-Geo_Grosse_Reportagen-DE-AUDIOBOOK-3CD-FLAC-2007-oNePiEcE": # 303
   type: "audiobook"
   artist: "Wolf Schneider"
   title: "Geo Grosse Reportagen"
@@ -2722,17 +2733,6 @@
   audio: "FLAC"
   language: "GERMAN"
   group: "oNePiEcE"
-"Harry+Potter+Audio+Books+1-7;+Read+by+Stephen+Fry+[MP3]": # 302
-  type: "audiobook"
-  title: "Harry Potter 1-7"
-  subtitle: "Read by Stephen Fry"
-  source: "AUDiOBOOK"
-  audio: "MP3"
-"HarryPotter Audio Books 1-6 [UK version] [Stephen Fry]": # 303
-  type: "audiobook"
-  title: "HarryPotter 1-6 UK version Stephen Fry"
-  source: "AUDiOBOOK"
-  region: "UK"
 "Zack_Zombie_-_Ombytta_Roller-AUDiOBOOK-WEB-SE-2021-OLDSWE_iNT": # 304
   type: "audiobook"
   artist: "Zack Zombie"

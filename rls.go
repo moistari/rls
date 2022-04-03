@@ -754,10 +754,13 @@ func compareInt(a, b int) func() int {
 // compareIntString returns a func that compares numbers in a, b.
 func compareIntString(a, b string) func() int {
 	return func() int {
-		if a == b {
-			return 0
-		}
 		switch {
+		case a == b:
+			return 0
+		case a == "" && b != "":
+			return -1
+		case b == "" && a != "":
+			return 1
 		case !strings.ContainsAny(a, "0123456789"):
 			return 0
 		case !strings.ContainsAny(b, "0123456789"):
@@ -788,8 +791,13 @@ func compareIntString(a, b string) func() int {
 func compareTitle(a, b string) func() int {
 	const cutset = "\t\n\f\r -._,()[]{}+\\/~"
 	return func() int {
-		if a == "" && b == "" {
+		switch {
+		case a == b:
 			return 0
+		case a == "" && b != "":
+			return -1
+		case b == "" && a != "":
+			return 1
 		}
 		if s, _, err := transform.String(Clean, a); err == nil {
 			a = s

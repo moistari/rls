@@ -656,6 +656,7 @@ source,HDRiP,High-Definition TV (rip),hd(?:tv)?[\-\._ ]?rip,,movie,
 source,HDTC,Telecine (HD),hd[\-\._ ]?tc,,movie,
 source,HDTS,Telesync (HD),hd[\-\._ ]?ts,,movie,
 source,HDTV,High-Definition TV,,,,
+source,HFR,High Frame Rate,,,movie,
 source,IVTC,Inverse Telecine,,,music,
 source,LASERDiSC,LaserDisc,,,movie,
 source,LP,Limited Play,(?-i:LP),,music,1
