@@ -147,7 +147,7 @@ type Tag struct {
 // NewTag creates a new tag.
 func NewTag(typ TagType, f taginfo.FindFunc, b ...[]byte) Tag {
 	if len(b) < 2 {
-		panic("must be provided at least 2 values")
+		panic("must provide at least 2 values to NewTag")
 	}
 	v := make([]string, len(b))
 	for i := 0; i < len(b); i++ {
@@ -805,9 +805,6 @@ func compareTitle(a, b string) func() int {
 		if s, _, err := transform.String(Clean, b); err == nil {
 			b = s
 		}
-		if a == "" && b == "" {
-			return 0
-		}
 		av, bv := strings.FieldsFunc(strings.ToLower(a), isBreakDelim), strings.FieldsFunc(strings.ToLower(b), isBreakDelim)
 		start, min := 0, 3
 		if len(av) > 0 && len(bv) > 0 && av[0] == bv[0] && contains([]string{"a", "an", "the"}, av[0]) {
@@ -819,6 +816,41 @@ func compareTitle(a, b string) func() int {
 			}
 		}
 		return 0
+	}
+}
+
+// compareTitleNumber compares a, b as numbers if both are numbers or roman
+// numerals (such as VI or 6).
+func compareTitleNumber(a, b string, i int) int {
+	ai, arom, aok := convNumber(a)
+	bi, brom, bok := convNumber(b)
+	abad := i == 0 && arom && aok && (ai == 1 || ai == 5 || ai == 50)
+	bbad := i == 0 && brom && bok && (bi == 1 || bi == 5 || bi == 50)
+	switch {
+	case abad && bbad:
+	case aok && bbad:
+		return -1
+	case bok && abad:
+		return +1
+	case aok && bok && ai < bi, aok && !bok && !abad:
+		return -1
+	case aok && bok && bi < ai, bok && !aok && !bbad:
+		return +1
+	}
+	return strings.Compare(a, b)
+}
+
+// compareString returns a func that compares a, b.
+func compareString(a, b string) func() int {
+	return func() int {
+		return strings.Compare(a, b)
+	}
+}
+
+// compareOriginal returns a func that compares a, b's original string.
+func compareOriginal(a, b Release) func() int {
+	return func() int {
+		return strings.Compare(fmt.Sprintf("%o", a), fmt.Sprintf("%o", b))
 	}
 }
 
@@ -849,27 +881,6 @@ func isTitleTrimDelim(r rune) bool {
 		return true
 	}
 	return false
-}
-
-// compareTitleNumber compares a, b as numbers if both are numbers or roman
-// numerals (such as VI or 6).
-func compareTitleNumber(a, b string, i int) int {
-	ai, arom, aok := convNumber(a)
-	bi, brom, bok := convNumber(b)
-	abad := i == 0 && arom && aok && (ai == 1 || ai == 5 || ai == 50)
-	bbad := i == 0 && brom && bok && (bi == 1 || bi == 5 || bi == 50)
-	switch {
-	case abad && bbad:
-	case aok && bbad:
-		return -1
-	case bok && abad:
-		return +1
-	case aok && bok && ai < bi, aok && !bok && !abad:
-		return -1
-	case aok && bok && bi < ai, bok && !aok && !bbad:
-		return +1
-	}
-	return strings.Compare(a, b)
 }
 
 // convNumber attempts to convert a int or roman numeral.
@@ -920,20 +931,6 @@ func roman(c byte) int {
 		return 1000
 	}
 	return 0
-}
-
-// compareString returns a func that compares a, b.
-func compareString(a, b string) func() int {
-	return func() int {
-		return strings.Compare(a, b)
-	}
-}
-
-// compareOriginal returns a func that compares a, b's original string.
-func compareOriginal(a, b Release) func() int {
-	return func() int {
-		return strings.Compare(fmt.Sprintf("%o", a), fmt.Sprintf("%o", b))
-	}
 }
 
 // Find finds a tag.
