@@ -967,6 +967,25 @@ var Clean = transform.Chain(
 	norm.NFC,
 )
 
+// MustClean applies the Clean transform to s.
+func MustClean(s string) string {
+	s, _, err := transform.String(Clean, s)
+	if err != nil {
+		panic(err)
+	}
+	return s
+}
+
+// MustCleanLower applies the Clean transform to s, returning the lower cased
+// cleaned form of s.
+func MustCleanLower(s string) string {
+	s, _, err := transform.String(Clean, s)
+	if err != nil {
+		panic(err)
+	}
+	return strings.ToLower(s)
+}
+
 // collapser is a transform.Transformer that converts all space chars to ' ',
 // removes '\'', and collapses adjacent spaces to a single space.
 type collapser struct{}
