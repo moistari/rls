@@ -261,7 +261,7 @@ func (b *TagBuilder) init(r *Release) {
 	b.fixBad(r, start, end)
 	b.fixNoText(r, end)
 	b.fixIsolated(r)
-	b.fixCbr(r)
+	b.fixMusic(r)
 }
 
 // pivots finds the last position for the specified tags, generating a map of
@@ -408,19 +408,32 @@ func (b *TagBuilder) fixIsolated(r *Release) {
 	}
 }
 
-// fixCbr fixes single cbr tag.
-func (b *TagBuilder) fixCbr(r *Release) {
+// fixMusic fixes music tags. Changes single cbr tag to the comic tag, and
+// converts to text bootleg tag that is not surrounded by '-' or '()'.
+func (b *TagBuilder) fixMusic(r *Release) {
 	// when only one music tag of `cbr`, change to container `cbr` (comic)
 	count, isCbr := 0, false
 	var pos int
 	for i := 0; i < r.end; i++ {
+		// count audio tags and position of cbr tag
 		if r.tags[i].Is(TagTypeAudio) {
 			if r.tags[i].Audio() == "CBR" {
 				isCbr, pos = true, i
 			}
 			count++
 		}
+		// reset bootleg tag that is not '-bootleg-' or '(bootleg)'
+		if i != 0 && r.tags[i].Is(TagTypeOther) && r.tags[i].Other() == "BOOTLEG" {
+			wrapped := (peek(r.tags, i-1, TagTypeDelim) && strings.HasSuffix(r.tags[i-1].Delim(), "-") &&
+				peek(r.tags, i+1, TagTypeDelim) && strings.HasPrefix(r.tags[i+1].Delim(), "-")) ||
+				(peek(r.tags, i-1, TagTypeDelim) && strings.HasSuffix(r.tags[i-1].Delim(), "(") &&
+					peek(r.tags, i+1, TagTypeDelim) && strings.HasPrefix(r.tags[i+1].Delim(), ")"))
+			if !wrapped {
+				r.tags[i] = r.tags[i].As(TagTypeText, nil)
+			}
+		}
 	}
+	// reset single cbr tag
 	if count == 1 && isCbr {
 		r.tags[pos] = r.tags[pos].As(TagTypeContainer, b.containerf)
 	}
@@ -810,8 +823,8 @@ func (b *TagBuilder) episodeTitles(r *Release) int {
 		return pos
 	}
 	// episode title must follow source, resolution, collection, date, series,
-	// version, disc, other, cut, edition, language or container tags.
-	// it must be before any codec, audio tag (TODO: break for ()[]{}\/~)
+	// version, disc, other, cut, edition, language or container tags. it must
+	// be before any codec, audio tag
 	for pos++; pos < len(r.tags) && r.tags[pos].Is(
 		TagTypeDelim,
 		TagTypeSource,
@@ -885,12 +898,6 @@ func (b *TagBuilder) musicTitles(r *Release) int {
 				break
 			}
 		}
-		// TODO: ...
-		/*
-			if m, j := b.spaces.FindAllStringIndex(r.Artist, -1), strings.LastIndex(r.Artist, "-"); r.Subtitle == "" && len(m) > 1 && j != -1 {
-				r.Artist, r.Title, r.Subtitle = strings.TrimRightFunc(r.Artist[:j], isTitleTrimDelim), strings.TrimLeftFunc(r.Artist[j+1:], isBreakDelim), r.Title
-			}
-		*/
 	}
 	return i
 }
