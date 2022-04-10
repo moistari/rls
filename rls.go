@@ -711,7 +711,7 @@ var CompareMap = map[Type]int{
 	Magazine:  10,
 }
 
-// Compare compares a to b, normalizing titles with Clean, comparing the
+// Compare compares a to b, normalizing titles with Normalize, comparing the
 // resulting lower cased strings.
 func Compare(a, b Release) int {
 	var cmp int
@@ -789,7 +789,7 @@ func compareIntString(a, b string) func() int {
 
 // compareTitle returns a func that does a title comparison of a, b.
 func compareTitle(a, b string) func() int {
-	const cutset = "\t\n\f\r -._,()[]{}+\\/~"
+	// const cutset = "\t\n\f\r -._,()[]{}+\\/~"
 	return func() int {
 		switch {
 		case a == b:
@@ -799,19 +799,14 @@ func compareTitle(a, b string) func() int {
 		case b == "" && a != "":
 			return 1
 		}
-		if s, _, err := transform.String(Clean, a); err == nil {
-			a = s
-		}
-		if s, _, err := transform.String(Clean, b); err == nil {
-			b = s
-		}
+		a, b := MustNormalize(a), MustNormalize(b)
 		av, bv := strings.FieldsFunc(strings.ToLower(a), isBreakDelim), strings.FieldsFunc(strings.ToLower(b), isBreakDelim)
 		start, min := 0, 3
 		if len(av) > 0 && len(bv) > 0 && av[0] == bv[0] && contains([]string{"a", "an", "the"}, av[0]) {
 			start, min = 1, 1
 		}
 		for i := start; i < start+min && i < len(av) && i < len(bv); i++ {
-			if cmp := compareTitleNumber(strings.Trim(av[i], cutset), strings.Trim(bv[i], cutset), i); cmp != 0 {
+			if cmp := compareTitleNumber(av[i], bv[i], i); cmp != 0 {
 				return cmp
 			}
 		}
@@ -963,7 +958,7 @@ func Find(tags []Tag, s string, count int, verb rune, types ...TagType) ([]Tag, 
 // See: https://go.dev/blog/normalization
 var Clean = transform.Chain(
 	norm.NFD,
-	collapser{},
+	NewCollapser(false, `'`),
 	norm.NFC,
 )
 
@@ -976,22 +971,45 @@ func MustClean(s string) string {
 	return s
 }
 
-// MustCleanLower applies the Clean transform to s, returning the lower cased
-// cleaned form of s.
-func MustCleanLower(s string) string {
-	s, _, err := transform.String(Clean, s)
+// Normalize is a text transformer chain that normalizes text to lower case
+// clean form useful for matching titles.
+var Normalize = transform.Chain(
+	norm.NFD,
+	NewCollapser(true, "`"+`':;~!@#$%^&*_=+()[]{}<>/?|\",`),
+	norm.NFC,
+)
+
+// MustNormalize applies the Normalize transform to s, returning the lower
+// cased cleaned form of s.
+func MustNormalize(s string) string {
+	s, _, err := transform.String(Normalize, s)
 	if err != nil {
 		panic(err)
 	}
-	return strings.ToLower(s)
+	return s
 }
 
-// collapser is a transform.Transformer that converts all space chars to ' ',
+// Collapser is a transform.Transformer that converts all space chars to ' ',
 // removes '\'', and collapses adjacent spaces to a single space.
-type collapser struct{}
+type Collapser struct {
+	Lower  bool
+	Remove map[rune]bool
+}
+
+// NewCollapser creates
+func NewCollapser(lower bool, remove string) Collapser {
+	m := make(map[rune]bool)
+	for _, r := range []rune(remove) {
+		m[r] = true
+	}
+	return Collapser{
+		Lower:  lower,
+		Remove: m,
+	}
+}
 
 // Transform satisfies the transform.Transformer interface.
-func (collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
+func (c Collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 	var i, l, j, n int
 	var prev, r rune
 	b, s, d := make([]byte, utf8.UTFMax), len(src), len(dst)
@@ -1004,8 +1022,11 @@ func (collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 				continue
 			}
 			r = ' '
-		case r == '\'', unicode.Is(unicode.Mn, r):
+		case c.Remove[r], unicode.Is(unicode.Mn, r):
 			continue
+		}
+		if c.Lower {
+			r = unicode.ToLower(r)
 		}
 		if j = utf8.EncodeRune(b, r); d < n+j {
 			return n, i, transform.ErrShortDst
@@ -1017,4 +1038,4 @@ func (collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 }
 
 // Reset satisfies the transform.Transformer interface.
-func (collapser) Reset() {}
+func (Collapser) Reset() {}

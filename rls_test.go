@@ -59,15 +59,22 @@ func TestParseRelease(t *testing.T) {
 	}
 }
 
-func TestClean(t *testing.T) {
-	const test = "''\t\tAmélie\r\r1998\n\nmkv\f\f''"
-	const exp = " Amelie 1998 mkv "
-	s, _, err := transform.String(Clean, test)
+func TestCollapser(t *testing.T) {
+	const test = "''\t\tAmélie\r\r1998\n\nMKV\f\f''"
+	const exp = " Amelie 1998 MKV "
+	a, _, err := transform.String(Clean, test)
 	if err != nil {
 		t.Fatalf("expected no error, got: %v", err)
 	}
-	if s != exp {
-		t.Errorf("expected %q, got: %q", exp, s)
+	if a != exp {
+		t.Errorf("expected %q, got: %q", exp, a)
+	}
+	b, _, err := transform.String(Normalize, test)
+	if err != nil {
+		t.Fatalf("expected no error, got: %v", err)
+	}
+	if exp := strings.ToLower(exp); b != exp {
+		t.Errorf("expected %q, got: %q", exp, b)
 	}
 }
 

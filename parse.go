@@ -12,7 +12,6 @@ import (
 
 	"github.com/moistari/rls/reutil"
 	"github.com/moistari/rls/taginfo"
-	"golang.org/x/text/transform"
 )
 
 // TagParser is a release tag parser.
@@ -792,7 +791,7 @@ func (b *TagBuilder) boxTitle(r *Release, start, offset int) int {
 	}
 	// check previous 4 words for 'the' and where NOT start of last text block
 	for pos := n - 1; pos > start+1 && pos > n-8 && pos > 0; pos-- {
-		if s, _, err := transform.String(Clean, r.tags[pos-1].Text()); err == nil && strings.ToLower(s) == "the" {
+		if MustNormalize(r.tags[pos-1].Text()) == "the" {
 			prefix, _ := b.title(r.tags[pos-1:n], TagTypeText)
 			// consume remaining text, cut, edition
 			suffix, offset := b.title(r.tags[n:], TagTypeText, TagTypeCut, TagTypeEdition)

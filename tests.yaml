@@ -1,8 +1,8 @@
 "": # 0
 " \t[]{}()._ \t": # 1
 "   ": # 2
-"  -  -[[ foo:bar ]]-__-{{ secret }}-.-([ABCD1234]).^.([ mountain ][[ key:value ]])  ": # 3
-  title: "^"
+"  -  -[[ foo:bar ]]-__-{{ secret }}-.-([ABCD1234]).0.([ mountain ][[ key:value ]])  ": # 3
+  title: "0"
   meta: "foo:bar key:value"
   site: "mountain"
   sum: "ABCD1234"
