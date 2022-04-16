@@ -316,12 +316,17 @@ func (b *TagBuilder) fixFirst(r *Release) {
 	for ; i < r.end && r.tags[i].Is(TagTypeWhitespace, TagTypeDelim); i++ {
 	}
 	if i != r.end && r.tags[i].Is(
-		TagTypeCut,
-		TagTypeEdition,
-		TagTypeOther,
-		TagTypeSource,
 		TagTypePlatform,
 		TagTypeArch,
+		TagTypeSource,
+		TagTypeResolution,
+		TagTypeCodec,
+		TagTypeAudio,
+		TagTypeOther,
+		TagTypeCut,
+		TagTypeEdition,
+		TagTypeLanguage,
+		TagTypeRegion,
 	) {
 		r.tags[i] = r.tags[i].As(TagTypeText, nil)
 	}
