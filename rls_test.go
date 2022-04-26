@@ -424,6 +424,7 @@ func TestExport_taginfo(t *testing.T) {
 			compareRegion(a, b),
 			comparePlatform(a, b),
 			compareCodec(a, b),
+			compareHDR(a, b),
 			compareChannels(a, b),
 			compareSuffix(a, b),
 			comparePrefix(a[1], b[1]),
@@ -495,8 +496,22 @@ func compareResolution(a, b []string) func() int {
 
 func compareCodec(a, b []string) func() int {
 	return func() int {
-		as, bs := strings.ToLower(a[1]), strings.ToLower(b[1])
-		if a[0] != "codec" || b[0] != "codec" || !strings.HasPrefix(as, "hdr") || !strings.HasPrefix(bs, "hdr") {
+		if a[0] != "codec" || b[0] != "codec" {
+			return 0
+		}
+		switch {
+		case len(a[1]) < len(b[1]):
+			return 1
+		case len(b[1]) < len(a[1]):
+			return -1
+		}
+		return 0
+	}
+}
+
+func compareHDR(a, b []string) func() int {
+	return func() int {
+		if a[0] != "hdr" || b[0] != "hdr" {
 			return 0
 		}
 		switch {
@@ -613,6 +628,7 @@ type rls struct {
 	Disc    string
 
 	Codec    string
+	Hdr      string
 	Audio    string
 	Channels string
 	Other    string
@@ -665,6 +681,7 @@ func buildRls(r Release) rls {
 		Disc:    r.Disc,
 
 		Codec:    strings.Join(r.Codec, " "),
+		Hdr:      strings.Join(r.Hdr, " "),
 		Audio:    strings.Join(r.Audio, " "),
 		Channels: r.Channels,
 		Other:    strings.Join(r.Other, " "),

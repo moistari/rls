@@ -138,6 +138,7 @@ func DefaultLexers() []Lexer {
 			`(?i)^(?P<YY>[12]\d)[\-\._ ](?P<01>\d\d?)[\-\._ ](?P<02>\d\d?)\b`,
 		),
 		NewRegexpSourceLexer(TagTypeCodec, true),
+		NewRegexpSourceLexer(TagTypeHDR, true),
 		NewAudioLexer(),
 		NewRegexpLexer(TagTypeChannels, true),
 		NewRegexpLexer(TagTypeOther, true),
