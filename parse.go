@@ -321,6 +321,7 @@ func (b *TagBuilder) fixFirst(r *Release) {
 		TagTypeSource,
 		TagTypeResolution,
 		TagTypeCodec,
+		TagTypeHDR,
 		TagTypeAudio,
 		TagTypeOther,
 		TagTypeCut,
@@ -489,6 +490,8 @@ func (b *TagBuilder) collect(r *Release) {
 			}
 		case TagTypeCodec:
 			r.Codec = append(r.Codec, r.tags[i].Codec())
+		case TagTypeHDR:
+			r.Hdr = append(r.Hdr, r.tags[i].Hdr())
 		case TagTypeAudio:
 			r.Audio = append(r.Audio, r.tags[i].Audio())
 		case TagTypeChannels:
@@ -606,7 +609,7 @@ func (b *TagBuilder) inspect(r *Release) Type {
 	}
 	// check music style tag delimiters
 	for count, i := 0, len(r.tags)-1; i > 1; i-- {
-		if r.tags[i-1].Is(TagTypeDate, TagTypeCodec, TagTypeAudio, TagTypeResolution, TagTypeSource, TagTypeLanguage) &&
+		if r.tags[i-1].Is(TagTypeDate, TagTypeCodec, TagTypeHDR, TagTypeAudio, TagTypeResolution, TagTypeSource, TagTypeLanguage) &&
 			peek(r.tags, i-2, TagTypeDelim) && strings.HasSuffix(r.tags[i-2].Delim(), "-") &&
 			peek(r.tags, i, TagTypeDelim) && strings.HasPrefix(r.tags[i].Delim(), "-") {
 			count++
@@ -665,6 +668,7 @@ func (b *TagBuilder) unset(r *Release) {
 			TagTypeResolution,
 			TagTypeCollection,
 			TagTypeCodec,
+			TagTypeHDR,
 			TagTypeAudio,
 			TagTypeChannels,
 			TagTypeOther,
@@ -691,6 +695,8 @@ func (b *TagBuilder) unset(r *Release) {
 				r.Collection, r.tags[i] = "", r.tags[i].As(TagTypeText, nil)
 			case typ == TagTypeCodec && contains(r.Codec, s):
 				r.Codec, r.tags[i] = remove(r.Codec, s), r.tags[i].As(TagTypeText, nil)
+			case typ == TagTypeHDR && contains(r.Hdr, s):
+				r.Hdr, r.tags[i] = remove(r.Hdr, s), r.tags[i].As(TagTypeText, nil)
 			case typ == TagTypeAudio && contains(r.Audio, s):
 				r.Audio, r.tags[i] = remove(r.Audio, s), r.tags[i].As(TagTypeText, nil)
 			case typ == TagTypeChannels && r.Channels == s:

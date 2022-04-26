@@ -85,7 +85,8 @@
   source: "UHD.BluRay"
   resolution: "2160p"
   year: 1968
-  codec: "DV x265"
+  codec: "x265"
+  hdr: "DV"
   audio: "DDP"
   channels: "5.1"
   group: "c0kE"
@@ -157,7 +158,8 @@
   resolution: "2160p"
   collection: "HMAX"
   year: 2021
-  codec: "DV HDR x265"
+  codec: "x265"
+  hdr: "DV HDR"
   audio: "DDP Atmos"
   channels: "5.1"
   group: "S97"
@@ -221,7 +223,8 @@
   source: "UHD.BluRay"
   resolution: "2160p"
   year: 2000
-  codec: "DV HEVC"
+  codec: "HEVC"
+  hdr: "DV"
   audio: "DTS-HD.MA"
   channels: "5.1"
   other: "HYBRiD REMUX"
@@ -297,7 +300,8 @@
   resolution: "2160p"
   collection: "IMAX"
   year: 2019
-  codec: "DV HDR HEVC"
+  codec: "HEVC"
+  hdr: "DV HDR"
   audio: "TrueHD Atmos"
   channels: "7.1"
   group: "SiC"
@@ -406,7 +410,8 @@
   source: "UHD.BluRay"
   resolution: "2160p"
   year: 2019
-  codec: "DV HEVC"
+  codec: "HEVC"
+  hdr: "DV"
   audio: "TrueHD Atmos"
   channels: "7.1"
   other: "REMUX"
@@ -542,7 +547,8 @@
   source: "BluRay"
   resolution: "1080p"
   year: 2015
-  codec: "x264 HDR10"
+  codec: "x264"
+  hdr: "HDR10"
   audio: "FLAC"
   channels: "2.0"
   site: "Dekinai"
@@ -761,7 +767,8 @@
   resolution: "2160p"
   collection: "IMAX"
   year: 2013
-  codec: "HDR10+ x265"
+  codec: "x265"
+  hdr: "HDR10+"
   audio: "DTS-HD.MA"
   channels: "7.1"
   group: "DON"
@@ -791,7 +798,8 @@
   source: "WEBRiP"
   resolution: "1080p"
   year: 2002
-  codec: "HEVC HDR10"
+  codec: "HEVC"
+  hdr: "HDR10"
   audio: "DD"
   channels: "5.1"
   other: "EXTRAS"
@@ -851,7 +859,7 @@
   title: "Naruto the Movie 3 - Guardians of the Crescent Moon Kingdom"
   source: "BluRay"
   resolution: "1080p"
-  codec: "HDR10"
+  hdr: "HDR10"
   audio: "DD DTS-HD.MA"
   region: "JPN"
   site: "Koten_Gars"
@@ -1199,7 +1207,8 @@
   source: "UHD.BluRay"
   resolution: "2160p"
   year: 2013
-  codec: "DV HEVC"
+  codec: "HEVC"
+  hdr: "DV"
   audio: "DTS-HD.MA"
   channels: "5.1"
   other: "REMUX"
@@ -1259,7 +1268,8 @@
   resolution: "2160p"
   collection: "Criterion.Collection"
   year: 2019
-  codec: "DV HDR10+ HEVC x265"
+  codec: "HEVC x265"
+  hdr: "DV HDR10+"
   audio: "TrueHD Atmos"
   channels: "7.1"
   group: "FZHD"
@@ -1280,7 +1290,8 @@
   source: "UHD.BluRay"
   resolution: "2160p"
   year: 2021
-  codec: "HEVC DV"
+  codec: "HEVC"
+  hdr: "DV"
   audio: "TrueHD Atmos"
   channels: "7.1"
   other: "REMUX"
@@ -1429,7 +1440,8 @@
   collection: "NF"
   year: 2021
   series: 1
-  codec: "HDR x265"
+  codec: "x265"
+  hdr: "HDR"
   audio: "DDPA"
   channels: "5.1"
   group: "182K"
@@ -1628,7 +1640,8 @@
   resolution: "1080p"
   year: 2009
   series: 1
-  codec: "x265 HDR10"
+  codec: "x265"
+  hdr: "HDR10"
   audio: "DD"
   channels: "2.0"
   other: "AI.Upscale"
@@ -1788,7 +1801,8 @@
   year: 2022
   series: 1
   episode: 8
-  codec: "x265 HDR10"
+  codec: "x265"
+  hdr: "HDR10"
   audio: "DD"
   channels: "5.1"
   group: "JBENT"
@@ -1927,7 +1941,8 @@
   source: "BluRay"
   resolution: "1080p"
   series: 1
-  codec: "x265 HEVC HDR10"
+  codec: "x265 HEVC"
+  hdr: "HDR10"
   audio: "AAC"
   channels: "5.1"
   other: "COMPLETE"
@@ -2059,7 +2074,8 @@
   year: 1989
   series: 33
   episode: 12
-  codec: "x265 HDR10"
+  codec: "x265"
+  hdr: "HDR10"
   audio: "DDP"
   channels: "5.1"
   group: "Goki"

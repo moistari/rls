@@ -43,6 +43,7 @@ type Release struct {
 	Disc    string
 
 	Codec    []string
+	Hdr      []string
 	Audio    []string
 	Channels string
 	Other    []string
@@ -282,6 +283,8 @@ func (tag Tag) Normalize() string {
 		return tag.Disc()
 	case TagTypeCodec:
 		return tag.Codec()
+	case TagTypeHDR:
+		return tag.Hdr()
 	case TagTypeAudio:
 		return tag.Audio()
 	case TagTypeChannels:
@@ -452,6 +455,11 @@ func (tag Tag) Codec() string {
 	return tag.normalize(tag.v[1], tag.v[2:]...)
 }
 
+// Hdr normalizes a hdr value.
+func (tag Tag) Hdr() string {
+	return tag.normalize(tag.v[1], tag.v[2:]...)
+}
+
 // Audio normalizes an audio value.
 func (tag Tag) Audio() string {
 	return tag.normalize(tag.v[1], tag.v[2:]...)
@@ -552,6 +560,7 @@ const (
 	TagTypeVersion
 	TagTypeDisc
 	TagTypeCodec
+	TagTypeHDR
 	TagTypeAudio
 	TagTypeChannels
 	TagTypeOther
