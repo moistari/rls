@@ -369,9 +369,7 @@ func (b *TagBuilder) fixSpecial(r *Release, i int) {
 	for ; i > 0; i-- {
 		typ, c, o, s := r.tags[i-1].TagType(), r.tags[i-1].Collection(), r.tags[i-1].Other(), strings.ToLower(r.tags[i-1].Text())
 		switch {
-		case typ == TagTypeCollection && c == "AMZN" && s == "amazon",
-			typ == TagTypeCollection && c == "CC",
-			typ == TagTypeCollection && c == "RED",
+		case typ == TagTypeCollection && (c == "CC" || c == "RED" || (c == "AMZN" && s == "amazon")),
 			typ == TagTypeSource && r.tags[i-1].Text() == "Web",
 			typ == TagTypeCut && r.tags[i-1].Text() == "Uncut",
 			typ == TagTypeOther && o == "MD":

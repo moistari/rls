@@ -980,16 +980,18 @@ func MustClean(s string) string {
 	return s
 }
 
-// Normalize is a text transformer chain that normalizes text to lower case
-// clean form useful for matching titles.
+// Normalize is a text transformer chain (similiar to Clean) that normalizes
+// text to lower case clean form useful for matching titles.
+//
+// See: https://go.dev/blog/normalization
 var Normalize = transform.Chain(
 	norm.NFD,
 	NewCollapser(true, "`"+`':;~!@#$%^&*_=+()[]{}<>/?|\",`),
 	norm.NFC,
 )
 
-// MustNormalize applies the Normalize transform to s, returning the lower
-// cased cleaned form of s.
+// MustNormalize applies the Normalize transform to s, returning a lower cased,
+// clean form of s useful for matching titles.
 func MustNormalize(s string) string {
 	s, _, err := transform.String(Normalize, s)
 	if err != nil {
@@ -999,16 +1001,26 @@ func MustNormalize(s string) string {
 }
 
 // Collapser is a transform.Transformer that converts all space chars to ' ',
-// removes '\'', and collapses adjacent spaces to a single space.
+// removes specified runes, and collapses adjacent spaces to a single space.
+//
+// See: https://go.dev/blog/normalization
 type Collapser struct {
 	Lower  bool
 	Remove map[rune]bool
 }
 
-// NewCollapser creates
+// NewCollapser creates a text transformer that collapses spaces, removes
+// specific runes, optionally lower cases runes, and removes non-spacing marks.
+//
+// Ideally used between a transform chain of norm.NFD and norm.NFC.
+//
+// Clean, Normalize, and MustClean, MustNormalize are provided for utility
+// purposes.
+//
+// See: https://go.dev/blog/normalization
 func NewCollapser(lower bool, remove string) Collapser {
 	m := make(map[rune]bool)
-	for _, r := range []rune(remove) {
+	for _, r := range remove {
 		m[r] = true
 	}
 	return Collapser{

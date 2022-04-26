@@ -360,11 +360,7 @@ func TestExport_tests(t *testing.T) {
 		fmt.Fprintf(buf, "%q: # %d\n", key, i)
 		v := reflect.ValueOf(m[key])
 		for j := 0; j < v.Type().NumField(); j++ {
-			name := v.Type().Field(j).Name
-			if name == "ID" {
-				name = "id"
-			}
-			name = strings.ToLower(name[:1]) + name[1:]
+			name := strings.ToLower(v.Type().Field(j).Name)
 			switch v.Field(j).Kind() {
 			case reflect.Int:
 				if i := v.Field(j).Int(); i != 0 {
@@ -628,7 +624,7 @@ type rls struct {
 	Disc    string
 
 	Codec    string
-	Hdr      string
+	HDR      string
 	Audio    string
 	Channels string
 	Other    string
@@ -681,7 +677,7 @@ func buildRls(r Release) rls {
 		Disc:    r.Disc,
 
 		Codec:    strings.Join(r.Codec, " "),
-		Hdr:      strings.Join(r.HDR, " "),
+		HDR:      strings.Join(r.HDR, " "),
 		Audio:    strings.Join(r.Audio, " "),
 		Channels: r.Channels,
 		Other:    strings.Join(r.Other, " "),
@@ -738,8 +734,9 @@ func rlsTests(tb testing.TB) []rlsTest {
 				tb.Fatalf("unable to locate : on line %d item %d", count, i)
 			}
 			name := strings.ToUpper(string(line[2:3])) + string(line[3:n])
-			if name == "Id" {
-				name = "ID"
+			switch name {
+			case "Id", "Hdr":
+				name = strings.ToUpper(name)
 			}
 			f := reflect.ValueOf(&test.exp).Elem().FieldByName(name)
 			switch f.Kind() {
