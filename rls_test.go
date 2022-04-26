@@ -379,7 +379,7 @@ func TestExport_tests(t *testing.T) {
 			}
 		}
 	}
-	if err := ioutil.WriteFile("tests.yaml", buf.Bytes(), 0644); err != nil {
+	if err := ioutil.WriteFile("tests.yaml", buf.Bytes(), 0o644); err != nil {
 		t.Fatal(err)
 	}
 }
@@ -443,7 +443,7 @@ func TestExport_taginfo(t *testing.T) {
 	for _, v := range all {
 		_, _ = buf.WriteString(strings.Join(v, ",") + "\n")
 	}
-	if err := ioutil.WriteFile("taginfo/taginfo.csv", buf.Bytes(), 0644); err != nil {
+	if err := ioutil.WriteFile("taginfo/taginfo.csv", buf.Bytes(), 0o644); err != nil {
 		t.Fatal(err)
 	}
 }
@@ -681,7 +681,7 @@ func buildRls(r Release) rls {
 		Disc:    r.Disc,
 
 		Codec:    strings.Join(r.Codec, " "),
-		Hdr:      strings.Join(r.Hdr, " "),
+		Hdr:      strings.Join(r.HDR, " "),
 		Audio:    strings.Join(r.Audio, " "),
 		Channels: r.Channels,
 		Other:    strings.Join(r.Other, " "),

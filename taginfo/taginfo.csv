@@ -37,7 +37,7 @@ audio,256Kbps,256 Kbps,256[\-\._ ]?kbps,,music,1
 audio,192Kbps,192 Kbps,192[\-\._ ]?kbps,,music,1
 audio,128Kbps,128 Kbps,128[\-\._ ]?kbps,,music,1
 audio,LiNE,Line,(?-i:L[iI]NE),,,
-audio,LOSSLESS,,(?-i:LOSSLESS),,,
+audio,LOSSLESS,Lossless,(?-i:LOSSLESS),,,
 audio,LPCM,Linear Pulse-Code Modulation,,,,
 audio,MP3,,,,,
 audio,OGG,,,,,
@@ -58,7 +58,7 @@ channels,2.1,,2\.1(?:[\-\._ ]?audios)?,,,
 channels,2.0,,2\.0(?:[\-\._ ]?audios)?,,,
 channels,1.0,,1\.0(?:[\-\._ ]?audios)?,,,
 codec,DiVX.SBC,DivX SBC,(?:divx[\-\._ ]?)?sbc,,movie,
-codec,x264.HQ,,x[\-\._ ]?264[\-\._ ]?hq,,movie,
+codec,x264.HQ,x264 (HQ),x[\-\._ ]?264[\-\._ ]?hq,,movie,
 codec,MPEG-2,,mpe?g(?:[\-\._ ]?2)?,,movie,
 codec,H.265,,h[\-\._ ]?265,,movie,
 codec,H.264,,h[\-\._ ]?264,,movie,
@@ -142,7 +142,7 @@ collection,NBC,National Broadcasting Company,,,,
 collection,NF,Netflix,(?-i:NF)|netflix(?:[\-\._ ]originals)?,,,
 collection,NHKG,NHK General TV,,,,
 collection,NICK,Nickelodeon,(?-i:N[iI]CK),,,
-collection,OAR,Original Aspect Ratio,,,,
+collection,OAR,Original Aspect Ratio,(?-i:OAR),,,
 collection,OREILLY,O'Reilly,o[\-\._ ]?reilly(?:[\-\._ ]?com)?,,education,1
 collection,Packt,,,,education,1
 collection,PCOK,Peacock,,,,
@@ -167,11 +167,11 @@ collection,TrainSignal,,,,education,1
 collection,TrainSimple,,train[\-\._ ]?simple(?:[\-\._ ]?com)?,,education,1
 collection,Truefire,,truefire(?:[\-\._ ]?com)?,,education,1
 collection,TutsPlus,,tutsplus(?:[\-\._ ]?com)?,,education,1
-collection,TVNZ,,,,,
+collection,TVNZ,Television New Zealand,,,,
 collection,Udemy,,,,education,1
 collection,Video2Brain,,video2brain(?:[\-\._ ]?com)?,,education,1
 collection,VTC,,,,education,1
-collection,WAKA,Wakanim,,,,
+collection,WAKA,Wakanim,(?-i:WAKA),,,
 collection,WiiWare,WiiWare Shop,,,game,1
 collection,Wiley,,wiley(?:[\-\._ ]?com)?,,education,1
 collection,XBLA,Xbox Live Arcade,,,game,1
@@ -182,7 +182,7 @@ container,AZW3,Kindle eBook (AZW),azw3?,,book,
 container,CBR,Comic Book Archive (CBR),,,comic,
 container,CBZ,Comic Book Archive (CBZ),,,comic,1
 container,DIVX,DivX,,,movie,
-container,ePub,,,,book,
+container,ePub,Electronic Publication (ePub),,,book,
 container,FLV,Flash Video,,,movie,
 container,F4V,Flash 4 Video (F4V),,,movie,
 container,ISO,ISO 9660,,,,
@@ -382,6 +382,7 @@ language,$1$2UB$3,$2ubs ($1$3),([A-Zi]*)([SD])UB([A-Zi]*),,,
 language,MULTi$2,Multi ($2),(?i:multi)[\-\._ ]?(\d+),,,
 other,ADVANCE,Advance,adv(?:anced?)?,,music,1
 other,AI.Upscale,Upscaled (AI),ai[\-\._ ]upscaled?,,movie,
+other,All.Access.Cheat,All Access Cheat,all[\-\._ ]access[\-\._ ](?:cheats?|save),,game,1
 other,BONUS.TRACKS,Bonus Tracks,bonus[\-\._ ]tracks?,,music,1
 other,BONUS,Bonus,(?-i:BONUS),,,
 other,BOOKWARE,Bookware,,,education,1
@@ -595,7 +596,6 @@ size,MDVD,DVD (music),m[\-\._ ]?dvd,,music,1
 size,512MS,MemoryStick (512mb),,,game,1
 size,$1$2,$1 $2,(\d+(?:\.\d+)?)[\-\._ ]?([kmgt]i?b),,movie,
 source,AHDTV,High-Definition TV (analog),,,movie,
-source,All.Access.Cheat,All Access Cheat,all[\-\._ ]access[\-\._ ](?:cheats?|save),,game,1
 source,AUDiOBOOK,Audiobook,a(?:udio[\-\._ ]?)?books?,,audiobook,1
 source,BDRiP,BluRay (rip),b[dr]?[\-\._ ]?rip,,movie,
 source,BDSCR,BluRay (screener),b[dr][\-\._ ]?scr(?:eener)?,,movie,1

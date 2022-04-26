@@ -491,7 +491,7 @@ func (b *TagBuilder) collect(r *Release) {
 		case TagTypeCodec:
 			r.Codec = append(r.Codec, r.tags[i].Codec())
 		case TagTypeHDR:
-			r.Hdr = append(r.Hdr, r.tags[i].Hdr())
+			r.HDR = append(r.HDR, r.tags[i].HDR())
 		case TagTypeAudio:
 			r.Audio = append(r.Audio, r.tags[i].Audio())
 		case TagTypeChannels:
@@ -695,8 +695,8 @@ func (b *TagBuilder) unset(r *Release) {
 				r.Collection, r.tags[i] = "", r.tags[i].As(TagTypeText, nil)
 			case typ == TagTypeCodec && contains(r.Codec, s):
 				r.Codec, r.tags[i] = remove(r.Codec, s), r.tags[i].As(TagTypeText, nil)
-			case typ == TagTypeHDR && contains(r.Hdr, s):
-				r.Hdr, r.tags[i] = remove(r.Hdr, s), r.tags[i].As(TagTypeText, nil)
+			case typ == TagTypeHDR && contains(r.HDR, s):
+				r.HDR, r.tags[i] = remove(r.HDR, s), r.tags[i].As(TagTypeText, nil)
 			case typ == TagTypeAudio && contains(r.Audio, s):
 				r.Audio, r.tags[i] = remove(r.Audio, s), r.tags[i].As(TagTypeText, nil)
 			case typ == TagTypeChannels && r.Channels == s:
