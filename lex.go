@@ -716,7 +716,7 @@ func NewRegexpSourceLexer(typ TagType, ignoreCase bool) TagLexer {
 			info := infos[strings.ToLower(typ.String())]
 			s := `^i`
 			if !ignoreCase {
-				s = `^i`
+				s = `^`
 			}
 			re, f = regexp.MustCompile(reutil.Taginfo(s, info...)+`(?:\b|[\-\._ ])`), taginfo.Find(info...)
 		},
