@@ -320,6 +320,7 @@ hdr,HDR10+,High Dynamic Range (10-bit+),hdr[\-\.]?10\+|10\+[\-\.]?bit|hdr10plus|
 hdr,HDR10,High Dynamic Range (10-bit),hdr[\-\.]?10|10[\-\.]?bit|hi10,,movie,
 hdr,HDR+,High Dynamic Range+,hdr\+,,movie,
 hdr,HDR,High Dynamic Range,,,movie,
+hdr,HLG,Hybrid Log-Gamma,,,movie,
 hdr,SDR,Standard Dynamic Range,,,movie,
 hdr,DV,Dolby Vision,dolby[\-\._ ]vision|dovi|dv,,movie,
 language,AUDiO.ADDON,Audio Addon,audio[\-\._ ]?addon,,,
