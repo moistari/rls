@@ -411,19 +411,20 @@ func (b *TagBuilder) fixIsolated(r *Release) {
 	}
 }
 
-// fixMusic fixes music tags. Changes single cbr tag to the comic tag, and
-// converts to text bootleg tag that is not surrounded by '-' or '()'.
+// fixMusic fixes music tags. Changes single cbr audio tag to the cbr container
+// (ie, a comic) tag, and converts to 'bootleg' tag not surrounded by '-' or
+// '()' back to text.
 func (b *TagBuilder) fixMusic(r *Release) {
 	// when only one music tag of `cbr`, change to container `cbr` (comic)
-	count, isCbr := 0, false
-	var pos int
+	countCbr, hasCbr := 0, false
+	var posCbr int
 	for i := 0; i < r.end; i++ {
 		// count audio tags and position of cbr tag
 		if r.tags[i].Is(TagTypeAudio) {
 			if r.tags[i].Audio() == "CBR" {
-				isCbr, pos = true, i
+				hasCbr, posCbr = true, i
 			}
-			count++
+			countCbr++
 		}
 		// reset bootleg tag that is not '-bootleg-' or '(bootleg)'
 		if i != 0 && r.tags[i].Is(TagTypeOther) && r.tags[i].Other() == "BOOTLEG" {
@@ -436,13 +437,13 @@ func (b *TagBuilder) fixMusic(r *Release) {
 			}
 		}
 	}
-	// reset single cbr tag
-	if count == 1 && isCbr {
-		r.tags[pos] = r.tags[pos].As(TagTypeContainer, b.containerf)
+	// change single cbr audio tag to the cbr container tag
+	if hasCbr && countCbr == 1 {
+		r.tags[posCbr] = r.tags[posCbr].As(TagTypeContainer, b.containerf)
 	}
 }
 
-// collect collects the collect into the release.
+// collect collects tags into the release.
 func (b *TagBuilder) collect(r *Release) {
 	for i := 0; i < len(r.tags); i++ {
 		switch r.tags[i].typ {
@@ -563,9 +564,10 @@ func (b *TagBuilder) inspect(r *Release) Type {
 	if r.Type != Unknown {
 		return r.Type
 	}
+	n := len(r.tags)
 	// inspect types
 	var app, series, movie bool
-	for i := len(r.tags); i > 0; i-- {
+	for i := n; i > 0; i-- {
 		typ := r.tags[i-1].InfoType()
 		app, series, movie = app || typ == App, series || r.tags[i-1].Is(TagTypeSeries), movie || typ == Movie
 		switch typ {
@@ -606,8 +608,16 @@ func (b *TagBuilder) inspect(r *Release) Type {
 		}
 	}
 	// check music style tag delimiters
-	for count, i := 0, len(r.tags)-1; i > 1; i-- {
-		if r.tags[i-1].Is(TagTypeDate, TagTypeCodec, TagTypeHDR, TagTypeAudio, TagTypeResolution, TagTypeSource, TagTypeLanguage) &&
+	for count, i := 0, n-1; i > 1; i-- {
+		if r.tags[i-1].Is(
+			TagTypeDate,
+			TagTypeCodec,
+			TagTypeHDR,
+			TagTypeAudio,
+			TagTypeResolution,
+			TagTypeSource,
+			TagTypeLanguage,
+		) &&
 			peek(r.tags, i-2, TagTypeDelim) && strings.HasSuffix(r.tags[i-2].Delim(), "-") &&
 			peek(r.tags, i, TagTypeDelim) && strings.HasPrefix(r.tags[i].Delim(), "-") {
 			count++
@@ -858,7 +868,7 @@ func (b *TagBuilder) episodeTitles(r *Release) int {
 	return pos + offset
 }
 
-// musicTitles sets the titles for musics.
+// musicTitles sets the titles for music.
 func (b *TagBuilder) musicTitles(r *Release) int {
 	var i int
 	r.Title, i = b.mixTitle(r, 0)
@@ -869,7 +879,7 @@ func (b *TagBuilder) musicTitles(r *Release) int {
 			break
 		}
 	}
-	// check if at end / skipped date
+	// check if date was skipped / at end
 	i, skipped, ok := b.checkDate(r, i)
 	if ok {
 		s := r.tags[i].Delim()
