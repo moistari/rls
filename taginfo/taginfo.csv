@@ -154,7 +154,7 @@ collection,PSN,PlayStation Network,,,game,1
 collection,Puresound.FM,Puresound FM,puresound[\-\._ ]?fm,,music,1
 collection,RED,YouTube Red,(?-i:RED),,,
 collection,ROKU,Roku,,,,
-collection,SF,Shout Factory!,(?-i:SF),,,
+collection,SF,Shout! Factory,(?-i:SF),,,
 collection,SiriusXM,Sirius XM,sirius[\-\._ ]?xm,,music,1
 collection,Skillfeed,,,,education,1
 collection,Skillshare,,skillshare(?:[\-\._ ]?com)?,,education,1
