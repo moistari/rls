@@ -356,8 +356,9 @@ func TestExport_tests(t *testing.T) {
 		return cmp < 0
 	})
 	buf := new(bytes.Buffer)
+	fmt.Fprintf(buf, "# add tests to bottom of this file then run `TESTS=export go test` to order.\n")
 	for i, key := range keys {
-		fmt.Fprintf(buf, "%q: # %d\n", key, i)
+		fmt.Fprintf(buf, "%q:\n", key)
 		v := reflect.ValueOf(m[key])
 		for j := 0; j < v.Type().NumField(); j++ {
 			name := strings.ToLower(v.Type().Field(j).Name)
@@ -753,6 +754,7 @@ func rlsTests(tb testing.TB) []rlsTest {
 				}
 				f.SetString(s)
 			}
+		case bytes.HasPrefix(line, []byte(`#`)):
 		default:
 			tb.Fatalf("unknown line %d item %d: %q", count, i, string(line))
 		}
