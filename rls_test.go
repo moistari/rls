@@ -719,7 +719,7 @@ func rlsTests(tb testing.TB) []rlsTest {
 	for i, n := 0, 0; s.Scan(); count, i = count+1, i+1 {
 		switch line := s.Bytes(); {
 		case bytes.HasPrefix(line, []byte(`"`)):
-			if i != 0 {
+			if i > 1 {
 				tests, test = append(tests, test), rlsTest{}
 			}
 			if n = bytes.LastIndexByte(line, '"'); n == -1 {

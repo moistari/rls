@@ -1,4 +1,4 @@
-# to add a test, add to the bottom of the file then run `TESTS=export go test` to reorder this file.
+# add tests to bottom of this file then run `TESTS=export go test` to order.
 "":
 " \t[]{}()._ \t":
 "   ":
