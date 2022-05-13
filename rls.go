@@ -220,6 +220,11 @@ func (tag Tag) TagType() TagType {
 	return tag.typ
 }
 
+// Prev returns the tag's previous tag type.
+func (tag Tag) Prev() TagType {
+	return tag.prev
+}
+
 // InfoTitle retrieves the tag's title.
 func (tag Tag) InfoTitle() string {
 	if info := tag.Info(); info != nil {
@@ -385,10 +390,22 @@ func (tag Tag) Delim() string {
 
 // Text normalizes the text value.
 func (tag Tag) Text() string {
-	if tag.prev == TagTypeDate {
+	switch tag.prev {
+	case TagTypeDate:
 		return tag.v[0]
+	case TagTypeChannels:
+		return tag.Channels()
 	}
 	return tag.v[1]
+}
+
+// TextReplace normalizes the text value and replaces the supplied string.
+func (tag Tag) TextReplace(old, newstr string, n int) string {
+	s := tag.Text()
+	if tag.prev == TagTypeChannels {
+		return s
+	}
+	return strings.Replace(s, old, newstr, n)
 }
 
 // Platform normalizes the platform value.

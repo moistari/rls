@@ -219,7 +219,7 @@ func (b *TagBuilder) Build(tags []Tag, end int) Release {
 	r.Type = b.inspect(r)
 	// special
 	b.specialDate(r)
-	// unset exclusive tags
+	// unset tags
 	b.unset(r)
 	// read titles
 	i := b.titles(r)
@@ -665,8 +665,12 @@ func (b *TagBuilder) specialDate(r *Release) {
 
 // unset unsets exclusive and other misrecognized tags on the release.
 func (b *TagBuilder) unset(r *Release) {
-	movieSeriesEpisodeMusicGame := r.Type.Is(Movie, Series, Episode, Music, Game)
+	movieSeriesEpisodeMusicGame, grabSource := r.Type.Is(Movie, Series, Episode, Music, Game), false
 	for i := 0; i < len(r.tags); i++ {
+		// if source had been previously reset, save it
+		if grabSource && r.tags[i].Is(TagTypeSource) && r.Source == "" {
+			r.Source = r.tags[i].Source()
+		}
 		ityp := r.tags[i].InfoType()
 		// reset exclusive tags
 		if ityp != r.Type && r.tags[i].Is(
@@ -735,7 +739,9 @@ func (b *TagBuilder) unset(r *Release) {
 			if r.Source == r.tags[i].Normalize() {
 				r.Source = ""
 			}
-			r.tags[i] = r.tags[i].As(TagTypeText, nil)
+			r.tags[i], grabSource = r.tags[i].As(TagTypeText, nil), true
+		} else if !movieSeriesEpisodeMusicGame && r.tags[i].Is(TagTypeChannels) {
+			r.tags[i], r.Channels = r.tags[i].As(TagTypeText, nil), ""
 		}
 	}
 }
@@ -965,9 +971,8 @@ func (b *TagBuilder) bookTitles(r *Release) int {
 		case isOther && r.tags[pos].InfoType() != Book:
 			offset = 1
 			continue
-		case isOther:
-			s, offset = b.title(r.tags[pos:], TagTypeOther)
-			s = strings.TrimFunc(s, isAnyDelim)
+		case isOther && r.tags[pos].Other() == "Strategy.Guide":
+			s, offset = strings.ReplaceAll(r.tags[pos].Text(), ".", " "), 2
 		default:
 			s, offset = b.title(r.tags[pos:], TagTypeText, TagTypePlatform, TagTypeArch, TagTypeRegion)
 		}
@@ -1024,7 +1029,7 @@ loop:
 	for ; i < len(tags); i++ {
 		switch {
 		case tags[i].Is(types...):
-			v = append(v, strings.ReplaceAll(tags[i].Text(), ".", " "))
+			v = append(v, tags[i].TextReplace(".", " ", -1))
 		case tags[i].Is(TagTypeDelim):
 			if s := tags[i].Delim(); !strings.ContainsAny(s, "()[]{}\\/") && s != "__" {
 				v = append(v, b.delim(s, tags, i))
@@ -1122,6 +1127,10 @@ func (b *TagBuilder) delim(delim string, tags []Tag, i int) string {
 	if isUpperLetter([]rune(prev)) && isUpperLetter([]rune(next)) && !strings.ContainsAny(ante, "-~") {
 		return "."
 	}
+	// version, such as 2.0 or 5.1 (book title)
+	if isDigit([]rune(prev)) && isDigit([]rune(next)) && !strings.ContainsAny(ante, "-~") {
+		return "."
+	}
 	return " "
 }
 
@@ -1132,6 +1141,15 @@ func isUpperLetter(r []rune) bool {
 		return true
 	case 1:
 		return unicode.IsUpper(r[0])
+	}
+	return false
+}
+
+// isDigit determines if s is a digit.
+func isDigit(r []rune) bool {
+	switch len(r) {
+	case 1:
+		return unicode.IsDigit(r[0])
 	}
 	return false
 }

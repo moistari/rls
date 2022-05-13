@@ -44,19 +44,19 @@ audio,OGG,,,,,
 audio,OPUS,,,,,
 audio,TrueHD,Dolby TrueHD,(?:dolby[\-\._ ]?)?true[\-\._ ]?hd,,movie,
 audio,VBR,Variable Bit Rate,,,music,1
-channels,7.1,,7\.1(?:[\-\._ ]?audios)?,,,
-channels,7.0,,7\.0(?:[\-\._ ]?audios)?,,,
-channels,6.1,,6\.1(?:[\-\._ ]?audios)?,,,
-channels,6.0,,6\.0(?:[\-\._ ]?audios)?,,,
-channels,5.1,,5\.1(?:[\-\._ ]?audios)?,,,
-channels,5.0,,5\.0(?:[\-\._ ]?audios)?,,,
-channels,4.1,,4\.1(?:[\-\._ ]?audios)?,,,
-channels,4.0,,4\.0(?:[\-\._ ]?audios)?,,,
-channels,3.1,,3\.1(?:[\-\._ ]?audios)?,,,
-channels,3.0,,3\.0(?:[\-\._ ]?audios)?,,,
-channels,2.1,,2\.1(?:[\-\._ ]?audios)?,,,
-channels,2.0,,2\.0(?:[\-\._ ]?audios)?,,,
-channels,1.0,,1\.0(?:[\-\._ ]?audios)?,,,
+channels,7.1,,7\.1(?:[\-\._ ]?audios?)?,,,
+channels,7.0,,7\.0(?:[\-\._ ]?audios?)?,,,
+channels,6.1,,6\.1(?:[\-\._ ]?audios?)?,,,
+channels,6.0,,6\.0(?:[\-\._ ]?audios?)?,,,
+channels,5.1,,5\.1(?:[\-\._ ]?audios?)?,,,
+channels,5.0,,5\.0(?:[\-\._ ]?audios?)?,,,
+channels,4.1,,4\.1(?:[\-\._ ]?audios?)?,,,
+channels,4.0,,4\.0(?:[\-\._ ]?audios?)?,,,
+channels,3.1,,3\.1(?:[\-\._ ]?audios?)?,,,
+channels,3.0,,3\.0(?:[\-\._ ]?audios?)?,,,
+channels,2.1,,2\.1(?:[\-\._ ]?audios?)?,,,
+channels,2.0,,2\.0(?:[\-\._ ]?audios?)?,,,
+channels,1.0,,1\.0(?:[\-\._ ]?audios?)?,,,
 codec,DiVX.SBC,DivX SBC,(?:divx[\-\._ ]?)?sbc,,movie,
 codec,x264.HQ,x264 (HQ),x[\-\._ ]?264[\-\._ ]?hq,,movie,
 codec,MPEG-2,,mpe?g(?:[\-\._ ]?2)?,,movie,
@@ -107,7 +107,6 @@ collection,DigitalTutors,,digital[\-\._ ]?tutors(?:[\-\._ ]?com)?,,education,1
 collection,DSCP,Discovery+,dsc[p\+],,,
 collection,DSNP,Disney+,dsn[p+],,,
 collection,DSNY,Disney,,,,
-collection,eBook,,ebooks?,,book,
 collection,eShop,Nintendo eShop,,,game,1
 collection,FBWatch,Facebook Watch,,,,
 collection,FE,Freeform,,,,
@@ -143,7 +142,7 @@ collection,NF,Netflix,(?-i:NF)|netflix(?:[\-\._ ]originals)?,,,
 collection,NHKG,NHK General TV,,,,
 collection,NICK,Nickelodeon,(?-i:N[iI]CK),,,
 collection,OAR,Original Aspect Ratio,(?-i:OAR),,,
-collection,OREILLY,O'Reilly,o[\-\._ ]?reilly(?:[\-\._ ]?com)?,,education,1
+collection,OREILLY,O'Reilly,o[\-\._ ]?reilly(?:[\-\._ ]?com)?,,education,
 collection,Packt,,,,education,1
 collection,PCOK,Peacock,,,,
 collection,Percipio,,percipio(?:[\-\._ ]?com)?,,education,1
@@ -403,6 +402,7 @@ other,Digital.Extras,Extras (digital),digital[\-\._ ]extras,,movie,
 other,DIRFIX,Fix (directory),dir[\-\._ ]?[df]ix?,,,
 other,Discography,,,,music,1
 other,DLC,,(?:(?:plus|including|incl|inc)[\-\._ ]?)?dlc(?:[\-\._ ]unlocker)?,,game,1
+other,DOX,Dox,,,,
 other,EAC,Exact Audio Copy,(?-i:EAC),,music,1
 other,EXTRAS,Extras,(?:(?:plus|including|incl|inc)[\-\._ ]?)?extras(?:[\-\._ ]?only)?,,,
 other,FiNAL,Final,(?-i:F[iI]N[aA]L),,,
@@ -429,6 +429,7 @@ other,KONTAKT,Samples (Kontakt),(?-i:KONTAKT),,music,1
 other,LD,Line Dubbed,,,,
 other,MD,Mic Dubbed,(?-i:MD),,,
 other,minimalNR,Minimal Noise-Reduction,,,movie,1
+other,MOViE.PACK,Movie Pack,movie[\-\._ ]?pack,,movie,1
 other,MULTiFORMAT,Multiformat,,,music,1
 other,NFOFiX,Fix (nfo),i?nfo[\-\._ ]?fix,,,
 other,NoCD,Crack (no CD),,,game,1
@@ -648,6 +649,7 @@ source,DVDSCR,Digital Video Disc (screener),(?:dvd[\-\._ ]?)?scr(?:eener)?,,movi
 source,DVDS,Digital Video Disc (single),dvds(?:ingle)?,,music,1
 source,DVD,Digital Video Disc,dvd,,movie,
 source,DVTV,Digital Versatile Television,,,,
+source,eBook,,ebooks?,,book,
 source,EP,Extended Play,(?-i:EP),,music,1
 source,FESTiVAL,Festival,(?-i:F[eE]ST[iI]V[aA]L),,movie,
 source,FM,,(?-i:FM),,music,1

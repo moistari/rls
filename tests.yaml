@@ -1139,6 +1139,18 @@
   audio: "DTS"
   group: "deciBeL"
   ext: "mkv"
+"BBC.The.Hunt.2015.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR":
+  type: "movie"
+  title: "The Hunt"
+  source: "BluRay"
+  resolution: "1080p"
+  collection: "BBC"
+  year: 2015
+  codec: "AVC"
+  audio: "DTS-HD.MA"
+  channels: "5.1"
+  other: "REMUX"
+  group: "FraMeSToR"
 "The.Jungle.Book.2016.3D.1080p.BRRip.SBS.x264.AAC-ETRG":
   type: "movie"
   title: "The Jungle Book"
@@ -2706,6 +2718,11 @@
   version: "v1.1a_56"
   other: "UPDATE"
   group: "SiMPLEX"
+"Dox.v2.20-LAXiTY":
+  type: "app"
+  title: "Dox"
+  version: "v2.20"
+  group: "LAXiTY"
 "Field.3D.v1.20.KEYMAKER.ONLY-PROPHECY":
   type: "app"
   title: "Field 3D"
@@ -2804,10 +2821,21 @@
   platform: "PS2"
   resolution: "PN.Selector"
   group: "KALISTO"
+"Enigma.Agency.The.Case.of.Shadows.Strategy.Guide.DOX-RAiN":
+  type: "book"
+  title: "Enigma Agency The Case of Shadows Strategy Guide"
+  other: "Strategy.Guide DOX"
+  group: "RAiN"
+"Red.Dead.Redemption.2.Complete.Official.Guide.Standard.Edition.(PDF).torrent":
+  type: "book"
+  title: "Red Dead Redemption 2 Complete Official Guide Standard Edition"
+  container: "PDF"
+  ext: "torrent"
 "Zelda.Majoras.Mask.Strategy.Guide.N64.(iGN.com).Retail.eBook-MAGBUSTERS":
   type: "book"
   title: "Zelda Majoras Mask Strategy Guide N64"
   platform: "N64"
+  source: "eBook"
   collection: "iGN.com"
   other: "Strategy.Guide RETAiL"
   group: "MAGBUSTERS"
@@ -2815,10 +2843,19 @@
   type: "book"
   artist: "C.S. Lewis"
   title: "Die Chroniken von Narnia-Der Koenig von Narnia Bd 2"
-  collection: "eBook"
+  source: "eBook"
   year: 2013
   other: "RETAiL"
   language: "GERMAN"
+  container: "ePub"
+  group: "BitBook"
+"McGraw.Hill.Professional.-.ASP.NET.4.0.Programming.2008.Retail.EPUB.eBook-BitBook":
+  type: "book"
+  artist: "McGraw Hill Professional"
+  title: "ASP NET 4.0 Programming"
+  source: "eBook"
+  year: 2008
+  other: "RETAiL"
   container: "ePub"
   group: "BitBook"
 "Harry+Potter+Audio+Books+1-7;+Read+by+Stephen+Fry+[MP3]":
@@ -2864,6 +2901,7 @@
 "[REQ]Wiley.Canon.EOS.90D.For.Dummies.2020.RETAiL.ePub.eBook-LiBRiCiDE.torrent":
   type: "education"
   title: "Canon EOS 90D For Dummies"
+  source: "eBook"
   collection: "Wiley"
   year: 2020
   other: "RETAiL"
@@ -2882,6 +2920,15 @@
   collection: "Lynda"
   other: "SUB100"
   group: "ViH"
+"Oreilly.-.Web.2.0.A.Strategy.Guide.2018.Retail.EPUB.eBook-BitBook":
+  type: "education"
+  title: "Web 2.0 A Strategy Guide"
+  source: "eBook"
+  collection: "OREILLY"
+  year: 2018
+  other: "RETAiL"
+  container: "ePub"
+  group: "BitBook"
 "Rick and Morty 020 (2016) (digital) (d'argh-Empire).cbr":
   type: "comic"
   title: "Rick and Morty 020"
@@ -2900,7 +2947,6 @@
   type: "comic"
   title: "Wolverine And The X Men"
   source: "SCAN"
-  collection: "eBook"
   year: 2013
   month: 5
   series: 1
@@ -2918,7 +2964,6 @@
   type: "magazine"
   title: "L Elephant N26"
   source: "MAGAZiNE"
-  collection: "eBook"
   year: 2019
   other: "RETAiL"
   language: "FRENCH"
@@ -2927,7 +2972,6 @@
   type: "magazine"
   title: "Mens Health"
   source: "MAGAZiNE"
-  collection: "eBook"
   year: 2017
   month: 9
   other: "HYBRiD"
