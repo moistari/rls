@@ -178,6 +178,7 @@ collection,Wiley,,wiley(?:[\-\._ ]?com)?,,education,1
 collection,XBLA,Xbox Live Arcade,,,game,1
 collection,XXX,Adult,(?-i:XXX),,,
 collection,YOUTUBE,YouTube,(?-i:YOUTUBE)|(?-i:YT),,,
+collection,ZEE5,ZEE5 Streaming,,,,
 container,AVI,Audio Video Interleave (AVI),,,,
 container,AZW3,Kindle eBook (AZW),azw3?,,book,
 container,CBR,Comic Book Archive (CBR),,,comic,
