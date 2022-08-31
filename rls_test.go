@@ -62,14 +62,14 @@ func TestParseRelease(t *testing.T) {
 func TestCollapser(t *testing.T) {
 	const test = "''\t\tAmélie\r\r1998\n\nMKV\f\f''"
 	const exp = " Amelie 1998 MKV "
-	a, _, err := transform.String(Clean, test)
+	a, _, err := transform.String(NewCleaner(), test)
 	if err != nil {
 		t.Fatalf("expected no error, got: %v", err)
 	}
 	if a != exp {
 		t.Errorf("expected %q, got: %q", exp, a)
 	}
-	b, _, err := transform.String(Normalize, test)
+	b, _, err := transform.String(NewNormalizer(), test)
 	if err != nil {
 		t.Fatalf("expected no error, got: %v", err)
 	}

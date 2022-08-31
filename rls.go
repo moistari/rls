@@ -83,6 +83,7 @@ func ParseString(src string) Release {
 // Format satisfies the fmt.Formatter interface.
 //
 // Format Options:
+//
 //	o - original release
 //	v - tag type followed by colon and quoted capture value (Date:["2009", "", ""])
 //	s - normalized capture value (2009)
@@ -354,6 +355,7 @@ func (tag Tag) Match(s string, verb rune, types ...TagType) bool {
 // Format satisfies the fmt.Formatter interface.
 //
 // Format Options:
+//
 //	q - all values including captured values, quoted (["2009", "2009", "", ""])
 //	o - original capture (2009)
 //	v - tag type followed by colon and quoted capture value (Date:["2009", "", ""])
@@ -976,41 +978,46 @@ func Find(tags []Tag, s string, count int, verb rune, types ...TagType) ([]Tag, 
 	return v, i
 }
 
-// Clean is a text transformer chain that transforms text to its textual
-// decomposed clean form (NFD), removing all non-spacing marks, converting all
-// spaces to ' ', removing '\'', collapsing adjacent spaces into a single ' ',
-// and finally returning the canonical normalized form (NFC).
+// NewCleaner creates a text transformer chain that transforms text to its
+// textual decomposed clean form (NFD), removing all non-spacing marks,
+// converting all spaces to ' ', removing ', collapsing adjacent spaces into a
+// single ' ', and finally returning the canonical normalized form (NFC).
 //
 // See: https://go.dev/blog/normalization
-var Clean = transform.Chain(
-	norm.NFD,
-	NewCollapser(false, `'`),
-	norm.NFC,
-)
+func NewCleaner() transform.Transformer {
+	return transform.Chain(
+		norm.NFD,
+		NewCollapser(false, `'`),
+		norm.NFC,
+	)
+}
 
 // MustClean applies the Clean transform to s.
 func MustClean(s string) string {
-	s, _, err := transform.String(Clean, s)
+	s, _, err := transform.String(NewCleaner(), s)
 	if err != nil {
 		panic(err)
 	}
 	return s
 }
 
-// Normalize is a text transformer chain (similiar to Clean) that normalizes
-// text to lower case clean form useful for matching titles.
+// NewNormalizer creates a new a text transformer chain (similiar to
+// NewCleaner) that normalizes text to lower case clean form useful for
+// matching titles.
 //
 // See: https://go.dev/blog/normalization
-var Normalize = transform.Chain(
-	norm.NFD,
-	NewCollapser(true, "`"+`':;~!@#$%^&*_=+()[]{}<>/?|\",`),
-	norm.NFC,
-)
+func NewNormalizer() transform.Transformer {
+	return transform.Chain(
+		norm.NFD,
+		NewCollapser(true, "`"+`':;~!@#$%^&*_=+()[]{}<>/?|\",`),
+		norm.NFC,
+	)
+}
 
 // MustNormalize applies the Normalize transform to s, returning a lower cased,
 // clean form of s useful for matching titles.
 func MustNormalize(s string) string {
-	s, _, err := transform.String(Normalize, s)
+	s, _, err := transform.String(NewNormalizer(), s)
 	if err != nil {
 		panic(err)
 	}
