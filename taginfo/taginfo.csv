@@ -27,7 +27,7 @@ audio,DTS-HD,DTS (HD),dts[\-\._ ]?hd[\-\._ ]?,,movie,
 audio,DTS-MA,DTS (MA),dts[\-\._ ]?ma[\-\._ ]?,,movie,
 audio,DTS-X,DTS (X),dts[\-\._ ]?x,,movie,
 audio,DTS,,,,movie,
-audio,DUAL.AUDIO,Dual Audio,dual(?:[\-\._ ]?audio)?,,movie,
+audio,DUAL.AUDIO,Dual Audio,dual(?:[\-\._ ]?audio)?|2audio,,movie,
 audio,EAC3D,,,,,
 audio,ES,Dolby Digital (ES),(?-i:ES),,movie,
 audio,EX,Dolby Digital (EX),(?-i:EX),,movie,
@@ -214,9 +214,11 @@ edition,Definitive.Edition,Definitive,(?:the[\-\._ ]?)?definitive[\-\._ ]edition
 edition,Deluxe.Edition,Deluxe,deluxe[\-\._ ]edition,,,
 edition,Despecialized,,,,movie,1
 edition,Expanded.Edition,Expanded,expanded(?:[\-\._ ](?:version|edition|cut))?,,movie,
+edition,Extended.Mix,Extended Mix,(?:incl[\-\._ ]+)?extended[\-\._ ]mix,,music,1
 edition,Fan.Edit,Fan,fan[\-\._ ]edit,,movie,1
 edition,JA,Japanese Edition,(?-i:JA),,music,1
 edition,Limited.Edition,Limited,limited(?:[\-\._ ]edition)?,,,
+edition,Ltd.Ed,Limited,ltd[\-\._ ][\-\._ ]?ed,,music,1
 edition,Noir.Edition,Noir,noir[\-\._ ]edition,,movie,1
 edition,Open.Matte,Open Matte,open[\-\._ ]matte,,movie,1
 edition,Remastered.Edition,Remastered,remaster(?:ed)?(?:[\-\._ ]edition)?,,,
@@ -327,7 +329,7 @@ hdr,SDR,Standard Dynamic Range,,,movie,
 hdr,DV,Dolby Vision,dolby[\-\._ ]vision|dovi|dv,,movie,
 language,AUDiO.ADDON,Audio Addon,audio[\-\._ ]?addon,,,
 language,BALTIC,Baltic,,,,
-language,BRAZiLiAN,Brazilian,,,,
+language,BRAZiLiAN,Brazilian,BRAZiLiAN|BR,,,
 language,BULGARiAN,Bulgarian,(?i:bulgarian)|BG,,,
 language,CHiNESE,Chinese,CH[iI]N[eE]S[eE]|CN,,,
 language,CHS,Chinese (simplified),(?i:chinese[\-\._ ]?simplified)|CHS,,,
@@ -411,6 +413,7 @@ other,FiNAL,Final,(?-i:F[iI]N[aA]L),,,
 other,FiX,Fix,(?-i:F[iI]X),,,
 other,FS,Fullscreen,(?-i:FS),,,
 other,Half-SBS,3D (half side-by-side),h(?:alf)?[\-\._ ]?sbs,,movie,1
+other,HAPPY.NEW.YEAR,Holiday (new year),(?-i:HAPPY[\-\._ ]NEW[\-\._ ]YEARS?),,,
 other,HiGHLiGHTS,Highlights,(?-i:H[iI]GHL[iI]GHTS),,,
 other,HiRES,High Resolution,(?-i:H[iI]RES),,,
 other,HOTFiX,Hotfix,hot[\-\._ ]?fix,,app,
@@ -427,10 +430,12 @@ other,Incl.Patch,Patch,(?:(?:incl?|and)[\-\._ ]?)?patch(?:[\-\._ ](?:only|for))?
 other,Incl.Serial,Serial,(?:(?:incl?|and)[\-\._ ]?)?serial(?:[\-\._ ](?:only|for))?,,app,
 other,iNJECT,Console Inject,(?-i:[iI]NJ[eE]CT),,game,1
 other,INTERNAL,Internal,(?-i:[iI]NT)|internal,int,,
+other,JB,Jailbroken,(?-i:JB),,game,1
 other,KONTAKT,Samples (Kontakt),(?-i:KONTAKT),,music,1
 other,LD,Line Dubbed,,,,
 other,MD,Mic Dubbed,(?-i:MD),,,
-other,minimalNR,Minimal Noise-Reduction,,,movie,1
+other,MERRY.XMAS,Holiday (xmas),(?-i:MERRY[\-\._ ](?:XMAS|CHRISTMAS)),,,
+other,minimalNR,Minimal Noise-Reduction,(?-i:minimalNR),,movie,1
 other,MOViE.PACK,Movie Pack,movie[\-\._ ]?pack,,movie,1
 other,MULTiFORMAT,Multiformat,,,music,1
 other,NFOFiX,Fix (nfo),i?nfo[\-\._ ]?fix,,,
@@ -446,11 +451,12 @@ other,PROPER,Proper,,,,
 other,RARFiX,Fix (rar),,,,
 other,READNFO,Read NFO,read[\-\._ ]?i?nfo,,,
 other,REAL.PROPER,Proper (real),real[\-\._ ]?proper,,,
+other,REAL,Real,(?-i:REAL),,,
 other,REGiSTERED,Registered,registered|regged,,app,1
 other,REISSUE,Reissue,,,music,
 other,REMAKE,Remake,(?-i:REMAKE),,,
 other,REMASTERED,Remastered,remaster(?:ed)?,,,
-other,REMiX,Remix,re[\-\._ ]?mix(?:e[sd])?,,music,1
+other,REMiX,Remix,(?:re[\-\._ ]?)?mix(?:e[sd])?,,music,1
 other,REMUX,Remux,,,,
 other,REPACK,Repack,repack(?:ed)?,,,
 other,RERELEASE,Re-release,re[\-\._ ]?release,,music,1

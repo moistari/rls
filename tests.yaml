@@ -42,6 +42,16 @@
   title: "WITHNAIL AND I"
 "You.I.Me":
   title: "You I Me"
+"5.Headed.Shark.Attack.German.2017.MERRY.XMAS.AC3.BDRiP.x264-XF":
+  type: "movie"
+  title: "5 Headed Shark Attack"
+  source: "BDRiP"
+  year: 2017
+  codec: "x264"
+  audio: "DD"
+  other: "MERRY.XMAS"
+  language: "GERMAN"
+  group: "XF"
 "22 Jump Street (2014) 720p BrRip x264 - YIFY":
   type: "movie"
   title: "22 Jump Street"
@@ -397,6 +407,15 @@
   other: "REMUX"
   group: "FraMeSToR"
   ext: "mkv"
+"Cat.And.Mouse.2003.2Audio.DVDRip.XviD.AC3.iNT-io":
+  type: "movie"
+  title: "Cat And Mouse"
+  source: "DVDRiP"
+  year: 2003
+  codec: "XViD"
+  audio: "DUAL.AUDIO DD"
+  other: "INTERNAL"
+  group: "io"
 "Coco.Avant.Chanel.2009.FRENCH.NORDiCSUBS.COMPLETE.BDR-CULTBDR":
   type: "movie"
   title: "Coco Avant Chanel"
@@ -1647,6 +1666,16 @@
   episode: 5
   codec: "x264"
   audio: "AAC"
+"Gute.Zeiten.schlechte.Zeiten.S01E00493.German.FS.Webrip.x264.REAL.iNTERNAL.READNFO-TVARCHiV":
+  type: "episode"
+  title: "Gute Zeiten schlechte Zeiten"
+  source: "WEBRiP"
+  series: 1
+  episode: 493
+  codec: "x264"
+  other: "FS REAL INTERNAL READNFO"
+  language: "GERMAN"
+  group: "TVARCHiV"
 "[SubsPlease]_Higurashi_no_Naku_Koro_ni_Sotsu_-_09_(1080p)_[C00D6C68]":
   type: "episode"
   title: "Higurashi no Naku Koro ni Sotsu"
@@ -2370,6 +2399,16 @@
   artist: "a"
   title: "(b) c"
   ext: "mp3"
+"Airdream_and_Calvin_OCommor_-_Rescue_Me_(Extended_Mix)-(NRG112)-SINGLE-WEB-2022-JUSTiFY_iNT":
+  type: "music"
+  artist: "Airdream and Calvin OCommor"
+  title: "Rescue Me"
+  source: "SINGLE"
+  year: 2022
+  other: "REMiX INTERNAL"
+  cut: "Extended.Cut"
+  id: "NRG112"
+  group: "JUSTiFY"
 "Airwalk_Ft_Stina_G._-_Energy-(DRIZ9802-28)-320kbps_Vinyl-1998-PUTA":
   type: "music"
   artist: "Airwalk Ft Stina G"
@@ -2631,6 +2670,15 @@
   group: "VX"
   site: "P2PDL"
   unused: "Hip Hop"
+"The_Presidents_Of_The_United_States_Of_America-The_Presidents_Of_The_United_States_Of_America-2CD-Ltd.Ed.-1996-PtSL":
+  type: "music"
+  artist: "The Presidents Of The United States Of America"
+  title: "The Presidents Of The United States Of America"
+  source: "CD"
+  year: 1996
+  disc: "2x"
+  edition: "Ltd.Ed"
+  group: "PtSL"
 "The_Smashing_Pumpkins-(Rotten_Apples)_Greatest_Hits-CD-FLAC-2001-FiXIE":
   type: "music"
   artist: "The Smashing Pumpkins"
@@ -2729,6 +2777,13 @@
   version: "v1.20"
   other: "Incl.Keygen"
   group: "PROPHECY"
+"Agarest_Generations_Of_War_EUR_REPACK_JB_PS3-LiGHTFORCE":
+  type: "game"
+  title: "Agarest Generations Of War"
+  platform: "PS3"
+  other: "REPACK JB"
+  region: "EUR"
+  group: "LiGHTFORCE"
 "ARK.Survival.Evolved.Extinction-CODEX":
   type: "game"
   title: "ARK Survival Evolved Extinction"

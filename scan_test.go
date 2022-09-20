@@ -10,7 +10,6 @@ import (
 	"regexp"
 	"sort"
 	"strings"
-	"sync"
 	"testing"
 	"time"
 )
@@ -46,13 +45,20 @@ func scan(t *testing.T, scanner Scanner, opts ...ReleaseScannerOption) {
 		if i != 0 {
 			d := n.Sub(start)
 			avg := d / time.Duration(i)
-			t.Logf("%d: %s (%s) RUNTIME: %s DELTA: %s AVG: %v", i, typ, n.Format(time.RFC3339), d.Truncate(time.Millisecond), n.Sub(prev).Truncate(time.Millisecond), avg)
+			t.Logf("%d: %s (%s) RUNTIME: %s DELTA: %s AVG: %v",
+				i, typ, n.Format(time.RFC3339), d.Truncate(time.Millisecond), n.Sub(prev).Truncate(time.Millisecond), avg)
 		}
 		prev = n
 	}
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	unused, unusedMutex := make(map[string]uint64), new(sync.Mutex)
+	unused := struct {
+		count map[string]uint64
+		items map[string][]string
+	}{
+		count: make(map[string]uint64),
+		items: make(map[string][]string),
+	}
 	m, s := make(map[string]uint64), NewScanner(opts...)
 loop:
 	for ch := s.Scan(ctx, scanner); ; i++ {
@@ -73,23 +79,22 @@ loop:
 				continue
 			}
 			if u := v.Release.Unused(); len(u) != 0 {
-				unusedMutex.Lock()
 				for _, tag := range u {
 					if s := tag.Text(); !num.MatchString(s) {
-						unused[s]++
+						unused.count[s]++
+						unused.items[s] = append(unused.items[s], v.Line)
 					}
 				}
-				unusedMutex.Unlock()
 				t.Logf("%d: %d: UNUSED: %q - %q - %s", i, v.ID, string(v.Line), v.Release.Type, joinTags(u, "%s", " "))
 			}
 		}
 	}
 	progress("DONE")
-	keys := make([]kv, len(unused))
-	for k := range unused {
+	keys := make([]kv, len(unused.count))
+	for k := range unused.count {
 		keys = append(keys, kv{
 			k: k,
-			v: unused[k],
+			v: unused.count[k],
 		})
 	}
 	sort.Slice(keys, func(i, j int) bool {
@@ -97,7 +102,15 @@ loop:
 	})
 	for i := 0; i < 2000 && i < len(keys); i++ {
 		t.Logf("TOP %02d: %q %d", 2000-i, keys[i].k, keys[i].v)
+		for j := uint64(0); j < 10 && j < keys[i].v; j++ {
+			t.Logf("    %02d: % 2d: %q", 2000-i, j, unused.items[keys[i].k][j])
+		}
 	}
+}
+
+type unusedCount struct {
+	items []string
+	count int64
 }
 
 var num = regexp.MustCompile(`^\d+$`)
