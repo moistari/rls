@@ -467,6 +467,7 @@ other,RiP,Rip,(?-i:RiP),,,
 other,SAMPLEFiX,Fix (sample),,,movie,
 other,SAMPLER,Sampler,(?:album[\-\._ ]?)?sampler,,music,1
 other,SBS,3D (side-by-side),,,movie,1
+other,SCRUBBED,Scrubbed,,,game,1
 other,Serial.Fix,Fix (serial),serial[\-\._ ]?fix,,app,
 other,Special.Features,Special Features,(?:(?:with|incl?)[\-\._ ])?special[\-\._ ]features,,movie,
 other,Strategy.Guide,Strategy Guide,strategy[\-\._ ]?guide,,book,1

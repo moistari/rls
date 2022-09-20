@@ -2876,6 +2876,14 @@
   platform: "PS2"
   resolution: "PN.Selector"
   group: "KALISTO"
+"Wii.Play.Motion.Pal.Wii.Scrubbed.843Mb.Internal-SCRUBS":
+  type: "game"
+  title: "Wii Play Motion"
+  platform: "Wii"
+  resolution: "576p"
+  other: "SCRUBBED INTERNAL"
+  size: "843MB"
+  group: "SCRUBS"
 "Enigma.Agency.The.Case.of.Shadows.Strategy.Guide.DOX-RAiN":
   type: "book"
   title: "Enigma Agency The Case of Shadows Strategy Guide"
