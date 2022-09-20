@@ -228,6 +228,14 @@
   language: "HiNDI"
   group: "M2Tv"
   unused: "DesiSCR Rip Mafiaking"
+"Akte.X.Jenseits.der.Wahrheit.R5.Line.Dubbed.German.READ.NFO.XviD-VCF":
+  type: "movie"
+  title: "Akte X Jenseits der Wahrheit"
+  codec: "XViD"
+  other: "READNFO"
+  language: "DUBBED GERMAN"
+  region: "R5"
+  group: "VCF"
 "Almost.Famous.2000.Bootleg.Cut.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR":
   type: "movie"
   title: "Almost Famous"
@@ -1436,6 +1444,17 @@
   language: "GERMAN"
   genre: "Documentary"
   group: "GEO"
+"AEW.x.NJPW.Forbidden.Door.2022.PPV.1080p.08Mb.HDTV.x264-WH.mp4":
+  type: "episode"
+  title: "AEW x NJPW Forbidden Door"
+  source: "HDTV"
+  resolution: "1080p"
+  collection: "PPV"
+  year: 2022
+  codec: "x264"
+  size: "08MB"
+  group: "WH"
+  ext: "mp4"
 "Agents.of.S.H.I.E.L.D.S01E14.T.A.H.I.T.I.BluRay.1080p.AVC.DTS-HD.MA.5.1.REMUX-FraMeSToR.mkv":
   type: "episode"
   title: "Agents of S.H.I.E.L.D."
@@ -2320,6 +2339,17 @@
   group: "ZR"
   ext: "mkv"
   unused: "Shuumatsu no Harem"
+"WWE.Clash.at.the.Castle.2022.PPV.1080p.PCOK.WEB-DL.AAC2.0.H.264-ShiNobi":
+  type: "episode"
+  title: "WWE Clash at the Castle"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "PPV"
+  year: 2022
+  codec: "H.264"
+  audio: "AAC"
+  channels: "2.0"
+  group: "ShiNobi"
 "WWE Hell in a Cell 2014 PPV WEB-DL x264-WD -={ SPARROW }=-":
   type: "episode"
   title: "WWE Hell in a Cell"
@@ -2355,6 +2385,13 @@
   year: 2009
   codec: "x264"
   group: "group"
+"AC.DC.Under.Review.Back.in.Black.2006.NTSC.MDVDR-MUSiQUE":
+  type: "music"
+  title: "AC DC Under Review Back in Black"
+  resolution: "480p"
+  year: 2006
+  size: "MDVDR"
+  group: "MUSiQUE"
 "Axel.Rudi.Pell.Live.Over.Europe.2008.2DiSCS.PAL.MDVD-R-DHI":
   type: "music"
   title: "Axel Rudi Pell Live Over Europe"
@@ -2372,6 +2409,16 @@
   other: "BOXSET COMPLETE"
   size: "MDVDR"
   group: "CMS"
+"Jack.Ruby.28th.Anniversary.Show.1986.Bootleg.Complete.PAL.MDVDR-YARDVID":
+  type: "music"
+  title: "Jack Ruby"
+  resolution: "576p"
+  year: 1986
+  other: "COMPLETE"
+  edition: "28th.Anniversary.Edition"
+  size: "MDVDR"
+  group: "YARDVID"
+  unused: "Show Bootleg"
 "The Title.(2011).MsT":
   type: "music"
   title: "The Title"
@@ -2514,6 +2561,7 @@
   title: "Thriller DJ Isaac Hardstyle Remix"
   subtitle: "Telejunkie Videomix"
   source: "SVCD"
+  other: "REMiX"
   group: "MV"
   unused: "iPZViD"
 "DJ_Luke_Nasty-OTW_(feat_Yung_Booke_Money_Man_Ace_Hood_Boosie_BadAzz_and_T-Pain)_Remix-SINGLE-WEB-2016-ENRAGED":
@@ -2590,6 +2638,16 @@
   subtitle: "1967"
   year: 2009
   audio: "FLAC"
+"Monica-Dont_Take_It_Personal_(Just_One_Of_Dem_Days)_Remix-Single-WEB-1995-UVU_INT":
+  type: "music"
+  artist: "Monica"
+  title: "Dont Take It Personal"
+  subtitle: "Just One Of Dem Days"
+  source: "WEB"
+  year: 1995
+  other: "REMiX INTERNAL"
+  group: "UVU"
+  unused: "Single"
 "Oasis-(Whats_the_Story)_Morning_Glory-1995-FADA":
   type: "music"
   artist: "Oasis"
@@ -2712,6 +2770,14 @@
   source: "CD"
   year: 2003
   group: "SND"
+"VA-1000_Percent_Techno_Dance_Vol_8-Limited_Edition_Bootleg-2005-WEM":
+  type: "music"
+  artist: "VA"
+  title: "1000 Percent Techno Dance Vol 8"
+  year: 2005
+  edition: "Limited.Edition"
+  group: "WEM"
+  unused: "Bootleg"
 "VA_-_Hellz_Army_EP_(APOC_001)-2xVinyl-2000-RSQ":
   type: "music"
   artist: "VA"

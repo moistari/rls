@@ -254,7 +254,7 @@ func (b *TagBuilder) init(r *Release) {
 	// get first text prior to pivot
 	end := b.end(r, pivot)
 	// reset language/other/arch/platform prior to end
-	_ = b.reset(r, end, TagTypeLanguage, TagTypeOther, TagTypeArch, TagTypePlatform)
+	_ = b.reset(r, end, TagTypeLanguage, TagTypeArch, TagTypePlatform)
 	b.fixFirst(r)
 	start := b.start(r, 0)
 	b.fixBad(r, start, end)
@@ -350,7 +350,8 @@ func (b *TagBuilder) fixBad(r *Release, start, i int) {
 	// fix collection/language/other/arch/platform tag between start and i
 	for ; i > start; i-- {
 		switch {
-		case r.tags[i-1].Is(TagTypeCollection) && r.tags[i-1].Collection() == "IMAX":
+		case r.tags[i-1].Is(TagTypeCollection) && r.tags[i-1].Collection() == "IMAX",
+			r.tags[i-1].Is(TagTypeOther) && r.tags[i-1].Other() == "REMiX":
 			// ignore imax
 		case r.tags[i-1].Is(
 			TagTypeCollection,
@@ -372,7 +373,8 @@ func (b *TagBuilder) fixSpecial(r *Release, i int) {
 		case typ == TagTypeCollection && (c == "CC" || c == "RED" || (c == "AMZN" && s == "amazon")),
 			typ == TagTypeSource && r.tags[i-1].Text() == "Web",
 			typ == TagTypeCut && r.tags[i-1].Text() == "Uncut",
-			typ == TagTypeOther && o == "MD":
+			typ == TagTypeOther && o == "MD",
+			typ == TagTypeCut && s == "dc":
 			r.tags[i-1] = r.tags[i-1].As(TagTypeText, nil)
 		}
 	}
@@ -405,7 +407,10 @@ func (b *TagBuilder) fixIsolated(r *Release) {
 			TagTypeOther,
 			TagTypeArch,
 			TagTypePlatform,
-		) && isolated(r.tags[:r.end], i-1, -1) && isolated(r.tags[:r.end], i-1, +1) {
+		) &&
+			isolated(r.tags[:r.end], i-1, -1) &&
+			isolated(r.tags[:r.end], i-1, +1) &&
+			r.tags[i-1].Other() != "REMiX" {
 			r.tags[i-1] = r.tags[i-1].As(TagTypeText, nil)
 		}
 	}

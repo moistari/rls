@@ -337,7 +337,7 @@ language,CHT,Chinese (traditional),(?i:chinese[\-\._ ]?traditional)|CHT,,,
 language,CZECH,Czech,CZECH|CZ,,,
 language,DANiSH,Danish,(?i:danish)|DK,,,
 language,DL,Dual Language,(?i:dual[\-\._ ]?language)|DL,,,
-language,DUBBED,Dubbed,(?i:dubbed),,,
+language,DUBBED,Dubbed,(?i:(?:line[\-\._ ]?)?dubbed),,,
 language,DUTCH,Dutch,(?i:dutch|flemish)|NL,,,
 language,ENGLiSH,English,(?i:eng(?:lish)?)|EN,,,
 language,ESTONiAN,Estonian,(?i:estonian)|EE,,,
@@ -456,7 +456,7 @@ other,REGiSTERED,Registered,registered|regged,,app,1
 other,REISSUE,Reissue,,,music,
 other,REMAKE,Remake,(?-i:REMAKE),,,
 other,REMASTERED,Remastered,remaster(?:ed)?,,,
-other,REMiX,Remix,(?:re[\-\._ ]?)?mix(?:e[sd])?,,music,1
+other,REMiX,Remix,(?:re[\-\._ ]?)?mix(?:e[sd])?(?:[\-\._ ]edition)?,,music,1
 other,REMUX,Remux,,,,
 other,REPACK,Repack,repack(?:ed)?,,,
 other,RERELEASE,Re-release,re[\-\._ ]?release,,music,1
