@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	"io/ioutil"
 	"math/rand"
 	"os"
 	"reflect"
@@ -376,7 +375,7 @@ func TestExport_tests(t *testing.T) {
 			}
 		}
 	}
-	if err := ioutil.WriteFile("tests.yaml", buf.Bytes(), 0o644); err != nil {
+	if err := os.WriteFile("tests.yaml", buf.Bytes(), 0o644); err != nil {
 		t.Fatal(err)
 	}
 }
@@ -440,7 +439,7 @@ func TestExport_taginfo(t *testing.T) {
 	for _, v := range all {
 		_, _ = buf.WriteString(strings.Join(v, ",") + "\n")
 	}
-	if err := ioutil.WriteFile("taginfo/taginfo.csv", buf.Bytes(), 0o644); err != nil {
+	if err := os.WriteFile("taginfo/taginfo.csv", buf.Bytes(), 0o644); err != nil {
 		t.Fatal(err)
 	}
 }
@@ -708,7 +707,7 @@ type rlsTest struct {
 }
 
 func rlsTests(tb testing.TB) []rlsTest {
-	buf, err := ioutil.ReadFile("tests.yaml")
+	buf, err := os.ReadFile("tests.yaml")
 	if err != nil {
 		tb.Fatal(err)
 	}

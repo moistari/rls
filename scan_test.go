@@ -108,11 +108,6 @@ loop:
 	}
 }
 
-type unusedCount struct {
-	items []string
-	count int64
-}
-
 var num = regexp.MustCompile(`^\d+$`)
 
 type kv struct {
