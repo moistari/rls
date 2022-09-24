@@ -16,7 +16,7 @@ audio,AC3D,,ac[\-\._ ]?3d,,movie,
 audio,Atmos,Dolby Atmos,,,movie,
 audio,24BIT,,(?-i:24BIT),,music,1
 audio,16BIT,,(?-i:16BIT),,music,1
-audio,CBR,Constant Bit Rate,,,music,1
+audio,CBR,Constant Bit Rate,,,,
 audio,DDPA,Dolby Digital+ Atmos (E-AC-3+Atmos),dd[p\+]a,,movie,
 audio,DDP,Dolby Digital+ (E-AC-3),dd[p\+]|e[\-\._ ]?ac3,,movie,
 audio,DD,Dolby Digital (AC-3),dd|ac3|dolby[\-\._ ]?digital,,movie,
@@ -102,7 +102,7 @@ collection,CR,Crunchyroll,,,,
 collection,CW,The CW,,,,
 collection,CX,Fuji TV,,,,
 collection,DCU,DC Universe,,,,
-collection,DI.FM,Digitally Imported FM,di[\-\._ ]?fm|(?-i:DI),,music,1
+collection,DI.FM,Digitally Imported FM,di[\-\._ ]?fm,,music,1
 collection,DigitalTutors,,digital[\-\._ ]?tutors(?:[\-\._ ]?com)?,,education,1
 collection,DSCP,Discovery+,dsc[p\+],,,
 collection,DSNP,Disney+,dsn[p+],,,
@@ -239,7 +239,6 @@ ext,cbz,Comic Book (CBZ),,,comic,1
 ext,dat,Data (dat),,,app,
 ext,divx,DivX,[bd]ivx,,movie,
 ext,dvr-ms,Microsoft Digital Video Recording (dvr-ms),,,movie,
-ext,dv,Digital Video (dv),,,movie,
 ext,flac,Free Lossless Audio Codec (flac),(?-i:flac),,music,
 ext,fli,FLIC Animation (fli),,,movie,
 ext,flv,FLV,,,movie,
@@ -406,6 +405,7 @@ other,Digital.Extras,Extras (digital),digital[\-\._ ]extras,,movie,
 other,DIRFIX,Fix (directory),dir[\-\._ ]?[df]ix?,,,
 other,Discography,,,,music,1
 other,DLC,,(?:(?:plus|including|incl|inc)[\-\._ ]?)?dlc(?:[\-\._ ]unlocker)?,,game,1
+other,DNR,Digital Noise Reduction,(?-i:DNR),,movie,1
 other,DOX,Dox,,,,
 other,EAC,Exact Audio Copy,(?-i:EAC),,music,1
 other,EXTRAS,Extras,(?:(?:plus|including|incl|inc)[\-\._ ]?)?extras(?:[\-\._ ]?only)?,,,
@@ -434,11 +434,12 @@ other,JB,Jailbroken,(?-i:JB),,game,1
 other,KONTAKT,Samples (Kontakt),(?-i:KONTAKT),,music,1
 other,LD,Line Dubbed,,,,
 other,MD,Mic Dubbed,(?-i:MD),,,
-other,MERRY.XMAS,Holiday (xmas),(?-i:MERRY[\-\._ ](?:XMAS|CHRISTMAS)),,,
-other,minimalNR,Minimal Noise-Reduction,(?-i:minimalNR),,movie,1
+other,MERRY.XMAS,Holiday (xmas),(?-i:.ERRY[\-\._ ](?:XMAS|CHRISTMAS)),,,
+other,minimalNR,Minimal Noise-Reduction,minimal[\-\._ ]?nr,,movie,1
 other,MOViE.PACK,Movie Pack,movie[\-\._ ]?pack,,movie,1
 other,MULTiFORMAT,Multiformat,,,music,1
 other,NFOFiX,Fix (nfo),i?nfo[\-\._ ]?fix,,,
+other,no-DNR,No Digital Noise Reduction,no[\-\._ ]?dnr,,movie,1
 other,NoCD,Crack (no CD),,,game,1
 other,NUKED,Nuked,nuked?,,,
 other,ONESIDED,Vinyl (onesided),,,music,1
@@ -462,6 +463,7 @@ other,REPACK,Repack,repack(?:ed)?,,,
 other,RERELEASE,Re-release,re[\-\._ ]?release,,music,1
 other,REREPACK,Re-repack,rerepack|repack2,,,
 other,RERiP,Re-rip,re[\-\._ ]?rip,,,
+other,RESTORATiON,Restoration,,,movie,
 other,RETAiL,Retail,,,,
 other,RiP,Rip,(?-i:RiP),,,
 other,SAMPLEFiX,Fix (sample),,,movie,
@@ -574,8 +576,9 @@ resolution,PN.Selector,PAL/NTSC Selector,p(?:al)?[\-\._ ]?n(?:tsc)?[\-\._ ]selec
 resolution,DCI4K,DCI 4k,dci[\-\._ ]?4k|4096x2160,,,
 resolution,DCI2K,DCI 2k,dci[\-\._ ]?2k|2048x1080,,,
 resolution,4320p,UltraHD 8K (4320p),4320p|7680x4320,,,
+resolution,3240p,6k (3240p),3240p|6k|5760x3240,,,
 resolution,2880p,5k (2880p),2880p|5k|5120x2880,,,
-resolution,2160p,UltraHD 4K (2160p),2160p|3840x2160|uhd|4k,,,
+resolution,2160p,UltraHD 4K (2160p),2160p|3840x2160|uhd|ultra[\-\._ ]?hd|4k,,,
 resolution,1800p,QHD+ (1800p),1800p|3200x1800,,,
 resolution,1440p,QHD (1440p),1440p|2560x1440,,,
 resolution,1080p,FullHD (1080p),1080[ip]|1920x1080,,,
@@ -676,6 +679,7 @@ source,LP,Limited Play,(?-i:LP),,music,1
 source,MAGAZiNE,Magazine,(?-i:MAGAZ[iI]NE),,magazine,1
 source,MBluRay,Music BluRay,m(?:usic)?[\-\._ ]?blu[\-\._ ]?ray|mbd,,music,1
 source,35mm,Film (35mm),,,movie,1
+source,16mm,Film (16mm),,,movie,1
 source,PDTV,Pure Digital TV,,,,
 source,PDVD,Digital Video Disc (pirated),,,movie,1
 source,PS2CD,PlayStation 2 (CD),,,game,1

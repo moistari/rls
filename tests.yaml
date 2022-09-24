@@ -542,6 +542,18 @@
   codec: "XViD"
   audio: "DD"
   group: "MiLLENiUM"
+"Dont.Blink.2014.1080p.AMZN-CBR.WEB-DL.DDP5.1.H.264-NTG.mkv":
+  type: "movie"
+  title: "Dont Blink"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "AMZN"
+  year: 2014
+  codec: "H.264"
+  audio: "CBR DDP"
+  channels: "5.1"
+  group: "NTG"
+  ext: "mkv"
 "Dr.No.1962.INTERNAL.2160p.WEB.H265-DEFLATE":
   type: "movie"
   title: "Dr No"
@@ -840,6 +852,18 @@
   codec: "x264"
   language: "VFF"
   group: "HDLIGHT"
+"Last.Train.from.Gun.Hill.1959.720p.6K.RESTORATION.BluRay.FLAC.2.0.x264-iFT.torrent":
+  type: "movie"
+  title: "Last Train from Gun Hill"
+  source: "BluRay"
+  resolution: "720p"
+  year: 1959
+  codec: "x264"
+  audio: "FLAC"
+  channels: "2.0"
+  other: "RESTORATiON"
+  group: "iFT"
+  ext: "torrent"
 "Lets.Be.Cops.2014.BRRip.XViD-juggs[ETRG]":
   type: "movie"
   title: "Lets Be Cops"
@@ -1031,6 +1055,21 @@
   channels: "2.0"
   group: "RESTORED"
   ext: "mkv"
+"Sonic the Hedgehog 2 (2022) (2160p iT WEB-DL Hybrid H265 DV HDR DDP Atmos 5.1 English - HONE).mkv":
+  type: "movie"
+  title: "Sonic the Hedgehog 2"
+  source: "WEB-DL"
+  resolution: "2160p"
+  collection: "iTunes"
+  year: 2022
+  codec: "H.265"
+  hdr: "DV HDR"
+  audio: "DDP Atmos"
+  channels: "5.1"
+  other: "HYBRiD"
+  language: "ENGLiSH"
+  group: "HONE"
+  ext: "mkv"
 "South.Park.Bigger.Longer.and.Uncut.1999.1080p.Blu-ray.AVC.TrueHD.5.1.REMUX-FraMeSToR":
   type: "movie"
   title: "South Park Bigger Longer and Uncut"
@@ -1084,6 +1123,17 @@
   site: "UTW-TMD"
   sum: "9F311DAB"
   ext: "mkv"
+"Super Mario Brothers: The Great Mission to Rescue Princess Peach! 1986 1080p 16mm Restoration DD2.0 H.264-MiU":
+  type: "movie"
+  title: "Super Mario Brothers: The Great Mission to Rescue Princess Peach!"
+  source: "16mm"
+  resolution: "1080p"
+  year: 1986
+  codec: "H.264"
+  audio: "DD"
+  channels: "2.0"
+  other: "RESTORATiON"
+  group: "MiU"
 "Teenage Mutant Ninja Turtles (HdRip / 2014)":
   type: "movie"
   title: "Teenage Mutant Ninja Turtles"
@@ -1389,6 +1439,13 @@
   channels: "1.0"
   other: "REPACK REMUX"
   group: "FraMeSToR"
+"WWE: 30 Years Of SummerSlam 3xDVD9 NTSC (ISO)":
+  type: "movie"
+  title: "WWE: 30 Years Of SummerSlam"
+  resolution: "480p"
+  disc: "3x"
+  size: "DVD9"
+  container: "ISO"
 "WWE Hell in a Cell 2014 HDTV x264 SNHD":
   type: "movie"
   title: "WWE Hell in a Cell"
@@ -1433,6 +1490,15 @@
   audio: "DD"
   language: "FRENCH"
   group: "XF"
+"30.Grader.I.Februari.S01E01.SWEDiSH.HDTV.XviD-HDR":
+  type: "episode"
+  title: "30 Grader I Februari"
+  source: "HDTV"
+  series: 1
+  episode: 1
+  codec: "XViD"
+  language: "SWEDiSH"
+  group: "HDR"
 "1-2-3.Istanbul.S01E04.GERMAN.DOKU.WS.dTV.XviD-GEO":
   type: "episode"
   title: "1-2-3 Istanbul"
@@ -1469,6 +1535,17 @@
   other: "REMUX"
   group: "FraMeSToR"
   ext: "mkv"
+"American Restoration S01 1080p AMZN WEB-DL DDP 2.0 H.264-T7ST":
+  type: "series"
+  title: "American Restoration"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "AMZN"
+  series: 1
+  codec: "H.264"
+  audio: "DDP"
+  channels: "2.0"
+  group: "T7ST"
 "And.Just.Like.That....S01.1080p.HMAX.WEB-DL.DD5.1.x264-NTb.torrent":
   type: "series"
   title: "And Just Like That..."
@@ -1500,6 +1577,16 @@
   audio: "DDP"
   channels: "5.1"
   group: "BTN"
+"Black White S01 2xDVD9 NTSC MPEG-2 DD2.0":
+  type: "series"
+  title: "Black White"
+  resolution: "480p"
+  series: 1
+  disc: "2x"
+  codec: "MPEG-2"
+  audio: "DD"
+  channels: "2.0"
+  size: "DVD9"
 "breaking.bad.s01e01.720p.bluray.x264-reward":
   type: "episode"
   title: "breaking bad"
@@ -1509,6 +1596,15 @@
   episode: 1
   codec: "x264"
   group: "reward"
+"Brooklyn Nine-Nine S01 DVD9 3-Discs WS NTSC DVDR-NoRBiT":
+  type: "series"
+  title: "Brooklyn Nine-Nine"
+  resolution: "480p"
+  series: 1
+  disc: "3DiSCS"
+  other: "WS"
+  size: "DVD9"
+  group: "NoRBiT"
 "Clickbait.2021.S01.2160p.NF.WEBRiP.DDPA5.1.HDR.x265-182K":
   type: "series"
   title: "Clickbait"
@@ -1562,6 +1658,17 @@
   episode: 862
   site: "HorribleSubs"
   ext: "mkv"
+"DI.Ray.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-NTb":
+  type: "series"
+  title: "DI Ray"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "AMZN"
+  series: 1
+  codec: "H.264"
+  audio: "DDP"
+  channels: "2.0"
+  group: "NTb"
 "Doctor.Who.2005.8x11.Dark.Water.720p.HDTV.x264-FoV[rartv]":
   type: "episode"
   title: "Doctor Who"
@@ -1950,6 +2057,19 @@
   other: "VR180"
   container: "MP4"
   group: "GUSH"
+"Restoration Garage S08E02 Social Upshift 1080p AMZN WEB-DL DDP 2.0 H.264-NTb":
+  type: "episode"
+  title: "Restoration Garage"
+  subtitle: "Social Upshift"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "AMZN"
+  series: 8
+  episode: 2
+  codec: "H.264"
+  audio: "DDP"
+  channels: "2.0"
+  group: "NTb"
 "Rugrats.S04E03.Vacation.NTSC.DVD.DD2.0.MPEG2.REMUX.mkv":
   type: "episode"
   title: "Rugrats"
@@ -2419,11 +2539,29 @@
   size: "MDVDR"
   group: "YARDVID"
   unused: "Show Bootleg"
+"R.E.M.REMTV.2014.6DVD9.NTSC.MDVDR-gFViD":
+  type: "music"
+  title: "R.E.M. REMTV"
+  resolution: "480p"
+  year: 2014
+  disc: "6x"
+  size: "DVD9"
+  group: "gFViD"
 "The Title.(2011).MsT":
   type: "music"
   title: "The Title"
   year: 2011
   group: "MsT"
+"The.Who.Sensation.The.Story.Of.Tommy.2013.1080p.DOCU.MBluRay.x264-LiQUiD.mkv":
+  type: "music"
+  title: "The Who Sensation The Story Of Tommy"
+  source: "MBluRay"
+  resolution: "1080p"
+  year: 2013
+  codec: "x264"
+  genre: "Documentary"
+  group: "LiQUiD"
+  ext: "mkv"
 "Lil_Yachty-Split__Whole_Time-DDC-1080p-x264-2020-SRPx":
   type: "music"
   artist: "Lil Yachty"
@@ -2545,6 +2683,15 @@
   other: "EAC"
   group: "miok"
   site: "WWRG"
+"Depeche_Mode_-_Videos_86-98-(Deluxe_Edition_2xDVDA)-2002-Doener":
+  type: "music"
+  artist: "Depeche Mode"
+  title: "Videos 86-98"
+  source: "DVDA"
+  year: 2002
+  disc: "2x"
+  edition: "Deluxe.Edition"
+  group: "Doener"
 "DJ_Exodus_-_Double_Down_Radio_083__Incl_Masta_Monk_and_DJ_Montone_Guestmix-SAT-01-07-2022-TALiON":
   type: "music"
   artist: "DJ Exodus"
@@ -2599,6 +2746,15 @@
   other: "REISSUE 201X"
   id: "CTLP 889"
   group: "YARD"
+"Gerardo_Frisina-The_Latin_Kick-(SCLP395)-2xVinyl-2005-MPX":
+  type: "music"
+  artist: "Gerardo Frisina"
+  title: "The Latin Kick"
+  source: "ViNYL"
+  year: 2005
+  disc: "2x"
+  id: "SCLP395"
+  group: "MPX"
 "Giveon+-+When+It&#039;s+All+Said+And+Done...+Take+Time+(2021)+Mp3+320kbps+[PMEDIA]+⭐️":
   type: "music"
   artist: "Giveon"
@@ -2648,12 +2804,28 @@
   other: "REMiX INTERNAL"
   group: "UVU"
   unused: "Single"
+"No_Doubt-Ex-Girlfriend-2CDS-2000-KSi":
+  type: "music"
+  artist: "No Doubt-Ex"
+  title: "Girlfriend"
+  source: "CDS"
+  year: 2000
+  disc: "2x"
+  group: "KSi"
 "Oasis-(Whats_the_Story)_Morning_Glory-1995-FADA":
   type: "music"
   artist: "Oasis"
   title: "(Whats the Story) Morning Glory"
   year: 1995
   group: "FADA"
+"Ouija-Antivirus-(DNR001)-WEB-2020-KLIN":
+  type: "music"
+  artist: "Ouija"
+  title: "Antivirus"
+  source: "WEB"
+  year: 2020
+  id: "DNR001"
+  group: "KLIN"
 "Placebo+-+Black+Market+Music+(2000+-+Alternative+Rock)+[Flac+24-192+LP]":
   type: "music"
   artist: "Placebo"
@@ -2728,6 +2900,12 @@
   group: "VX"
   site: "P2PDL"
   unused: "Hip Hop"
+"The_Paddingtons-No_Mundane_Options-2008-DV":
+  type: "music"
+  artist: "The Paddingtons"
+  title: "No Mundane Options"
+  year: 2008
+  group: "DV"
 "The_Presidents_Of_The_United_States_Of_America-The_Presidents_Of_The_United_States_Of_America-2CD-Ltd.Ed.-1996-PtSL":
   type: "music"
   artist: "The Presidents Of The United States Of America"
@@ -2787,6 +2965,13 @@
   disc: "2x"
   id: "APOC 001"
   group: "RSQ"
+"Wretched-DNR-EP-1981-SDR":
+  type: "music"
+  artist: "Wretched"
+  title: "DNR"
+  source: "EP"
+  year: 1981
+  group: "SDR"
 "Yabby_You-Fire_In_Kingston-VL-7inch-197x-RAC":
   type: "music"
   artist: "Yabby You"
@@ -2843,6 +3028,13 @@
   version: "v1.20"
   other: "Incl.Keygen"
   group: "PROPHECY"
+"35MM_Update_v1.0.2_NSW-LiGHTFORCE":
+  type: "game"
+  title: "35MM"
+  platform: "NSW"
+  version: "v1.0.2"
+  other: "UPDATE"
+  group: "LiGHTFORCE"
 "Agarest_Generations_Of_War_EUR_REPACK_JB_PS3-LiGHTFORCE":
   type: "game"
   title: "Agarest Generations Of War"

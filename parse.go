@@ -36,7 +36,11 @@ func NewTagParser(infos map[string][]*taginfo.Taginfo, lexers ...Lexer) Parser {
 	delim := regexp.MustCompile(`^((?:` + reutil.Join(true, v...) + ")+)")
 	// build short tags
 	short := make(map[string]bool)
-	for _, v := range infos {
+	hdr := strings.ToLower(TagTypeHDR.String())
+	for typ, v := range infos {
+		if typ == hdr {
+			continue
+		}
 		for _, info := range v {
 			for _, field := range strings.FieldsFunc(info.Tag(), isAnyDelim) {
 				if len(field) < 5 && !strings.Contains(field, "$") {
@@ -373,7 +377,7 @@ func (b *TagBuilder) fixSpecial(r *Release, i int) {
 		case typ == TagTypeCollection && (c == "CC" || c == "RED" || (c == "AMZN" && s == "amazon")),
 			typ == TagTypeSource && r.tags[i-1].Text() == "Web",
 			typ == TagTypeCut && r.tags[i-1].Text() == "Uncut",
-			typ == TagTypeOther && o == "MD",
+			typ == TagTypeOther && (o == "MD" || o == "RESTORATiON"),
 			typ == TagTypeCut && s == "dc":
 			r.tags[i-1] = r.tags[i-1].As(TagTypeText, nil)
 		}
@@ -417,7 +421,7 @@ func (b *TagBuilder) fixIsolated(r *Release) {
 }
 
 // fixMusic fixes music tags. Changes single cbr audio tag to the cbr container
-// (ie, a comic) tag, and converts to 'bootleg' tag not surrounded by '-' or
+// (ie, a comic) tag, and converts 'bootleg' tag not surrounded by '-' or
 // '()' back to text.
 func (b *TagBuilder) fixMusic(r *Release) {
 	// when only one music tag of `cbr`, change to container `cbr` (comic)

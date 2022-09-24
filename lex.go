@@ -112,12 +112,18 @@ func DefaultLexers() []Lexer {
 			`(?i)^(?P<t>cd)[\-\._ ]?(?P<c>\d{1,2})\b`,
 			// DVD2, DVD24 -- does not match DVD5/DVD9
 			`(?i)^(?P<t>dvd)[\-\._ ]?(?P<c>[1-46-8]|[12]\d)\b`,
+			// 2xDVD9
+			`(?i)^(?P<c>\d{1,2})(?P<t>x(?:dvd9))\b`,
+			// 2DVD9, 6DVD9
+			`(?i)^(?P<c>[2-9])(?P<z>dvd9)\b`,
 			// 2xVinyl, 3xDVD, 4xCD
-			`(?i)^(?P<c>\d{1,2})(?P<t>x(?:cd|ep|lp|dvd|vls|vinyl))\b`,
+			`(?i)^(?P<c>\d{1,2})(?P<t>x(?:cd|ep|lp|dvda|dvd|vls|vinyl)s?)\b`,
 			// 2Vinyl, 6DVD
-			`(?i)^(?P<c>\d{1,2})(?P<x>(?:cd|ep|lp|dvd|vls|vinyl))\b`,
+			`(?i)^(?P<c>\d{1,2})(?P<x>(?:cd|ep|lp|dvda|dvd|vls|vinyl)s?)\b`,
 			// CDS3
 			`(?i)^(?:(?P<x>cd)s)(?P<c>\d{1,2})\b`,
+			// 2CDS
+			`(?i)^(?P<c>[2-9])(?P<x>cds)\b`,
 		),
 		NewDateLexer(
 			// 2006-01-02, 2006
@@ -216,11 +222,11 @@ func NewDateLexer(strs ...string) Lexer {
 
 // NewSeriesLexer creates a tag lexer for a series.
 func NewSeriesLexer(strs ...string) Lexer {
-	var f taginfo.FindFunc
+	var sourcef taginfo.FindFunc
 	lexer, re, typ := NamedCaptureLexer(strs...), regexp.MustCompile(`(?i)s(\d?\d)`), regexp.MustCompile(`(?i)^disc|disk|dvd|d`)
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
-			f = taginfo.Find(infos["source"]...)
+			sourcef = taginfo.Find(infos["source"]...)
 		},
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if s, v, i, n, ok := lexer(src, buf, i, n); ok {
@@ -262,7 +268,7 @@ func NewSeriesLexer(strs ...string) Lexer {
 					case "DVD":
 						tags = append(
 							tags,
-							NewTag(TagTypeSource, f, disctyp, disctyp),
+							NewTag(TagTypeSource, sourcef, disctyp, disctyp),
 							NewTag(TagTypeDisc, nil, disc[len(disctyp):], disctyp, num),
 						)
 					default:
@@ -356,11 +362,11 @@ func NewVersionLexer(strs ...string) Lexer {
 // NewDiscSourceYearLexer creates a tag lexer for the combined disc, source,
 // year style tag.
 func NewDiscSourceYearLexer(strs ...string) Lexer {
-	var f taginfo.FindFunc
+	var sourcef taginfo.FindFunc
 	lexer := NamedCaptureLexer(strs...)
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
-			f = taginfo.Find(infos["source"]...)
+			sourcef = taginfo.Find(infos["source"]...)
 		},
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if s, v, i, n, ok := lexer(src, buf, i, n); ok {
@@ -384,7 +390,7 @@ func NewDiscSourceYearLexer(strs ...string) Lexer {
 				}
 				tags = append(
 					tags,
-					NewTag(TagTypeSource, f, source, source),
+					NewTag(TagTypeSource, sourcef, source, source),
 					NewTag(TagTypeDate, nil, year, year, nil, nil),
 				)
 				return append(start, tags...), end, i + len(s), n, true
@@ -400,15 +406,15 @@ func NewDiscSourceYearLexer(strs ...string) Lexer {
 //	t - type
 //	x - xXtype
 func NewDiscLexer(strs ...string) Lexer {
-	var f taginfo.FindFunc
+	var sourcef, sizef taginfo.FindFunc
 	lexer, re := NamedCaptureLexer(strs...), regexp.MustCompile(`(?i)^dvd|cd|d|s|x`)
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
-			f = taginfo.Find(infos["source"]...)
+			sourcef, sizef = taginfo.Find(infos["source"]...), taginfo.Find(infos["size"]...)
 		},
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if s, v, j, k, ok := lexer(src, buf, i, n); ok {
-				var typ, c, x []byte
+				var typ, c, x, z []byte
 				for l := 0; l < len(v); l += 2 {
 					switch string(v[l]) {
 					case "c":
@@ -417,6 +423,8 @@ func NewDiscLexer(strs ...string) Lexer {
 						typ = bytes.ToUpper(v[l+1])
 					case "x":
 						x = bytes.ToUpper(v[l+1])
+					case "z":
+						typ, z = []byte("Z"), bytes.ToUpper(v[l+1])
 					default:
 						panic(fmt.Errorf("unknown capture group %q", v[l]))
 					}
@@ -427,20 +435,31 @@ func NewDiscLexer(strs ...string) Lexer {
 				switch string(typ) {
 				case "D", "S":
 					return append(start, NewTag(TagTypeDisc, nil, s, typ, c)), end, j, k, true
-				case "DVD", "CD":
+				case "DVDA", "DVD", "CD":
 					return append(start,
-						NewTag(TagTypeSource, f, s[:len(typ)], typ, typ),
+						NewTag(TagTypeSource, sourcef, s[:len(typ)], typ, typ),
 						NewTag(TagTypeDisc, nil, s[len(typ):], typ, c),
 					), end, j, k, true
 				case "X":
+					if sz := strings.ToUpper(string(s[len(c)+1:])); sz == "DVD9" {
+						return append(start,
+							NewTag(TagTypeDisc, nil, s[:len(c)+1], typ, c),
+							NewTag(TagTypeSize, sizef, s[len(c)+1:], s[len(c)+1:]),
+						), end, j, k, true
+					}
 					return append(start,
 						NewTag(TagTypeDisc, nil, s[:len(c)+1], typ, c),
-						NewTag(TagTypeSource, f, s[len(c)+1:], s[len(c)+1:]),
+						NewTag(TagTypeSource, sourcef, s[len(c)+1:], s[len(c)+1:]),
+					), end, j, k, true
+				case "Z":
+					return append(start,
+						NewTag(TagTypeDisc, nil, s[:len(c)+1], []byte{'X'}, c),
+						NewTag(TagTypeSize, sizef, s[len(c)+1:], z),
 					), end, j, k, true
 				case "":
 					return append(start,
 						NewTag(TagTypeDisc, nil, s[:len(c)+1], []byte{'X'}, c),
-						NewTag(TagTypeSource, f, s[len(c)+1:], x),
+						NewTag(TagTypeSource, sourcef, s[len(c)+1:], x),
 					), end, j, k, true
 				default:
 					panic(fmt.Errorf("unknown type %q", typ))
@@ -484,7 +503,7 @@ func NewAudioLexer() Lexer {
 
 // NewGenreLexer creates a tag lexer for a genre.
 func NewGenreLexer() Lexer {
-	var f taginfo.FindFunc
+	var genref taginfo.FindFunc
 	var re, lb, other *regexp.Regexp
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
@@ -498,7 +517,7 @@ func NewGenreLexer() Lexer {
 				}
 			}
 			s := `\(?(` + strings.Join(v, `|`) + `)\s*\)`
-			re, lb, other, f = regexp.MustCompile(`(?i)^`+s), regexp.MustCompile(`(?i)\(\s*`+s+`$`), regexp.MustCompile(`(?i)^(`+strings.Join(tagv, `|`)+`)\b`), taginfo.Find(genre...)
+			re, lb, other, genref = regexp.MustCompile(`(?i)^`+s), regexp.MustCompile(`(?i)\(\s*`+s+`$`), regexp.MustCompile(`(?i)^(`+strings.Join(tagv, `|`)+`)\b`), taginfo.Find(genre...)
 		},
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			var m [][]byte
@@ -506,12 +525,12 @@ func NewGenreLexer() Lexer {
 			if m = re.FindSubmatch(src[i:n]); m != nil && lb.Match(src[:i+len(m[0])]) {
 				return append(
 					start,
-					NewTag(TagTypeGenre, f, m...),
+					NewTag(TagTypeGenre, genref, m...),
 				), end, i + len(m[0]), n, true
 			} else if m = other.FindSubmatch(buf[i:n]); m != nil {
 				return append(
 					start,
-					NewTag(TagTypeGenre, f, m...),
+					NewTag(TagTypeGenre, genref, m...),
 				), end, i + len(m[0]), n, true
 			}
 			return start, end, i, n, false
@@ -522,7 +541,7 @@ func NewGenreLexer() Lexer {
 // NewGroupLexer creates a tag lexer for a group.
 func NewGroupLexer() Lexer {
 	const delim, invalid = '-', ` _.()[]{}+`
-	year, group := regexp.MustCompile(`\b(19|20)\d{2}\b`), regexp.MustCompile(`(?i)^[a-z_ ]{4,10}$`)
+	year, group := regexp.MustCompile(`\b(19|20)\d{2}\b`), regexp.MustCompile(`(?i)^[a-z_ ]{2,10}$`)
 	bracket := regexp.MustCompile(`^[\]\)\}]`)
 	var groupf, otherf taginfo.FindFunc
 	var re, special *regexp.Regexp
@@ -668,16 +687,16 @@ func NewMetaLexer(strs ...string) Lexer {
 
 // NewExtLexer creates a tag lexer for a file's extension.
 func NewExtLexer() Lexer {
-	var f taginfo.FindFunc
+	var extf taginfo.FindFunc
 	var re *regexp.Regexp
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
 			ext := infos["ext"]
-			re, f = regexp.MustCompile(`(?i:\.`+reutil.Taginfo("$", ext...)+`)`), taginfo.Find(ext...)
+			re, extf = regexp.MustCompile(`(?i:\.`+reutil.Taginfo("$", ext...)+`)`), taginfo.Find(ext...)
 		},
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if m := re.FindSubmatch(src[i:n]); m != nil {
-				return start, append(end, NewTag(TagTypeExt, f, m...)), i, n - len(m[0]), true
+				return start, append(end, NewTag(TagTypeExt, extf, m...)), i, n - len(m[0]), true
 			}
 			return start, end, i, n, false
 		},
