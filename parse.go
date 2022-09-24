@@ -244,7 +244,7 @@ func (b *TagBuilder) init(r *Release) {
 	if dates := b.reset(r, date, TagTypeDate); len(dates) != 0 {
 		r.dates = append(r.dates, dates...)
 	}
-	// fix "amazon" and "md" matches before a series/date tag
+	// fix special tags
 	if date != -1 || series != -1 {
 		i := min(date, series)
 		switch {
@@ -253,7 +253,7 @@ func (b *TagBuilder) init(r *Release) {
 		case series == -1:
 			i = date
 		}
-		b.fixSpecial(r, i)
+		b.fixSpecial(r, i, series != -1)
 	}
 	// get first text prior to pivot
 	end := b.end(r, pivot)
@@ -370,15 +370,16 @@ func (b *TagBuilder) fixBad(r *Release, start, i int) {
 }
 
 // fixSpecial fixes special collection and other tags before i.
-func (b *TagBuilder) fixSpecial(r *Release, i int) {
+func (b *TagBuilder) fixSpecial(r *Release, i int, series bool) {
 	for ; i > 0; i-- {
-		typ, c, o, s := r.tags[i-1].TagType(), r.tags[i-1].Collection(), r.tags[i-1].Other(), strings.ToLower(r.tags[i-1].Text())
-		switch {
-		case typ == TagTypeCollection && (c == "CC" || c == "RED" || (c == "AMZN" && s == "amazon")),
-			typ == TagTypeSource && r.tags[i-1].Text() == "Web",
-			typ == TagTypeCut && r.tags[i-1].Text() == "Uncut",
+		typ, c, o, t := r.tags[i-1].TagType(), r.tags[i-1].Collection(), r.tags[i-1].Other(), r.tags[i-1].Text()
+		switch l := strings.ToLower(t); {
+		case typ == TagTypeCollection && (c == "CC" || c == "RED" || (c == "AMZN" && l == "amazon")),
+			typ == TagTypeSource && t == "Web",
+			typ == TagTypeCut && t == "Uncut",
 			typ == TagTypeOther && (o == "MD" || o == "RESTORATiON"),
-			typ == TagTypeCut && s == "dc":
+			typ == TagTypeCut && l == "dc",
+			series && (typ == TagTypeArch || typ == TagTypePlatform):
 			r.tags[i-1] = r.tags[i-1].As(TagTypeText, nil)
 		}
 	}

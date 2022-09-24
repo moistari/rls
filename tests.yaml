@@ -2069,6 +2069,17 @@
   group: "JBENT"
   site: "TAoE"
   ext: "mkv"
+"Power.On.The.Story.Of.Xbox.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-WELP":
+  type: "series"
+  title: "Power On The Story Of Xbox"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "AMZN"
+  series: 1
+  codec: "H.264"
+  audio: "DDP"
+  channels: "2.0"
+  group: "WELP"
 "RealityLovers.17.04.01.Arya.Fae.Aryas.Pool.Day.XXX.VR180.1920p.MP4-GUSH":
   type: "episode"
   title: "RealityLovers"
