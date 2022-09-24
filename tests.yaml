@@ -542,6 +542,19 @@
   codec: "XViD"
   audio: "DD"
   group: "MiLLENiUM"
+"Distant.Journey.AKA.Daleká.cesta.1950.1080p.4K.Restoration.BluRay.REMUX.AVC.FLAC.1.0-EDPH.torrent":
+  type: "movie"
+  title: "Distant Journey"
+  subtitle: "Daleká cesta"
+  source: "BluRay"
+  resolution: "1080p"
+  year: 1950
+  codec: "AVC"
+  audio: "FLAC"
+  channels: "1.0"
+  other: "RESTORATiON REMUX"
+  group: "EDPH"
+  ext: "torrent"
 "Dont.Blink.2014.1080p.AMZN-CBR.WEB-DL.DDP5.1.H.264-NTG.mkv":
   type: "movie"
   title: "Dont Blink"
@@ -1017,7 +1030,8 @@
   group: "FraMeSToR"
 "Run Lola Run AKA Lola Rennt 1998 1080p BluRay x264 DTS With Commentary-Slappy ":
   type: "movie"
-  title: "Run Lola Run AKA Lola Rennt"
+  title: "Run Lola Run"
+  subtitle: "Lola Rennt"
   source: "BluRay"
   resolution: "1080p"
   year: 1998
@@ -1651,6 +1665,16 @@
   codec: "x264"
   region: "USA"
   group: "TBS"
+"Demo.Derby.S01E21.Official.Xbox.Magazine.052.720p.WEB.x264-PLUTONiUM":
+  type: "episode"
+  title: "Demo Derby"
+  subtitle: "Official Xbox Magazine 052"
+  source: "WEB"
+  resolution: "720p"
+  series: 1
+  episode: 21
+  codec: "x264"
+  group: "PLUTONiUM"
 "[HorribleSubs] Detective Conan - 862 [1080p].mkv":
   type: "episode"
   title: "Detective Conan"

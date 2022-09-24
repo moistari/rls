@@ -759,7 +759,11 @@ func (b *TagBuilder) unset(r *Release) {
 func (b *TagBuilder) titles(r *Release) int {
 	switch r.Type {
 	case Movie:
-		return b.movieTitles(r)
+		i := b.movieTitles(r)
+		if s := strings.Split(r.Title, " AKA "); r.Subtitle == "" && len(s) == 2 && s[0] != "" && s[1] != "" {
+			r.Title, r.Subtitle = s[0], s[1]
+		}
+		return i
 	case Series, Episode:
 		return b.episodeTitles(r)
 	case Music:
