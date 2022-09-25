@@ -758,21 +758,27 @@ func (b *TagBuilder) unset(r *Release) {
 
 // titles sets the titles for the release.
 func (b *TagBuilder) titles(r *Release) int {
+	var f func(*Release) int
+	var aka bool
 	switch r.Type {
 	case Movie:
-		i := b.movieTitles(r)
-		if s := strings.Split(r.Title, " AKA "); r.Subtitle == "" && len(s) == 2 && s[0] != "" && s[1] != "" {
-			r.Title, r.Subtitle = s[0], s[1]
-		}
-		return i
+		f, aka = b.movieTitles, true
 	case Series, Episode:
-		return b.episodeTitles(r)
+		f, aka = b.episodeTitles, true
 	case Music:
-		return b.musicTitles(r)
+		f = b.musicTitles
 	case Book, Audiobook:
-		return b.bookTitles(r)
+		f = b.bookTitles
+	default:
+		f = b.defaultTitle
 	}
-	return b.defaultTitle(r)
+	i := f(r)
+	if aka {
+		if s := strings.Split(r.Title, " AKA "); r.Alt == "" && len(s) == 2 && s[0] != "" && s[1] != "" {
+			r.Title, r.Alt = s[0], s[1]
+		}
+	}
+	return i
 }
 
 // movieTitles sets the titles for movies and series.

@@ -545,7 +545,7 @@
 "Distant.Journey.AKA.Daleká.cesta.1950.1080p.4K.Restoration.BluRay.REMUX.AVC.FLAC.1.0-EDPH.torrent":
   type: "movie"
   title: "Distant Journey"
-  subtitle: "Daleká cesta"
+  alt: "Daleká cesta"
   source: "BluRay"
   resolution: "1080p"
   year: 1950
@@ -1031,7 +1031,7 @@
 "Run Lola Run AKA Lola Rennt 1998 1080p BluRay x264 DTS With Commentary-Slappy ":
   type: "movie"
   title: "Run Lola Run"
-  subtitle: "Lola Rennt"
+  alt: "Lola Rennt"
   source: "BluRay"
   resolution: "1080p"
   year: 1998
@@ -2118,6 +2118,14 @@
   channels: "2.0"
   other: "REMUX"
   ext: "mkv"
+"[SubsPlease] Saikin Yatotta Maid ga Ayashii - 09 (1080p) [990FF01E].mkv":
+  type: "episode"
+  title: "Saikin Yatotta Maid ga Ayashii"
+  resolution: "1080p"
+  episode: 9
+  site: "SubsPlease"
+  sum: "990FF01E"
+  ext: "mkv"
 "Schitt's Creek (2015) - S04E01 - Dead Guy in Room 4 (1080p AMZN WEB-DL x265 MONOLITH).mkv":
   type: "episode"
   title: "Schitt's Creek"
@@ -2302,6 +2310,18 @@
   channels: "2.0"
   group: "PHOENiX"
   ext: "mkv"
+"The Maid I Hired Recently Is Mysterious AKA Saikin Yatotta Maid ga Ayashii S01E09 1080p WEB-DL AAC 2.0 H.264-SubsPlease":
+  type: "episode"
+  title: "The Maid I Hired Recently Is Mysterious"
+  alt: "Saikin Yatotta Maid ga Ayashii"
+  source: "WEB-DL"
+  resolution: "1080p"
+  series: 1
+  episode: 9
+  codec: "H.264"
+  audio: "AAC"
+  channels: "2.0"
+  group: "SubsPlease"
 "The Missing 1x01 Pilot HDTV x264-FoV [eztv]":
   type: "episode"
   title: "The Missing"

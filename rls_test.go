@@ -342,6 +342,7 @@ func TestExport_tests(t *testing.T) {
 			compareInt(a.Series, b.Series),
 			compareInt(a.Episode, b.Episode),
 			compareTitle(a.Subtitle, b.Subtitle),
+			compareTitle(a.Alt, b.Alt),
 			compareIntString(a.Resolution, b.Resolution),
 			compareString(a.Version, b.Version),
 			compareString(a.Group, b.Group),
@@ -606,6 +607,7 @@ type rls struct {
 	Artist   string
 	Title    string
 	Subtitle string
+	Alt      string
 
 	Platform string
 	Arch     string
@@ -659,6 +661,7 @@ func buildRls(r Release) rls {
 		Artist:   r.Artist,
 		Title:    r.Title,
 		Subtitle: r.Subtitle,
+		Alt:      r.Alt,
 
 		Platform: r.Platform,
 		Arch:     r.Arch,

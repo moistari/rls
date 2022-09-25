@@ -25,6 +25,7 @@ type Release struct {
 	Artist   string
 	Title    string
 	Subtitle string
+	Alt      string
 
 	Platform string
 	Arch     string
@@ -723,7 +724,9 @@ func init() {
 	DefaultParser = NewDefaultParser()
 }
 
-// CompareMap is the release compare map.
+// CompareMap is the release compare map. Modifying this will alter the order
+// by which different release types are grouped together when using Compare
+// with a sort operation.
 var CompareMap = map[Type]int{
 	Unknown:   0,
 	Movie:     1,
@@ -740,7 +743,8 @@ var CompareMap = map[Type]int{
 }
 
 // Compare compares a to b, normalizing titles with Normalize, comparing the
-// resulting lower cased strings.
+// resulting lower cased strings. Release types are grouped together based on
+// the precedence defined in CompareMap.
 func Compare(a, b Release) int {
 	var cmp int
 	for _, f := range []func() int{
@@ -753,6 +757,7 @@ func Compare(a, b Release) int {
 		compareInt(a.Series, b.Series),
 		compareInt(a.Episode, b.Episode),
 		compareTitle(a.Subtitle, b.Subtitle),
+		compareTitle(a.Alt, b.Alt),
 		compareIntString(a.Resolution, b.Resolution),
 		compareString(a.Version, b.Version),
 		compareString(a.Group, b.Group),
