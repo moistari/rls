@@ -16,12 +16,13 @@ import (
 
 // TagParser is a release tag parser.
 type TagParser struct {
-	builder Builder
-	delim   *regexp.Regexp
-	ellip   []byte
-	work    *regexp.Regexp
-	once    []LexFunc
-	multi   []LexFunc
+	builder  Builder
+	delim    *regexp.Regexp
+	ellip    []byte
+	work     *regexp.Regexp
+	once     []LexFunc
+	multi    []LexFunc
+	notFirst []bool
 }
 
 // NewTagParser creates a new release tag parser.
@@ -51,11 +52,13 @@ func NewTagParser(infos map[string][]*taginfo.Taginfo, lexers ...Lexer) Parser {
 	}
 	// separate once and multi
 	var once, multi []LexFunc
+	var notFirst []bool
 	for _, lexer := range lexers {
-		if f, o := lexer.Initialize(infos, delim, short); o {
+		if f, o, nf := lexer.Initialize(infos, delim, short); o {
 			once = append(once, f)
 		} else {
 			multi = append(multi, f)
+			notFirst = append(notFirst, nf)
 		}
 	}
 	// init builder
@@ -66,12 +69,13 @@ func NewTagParser(infos map[string][]*taginfo.Taginfo, lexers ...Lexer) Parser {
 		builder = b.Init(infos)
 	}
 	return &TagParser{
-		builder: builder,
-		delim:   delim,
-		ellip:   []byte("..."),
-		work:    regexp.MustCompile(`[_,\+]`),
-		once:    once,
-		multi:   multi,
+		builder:  builder,
+		delim:    delim,
+		ellip:    []byte("..."),
+		work:     regexp.MustCompile(`[_,\+]`),
+		once:     once,
+		multi:    multi,
+		notFirst: notFirst,
 	}
 }
 
@@ -91,8 +95,9 @@ func (p *TagParser) Parse(src []byte) ([]Tag, int) {
 		start, end, i, n, _ = f(src, buf, start, end, i, n)
 	}
 	// consume
+	notFirst := false
 	for i < n {
-		start, end, i, _ = p.next(src, buf, start, end, i, n)
+		start, end, i, _ = p.next(src, buf, start, end, i, n, &notFirst)
 	}
 	// add end (reversed) to start
 	tags := make([]Tag, len(start)+len(end))
@@ -112,7 +117,7 @@ func (p *TagParser) Parse(src []byte) ([]Tag, int) {
 // Lexers have the choice of matching against src or buf. Buf is the working
 // version of src, with underscores and other runes replaced with spaces. Using
 // buf allows lexers to matching with Go regexp `\b`.
-func (p *TagParser) next(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int) {
+func (p *TagParser) next(src, buf []byte, start, end []Tag, i, n int, notFirst *bool) ([]Tag, []Tag, int, int) {
 	// delimiter
 	if bytes.HasPrefix(src[i:n], p.ellip) {
 		return append(
@@ -126,8 +131,13 @@ func (p *TagParser) next(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []
 		), end, i + len(m[0]), n
 	}
 	// run all lexers
-	for _, f := range p.multi {
+	startn := len(start)
+	for a, f := range p.multi {
+		if p.notFirst[a] && !*notFirst {
+			continue
+		}
 		if s, e, j, k, ok := f(src, buf, start, end, i, n); ok {
+			*notFirst = *notFirst || startn != len(s)
 			return s, e, j, k
 		}
 	}
@@ -136,6 +146,7 @@ func (p *TagParser) next(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []
 	for j < n && !p.delim.Match(src[j:]) {
 		j++
 	}
+	*notFirst = true
 	return append(
 		start,
 		NewTag(TagTypeText, nil, src[i:j], src[i:j]),
@@ -787,6 +798,8 @@ func (b *TagBuilder) titles(r *Release) int {
 		f = b.musicTitles
 	case Book, Audiobook:
 		f = b.bookTitles
+	case App, Game:
+		f = b.appTitle
 	default:
 		f = b.defaultTitle
 	}
@@ -1047,6 +1060,17 @@ func (b *TagBuilder) bookTitles(r *Release) int {
 	return pos
 }
 
+// appTitle sets the an app title.
+func (b *TagBuilder) appTitle(r *Release) int {
+	// seek to text
+	var pos int
+	for pos = 0; pos < len(r.tags) && !r.tags[pos].Is(TagTypeText, TagTypeDate); pos++ {
+	}
+	var offset int
+	r.Title, offset = b.title(r.tags[pos:], TagTypeText, TagTypeDate)
+	return pos + offset
+}
+
 // defaultTitle sets the default title.
 func (b *TagBuilder) defaultTitle(r *Release) int {
 	// seek to text
@@ -1070,7 +1094,7 @@ loop:
 			v = append(v, tags[i].TextReplace(".", " ", -1))
 		case tags[i].Is(TagTypeDelim):
 			if s := tags[i].Delim(); !strings.ContainsAny(s, "()[]{}\\/") && s != "__" {
-				v = append(v, b.delim(s, tags, i))
+				v = append(v, b.delim(s, tags, i, types...))
 			} else {
 				break loop
 			}
@@ -1121,7 +1145,7 @@ func (b *TagBuilder) unused(r *Release, i int) {
 }
 
 // delim fixes the delimiter based on surrounding tags.
-func (b *TagBuilder) delim(delim string, tags []Tag, i int) string {
+func (b *TagBuilder) delim(delim string, tags []Tag, i int, types ...TagType) string {
 	// special cases
 	switch delim {
 	case "...":
@@ -1155,10 +1179,10 @@ func (b *TagBuilder) delim(delim string, tags []Tag, i int) string {
 	if i > 2 && tags[i-2].Is(TagTypeDelim) {
 		ante = tags[i-2].Delim()
 	}
-	if i != 0 && tags[i-1].Is(TagTypeText) {
+	if i != 0 && tags[i-1].Is(types...) {
 		prev = tags[i-1].Text()
 	}
-	if i < len(tags)-1 && tags[i+1].Is(TagTypeText) {
+	if i < len(tags)-1 && tags[i+1].Is(types...) {
 		next = tags[i+1].Text()
 	}
 	// acronyms / abbreviations

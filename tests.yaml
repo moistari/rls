@@ -32,8 +32,6 @@
 "[BBT-RMX]_Servant_x_Service":
   title: "Servant x Service"
   site: "BBT-RMX"
-"SketchUp.Pro.22.0.316-REPACK.ME":
-  title: "SketchUp Pro 22 0 316-REPACK ME"
 "TEST.A.Documentary":
   title: "TEST A Documentary"
 "Vol.I.V":
@@ -70,6 +68,14 @@
   cut: "Uncut"
   language: "GERMAN DL"
   group: "ETM"
+"[test]50.50.2011.BluRay.1080p.DTS-HD":
+  type: "movie"
+  title: "50 50"
+  source: "BluRay"
+  resolution: "1080p"
+  year: 2011
+  audio: "DTS-HD"
+  site: "test"
 "50.50.2011.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR.mkv":
   type: "movie"
   title: "50 50"
@@ -3059,9 +3065,15 @@
   title: "Accdb Password Get Idiot"
   version: "v5.16"
   group: "PH"
+"Adobe.Photoshop.2022.23.3.2.458-m0nkrus":
+  type: "app"
+  title: "Adobe Photoshop 2022"
+  year: 2022
+  version: "v23.3.2.458"
+  group: "m0nkrus"
 "Adobe.XD.CC.2019.v21.0.12.X64.Multilingual-WEBiSO":
   type: "app"
-  title: "Adobe XD CC"
+  title: "Adobe XD CC 2019"
   arch: "x64"
   year: 2019
   version: "v21.0.12"
@@ -3091,17 +3103,49 @@
   title: "Dox"
   version: "v2.20"
   group: "LAXiTY"
+"Elsten.Software.Bliss.v20220826.MacOS.Incl.KeyMaker-DVT.zip":
+  type: "app"
+  title: "Elsten Software Bliss"
+  platform: "MacOS"
+  version: "v20220826"
+  other: "Incl.Keygen"
+  group: "DVT"
+  ext: "zip"
 "Field.3D.v1.20.KEYMAKER.ONLY-PROPHECY":
   type: "app"
   title: "Field 3D"
   version: "v1.20"
   other: "Incl.Keygen"
   group: "PROPHECY"
+"Final_Draft_11_11.1.1__TNT":
+  type: "app"
+  title: "Final Draft 11"
+  version: "v11.1.1"
+  group: "TNT"
+"Microsoft.Office.16.30.19101301.MAC-PTM":
+  type: "app"
+  title: "Microsoft Office"
+  version: "v16.30.19101301"
+  group: "PTM"
+  unused: "MAC"
 "Microsoft_Windows_11_Enterprise_Version_21H2-CYGiSO":
   type: "app"
   title: "Microsoft Windows 11 Enterprise"
   version: "21H2"
   group: "CYGiSO"
+"MiniMeters v0 8 4 Beta MacOS BTCR":
+  type: "app"
+  title: "MiniMeters"
+  platform: "MacOS"
+  version: "v0.8.4"
+  group: "BTCR"
+  unused: "Beta"
+"SketchUp.Pro.22.0.316-REPACK.me":
+  type: "app"
+  title: "SketchUp Pro"
+  version: "v22.0.316"
+  other: "REPACK"
+  group: "me"
 "35MM_Update_v1.0.2_NSW-LiGHTFORCE":
   type: "game"
   title: "35MM"
@@ -3181,6 +3225,12 @@
   title: "Graveyard Keeper"
   edition: "Collectors.Edition"
   group: "DARKSiDERS"
+"Madden NFL 22 v2 04 PS4-CUSA25551":
+  type: "game"
+  title: "Madden NFL 22"
+  platform: "PS4"
+  version: "v2.04"
+  group: "CUSA25551"
 "SAMURAI_SHODOWN_MULTI_Update_v1.90_NSW-SUXXORS":
   type: "game"
   title: "SAMURAI SHODOWN"

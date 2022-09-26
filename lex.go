@@ -17,22 +17,23 @@ type LexFunc func([]byte, []byte, []Tag, []Tag, int, int) ([]Tag, []Tag, int, in
 
 // Lexer is the interface for lexers.
 type Lexer interface {
-	Initialize(map[string][]*taginfo.Taginfo, *regexp.Regexp, map[string]bool) (LexFunc, bool)
+	Initialize(map[string][]*taginfo.Taginfo, *regexp.Regexp, map[string]bool) (LexFunc, bool, bool)
 }
 
 // TagLexer is a tag lexer.
 type TagLexer struct {
-	Init func(map[string][]*taginfo.Taginfo, *regexp.Regexp, map[string]bool)
-	Lex  LexFunc
-	Once bool
+	Init     func(map[string][]*taginfo.Taginfo, *regexp.Regexp, map[string]bool)
+	Lex      LexFunc
+	NotFirst bool
+	Once     bool
 }
 
 // Init satisfies the Lexer interface.
-func (lexer TagLexer) Initialize(infos map[string][]*taginfo.Taginfo, delim *regexp.Regexp, short map[string]bool) (LexFunc, bool) {
+func (lexer TagLexer) Initialize(infos map[string][]*taginfo.Taginfo, delim *regexp.Regexp, short map[string]bool) (LexFunc, bool, bool) {
 	if lexer.Init != nil {
 		lexer.Init(infos, delim, short)
 	}
-	return lexer.Lex, lexer.Once
+	return lexer.Lex, lexer.Once, lexer.NotFirst
 }
 
 // DefaultLexers returns the default tag tag lexers.
@@ -89,16 +90,6 @@ func DefaultLexers() []Lexer {
 			// s1957e01
 			`(?i)^s(?P<s>19\d\d)e(?P<e>\d{2,4})\b`,
 		),
-		NewVersionLexer(
-			// v1.17, v1, v1.2a, v1b
-			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?\d{1,2}(?:[\._ ]\d{1,2}[a-z]?\d*){0,3})\b`,
-			// v2012, v20120803, v20120803, v1999.08.08
-			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?(?:19|20)\d\d(?:[\-\._ ]?\d\d?){0,2})\b`,
-			// v60009
-			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?\d{4,10})\b`,
-			// Version 2004, Version 21H2, Version 22H1
-			`(?i)^version[\-\._ ](?P<V>\d{2,}|\d{2}[a-z]{1,2}\d{1,2})\b`,
-		),
 		NewDiscSourceYearLexer(
 			// VLS2004, 2DVD1999, 4CD2003
 			`(?i)^(?P<d>[2-9])?(?P<s>cd|ep|lp|dvd|vls|vinyl)(?P<y>(?:19|20)\d\d)\b`,
@@ -144,6 +135,18 @@ func DefaultLexers() []Lexer {
 			`(?i)^(?P<Jan>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[\-\._ ](?P<_2>\d{1,2})[\-\._ ](?P<2006>(?:19|20)\d{2})\b`,
 			// 17.12.15, 20-9-9
 			`(?i)^(?P<YY>[12]\d)[\-\._ ](?P<01>\d\d?)[\-\._ ](?P<02>\d\d?)\b`,
+		),
+		NewVersionLexer(
+			// v1.17, v1, v1.2a, v1b
+			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?\d{1,2}(?:[\._ ]\d{1,2}[a-z]?\d*){0,3})\b`,
+			// v2012, v20120803, v20120803, v1999.08.08
+			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?(?:19|20)\d\d(?:[\-\._ ]?\d\d?){0,2})\b`,
+			// v60009
+			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?\d{4,10})\b`,
+			// Version 2004, Version 21H2, Version 22H1
+			`(?i)^version[\-\._ ](?P<V>\d{2,}|\d{2}[a-z]{1,2}\d{1,2})\b`,
+			// 11.09.1, 100.000.99999999999, 23.3.2.458
+			`(?i)^(?P<u>\d{1,3}\.\d{1,3}\.\d{1,16}(\.\d{1,16})?)\b`,
 		),
 		NewRegexpSourceLexer(TagTypeCodec, true),
 		NewRegexpSourceLexer(TagTypeHDR, true),
@@ -353,8 +356,11 @@ func NewVersionLexer(strs ...string) Lexer {
 						if bytes.HasPrefix(version, []byte("version")) {
 							version = version[len("version")+1:]
 						}
+						version = bytes.Replace(version, []byte{' '}, []byte{'.'}, -1)
 					case "V":
 						version = v[l+1]
+					case "u":
+						version = append([]byte{'v'}, v[l+1]...)
 					default:
 						panic(fmt.Errorf("unknown capture group %q", v[l]))
 					}
@@ -363,6 +369,7 @@ func NewVersionLexer(strs ...string) Lexer {
 			}
 			return start, end, i, n, false
 		},
+		NotFirst: true,
 	}
 }
 
