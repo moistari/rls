@@ -3020,6 +3020,15 @@
   disc: "2x"
   id: "APOC 001"
   group: "RSQ"
+"VA-Top_Gun_Maverick-OST-CD-FLAC-2022-PERFECT":
+  type: "music"
+  artist: "VA"
+  title: "Top Gun Maverick"
+  source: "CD"
+  year: 2022
+  audio: "FLAC"
+  other: "OST"
+  group: "PERFECT"
 "Wretched-DNR-EP-1981-SDR":
   type: "music"
   artist: "Wretched"
@@ -3045,6 +3054,11 @@
   day: 1
   codec: "x264"
   group: "uva"
+"Accdb.Password.Get.Idiot.Version.v5.16-PH":
+  type: "app"
+  title: "Accdb Password Get Idiot"
+  version: "v5.16"
+  group: "PH"
 "Adobe.XD.CC.2019.v21.0.12.X64.Multilingual-WEBiSO":
   type: "app"
   title: "Adobe XD CC"
@@ -3083,6 +3097,11 @@
   version: "v1.20"
   other: "Incl.Keygen"
   group: "PROPHECY"
+"Microsoft_Windows_11_Enterprise_Version_21H2-CYGiSO":
+  type: "app"
+  title: "Microsoft Windows 11 Enterprise"
+  version: "21H2"
+  group: "CYGiSO"
 "35MM_Update_v1.0.2_NSW-LiGHTFORCE":
   type: "game"
   title: "35MM"
@@ -3177,6 +3196,12 @@
   version: "v1.1.0"
   other: "UPDATE"
   group: "VENOM"
+"The LEGO NINJAGO Movie Videogame EUR NSW BigBlueBox":
+  type: "game"
+  title: "The LEGO NINJAGO Movie Videogame"
+  platform: "NSW"
+  region: "EUR"
+  group: "BigBlueBox"
 "The.Swindle.eShop.NSW-SUXXORS":
   type: "game"
   title: "The Swindle"

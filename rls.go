@@ -141,10 +141,11 @@ func (r Release) Dates() []Tag {
 
 // Tag is a release tag.
 type Tag struct {
-	typ  TagType
-	v    []string
-	f    taginfo.FindFunc
-	prev TagType
+	typ   TagType
+	v     []string
+	f     taginfo.FindFunc
+	prev  TagType
+	prevf taginfo.FindFunc
 }
 
 // NewTag creates a new tag.
@@ -176,10 +177,20 @@ func ParseTagsString(src string) ([]Tag, int) {
 // As returns a copy of tag as a tag of the specified type.
 func (tag Tag) As(typ TagType, f taginfo.FindFunc) Tag {
 	return Tag{
-		typ:  typ,
-		f:    f,
-		v:    tag.v,
-		prev: tag.typ,
+		typ:   typ,
+		f:     f,
+		v:     tag.v,
+		prev:  tag.typ,
+		prevf: tag.f,
+	}
+}
+
+// Revert returns a copy of tag as the tag's previous type.
+func (tag Tag) Revert() Tag {
+	return Tag{
+		typ: tag.prev,
+		f:   tag.prevf,
+		v:   tag.v,
 	}
 }
 
@@ -187,6 +198,16 @@ func (tag Tag) As(typ TagType, f taginfo.FindFunc) Tag {
 func (tag Tag) Is(types ...TagType) bool {
 	for _, typ := range types {
 		if tag.typ == typ {
+			return true
+		}
+	}
+	return false
+}
+
+// Was returns true when tag's prev is of a type.
+func (tag Tag) Was(types ...TagType) bool {
+	for _, typ := range types {
+		if tag.prev == typ {
 			return true
 		}
 	}
@@ -453,7 +474,7 @@ func (tag Tag) Series() (int, int) {
 
 // Version normalizes the version value.
 func (tag Tag) Version() string {
-	return strings.ToLower(tag.v[1])
+	return tag.v[1]
 }
 
 // Disc normmalizes the disc value.

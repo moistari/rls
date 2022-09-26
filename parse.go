@@ -220,7 +220,7 @@ func (b *TagBuilder) Build(tags []Tag, end int) Release {
 	// collect tags into release
 	b.collect(r)
 	// guess type
-	r.Type = b.inspect(r)
+	r.Type = b.inspect(r, true)
 	// special
 	b.specialDate(r)
 	// unset tags
@@ -570,7 +570,7 @@ func (b *TagBuilder) collect(r *Release) {
 }
 
 // inspect inspects the release, returning its expected type.
-func (b *TagBuilder) inspect(r *Release) Type {
+func (b *TagBuilder) inspect(r *Release, initial bool) Type {
 	if r.Type != Unknown {
 		return r.Type
 	}
@@ -648,6 +648,24 @@ func (b *TagBuilder) inspect(r *Release) Type {
 		return Movie
 	case (r.Source == "" || r.Source == "WEB") && r.Resolution == "" && r.Year != 0:
 		return Music
+	}
+	// check for platform, arch tags previously reset
+	if initial {
+		var reinspect bool
+		for i := n; i > 0; i-- {
+			if r.tags[i-1].Was(TagTypePlatform, TagTypeArch) {
+				r.tags[i-1], reinspect = r.tags[i-1].Revert(), true
+				switch r.tags[i-1].TagType() {
+				case TagTypePlatform:
+					r.Platform = r.tags[i-1].Platform()
+				case TagTypeArch:
+					r.Arch = r.tags[i-1].Arch()
+				}
+			}
+		}
+		if reinspect {
+			return b.inspect(r, false)
+		}
 	}
 	return Unknown
 }

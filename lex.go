@@ -91,11 +91,13 @@ func DefaultLexers() []Lexer {
 		),
 		NewVersionLexer(
 			// v1.17, v1, v1.2a, v1b
-			`(?i)^(?P<v>v[\-\._ ]?\d{1,2}(?:[\._ ]\d{1,2}[a-z]?\d*){0,3})\b`,
+			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?\d{1,2}(?:[\._ ]\d{1,2}[a-z]?\d*){0,3})\b`,
 			// v2012, v20120803, v20120803, v1999.08.08
-			`(?i)^(?P<v>v[\-\._ ]?(?:19|20)\d\d(?:[\-\._ ]?\d\d?){0,2})\b`,
+			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?(?:19|20)\d\d(?:[\-\._ ]?\d\d?){0,2})\b`,
 			// v60009
-			`(?i)^(?P<v>v[\-\._ ]?\d{4,10})\b`,
+			`(?i)^(version[\-\._ ])?(?P<v>v[\-\._ ]?\d{4,10})\b`,
+			// Version 2004, Version 21H2, Version 22H1
+			`(?i)^version[\-\._ ](?P<V>\d{2,}|\d{2}[a-z]{1,2}\d{1,2})\b`,
 		),
 		NewDiscSourceYearLexer(
 			// VLS2004, 2DVD1999, 4CD2003
@@ -348,6 +350,11 @@ func NewVersionLexer(strs ...string) Lexer {
 					switch string(v[l]) {
 					case "v":
 						version = bytes.ToLower(s)
+						if bytes.HasPrefix(version, []byte("version")) {
+							version = version[len("version")+1:]
+						}
+					case "V":
+						version = v[l+1]
 					default:
 						panic(fmt.Errorf("unknown capture group %q", v[l]))
 					}
