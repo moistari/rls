@@ -859,9 +859,25 @@ func compareTitle(a, b string) func() int {
 		if len(av) > 0 && len(bv) > 0 && av[0] == bv[0] && contains([]string{"a", "an", "the"}, av[0]) {
 			start, min = 1, 1
 		}
-		for i := start; i < start+min && i < len(av) && i < len(bv); i++ {
+		// compare fields up to a prefix length
+		i := start
+		for ; i < start+min && i < len(av) && i < len(bv); i++ {
+			switch {
+			case av[i] == "and" && bv[i] == "&", av[i] == "&" && bv[i] == "and":
+				continue
+			}
 			if cmp := compareTitleNumber(av[i], bv[i], i); cmp != 0 {
 				return cmp
+			}
+		}
+		if i < start+min {
+			// haven't reached end of prefixes and a or b is prefix of the
+			// other, determine which is shorter
+			switch {
+			case len(av) < len(bv):
+				return -1
+			case len(bv) < len(av):
+				return +1
 			}
 		}
 		return 0
@@ -1013,7 +1029,11 @@ func Find(tags []Tag, s string, count int, verb rune, types ...TagType) ([]Tag, 
 func NewCleaner() transform.Transformer {
 	return transform.Chain(
 		norm.NFD,
-		NewCollapser(false, false, `'`, " \t\r\n\f"),
+		NewCollapser(
+			false, true,
+			`'`, " \t\r\n\f",
+			nil,
+		),
 		norm.NFC,
 	)
 }
@@ -1037,9 +1057,16 @@ func NewNormalizer() transform.Transformer {
 		norm.NFD,
 		NewCollapser(
 			true, true,
-			"`"+`':;~!@#$%^&*_=+()[]{}<>/?|\",`, " \t\r\n\f",
-			func(r, prev rune) rune {
-				if r == '-' && unicode.IsSpace(prev) {
+			"`"+`':;~!@#%^*=+()[]{}<>/?|\",`, " \t\r\n\f._",
+			func(r, prev, next rune) rune {
+				switch {
+				case r == '-' && unicode.IsSpace(prev):
+					return -1
+				case r == '$' && (unicode.IsLetter(prev) || unicode.IsLetter(next)):
+					return 'S'
+				case r == '£' && (unicode.IsLetter(prev) || unicode.IsLetter(next)):
+					return 'L'
+				case r == '$', r == '£':
 					return -1
 				}
 				return r
@@ -1064,11 +1091,18 @@ func MustNormalize(s string) string {
 //
 // See: https://go.dev/blog/normalization
 type Collapser struct {
-	Lower  bool
-	Trim   bool
+	// Spc is the space rune.
+	Spc rune
+	// Lower toggles lower casing.
+	Lower bool
+	// Trim toggles trimming leading/trailing spaces.
+	Trim bool
+	// Remove are the runes to remove.
 	Remove map[rune]bool
-	Space  map[rune]bool
-	Trans  []func(rune, rune) rune
+	// Space are the runes to convert to Spc.
+	Space map[rune]bool
+	// Transformer is a rune transformer.
+	Transformer func(rune, rune, rune) rune
 }
 
 // NewCollapser creates a text transformer that collapses spaces, removes
@@ -1080,7 +1114,7 @@ type Collapser struct {
 // purposes.
 //
 // See: https://go.dev/blog/normalization
-func NewCollapser(lower, trim bool, remove, space string, trans ...func(rune, rune) rune) Collapser {
+func NewCollapser(lower, trim bool, remove, space string, transformer func(rune, rune, rune) rune) Collapser {
 	rem, spc := make(map[rune]bool), make(map[rune]bool)
 	for _, r := range remove {
 		rem[r] = true
@@ -1089,11 +1123,12 @@ func NewCollapser(lower, trim bool, remove, space string, trans ...func(rune, ru
 		spc[r] = true
 	}
 	return Collapser{
-		Lower:  lower,
-		Trim:   trim,
-		Remove: rem,
-		Space:  spc,
-		Trans:  trans,
+		Spc:         ' ',
+		Lower:       lower,
+		Trim:        trim,
+		Remove:      rem,
+		Space:       spc,
+		Transformer: transformer,
 	}
 }
 
@@ -1115,22 +1150,19 @@ func (c Collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 	}
 	// copy from src to dst
 	var last int
-loop:
 	for ; i < s; i = i + l {
 		r, l = utf8.DecodeRune(src[i:])
 		switch {
 		case r == utf8.RuneError:
 			return n, i + l, transform.ErrShortSrc
-		case c.Space[r] && prev == ' ':
+		case c.Space[r] && prev == c.Spc, c.Remove[r], unicode.Is(unicode.Mn, r):
 			continue
 		case c.Space[r]:
-			r = ' '
-		case c.Remove[r], unicode.Is(unicode.Mn, r):
-			continue
+			r = c.Spc
 		}
-		for _, f := range c.Trans {
-			if r = f(r, prev); r == -1 {
-				continue loop
+		if c.Transformer != nil {
+			if r = c.Transformer(r, prev, rpeek(src, i+l, s)); r == -1 {
+				continue
 			}
 		}
 		if c.Lower {
@@ -1141,7 +1173,7 @@ loop:
 		}
 		copy(dst[n:], b[:j])
 		prev, n = r, n+j
-		if r != ' ' {
+		if r != c.Spc {
 			last = n
 		}
 	}
@@ -1153,3 +1185,13 @@ loop:
 
 // Reset satisfies the transform.Transformer interface.
 func (Collapser) Reset() {}
+
+// rpeek
+func rpeek(b []byte, i, n int) rune {
+	if i < n {
+		if r, _ := utf8.DecodeRune(b[i:]); r != utf8.RuneError {
+			return r
+		}
+	}
+	return 0
+}

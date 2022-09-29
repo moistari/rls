@@ -8,8 +8,6 @@
   site: "mountain"
   sum: "ABCD1234"
   pass: "secret"
-"A.DOCUMENTARY":
-  title: "A DOCUMENTARY"
 "[[key1:value1]]a":
   title: "a"
   meta: "key1:value1"
@@ -19,6 +17,8 @@
 "a[[key1:value1]]":
   title: "a"
   meta: "key1:value1"
+"A.DOCUMENTARY":
+  title: "A DOCUMENTARY"
 "foo\nbar":
   title: "foo bar"
 "I.AND.THE.KING":

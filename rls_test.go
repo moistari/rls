@@ -64,10 +64,16 @@ func TestCollapser(t *testing.T) {
 		c string
 		n string
 	}{
-		{"''\t\tAmélie\r\r1998\n\nMKV\f\f''", " Amelie 1998 MKV ", "amelie 1998 mkv"},
-		{"\t Star Trek  -  Lower  Decks \t", " Star Trek - Lower Decks ", "star trek lower decks"},
+		{"''\t\tAmélie\r\r1998\n\nMKV\f\f''", "Amelie 1998 MKV", "amelie 1998 mkv"},
+		{"\t Star Trek  -  Lower  Decks \t", "Star Trek - Lower Decks", "star trek lower decks"},
 		{"Star Trek-Lower DECKS", "Star Trek-Lower DECKS", "star trek-lower decks"},
-		{"   t-pain  rappa   ", " t-pain rappa ", "t-pain rappa"},
+		{"   t-pain  rappa   ", "t-pain rappa", "t-pain rappa"},
+		{"\t\f\f[PMEDIA] \u2b50\ufe0f\u0009\t", "[PMEDIA] \u2b50", "pmedia \u2b50"}, // ⭐️ vs ⭐
+		{"$elfie.Shootout", "$elfie.Shootout", "selfie shootout"},
+		{"LAWLE$$", "LAWLE$$", "lawless"},
+		{"$100 TAXI RIDE", "$100 TAXI RIDE", "100 taxi ride"},
+		{"Mr. & Mrs. Smith", "Mr. & Mrs. Smith", "mr & mrs smith"},
+		{"Bob's Burgers", "Bobs Burgers", "bobs burgers"},
 	}
 	for i, test := range tests {
 		c, _, err := transform.String(NewCleaner(), test.s)
@@ -87,7 +93,40 @@ func TestCollapser(t *testing.T) {
 	}
 }
 
+func TestCompareTitle(t *testing.T) {
+	tests := []struct {
+		a, b string
+		exp  int
+	}{
+		{"STAR WARS - 1", "star wars 2", -1},
+		{"star wars 2", "STAR WARS - 1", 1},
+		{"STAR WARS - ep 1", "star wars ep 2", 0},
+		{"star wars ep 2", "STAR WARS - ep 1", 0},
+		{"rocky iv", "rocky", 1},
+		{"rocky", "rocky iv", -1},
+		{"ROCKY", "rocky", 0},
+		{"harry potter and the goblet of fire", "harry potter & the goblet of fire", 0},
+		{"harry potter & the goblet of fire", "harry potter and the goblet of fire", 0},
+		{"KING & I", "KING AND I", 0},
+		{"KING AND I", "KING & I", 0},
+	}
+	for i, test := range tests {
+		v := compareTitle(test.a, test.b)()
+		if v != test.exp {
+			t.Errorf("test %d expected %d, got: %d", i, test.exp, v)
+		}
+	}
+}
+
 func TestCompare(t *testing.T) {
+	seed := time.Now().UnixNano()
+	if s := os.Getenv("SEED"); s != "" {
+		var err error
+		if seed, err = strconv.ParseInt(s, 10, 64); err != nil {
+			t.Fatalf("expected no error, got: %v", err)
+		}
+	}
+	t.Logf("seed: %d", seed)
 	exp := []string{
 		"",
 		"1",
@@ -111,21 +150,26 @@ func TestCompare(t *testing.T) {
 		"Harry.Potter.and.the.Sorcerer's.Stone.2001.Theatrical.Cut.mkv",
 		"Harry.Potter.and.the.Chamber.of.Secrets.2002.Theatrical.Cut.mkv",
 		"Harry.Potter.and.the.Prisoner.of.Azkaban.2004.mkv",
-		"Harry.Potter.and.the.Goblet.of.Fire.2005.mkv",
+		"Harry.Potter.&.the.Goblet.of.Fire.2005.mkv",
 		"Harry.Potter.and.the.Order.of.the.Phoenix.2007.mkv",
 		"Harry.Potter.and.the.Half-Blood.Prince.2009.mkv",
 		"Harry.Potter.and.the.Deathly.Hallows.Part.1.2010.mkv",
 		"Harry.Potter.and.the.Deathly.Hallows.Part.2.2011.mkv",
 		"i.am.legend.mkv",
+		"LAWLE$$.mkv",
+		"lawless.mkv",
 		"rocky.mkv",
 		"\trocky ii.mkv",
 		"rocky iii.mkv",
 		"rocky iv.mkv",
 		"rocky v.mkv",
+		"ROCKY 6.MKV",
+		"\trocky\t6.mkv",
 		"rocky 6.mkv",
+		"rOCKY VII.mkv",
 		"rocky 8.mkv",
 		"rocky\tix.mkv\t\t",
-		"rocky x.mkv",
+		" ROCKY x.mkv ",
 		"rocky 11.mkv",
 		"the.matrix (part 2).1997.mkv",
 		"The.Matrix.1999.mkv",
@@ -183,7 +227,7 @@ func TestCompare(t *testing.T) {
 		// t.Logf("%d: %q: %s", i, s, releases[i].Type)
 	}
 	// randomize
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	r := rand.New(rand.NewSource(seed))
 	r.Shuffle(len(releases), func(i, j int) {
 		releases[i], releases[j] = releases[j], releases[i]
 	})
