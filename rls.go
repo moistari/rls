@@ -1013,7 +1013,7 @@ func Find(tags []Tag, s string, count int, verb rune, types ...TagType) ([]Tag, 
 func NewCleaner() transform.Transformer {
 	return transform.Chain(
 		norm.NFD,
-		NewCollapser(false, `'`),
+		NewCollapser(false, false, `'`, " \t\r\n\f"),
 		norm.NFC,
 	)
 }
@@ -1035,7 +1035,16 @@ func MustClean(s string) string {
 func NewNormalizer() transform.Transformer {
 	return transform.Chain(
 		norm.NFD,
-		NewCollapser(true, "`"+`':;~!@#$%^&*_=+()[]{}<>/?|\",`),
+		NewCollapser(
+			true, true,
+			"`"+`':;~!@#$%^&*_=+()[]{}<>/?|\",`, " \t\r\n\f",
+			func(r, prev rune) rune {
+				if r == '-' && unicode.IsSpace(prev) {
+					return -1
+				}
+				return r
+			},
+		),
 		norm.NFC,
 	)
 }
@@ -1050,13 +1059,16 @@ func MustNormalize(s string) string {
 	return s
 }
 
-// Collapser is a transform.Transformer that converts all space chars to ' ',
-// removes specified runes, and collapses adjacent spaces to a single space.
+// Collapser is a transform.Transformer that converts spaces to ' ', removes
+// specified runes, and collapses adjacent spaces to a single ' '.
 //
 // See: https://go.dev/blog/normalization
 type Collapser struct {
 	Lower  bool
+	Trim   bool
 	Remove map[rune]bool
+	Space  map[rune]bool
+	Trans  []func(rune, rune) rune
 }
 
 // NewCollapser creates a text transformer that collapses spaces, removes
@@ -1068,14 +1080,20 @@ type Collapser struct {
 // purposes.
 //
 // See: https://go.dev/blog/normalization
-func NewCollapser(lower bool, remove string) Collapser {
-	m := make(map[rune]bool)
+func NewCollapser(lower, trim bool, remove, space string, trans ...func(rune, rune) rune) Collapser {
+	rem, spc := make(map[rune]bool), make(map[rune]bool)
 	for _, r := range remove {
-		m[r] = true
+		rem[r] = true
+	}
+	for _, r := range space {
+		spc[r] = true
 	}
 	return Collapser{
 		Lower:  lower,
-		Remove: m,
+		Trim:   trim,
+		Remove: rem,
+		Space:  spc,
+		Trans:  trans,
 	}
 }
 
@@ -1084,17 +1102,36 @@ func (c Collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 	var i, l, j, n int
 	var prev, r rune
 	b, s, d := make([]byte, utf8.UTFMax), len(src), len(dst)
+	// trim leading spaces
+	if c.Trim {
+		for ; i < s; i = i + l {
+			if r, l = utf8.DecodeRune(src[i:]); r == utf8.RuneError {
+				return n, i + l, transform.ErrShortSrc
+			}
+			if !c.Remove[r] && !c.Space[r] {
+				break
+			}
+		}
+	}
+	// copy from src to dst
+	var last int
+loop:
 	for ; i < s; i = i + l {
-		switch r, l = utf8.DecodeRune(src[i:]); {
+		r, l = utf8.DecodeRune(src[i:])
+		switch {
 		case r == utf8.RuneError:
 			return n, i + l, transform.ErrShortSrc
-		case r == '\t', r == '\r', r == '\n', r == '\f':
-			if prev == ' ' {
-				continue
-			}
+		case c.Space[r] && prev == ' ':
+			continue
+		case c.Space[r]:
 			r = ' '
 		case c.Remove[r], unicode.Is(unicode.Mn, r):
 			continue
+		}
+		for _, f := range c.Trans {
+			if r = f(r, prev); r == -1 {
+				continue loop
+			}
 		}
 		if c.Lower {
 			r = unicode.ToLower(r)
@@ -1104,6 +1141,12 @@ func (c Collapser) Transform(dst, src []byte, atEOF bool) (int, int, error) {
 		}
 		copy(dst[n:], b[:j])
 		prev, n = r, n+j
+		if r != ' ' {
+			last = n
+		}
+	}
+	if c.Trim {
+		return last, i, nil
 	}
 	return n, i, nil
 }

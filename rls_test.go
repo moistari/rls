@@ -59,21 +59,31 @@ func TestParseRelease(t *testing.T) {
 }
 
 func TestCollapser(t *testing.T) {
-	const test = "''\t\tAmélie\r\r1998\n\nMKV\f\f''"
-	const exp = " Amelie 1998 MKV "
-	a, _, err := transform.String(NewCleaner(), test)
-	if err != nil {
-		t.Fatalf("expected no error, got: %v", err)
+	tests := []struct {
+		s string
+		c string
+		n string
+	}{
+		{"''\t\tAmélie\r\r1998\n\nMKV\f\f''", " Amelie 1998 MKV ", "amelie 1998 mkv"},
+		{"\t Star Trek  -  Lower  Decks \t", " Star Trek - Lower Decks ", "star trek lower decks"},
+		{"Star Trek-Lower DECKS", "Star Trek-Lower DECKS", "star trek-lower decks"},
+		{"   t-pain  rappa   ", " t-pain rappa ", "t-pain rappa"},
 	}
-	if a != exp {
-		t.Errorf("expected %q, got: %q", exp, a)
-	}
-	b, _, err := transform.String(NewNormalizer(), test)
-	if err != nil {
-		t.Fatalf("expected no error, got: %v", err)
-	}
-	if exp := strings.ToLower(exp); b != exp {
-		t.Errorf("expected %q, got: %q", exp, b)
+	for i, test := range tests {
+		c, _, err := transform.String(NewCleaner(), test.s)
+		if err != nil {
+			t.Fatalf("test %d expected no error, got: %v", i, err)
+		}
+		if c != test.c {
+			t.Errorf("test %d clean expected %q, got: %q", i, test.c, c)
+		}
+		n, _, err := transform.String(NewNormalizer(), test.s)
+		if err != nil {
+			t.Fatalf("test %d expected no error, got: %v", i, err)
+		}
+		if n != test.n {
+			t.Errorf("test %d normalize expected %q, got: %q", i, test.n, n)
+		}
 	}
 }
 
@@ -108,13 +118,13 @@ func TestCompare(t *testing.T) {
 		"Harry.Potter.and.the.Deathly.Hallows.Part.2.2011.mkv",
 		"i.am.legend.mkv",
 		"rocky.mkv",
-		"rocky ii.mkv",
+		"\trocky ii.mkv",
 		"rocky iii.mkv",
 		"rocky iv.mkv",
 		"rocky v.mkv",
 		"rocky 6.mkv",
 		"rocky 8.mkv",
-		"rocky ix.mkv",
+		"rocky\tix.mkv\t\t",
 		"rocky x.mkv",
 		"rocky 11.mkv",
 		"the.matrix (part 2).1997.mkv",
@@ -136,11 +146,21 @@ func TestCompare(t *testing.T) {
 		"ultra. vol. 13.mkv",
 		"ultra vol xiii.mkv",
 		"v.for.vendetta.mkv",
+		"Star.Trek.Lower.Decks.S01E00.Decks.Creator.And.Cast.Talk.Season.1.1080p.CBS.WEB-DL.AAC2.0.x264-TEPES.mkv",
+		"Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb",
+		"Star.Trek.Lower.Decks.S03E01.Grounded.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
+		"Star.Trek.Lower.Decks.S03E02.The.Least.Dangerous.Game.1080p.AMZN.WEB-DL.DDP.5.1.H.264-GNOME.mkv",
+		"Star.Trek.Lower.Decks.S03E03.1080p.WEB.H264-GLHF",
+		"Star Trek - Lower Decks    S03E03 Mining the Mind's Mines (1080p AMZN Webrip x265 10bit EAC3 5.1 - Goki)[TAoE].mkv",
+		"Star.Trek.Lower.Decks.S03E04.Room.For.Growth.1080p.AMZN.WEB-DL.DDP.5.1.H.264-GNOME.mkv",
+		"Star.Trek.Lower.Decks.S03E05.1080p.WEB.h264-KOGi.mkv",
+		"Star Trek - Lower Decks (2020) S03E03 Mining the Mind's Mines (1080p AMZN Webrip x265 10bit EAC3 5.1 - Goki)[TAoE].mkv",
 		"Zebra.S01E02",
 		"Zébra.2009.S00.x264-group.mkv",
 		"Zebra.2009.S01.FLAC-group",
 		"Zebra.2009.S01E02",
 		"Zébra.2009.S02",
+		"T-Pain - The Lost Remixes (2020) Mp3 320kbps [PMEDIA] ⭐️",
 		"the cc - A 1999.mp3",
 		"the cc - a - the remix 1999.mp3",
 		"minesweeper.winnt",

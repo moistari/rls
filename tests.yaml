@@ -1109,16 +1109,6 @@
   year: 2022
   other: "EXTRAS"
   group: "NOGRP"
-"Star Wars - Return of the Jedi (1983).4K83.35mm.minimalNR.v1.4.UHD.2160p.mkv":
-  type: "movie"
-  title: "Star Wars - Return of the Jedi"
-  source: "35mm"
-  resolution: "2160p"
-  year: 1983
-  version: "v1.4"
-  other: "minimalNR"
-  group: "4K83"
-  ext: "mkv"
 "Star.Wars.Episode.VI.Return.of.the.Jedi.1983.4K83.minimalNR.v1.6.2160p.35mm.DD2.0.x265-TN1":
   type: "movie"
   title: "Star Wars Episode VI Return of the Jedi"
@@ -1132,6 +1122,16 @@
   other: "minimalNR"
   group: "TN1"
   unused: "4K83"
+"Star Wars - Return of the Jedi (1983).4K83.35mm.minimalNR.v1.4.UHD.2160p.mkv":
+  type: "movie"
+  title: "Star Wars - Return of the Jedi"
+  source: "35mm"
+  resolution: "2160p"
+  year: 1983
+  version: "v1.4"
+  other: "minimalNR"
+  group: "4K83"
+  ext: "mkv"
 "[UTW-TMD]_Summer_Wars_[BD][h264-720p][TrueHD5.1][9F311DAB].mkv":
   type: "movie"
   title: "Summer Wars"
