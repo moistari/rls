@@ -119,6 +119,8 @@ func TestCompareTitle(t *testing.T) {
 		{"star wars x", "star wars 8", 1},
 		{"100 years", "X years", -1},
 		{"X years", "100 years", 1},
+		{"i'll follow you", "Ill.Follow.You", 0},
+		{"Ill.Follow.You", "i'll follow you", 0},
 	}
 	for i, test := range tests {
 		v := compareTitle(test.a, test.b)()
