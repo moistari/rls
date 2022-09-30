@@ -2623,16 +2623,6 @@
   genre: "Documentary"
   group: "LiQUiD"
   ext: "mkv"
-"Lil_Yachty-Split__Whole_Time-DDC-1080p-x264-2020-SRPx":
-  type: "music"
-  artist: "Lil Yachty"
-  title: "Split"
-  subtitle: "Whole Time"
-  source: "DDC"
-  resolution: "1080p"
-  year: 2020
-  codec: "x264"
-  group: "SRPx"
 "112-Pleasure_And_Pain-(Adv._Promo)-2005-C4_INT":
   type: "music"
   artist: "112"
@@ -2848,6 +2838,16 @@
   year: 2004
   disc: "3x"
   group: "TWCMP3"
+"Lil_Yachty-Split__Whole_Time-DDC-1080p-x264-2020-SRPx":
+  type: "music"
+  artist: "Lil Yachty"
+  title: "Split"
+  subtitle: "Whole Time"
+  source: "DDC"
+  resolution: "1080p"
+  year: 2020
+  codec: "x264"
+  group: "SRPx"
 "Michael Jackson - Discography (1967-2009) [FLAC]":
   type: "music"
   artist: "Michael Jackson"

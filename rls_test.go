@@ -109,11 +109,21 @@ func TestCompareTitle(t *testing.T) {
 		{"harry potter & the goblet of fire", "harry potter and the goblet of fire", 0},
 		{"KING & I", "KING AND I", 0},
 		{"KING AND I", "KING & I", 0},
+		{"VI", "100", 1},
+		{"100", "VI", -1},
+		{"1000 years", "Il deducio", -1},
+		{"Il deducio", "1000 years", 1},
+		{"1000 years", "I'll follow you down", -1},
+		{"I'll follow you down", "1000 years", 1},
+		{"star wars 8", "star wars x", -1},
+		{"star wars x", "star wars 8", 1},
+		{"100 years", "X years", -1},
+		{"X years", "100 years", 1},
 	}
 	for i, test := range tests {
 		v := compareTitle(test.a, test.b)()
 		if v != test.exp {
-			t.Errorf("test %d expected %d, got: %d", i, test.exp, v)
+			t.Errorf("test %d expected %q :: %q = %d, got: %d", i, test.a, test.b, test.exp, v)
 		}
 	}
 }
@@ -130,15 +140,15 @@ func TestCompare(t *testing.T) {
 	exp := []string{
 		"",
 		"1",
-		"ii",
 		"13",
-		"xiii",
 		"i",
 		"i.am.legend",
+		"ii",
 		"'twas the night",
 		"twas the night",
 		"v",
 		"v.for.vendetta",
+		"xiii",
 		"a\tthing.1998.dvdrip",
 		"a thing.1999.dvdrip",
 		"Amélie.mkv",
@@ -156,6 +166,7 @@ func TestCompare(t *testing.T) {
 		"Harry.Potter.and.the.Deathly.Hallows.Part.1.2010.mkv",
 		"Harry.Potter.and.the.Deathly.Hallows.Part.2.2011.mkv",
 		"i.am.legend.mkv",
+		"I'll.Follow.You.Down.2013.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi.mkv",
 		"LAWLE$$.mkv",
 		"lawless.mkv",
 		"rocky.mkv",
@@ -190,6 +201,7 @@ func TestCompare(t *testing.T) {
 		"ultra. vol. 13.mkv",
 		"ultra vol xiii.mkv",
 		"v.for.vendetta.mkv",
+		"X.2022.BluRay.720p.DD.2.0.x264",
 		"Star.Trek.Lower.Decks.S01E00.Decks.Creator.And.Cast.Talk.Season.1.1080p.CBS.WEB-DL.AAC2.0.x264-TEPES.mkv",
 		"Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb",
 		"Star.Trek.Lower.Decks.S03E01.Grounded.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",

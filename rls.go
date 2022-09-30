@@ -892,6 +892,7 @@ func compareTitleNumber(a, b string, i int) int {
 	abad := i == 0 && arom && aok && (ai == 1 || ai == 5 || ai == 50)
 	bbad := i == 0 && brom && bok && (bi == 1 || bi == 5 || bi == 50)
 	switch {
+	case (arom || brom) && i == 0:
 	case abad && bbad:
 	case aok && bbad:
 		return -1
