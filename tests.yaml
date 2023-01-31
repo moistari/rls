@@ -96,6 +96,17 @@
   other: "INTERNAL"
   language: "SWEDiSH SUBPACK"
   group: "SiN"
+"(2001)A Space Odyssey(1961).mkv":
+  type: "movie"
+  title: "2001"
+  year: 1961
+  group: "Odyssey"
+  ext: "mkv"
+  unused: "A Space"
+"2001: A Space Odyssey.mkv":
+  type: "movie"
+  title: "2001: A Space Odyssey"
+  ext: "mkv"
 "2001.A.Space.Odyssey.1968.2160p.UHD.BluRay.DD+5.1.DoVi.x265-c0kE":
   type: "movie"
   title: "2001 A Space Odyssey"
@@ -136,6 +147,11 @@
   codec: "x264"
   size: "1.7GB"
   group: "YIFY"
+"2012 2012.mkv":
+  type: "movie"
+  title: "2012"
+  year: 2012
+  ext: "mkv"
 "2047 - Sights of Death (2014) 720p BrRip x264 - YIFY":
   type: "movie"
   title: "2047 - Sights of Death"
@@ -198,6 +214,11 @@
   channels: "5.1"
   other: "REMASTERED REMUX"
   group: "FraMeSToR"
+"(2001)A Space Odyssey.mkv":
+  type: "movie"
+  title: "A Space Odyssey"
+  year: 2001
+  ext: "mkv"
 "A.Very.Harold.And.Kumar.3D.Christmas.2011.FRENCH.3D.HSBS.MULTISUBS.1080p.BluRay.x264.HQ-TUSAHD":
   type: "movie"
   title: "A Very Harold And Kumar 3D Christmas"
@@ -1519,6 +1540,42 @@
   codec: "XViD"
   language: "SWEDiSH"
   group: "HDR"
+"1899.S01.PROPER.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-FLUX":
+  type: "series"
+  title: "1899"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "NF"
+  series: 1
+  codec: "H.264"
+  audio: "DDP Atmos"
+  channels: "5.1"
+  other: "PROPER"
+  group: "FLUX"
+"1923.s01e01.1080p.web.h264-ggez.mkv":
+  type: "episode"
+  title: "1923"
+  source: "WEB"
+  resolution: "1080p"
+  series: 1
+  episode: 1
+  codec: "H.264"
+  group: "ggez"
+  ext: "mkv"
+"1923.S01E01.1923.720p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv":
+  type: "episode"
+  title: "1923"
+  source: "WEB-DL"
+  resolution: "720p"
+  collection: "AMZN"
+  year: 1923
+  series: 1
+  episode: 1
+  codec: "H.264"
+  audio: "DDP"
+  channels: "5.1"
+  group: "FLUX"
+  ext: "mkv"
 "1-2-3.Istanbul.S01E04.GERMAN.DOKU.WS.dTV.XviD-GEO":
   type: "episode"
   title: "1-2-3 Istanbul"
@@ -2630,6 +2687,13 @@
   year: 2005
   other: "ADVANCE PROMO INTERNAL"
   group: "C4"
+"1994-1994-(EP)-2008-FNT":
+  type: "music"
+  artist: "1994"
+  title: "1994"
+  source: "EP"
+  year: 2008
+  group: "FNT"
 "(a)(b)(c).mp3":
   type: "music"
   artist: "a"
@@ -3060,6 +3124,11 @@
   day: 1
   codec: "x264"
   group: "uva"
+"1998.ACCRUAL.PAYROLL.AND.CASH.UPDATE.FOR.NEWVIEWS.v1.41-F4CG":
+  type: "app"
+  title: "1998 ACCRUAL PAYROLL AND CASH UPDATE FOR NEWVIEWS"
+  version: "v1.41"
+  group: "F4CG"
 "Accdb.Password.Get.Idiot.Version.v5.16-PH":
   type: "app"
   title: "Accdb Password Get Idiot"

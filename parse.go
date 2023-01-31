@@ -245,6 +245,7 @@ func (b *TagBuilder) Build(tags []Tag, end int) Release {
 
 // init fixes the initial tag set.
 func (b *TagBuilder) init(r *Release) {
+	b.fixFirstDate(r)
 	// determine earliest pivot
 	m, pivot := b.pivots(r, TagTypeDate, TagTypeSource, TagTypeSeries, TagTypeResolution, TagTypeVersion)
 	date, series := m[TagTypeDate], m[TagTypeSeries]
@@ -276,6 +277,31 @@ func (b *TagBuilder) init(r *Release) {
 	b.fixNoText(r, end)
 	b.fixIsolated(r)
 	b.fixMusic(r)
+}
+
+// fixFirstDate fixes the special case of a date occuring before text, and
+// there are no other date tags.
+func (b *TagBuilder) fixFirstDate(r *Release) {
+	i, last := 0, -1
+	// seek last
+	for i = r.end; i > 0; i-- {
+		if r.tags[i-1].Is(TagTypeDate) {
+			last = i - 1
+			break
+		}
+	}
+	if last == -1 { // not found
+		return
+	}
+	// seek first
+	for i = 0; i < r.end && r.tags[i].Is(TagTypeWhitespace, TagTypeDelim); i++ {
+	}
+	switch {
+	case i < last,
+		peek(r.tags, i-1, TagTypeDelim) && strings.HasSuffix(r.tags[i-1].Delim(), "("):
+	case r.tags[i].Is(TagTypeDate):
+		r.tags[i] = r.tags[i].As(TagTypeText, nil)
+	}
 }
 
 // pivots finds the last position for the specified tags, generating a map of
