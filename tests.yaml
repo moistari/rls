@@ -1416,6 +1416,10 @@
   audio: "TrueHD Atmos"
   channels: "7.1"
   group: "FZHD"
+"under.the.sea:.20,000.leagues.1080p":
+  type: "movie"
+  title: "under the sea: 20,000 leagues"
+  resolution: "1080p"
 "USA.A.West.Coast.Journey.2016.UHD.BluRay.2160p.DTS-HD.MA.5.1.HEVC.REMUX-FraMeSToR":
   type: "movie"
   title: "USA A West Coast Journey"
@@ -2680,6 +2684,12 @@
   genre: "Documentary"
   group: "LiQUiD"
   ext: "mkv"
+"100 gecs - 10,000 gecs (2nd Version) FLAC (16bit-44.1kHz)":
+  type: "music"
+  artist: "100 gecs"
+  title: "10,000 gecs"
+  subtitle: "2nd Version"
+  audio: "FLAC 16BIT 44khz"
 "112-Pleasure_And_Pain-(Adv._Promo)-2005-C4_INT":
   type: "music"
   artist: "112"
@@ -2919,6 +2929,15 @@
   subtitle: "1967"
   year: 2009
   audio: "FLAC"
+"Miles_Davis-Kind_Of_Blue-REMASTERED-(24BiT-192kHz)-WEB-FLAC-2013-OBZEN":
+  type: "music"
+  artist: "Miles Davis"
+  title: "Kind Of Blue"
+  source: "WEB"
+  year: 2013
+  audio: "24BIT 192khz FLAC"
+  other: "REMASTERED"
+  group: "OBZEN"
 "Monica-Dont_Take_It_Personal_(Just_One_Of_Dem_Days)_Remix-Single-WEB-1995-UVU_INT":
   type: "music"
   artist: "Monica"
@@ -3346,6 +3365,10 @@
   title: "Enigma Agency The Case of Shadows Strategy Guide"
   other: "Strategy.Guide DOX"
   group: "RAiN"
+"jules verne-20,000 leagues under the sea.pdf":
+  type: "book"
+  title: "jules verne-20,000 leagues under the sea"
+  container: "PDF"
 "Red.Dead.Redemption.2.Complete.Official.Guide.Standard.Edition.(PDF).torrent":
   type: "book"
   title: "Red Dead Redemption 2 Complete Official Guide Standard Edition"

@@ -329,7 +329,7 @@ func NewEpisodeLexer() Lexer {
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			// compare against src, and match "lookbehind"
 			if lb.Match(src[:i]) {
-				if m := re.FindSubmatch(src[i:n]); m != nil {
+				if m := re.FindSubmatch(src[i:n]); m != nil && !bytes.HasPrefix(src[i+len(m[1]):], []byte{','}) {
 					tags := []Tag{NewTag(TagTypeSeries, nil, m[1], nil, m[1], nil)}
 					if len(m[2]) != 0 {
 						tags = append(tags, NewTag(TagTypeDelim, nil, m[2], m[2]))

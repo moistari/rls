@@ -184,6 +184,8 @@ type TagBuilder struct {
 	infos map[string][]*taginfo.Taginfo
 	// containerf is the container find func.
 	containerf taginfo.FindFunc
+	// audiof is the audio find func.
+	audiof taginfo.FindFunc
 }
 
 // NewTagBuilder creates a new release builder.
@@ -217,6 +219,7 @@ func (b *TagBuilder) Init(infos map[string][]*taginfo.Taginfo) Builder {
 		digsuf:     b.digsuf,
 		infos:      infos,
 		containerf: taginfo.Find(infos["container"]...),
+		audiof:     taginfo.Find(infos["audio"]...),
 	}
 }
 
@@ -459,12 +462,11 @@ func (b *TagBuilder) fixIsolated(r *Release) {
 }
 
 // fixMusic fixes music tags. Changes single cbr audio tag to the cbr container
-// (ie, a comic) tag, and converts 'bootleg' tag not surrounded by '-' or
-// '()' back to text.
+// (ie, a comic) tag, changes 16bit arch tag to audio tag, and converts
+// 'bootleg' tag not surrounded by '-' or '()' back to text.
 func (b *TagBuilder) fixMusic(r *Release) {
 	// when only one music tag of `cbr`, change to container `cbr` (comic)
-	countCbr, hasCbr := 0, false
-	var posCbr int
+	countCbr, posCbr, hasCbr := 0, 0, false
 	for i := 0; i < r.end; i++ {
 		// count audio tags and position of cbr tag
 		if r.tags[i].Is(TagTypeAudio) {
@@ -482,6 +484,10 @@ func (b *TagBuilder) fixMusic(r *Release) {
 			if !wrapped {
 				r.tags[i] = r.tags[i].As(TagTypeText, nil)
 			}
+		}
+		// change 16bit tag
+		if r.tags[i].Is(TagTypeArch) && r.tags[i].Arch() == "16bit" {
+			r.tags[i] = r.tags[i].As(TagTypeAudio, b.audiof)
 		}
 	}
 	// change single cbr audio tag to the cbr container tag

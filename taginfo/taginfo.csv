@@ -14,8 +14,8 @@ audio,AAC-LC,Advanced Audio Coding (LC),aac[\-\._ ]?lc,,,
 audio,AAC,Advanced Audio Coding,,,,
 audio,AC3D,,ac[\-\._ ]?3d,,movie,
 audio,Atmos,Dolby Atmos,,,movie,
-audio,24BIT,,(?-i:24BIT),,music,1
-audio,16BIT,,(?-i:16BIT),,music,1
+audio,24BIT,,(?-i:24B[iI]T),,music,1
+audio,16BIT,,,,music,1
 audio,CBR,Constant Bit Rate,,,,
 audio,DDPA,Dolby Digital+ Atmos (E-AC-3+Atmos),dd[p\+]a,,movie,
 audio,DDP,Dolby Digital+ (E-AC-3),dd[p\+]|e[\-\._ ]?ac3,,movie,
@@ -36,6 +36,10 @@ audio,320Kbps,320 Kbps,320[\-\._ ]?kbps,,music,1
 audio,256Kbps,256 Kbps,256[\-\._ ]?kbps,,music,1
 audio,192Kbps,192 Kbps,192[\-\._ ]?kbps,,music,1
 audio,128Kbps,128 Kbps,128[\-\._ ]?kbps,,music,1
+audio,192khz,192 khz,192[\-\._ ]?khz,,music,1
+audio,96khz,96 khz,96[\-\._ ]?khz,,music,1
+audio,48khz,48 khz,48[\-\._ ]?khz,,music,1
+audio,44khz,44 khz,44(?:[\-\._ ]1)?[\-\._ ]?khz,,music,1
 audio,LiNE,Line,(?-i:L[iI]NE),,,
 audio,LOSSLESS,Lossless,(?-i:LOSSLESS),,,
 audio,LPCM,Linear Pulse-Code Modulation,,,,
