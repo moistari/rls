@@ -466,13 +466,14 @@ func (b *TagBuilder) fixIsolated(r *Release) {
 // 'bootleg' tag not surrounded by '-' or '()' back to text.
 func (b *TagBuilder) fixMusic(r *Release) {
 	// when only one music tag of `cbr`, change to container `cbr` (comic)
-	countCbr, posCbr, hasCbr := 0, 0, false
+	countCbr, posCbr, hasCbr, musicExcl := 0, 0, false, false
 	for i := 0; i < r.end; i++ {
 		// count audio tags and position of cbr tag
 		if r.tags[i].Is(TagTypeAudio) {
 			if r.tags[i].Audio() == "CBR" {
 				hasCbr, posCbr = true, i
 			}
+			musicExcl = musicExcl || r.tags[i].InfoExcl()
 			countCbr++
 		}
 		// reset bootleg tag that is not '-bootleg-' or '(bootleg)'
@@ -485,9 +486,17 @@ func (b *TagBuilder) fixMusic(r *Release) {
 				r.tags[i] = r.tags[i].As(TagTypeText, nil)
 			}
 		}
-		// change 16bit tag
-		if r.tags[i].Is(TagTypeArch) && r.tags[i].Arch() == "16bit" {
-			r.tags[i] = r.tags[i].As(TagTypeAudio, b.audiof)
+		// fix single ep, and 16bit tag when music exclusive
+		if singleEp, sbBit := r.tags[i].SingleEp(), (r.tags[i].Is(TagTypeArch) && r.tags[i].Arch() == "16bit"); singleEp || sbBit {
+			for j := i + 1; !musicExcl && j < r.end; j++ {
+				musicExcl = musicExcl || (r.tags[j].Is(TagTypeAudio) && r.tags[j].InfoExcl())
+			}
+			switch {
+			case musicExcl && singleEp:
+				r.tags[i] = r.tags[i].As(TagTypeText, nil)
+			case musicExcl && sbBit:
+				r.tags[i] = r.tags[i].As(TagTypeAudio, b.audiof)
+			}
 		}
 	}
 	// change single cbr audio tag to the cbr container tag

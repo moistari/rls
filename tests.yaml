@@ -2745,6 +2745,14 @@
   year: 2014
   codec: "x264"
   group: "ZViD"
+"Arcvalx - 3 A.m. [2022] [Single] - FLAC / Lossless / WEB":
+  type: "music"
+  artist: "Arcvalx"
+  title: "3 A m"
+  source: "WEB"
+  year: 2022
+  audio: "FLAC LOSSLESS"
+  group: "Single"
 "B_recordings--instant-(supercheap-03)-2VLS1998-kW":
   type: "music"
   artist: "B recordings"
@@ -2771,6 +2779,14 @@
   year: 2006
   other: "PROMO"
   group: "IMT"
+"Bryn - 21 Freestyle [2021] [Single] - FLAC / Lossless / WEB":
+  type: "music"
+  artist: "Bryn"
+  title: "21 Freestyle"
+  source: "WEB"
+  year: 2021
+  audio: "FLAC LOSSLESS"
+  group: "Single"
 "Caracola-Vamos_Vamos_(Sommarkrysset_08-02-08)-x264-2008-VFi":
   type: "music"
   artist: "Caracola"
@@ -3018,6 +3034,14 @@
   audio: "MP3 320Kbps"
   other: "REMiX"
   site: "PMEDIA"
+"Tales From Europe - 40 [2023] [Album] - FLAC / Lossless / WEB":
+  type: "music"
+  artist: "Tales From Europe"
+  title: "40"
+  source: "WEB"
+  year: 2023
+  audio: "FLAC LOSSLESS"
+  group: "Album"
 "the cc - a (the remix) 1999.mp3":
   type: "music"
   artist: "the cc"

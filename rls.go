@@ -222,6 +222,15 @@ func (tag Tag) Info() *taginfo.Taginfo {
 	return nil
 }
 
+// SingleEp returns true when the
+func (tag Tag) SingleEp() bool {
+	if tag.typ.Is(TagTypeSeries) {
+		s, e := tag.Series()
+		return s == 0 && e != 0 && tag.v[1] == "" && tag.v[0] == tag.v[2]
+	}
+	return false
+}
+
 // InfoType returns the associated tag info type.
 func (tag Tag) InfoType() Type {
 	if info := tag.Info(); info != nil {
@@ -415,7 +424,7 @@ func (tag Tag) Delim() string {
 // Text normalizes the text value.
 func (tag Tag) Text() string {
 	switch tag.prev {
-	case TagTypeDate:
+	case TagTypeDate, TagTypeSeries:
 		return tag.v[0]
 	case TagTypeChannels:
 		return tag.Channels()
