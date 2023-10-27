@@ -1535,6 +1535,17 @@
   audio: "DD"
   language: "FRENCH"
   group: "XF"
+"Talk.to.Me.2022.2160p.UHD.Remux.HEVC.DoVi.TrueHD.Atmos.7.1-playBD":
+  type: "movie"
+  title: "Talk to Me"
+  source: "UHD.BluRay"
+  resolution: "2160p"
+  year: 2022
+  codec: "HEVC"
+  hdr: "DV"
+  audio: "TrueHD Atmos"
+  channels: "7.1"
+  group: "playBD"
 "30.Grader.I.Februari.S01E01.SWEDiSH.HDTV.XviD-HDR":
   type: "episode"
   title: "30 Grader I Februari"
