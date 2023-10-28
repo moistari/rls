@@ -1175,6 +1175,18 @@
   channels: "2.0"
   other: "RESTORATiON"
   group: "MiU"
+"Talk.to.Me.2022.2160p.UHD.Remux.HEVC.DoVi.TrueHD.Atmos.7.1-playBD":
+  type: "movie"
+  title: "Talk to Me"
+  source: "UHD.BluRay"
+  resolution: "2160p"
+  year: 2022
+  codec: "HEVC"
+  hdr: "DV"
+  audio: "TrueHD Atmos"
+  channels: "7.1"
+  other: "REMUX"
+  group: "playBD"
 "Teenage Mutant Ninja Turtles (HdRip / 2014)":
   type: "movie"
   title: "Teenage Mutant Ninja Turtles"
@@ -1407,7 +1419,7 @@
 "Uncut Gems 2019 Criterion Collection UHD 2160P Bluray DoVi TrueHD Atmos7 1 HDR10+ HEVC X265-FZHD":
   type: "movie"
   title: "Uncut Gems"
-  source: "BluRay"
+  source: "UHD.BluRay"
   resolution: "2160p"
   collection: "Criterion.Collection"
   year: 2019

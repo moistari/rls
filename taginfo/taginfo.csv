@@ -710,7 +710,7 @@ source,TS,Telesync,telesync|ts,,movie,
 source,TVHSRiP,TV HS (rip),tvhs[\-\._ ]?rip,,,
 source,TVRiP,TV (rip),tv[\-\._ ]?rip,,,
 source,UHD.BDRiP,Ultra High-Definiton BluRay (rip),uhd[\-\._ ]?(?:bd)?rip,,movie,
-source,UHD.BluRay,Ultra High-Definiton BluRay,uhd[\-\._ ]?(?:blu[\-\._ ]?ray|bd),,movie,
+source,UHD.BluRay,Ultra High-Definiton BluRay,uhd(?:[\-\._ ]?(?:blu[\-\._ ]?ray|bd))?,,movie,
 source,UHDTV,Ultra High-Definition TV,,,,
 source,UMDMOVIE,Universal Media Disc Movie,,,,
 source,UMDRiP,Universal Media Disc (rip),umd[\-\._ ]?rip,,game,1
