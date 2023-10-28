@@ -1175,6 +1175,16 @@
   channels: "2.0"
   other: "RESTORATiON"
   group: "MiU"
+"Talk.to.Me.2022.1080p.Remux.AVC.TrueHD.Atmos.7.1-playBD":
+  type: "movie"
+  title: "Talk to Me"
+  resolution: "1080p"
+  year: 2022
+  codec: "AVC"
+  audio: "TrueHD Atmos"
+  channels: "7.1"
+  other: "REMUX"
+  group: "playBD"
 "Talk.to.Me.2022.2160p.UHD.Remux.HEVC.DoVi.TrueHD.Atmos.7.1-playBD":
   type: "movie"
   title: "Talk to Me"
