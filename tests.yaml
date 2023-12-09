@@ -3566,3 +3566,16 @@
   other: "HYBRiD"
   language: "PORTUGUESE"
   group: "PAPERCLiPS"
+"The.Creator.2023.PROPER.UHD.WEB-DL.2160p.HEVC.DV.HDR.EAC3.7.1.DL.Remux-TvR":
+  type: "movie"
+  title: "The Creator"
+  Year: 2023
+  source: "UHD.WEB-DL"
+  resolution: "2160p"
+  codec: "HEVC"
+  audio: "DDP"
+  channels: "7.1"
+  hdr: "DV HDR"
+  language: "DL"
+  other: "PROPER REMUX"
+  group: "TvR"
