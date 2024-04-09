@@ -496,6 +496,7 @@ func TestExport_taginfo(t *testing.T) {
 			compareString(a[0], b[0]),
 			compareHasDollar(a[1], b[1]),
 			compareResolution(a, b),
+			compareSource(a, b),
 			compareRegion(a, b),
 			comparePlatform(a, b),
 			compareCodec(a, b),
@@ -608,6 +609,24 @@ func compareChannels(a, b []string) func() int {
 		case cmp < 0:
 			return 1
 		case cmp > 0:
+			return -1
+		}
+		return 0
+	}
+}
+
+func compareSource(a, b []string) func() int {
+	return func() int {
+		if a[0] != "source" || b[0] != "source" {
+			return 0
+		}
+		if !strings.HasPrefix(a[1], "UHD.") || !strings.HasPrefix(b[1], "UHD.") {
+			return 0
+		}
+		switch {
+		case a[1] == "UHD.BluRay":
+			return 1
+		case b[1] == "UHD.BluRay":
 			return -1
 		}
 		return 0

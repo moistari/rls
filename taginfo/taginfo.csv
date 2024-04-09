@@ -23,8 +23,8 @@ audio,DD,Dolby Digital (AC-3),dd|ac3|dolby[\-\._ ]?digital,,movie,
 audio,DTS-HD.HRA,DTS (HD HRA),dts[\-\._ ]?hd[\-\._ ]?hra,,movie,
 audio,DTS-HD.HR,DTS (HD HR),dts[\-\._ ]?hd[\-\._ ]?hr,,movie,
 audio,DTS-HD.MA,DTS (HD MA),dts[\-\._ ]?hd[\-\._ ]?ma,,movie,
-audio,DTS-HD,DTS (HD),dts[\-\._ ]?hd[\-\._ ]?,,movie,
-audio,DTS-MA,DTS (MA),dts[\-\._ ]?ma[\-\._ ]?,,movie,
+audio,DTS-HD,DTS (HD),dts[\-\._ ]?hd,,movie,
+audio,DTS-MA,DTS (MA),dts[\-\._ ]?ma,,movie,
 audio,DTS-X,DTS (X),dts[\-\._ ]?x,,movie,
 audio,DTS,,,,movie,
 audio,DUAL.AUDIO,Dual Audio,dual(?:[\-\._ ]?audio)?|2audio,,movie,
@@ -135,7 +135,6 @@ collection,JPOP,Japanese Pop,,,music,1
 collection,KelbyOne,,kelby(?:[\-\._ ]?(?:one|training))?,,education,1
 collection,Learnable.com,,learnable[\-\._ ]?com,,education,1
 collection,LearnNowOnline,,,,education,1
-collection,LIFE,Lifetime,(?-i:LIFE(?:TIME)?),,,
 collection,LinkedIn.Learning,LinkedIn Learning,linkedin[\-\._ ]?learning,,education,1
 collection,LinuxCBT,,linux[\-\._ ]?cbt(?:[\-\._ ]?com)?,,education,1
 collection,Lynda,,lynda(?:[\-\._ ]?com)?,,education,1
@@ -709,8 +708,8 @@ source,TC,Telecine,telecine|tc,,movie,
 source,TS,Telesync,telesync|ts,,movie,
 source,TVHSRiP,TV HS (rip),tvhs[\-\._ ]?rip,,,
 source,TVRiP,TV (rip),tv[\-\._ ]?rip,,,
-source,UHD.WEB-DL,Ultra High-Definiton WEB (DL),uhd[\-\._ ]?web[\-\._ ]?dl,,movie,
 source,UHD.BDRiP,Ultra High-Definiton BluRay (rip),uhd[\-\._ ]?(?:bd)?rip,,movie,
+source,UHD.WEB-DL,Ultra High-Definiton Web (dl),uhd[\-\._ ]?web[\-\._ ]?dl,,movie,
 source,UHD.BluRay,Ultra High-Definiton BluRay,uhd(?:[\-\._ ]?(?:blu[\-\._ ]?ray|bd))?,,movie,
 source,UHDTV,Ultra High-Definition TV,,,,
 source,UMDMOVIE,Universal Media Disc Movie,,,,

@@ -1241,6 +1241,19 @@
   audio: "DTS-X"
   channels: "7.1"
   other: "REMUX"
+"The.Creator.2023.PROPER.UHD.WEB-DL.2160p.HEVC.DV.HDR.EAC3.7.1.DL.Remux-TvR":
+  type: "movie"
+  title: "The Creator"
+  source: "UHD.WEB-DL"
+  resolution: "2160p"
+  year: 2023
+  codec: "HEVC"
+  hdr: "DV HDR"
+  audio: "DDP"
+  channels: "7.1"
+  other: "PROPER REMUX"
+  language: "DL"
+  group: "TvR"
 "The.English.Patient.BluRay.1996.German.DTS":
   type: "movie"
   title: "The English Patient"
@@ -1970,6 +1983,21 @@
   other: "AI.Upscale"
   group: "JBENT"
   site: "TAoE"
+"Invincible.2021.S02E01.A.LESSON.FOR.YOUR.NEXT.LIFE.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv":
+  type: "episode"
+  title: "Invincible"
+  subtitle: "A LESSON FOR YOUR NEXT LIFE"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "AMZN"
+  year: 2021
+  series: 2
+  episode: 1
+  codec: "H.264"
+  audio: "DDP"
+  channels: "5.1"
+  group: "FLUX"
+  ext: "mkv"
 "iZombie.S02E10.Zombie.High.German.DD51.Dubbed.DL.720p.BD.x264-TVS{{s3cre7p455wd!}}":
   type: "episode"
   title: "iZombie"
@@ -2643,6 +2671,21 @@
   other: "WS"
   group: "RKOFAN1990"
   site: "SPARROW"
+"X-Men.97.S01E02.Mutant.Liberation.Begins.2160p.DSNP.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FLUX.mkv":
+  type: "episode"
+  title: "X-Men 97"
+  subtitle: "Mutant Liberation Begins"
+  source: "WEB-DL"
+  resolution: "2160p"
+  collection: "DSNP"
+  series: 1
+  episode: 2
+  codec: "H.265"
+  hdr: "DV HDR"
+  audio: "DDP Atmos"
+  channels: "5.1"
+  group: "FLUX"
+  ext: "mkv"
 "Zébra.2009.S00.x264-group":
   type: "series"
   title: "Zébra"
@@ -2767,6 +2810,13 @@
   year: 2014
   codec: "x264"
   group: "ZViD"
+"Apocalyptica - 2010 7th Symphony [Japan] [flac]":
+  type: "music"
+  artist: "Apocalyptica"
+  title: "7th Symphony"
+  year: 2010
+  audio: "FLAC"
+  group: "Japan"
 "Arcvalx - 3 A.m. [2022] [Single] - FLAC / Lossless / WEB":
   type: "music"
   artist: "Arcvalx"
@@ -2986,6 +3036,14 @@
   other: "REMiX INTERNAL"
   group: "UVU"
   unused: "Single"
+"Nirvana - Nevermind {30th Anniversary Super Deluxe} (2021) [FLAC CD]":
+  type: "music"
+  artist: "Nirvana"
+  title: "Nevermind"
+  source: "CD"
+  year: 2021
+  audio: "FLAC"
+  edition: "30th.Anniversary.Edition Super.Deluxe"
 "No_Doubt-Ex-Girlfriend-2CDS-2000-KSi":
   type: "music"
   artist: "No Doubt-Ex"
@@ -3566,16 +3624,3 @@
   other: "HYBRiD"
   language: "PORTUGUESE"
   group: "PAPERCLiPS"
-"The.Creator.2023.PROPER.UHD.WEB-DL.2160p.HEVC.DV.HDR.EAC3.7.1.DL.Remux-TvR":
-  type: "movie"
-  title: "The Creator"
-  Year: 2023
-  source: "UHD.WEB-DL"
-  resolution: "2160p"
-  codec: "HEVC"
-  audio: "DDP"
-  channels: "7.1"
-  hdr: "DV HDR"
-  language: "DL"
-  other: "PROPER REMUX"
-  group: "TvR"
