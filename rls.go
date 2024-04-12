@@ -949,7 +949,7 @@ func isBreakDelim(r rune) bool {
 }
 
 // isTitleTrimDelim returns true if r is a title trim delimiter (any delim
-// execpt '.', '+").
+// except '.', '+').
 func isTitleTrimDelim(r rune) bool {
 	switch r {
 	case '\t', '\n', '\f', '\r', ' ', '(', ')' /*, '+'*/, ',', '-' /*, '.'*/, '_', '[', '/', '\\', ']', '{', '}', '~':
