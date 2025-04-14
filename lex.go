@@ -324,7 +324,7 @@ func NewIDLexer() Lexer {
 
 // NewEpisodeLexer creates a tag lexer for a single episode (`- 2 -`, `- 867 (`, `- 100 [`).
 func NewEpisodeLexer() Lexer {
-	re, lb := regexp.MustCompile(`^(\d{1,3})(\b|[\._ ]?[\-\[\]\(\)\{\}])`), regexp.MustCompile(`-[\-\._ ]{1,3}$`)
+	re, lb := regexp.MustCompile(`^(\d{1,4})(\b|[\._ ]?[\-\[\]\(\)\{\}])`), regexp.MustCompile(`-[\-\._ ]{1,3}$`)
 	return TagLexer{
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			// compare against src, and match "lookbehind"

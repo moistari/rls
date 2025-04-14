@@ -2162,6 +2162,14 @@
   day: 6
   codec: "HEVC x265"
   group: "MeGusta"
+"[SubsPlease] One Piece - 1125 (1080p) [7E631F90].mkv":
+  type: "episode"
+  title: "One Piece"
+  resolution: "1080p"
+  episode: 1125
+  site: "SubsPlease"
+  sum: "7E631F90"
+  ext: "mkv"
 "Party.Planner.with.David.Tutera.S01E46.Dr..Zhivago-A-Go-Go.720p":
   type: "episode"
   title: "Party Planner with David Tutera"
