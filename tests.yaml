@@ -3652,3 +3652,15 @@
   Audio: "DDP"
   series: 1
   episode: 23
+"Ghost Force S01E23E24 1080p HULU WEB-DL DDP 5.1 H.264-LAZY":
+  type: "episode"
+  title: "Ghost Force"
+  source: "WEB-DL"
+  Collection: "HULU"
+  Resolution: "1080p"
+  Codec: "H.264"
+  Channels: "5.1"
+  Group: "LAZY"
+  Audio: "DDP"
+  series: 1
+  # episode: 23,24
