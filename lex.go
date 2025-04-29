@@ -70,15 +70,17 @@ func DefaultLexers() []Lexer {
 		NewRegexpSourceLexer(TagTypeCollection, true),
 		NewSeriesLexer(
 			// s02, S01E01
-			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]?(?:e(?P<e>\d{1,5}))?\b`,
+			// `(?i)^s(?P<s>[0-8]?\d)[\-\._ ]?(?:e(?P<e>\d{1,5}))?\b`, // candidate 1
+			// s02, S01E01, S01E23E24
+			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]?(?:e(?P<e>\d{1,5}(?:[Ee]\d{1,5})*))?\b`, // candidate 1 replacer
 			// S01S02S03
 			`(?i)^(?P<S>(?:s[0-8]?\d){2,4})\b`,
 			// 2x1, 1x01
 			`(?i)^(?P<s>[0-8]?\d)x(?P<e>\d{1,3})\b`,
 			// S01 - 02v3, S07-06, s03-5v.9
-			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]{1,3}(?P<e>\d{1,5})(?:[\-\._ ]{1,3}(?P<v>v\d+(?:\.\d+){0,2}))?\b`,
+			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]{1,3}(?P<e>\d{1,5})(?:[\-\._ ]{1,3}(?P<v>v\d+(?:\.\d+){0,2}))?\b`, // candidate 2
 			// Season.01.Episode.02, Series.01.Ep.02, Series.01, Season.01
-			`(?i)^(?:series|season|s)[\-\._ ]?(?P<s>[0-8]?\d)(?:[\-\._ ]?(?:episode|ep)(?P<e>\d{1,5}))?\b`,
+			`(?i)^(?:series|season|s)[\-\._ ]?(?P<s>[0-8]?\d)(?:[\-\._ ]?(?:episode|ep)(?P<e>\d{1,5}))?\b`, // candidate 3
 			// Vol.1.No.2, vol1no2
 			`(?i)^vol(?:ume)?[\-\._ ]?(?P<s>\d{1,3})(?:[\-\._ ]?(?:number|no)[\-\._ ]?(?P<e>\d{1,5}))\b`,
 			// Episode 15, E009, Ep. 007, Ep.05-07
@@ -236,13 +238,13 @@ func NewSeriesLexer(strs ...string) Lexer {
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if s, v, i, n, ok := lexer(src, buf, i, n); ok {
 				// collect series, episode, version
-				var series, episode, version, disc, many []byte
+				var series, episodeStr, version, disc, many []byte
 				for l := 0; l < len(v); l += 2 {
 					switch string(v[l]) {
 					case "s":
 						series = v[l+1]
 					case "e":
-						episode = v[l+1]
+						episodeStr = v[l+1]
 					case "v":
 						version = v[l+1]
 					case "d":
@@ -254,14 +256,14 @@ func NewSeriesLexer(strs ...string) Lexer {
 					}
 				}
 				var tags []Tag
-				if len(series) != 0 || len(episode) != 0 {
+				if len(series) != 0 || len(episodeStr) != 0 {
 					if len(version) != 0 {
 						s = bytes.TrimSuffix(s, version)
 					}
 					if len(disc) != 0 {
 						s = bytes.TrimSuffix(s, disc)
 					}
-					tags = append(tags, NewTag(TagTypeSeries, nil, s, series, episode))
+					tags = append(tags, NewTag(TagTypeSeries, nil, s, series, episodeStr))
 				}
 				if len(version) != 0 {
 					tags = append(tags, NewTag(TagTypeVersion, nil, version, version))
