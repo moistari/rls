@@ -1575,7 +1575,7 @@
   title: "30 Grader I Februari"
   source: "HDTV"
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "XViD"
   language: "SWEDiSH"
   group: "HDR"
@@ -1597,7 +1597,7 @@
   source: "WEB"
   resolution: "1080p"
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "H.264"
   group: "ggez"
   ext: "mkv"
@@ -1609,7 +1609,7 @@
   collection: "AMZN"
   year: 1923
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "H.264"
   audio: "DDP"
   channels: "5.1"
@@ -1620,7 +1620,7 @@
   title: "1-2-3 Istanbul"
   source: "DTV"
   series: 1
-  episode: 4
+  episodes: [4]
   codec: "XViD"
   other: "WS"
   language: "GERMAN"
@@ -1644,7 +1644,7 @@
   source: "BluRay"
   resolution: "1080p"
   series: 1
-  episode: 14
+  episodes: [14]
   codec: "AVC"
   audio: "DTS-HD.MA"
   channels: "5.1"
@@ -1709,7 +1709,7 @@
   source: "BluRay"
   resolution: "720p"
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "x264"
   group: "reward"
 "Brooklyn Nine-Nine S01 DVD9 3-Discs WS NTSC DVDR-NoRBiT":
@@ -1738,7 +1738,7 @@
   type: "episode"
   title: "Clockwork Planet"
   resolution: "480p"
-  episode: 10
+  episodes: [10]
   site: "HorribleSubs"
   ext: "mkv"
 "Community.s02e20.rus.eng.720p.Kybik.v.Kybe":
@@ -1747,7 +1747,7 @@
   subtitle: "Kybik v Kybe"
   resolution: "720p"
   series: 2
-  episode: 20
+  episodes: [20]
   language: "RUSSiAN ENGLiSH"
 "Core.Kyoto.S05E16.Tatami.The.Flooring.Underlying.Japanese.Culture.HDTV.x264-DARKFLiX":
   type: "episode"
@@ -1755,7 +1755,7 @@
   subtitle: "Tatami The Flooring Underlying Japanese Culture"
   source: "HDTV"
   series: 5
-  episode: 16
+  episodes: [16]
   codec: "x264"
   group: "DARKFLiX"
 "Dancing.With.The.Stars.US.S25.720p.WEB-DL.x264-TBS":
@@ -1774,14 +1774,14 @@
   source: "WEB"
   resolution: "720p"
   series: 1
-  episode: 21
+  episodes: [21]
   codec: "x264"
   group: "PLUTONiUM"
 "[HorribleSubs] Detective Conan - 862 [1080p].mkv":
   type: "episode"
   title: "Detective Conan"
   resolution: "1080p"
-  episode: 862
+  episodes: [862]
   site: "HorribleSubs"
   ext: "mkv"
 "DI.Ray.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-NTb":
@@ -1803,7 +1803,7 @@
   resolution: "720p"
   year: 2005
   series: 8
-  episode: 11
+  episodes: [11]
   codec: "x264"
   group: "FoV"
   site: "rartv"
@@ -1815,7 +1815,7 @@
   resolution: "720p"
   year: 2005
   series: 8
-  episode: 12
+  episodes: [12]
   codec: "x264"
   group: "fov"
 "Doogie.Howser.MD.S02E05.DVDRip.XviD-FFNDVD":
@@ -1823,7 +1823,7 @@
   title: "Doogie Howser MD"
   source: "DVDRiP"
   series: 2
-  episode: 5
+  episodes: [5]
   codec: "XViD"
   group: "FFNDVD"
 "Downton Abbey 5x06 HDTV x264-FoV [eztv]":
@@ -1831,7 +1831,7 @@
   title: "Downton Abbey"
   source: "HDTV"
   series: 5
-  episode: 6
+  episodes: [6]
   codec: "x264"
   group: "FoV"
   site: "eztv"
@@ -1856,7 +1856,7 @@
   collection: "iPlayer"
   year: 2018
   series: 2
-  episode: 4
+  episodes: [4]
   codec: "HEVC"
   hdr: "HLG"
   audio: "AAC"
@@ -1887,7 +1887,7 @@
   subtitle: "Natsu verschlingt ein Dorf"
   source: "BDRiP"
   year: 2009
-  episode: 9
+  episodes: [9]
   codec: "x264"
   language: "GERMAN DL"
   genre: "Anime"
@@ -1908,14 +1908,14 @@
   title: "Game of Thrones"
   subtitle: "Breaker of Chains"
   series: 4
-  episode: 3
+  episodes: [3]
 "Gotham.S01E05.Viper.WEB-DL.x264.AAC":
   type: "episode"
   title: "Gotham"
   subtitle: "Viper"
   source: "WEB-DL"
   series: 1
-  episode: 5
+  episodes: [5]
   codec: "x264"
   audio: "AAC"
 "Gute.Zeiten.schlechte.Zeiten.S01E00493.German.FS.Webrip.x264.REAL.iNTERNAL.READNFO-TVARCHiV":
@@ -1923,7 +1923,7 @@
   title: "Gute Zeiten schlechte Zeiten"
   source: "WEBRiP"
   series: 1
-  episode: 493
+  episodes: [493]
   codec: "x264"
   other: "FS REAL INTERNAL READNFO"
   language: "GERMAN"
@@ -1932,7 +1932,7 @@
   type: "episode"
   title: "Higurashi no Naku Koro ni Sotsu"
   resolution: "1080p"
-  episode: 9
+  episodes: [9]
   site: "SubsPlease"
   sum: "C00D6C68"
 "Hold.The.Sunset.S01E00.Christmas.Special.720p.HDTV.X264-MTB":
@@ -1963,7 +1963,7 @@
   resolution: "1080p"
   collection: "iPlayer"
   series: 9
-  episode: 7
+  episodes: [7]
   codec: "H.264"
   audio: "AAC"
   channels: "2.0"
@@ -1992,7 +1992,7 @@
   collection: "AMZN"
   year: 2021
   series: 2
-  episode: 1
+  episodes: [1]
   codec: "H.264"
   audio: "DDP"
   channels: "5.1"
@@ -2005,7 +2005,7 @@
   source: "BluRay"
   resolution: "720p"
   series: 2
-  episode: 10
+  episodes: [10]
   codec: "x264"
   audio: "DD"
   channels: "5.1"
@@ -2048,7 +2048,7 @@
   resolution: "1080p"
   collection: "VRV"
   series: 1
-  episode: 1
+  episodes: [1]
   audio: "AAC"
   site: "P9"
   ext: "mkv"
@@ -2060,7 +2060,7 @@
   resolution: "1080p"
   year: 1958
   series: 1958
-  episode: 13
+  episodes: [13]
   codec: "AVC"
   audio: "DD"
   channels: "1.0"
@@ -2074,7 +2074,7 @@
   source: "WEB-DL"
   resolution: "1080p"
   series: 2
-  episode: 1
+  episodes: [1]
   audio: "DD"
   channels: "5.1"
 "Marvels Agents of S H I E L D S02E05 HDTV x264-KILLERS [eztv]":
@@ -2082,7 +2082,7 @@
   title: "Marvels Agents of S.H.I.E.L.D."
   source: "HDTV"
   series: 2
-  episode: 5
+  episodes: [5]
   codec: "x264"
   group: "KILLERS"
   site: "eztv"
@@ -2091,14 +2091,14 @@
   title: "Marvels Agents of S.H.I.E.L.D."
   source: "HDTV"
   series: 2
-  episode: 6
+  episodes: [6]
   codec: "x264"
   group: "KILLERS"
   site: "ettv"
 "[RaX]Mezzo(DSA)_-_05_-_[x264_ogg]_[585d9971].mkv":
   type: "episode"
   title: "Mezzo"
-  episode: 5
+  episodes: [5]
   codec: "x264"
   audio: "OGG"
   site: "RaX"
@@ -2110,7 +2110,7 @@
   title: "Mobile Suit Gundam 00"
   resolution: "720p"
   series: 2
-  episode: 1
+  episodes: [1]
   version: "v2"
   codec: "H.264"
   audio: "AAC"
@@ -2124,7 +2124,7 @@
   source: "BluRay"
   resolution: "1080p"
   series: 2
-  episode: 7
+  episodes: [7]
   codec: "x264"
   group: "THORA"
   ext: "mkv"
@@ -2146,7 +2146,7 @@
   resolution: "1080p"
   collection: "AMZN"
   series: 2
-  episode: 11
+  episodes: [11]
   codec: "x264"
   audio: "DD"
   channels: "5.1"
@@ -2166,7 +2166,7 @@
   type: "episode"
   title: "One Piece"
   resolution: "1080p"
-  episode: 1125
+  episodes: [1125]
   site: "SubsPlease"
   sum: "7E631F90"
   ext: "mkv"
@@ -2176,7 +2176,7 @@
   subtitle: "Dr. Zhivago-A-Go-Go"
   resolution: "720p"
   series: 1
-  episode: 46
+  episodes: [46]
 "Peacemaker (2022) S01E08 It's Cow or Never (1080p HMAX Webrip x265 10bit AC3 5.1 - JBENT)[TAoE].mkv":
   type: "episode"
   title: "Peacemaker"
@@ -2186,7 +2186,7 @@
   collection: "HMAX"
   year: 2022
   series: 1
-  episode: 8
+  episodes: [8]
   codec: "x265"
   hdr: "HDR10"
   audio: "DD"
@@ -2225,7 +2225,7 @@
   resolution: "1080p"
   collection: "AMZN"
   series: 8
-  episode: 2
+  episodes: [2]
   codec: "H.264"
   audio: "DDP"
   channels: "2.0"
@@ -2237,7 +2237,7 @@
   source: "DVD"
   resolution: "480p"
   series: 4
-  episode: 3
+  episodes: [3]
   codec: "MPEG-2"
   audio: "DD"
   channels: "2.0"
@@ -2247,7 +2247,7 @@
   type: "episode"
   title: "Saikin Yatotta Maid ga Ayashii"
   resolution: "1080p"
-  episode: 9
+  episodes: [9]
   site: "SubsPlease"
   sum: "990FF01E"
   ext: "mkv"
@@ -2260,14 +2260,14 @@
   collection: "AMZN"
   year: 2015
   series: 4
-  episode: 1
+  episodes: [1]
   codec: "x265"
   group: "MONOLITH"
   ext: "mkv"
 "[chibi-Doki] Seikon no Qwaser - 13v0 (Uncensored Director's Cut) [988DB090].mkv":
   type: "episode"
   title: "Seikon no Qwaser"
-  episode: 13
+  episodes: [13]
   version: "v0"
   cut: "Uncensored.Cut Directors.Cut"
   site: "chibi-Doki"
@@ -2280,7 +2280,7 @@
   resolution: "720p"
   collection: "AMZN"
   series: 6
-  episode: 10
+  episodes: [10]
   codec: "x264"
   audio: "DD"
   channels: "2.0"
@@ -2293,7 +2293,7 @@
   source: "WEB-DL"
   resolution: "1080p"
   collection: "HULU"
-  episode: 4
+  episodes: [4]
   codec: "H.264"
   audio: "DDP"
   channels: "5.1"
@@ -2303,14 +2303,14 @@
   type: "episode"
   title: "Sons of Anarchy"
   series: 1
-  episode: 3
+  episodes: [3]
 "[720pMkv.Com]_sons.of.anarchy.s05e10.480p.BluRay.x264-GAnGSteR":
   type: "episode"
   title: "sons of anarchy"
   source: "BluRay"
   resolution: "480p"
   series: 5
-  episode: 10
+  episodes: [10]
   codec: "x264"
   group: "GAnGSteR"
   site: "720pMkv.Com"
@@ -2320,7 +2320,7 @@
   source: "HDTV"
   resolution: "720p"
   series: 7
-  episode: 7
+  episodes: [7]
   codec: "x264"
   group: "DIMENSION"
   site: "www.Speed.cd"
@@ -2329,7 +2329,7 @@
   title: "Soul Eater"
   source: "BluRay"
   resolution: "720p"
-  episode: 1
+  episodes: [1]
   codec: "x264"
   audio: "DD"
   other: "COMPLETE"
@@ -2340,7 +2340,7 @@
   title: "Soul Eater"
   source: "BluRay"
   resolution: "720p"
-  episode: 2
+  episodes: [2]
   codec: "x264"
   audio: "DD"
   language: "GERMAN DL"
@@ -2371,7 +2371,7 @@
   title: "South Park"
   source: "HDTV"
   series: 18
-  episode: 5
+  episodes: [5]
   codec: "x264"
   group: "KILLERS"
   site: "eztv"
@@ -2380,7 +2380,7 @@
   title: "SpankedSchoolGirl"
   subtitle: "Nervous Wait"
   collection: "XXX"
-  episode: 57
+  episodes: [57]
   other: "HR"
   container: "WMV"
   group: "KTR"
@@ -2400,7 +2400,7 @@
   title: "The Big Bang Theory"
   source: "HDTV"
   series: 8
-  episode: 6
+  episodes: [6]
   codec: "XViD"
   group: "LOL"
   site: "eztv"
@@ -2418,7 +2418,7 @@
   source: "HDTV"
   year: 2014
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "x264"
   group: "LOL"
   site: "ettv"
@@ -2429,7 +2429,7 @@
   source: "WEB-DL"
   resolution: "1080p"
   collection: "AMZN"
-  episode: 1
+  episodes: [1]
   codec: "H.264"
   audio: "DDP"
   channels: "2.0"
@@ -2442,7 +2442,7 @@
   source: "WEB-DL"
   resolution: "1080p"
   series: 1
-  episode: 9
+  episodes: [9]
   codec: "H.264"
   audio: "AAC"
   channels: "2.0"
@@ -2453,7 +2453,7 @@
   subtitle: "Pilot"
   source: "HDTV"
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "x264"
   group: "FoV"
   site: "eztv"
@@ -2477,7 +2477,7 @@
   resolution: "1080p"
   collection: "AMZN"
   series: 7
-  episode: 3
+  episodes: [3]
   codec: "H.264"
   audio: "DDP"
   channels: "5.1"
@@ -2489,7 +2489,7 @@
   title: "The Simpsons"
   source: "HDTV"
   series: 26
-  episode: 5
+  episodes: [5]
   codec: "x264"
   other: "PROPER"
   group: "LOL"
@@ -2503,7 +2503,7 @@
   collection: "HULU"
   year: 1989
   series: 33
-  episode: 12
+  episodes: [12]
   codec: "x265"
   hdr: "HDR10"
   audio: "DDP"
@@ -2516,7 +2516,7 @@
   source: "HDTV"
   resolution: "720p"
   series: 5
-  episode: 3
+  episodes: [3]
   codec: "x264"
   group: "ASAP"
   site: "ettv"
@@ -2526,7 +2526,7 @@
   source: "WEB-DL"
   resolution: "1080p"
   series: 5
-  episode: 3
+  episodes: [3]
   codec: "H.264"
   audio: "DD"
   channels: "5.1"
@@ -2547,7 +2547,7 @@
   source: "BluRay"
   resolution: "1080p"
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "HEVC x265"
 "thomas.and.friends.s19e09_s20e14.convert.hdtv.x264-w4f[eztv].mkv":
   type: "episode"
@@ -2555,7 +2555,7 @@
   subtitle: "convert"
   source: "HDTV"
   series: 19
-  episode: 9
+  episodes: [9]
   codec: "x264"
   group: "w4f"
   site: "eztv"
@@ -2567,7 +2567,7 @@
   source: "WEB-DL"
   resolution: "1080p"
   collection: "NF"
-  episode: 1
+  episodes: [1]
   codec: "x264"
   audio: "DDP"
   channels: "2.0"
@@ -2578,7 +2578,7 @@
   title: "Tokyo Ghoul: RE"
   resolution: "1080p"
   series: 2
-  episode: 4
+  episodes: [4]
   language: "VOSTFR"
 "Trinity.Seven.S01.E12.German.2014.ANiME.DTS.DL.1080p.BluRay.x264-ShadowTX.mkv":
   type: "episode"
@@ -2587,7 +2587,7 @@
   resolution: "1080p"
   year: 2014
   series: 1
-  episode: 12
+  episodes: [12]
   codec: "x264"
   audio: "DTS"
   language: "GERMAN DL"
@@ -2608,7 +2608,7 @@
   source: "WEB"
   resolution: "1080p"
   series: 1
-  episode: 1
+  episodes: [1]
   codec: "H.264"
   language: "FRENCH"
   group: "PROPJOE"
@@ -2619,7 +2619,7 @@
   source: "WEB-DL"
   resolution: "720p"
   series: 6
-  episode: 16
+  episodes: [16]
   codec: "H.264"
   language: "GERMAN DUBBED DL"
   group: "pbw"
@@ -2632,7 +2632,7 @@
   collection: "AT-X"
   year: 2021
   series: 1
-  episode: 8
+  episodes: [8]
   audio: "AAC"
   channels: "2.0"
   language: "ENGLiSH SUBBED"
@@ -2687,7 +2687,7 @@
   resolution: "2160p"
   collection: "DSNP"
   series: 1
-  episode: 2
+  episodes: [2]
   codec: "H.265"
   hdr: "DV HDR"
   audio: "DDP Atmos"
@@ -3613,14 +3613,14 @@
   year: 2013
   month: 5
   series: 1
-  episode: 26
+  episodes: [26]
   group: "iNTENSiTY"
   req: 1
 "X-Men.vol1.no22(CBR)[thesite]":
   type: "comic"
   title: "X-Men"
   series: 1
-  episode: 22
+  episodes: [22]
   container: "CBR"
   site: "thesite"
 "L.Elephant.N26.2019.FRENCH.RETAiL.MAGAZiNE.eBook-PRiNTER":
@@ -3651,7 +3651,7 @@
   Group: "LAZY"
   Audio: "DDP"
   series: 1
-  episode: 23
+  episodes: [23]
 "Ghost Force S01E23E24 1080p HULU WEB-DL DDP 5.1 H.264-LAZY":
   type: "episode"
   title: "Ghost Force"
@@ -3663,4 +3663,4 @@
   Group: "LAZY"
   Audio: "DDP"
   series: 1
-  # episode: 23,24
+  episodes: [23, 24]
