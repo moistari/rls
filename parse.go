@@ -534,12 +534,12 @@ func (b *TagBuilder) collect(r *Release) {
 		case TagTypeDate:
 			r.Year, r.Month, r.Day = r.tags[i].Date()
 		case TagTypeSeries:
-			series, episode := r.tags[i].Series()
+			series, episodes := r.tags[i].Series()
 			if r.Series == 0 {
 				r.Series = series
 			}
-			if r.Episode == 0 {
-				r.Episode = episode
+			if len(r.Episodes) == 0 {
+				r.Episodes = episodes
 			}
 		case TagTypeVersion:
 			if r.Version == "" {
@@ -642,12 +642,12 @@ func (b *TagBuilder) inspect(r *Release, initial bool) Type {
 			}
 			return typ
 		case Series, Episode:
-			if r.Episode != 0 || (r.Series == 0 && r.Episode == 0) && !contains(r.Other, "BOXSET") {
+			if len(r.Episodes) != 0 || (r.Series == 0 && len(r.Episodes) == 0) && !contains(r.Other, "BOXSET") {
 				return Episode
 			}
 			return Series
 		case Education:
-			if r.Series == 0 && r.Episode == 0 {
+			if r.Series == 0 && len(r.Episodes) == 0 {
 				return Education
 			}
 		case Music:
@@ -664,7 +664,7 @@ func (b *TagBuilder) inspect(r *Release, initial bool) Type {
 		// exclusive tag not superseded by version/episode/date
 		if r.tags[i-1].InfoExcl() &&
 			r.Version == "" &&
-			r.Series == 0 && r.Episode == 0 &&
+			r.Series == 0 && len(r.Episodes) == 0 &&
 			r.Day == 0 && r.Month == 0 {
 			return typ
 		}
@@ -690,7 +690,7 @@ func (b *TagBuilder) inspect(r *Release, initial bool) Type {
 	}
 	// defaults
 	switch {
-	case r.Episode != 0 || (r.Year != 0 && r.Month != 0 && r.Day != 0):
+	case len(r.Episodes) != 0 || (r.Year != 0 && r.Month != 0 && r.Day != 0):
 		return Episode
 	case r.Series != 0 || series:
 		return Series

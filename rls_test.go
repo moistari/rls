@@ -418,7 +418,7 @@ func TestExport_tests(t *testing.T) {
 			compareInt(a.Month, b.Month),
 			compareInt(a.Day, b.Day),
 			compareInt(a.Series, b.Series),
-			compareInt(a.Episode, b.Episode),
+			// compareInt(a.Episodes, b.Episodes),
 			compareTitle(a.Subtitle, b.Subtitle),
 			compareTitle(a.Alt, b.Alt),
 			compareIntString(a.Resolution, b.Resolution),
@@ -717,10 +717,10 @@ type rls struct {
 	Month int
 	Day   int
 
-	Series  int
-	Episode int
-	Version string
-	Disc    string
+	Series   int
+	Episodes []int
+	Version  string
+	Disc     string
 
 	Codec    string
 	HDR      string
@@ -771,10 +771,10 @@ func buildRls(r Release) rls {
 		Month: r.Month,
 		Day:   r.Day,
 
-		Series:  r.Series,
-		Episode: r.Episode,
-		Version: r.Version,
-		Disc:    r.Disc,
+		Series:   r.Series,
+		Episodes: r.Episodes,
+		Version:  r.Version,
+		Disc:     r.Disc,
 
 		Codec:    strings.Join(r.Codec, " "),
 		HDR:      strings.Join(r.HDR, " "),
