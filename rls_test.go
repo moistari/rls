@@ -852,6 +852,23 @@ func rlsTests(tb testing.TB) []rlsTest {
 					tb.Fatalf("unable to unquote string for %s on line %d: %v", name, count, err)
 				}
 				f.SetString(s)
+			case reflect.Slice:
+				eps := []int{}
+				for _, epStr := range strings.Split(string(line[n+2:]), ",") {
+					epStr = strings.ReplaceAll(epStr, "[", "")
+					epStr = strings.ReplaceAll(epStr, "]", "")
+					epStr = strings.TrimSpace(epStr)
+					ep, err := strconv.ParseInt(epStr, 10, 64)
+					if err != nil {
+						tb.Fatalf("unable to convert int for %s on line %d: %v", name, count, err)
+					}
+					eps = append(eps, int(ep))
+				}
+				val := reflect.ValueOf(eps)
+				if !val.Type().AssignableTo(f.Type()) {
+					tb.Fatalf("expected slice of ints for %s on line %d: %v", name, count, err)
+				}
+				f.Set(val)
 			}
 		case bytes.HasPrefix(line, []byte(`#`)):
 		default:
