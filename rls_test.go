@@ -418,7 +418,7 @@ func TestExport_tests(t *testing.T) {
 			compareInt(a.Month, b.Month),
 			compareInt(a.Day, b.Day),
 			compareInt(a.Series, b.Series),
-			// compareInt(a.Episodes, b.Episodes),
+			compareIntSlice(a.Episodes, b.Episodes),
 			compareTitle(a.Subtitle, b.Subtitle),
 			compareTitle(a.Alt, b.Alt),
 			compareIntString(a.Resolution, b.Resolution),

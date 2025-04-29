@@ -484,7 +484,6 @@ func (tag Tag) Series() (int, []int) {
 
 	episodeStr := tag.v[2]
 	var episodes []int
-
 	for _, ep := range strings.Split(episodeStr, "E") {
 		if num, err := strconv.Atoi(ep); err == nil && num > 0 {
 			episodes = append(episodes, num)
@@ -798,7 +797,7 @@ func Compare(a, b Release) int {
 		compareInt(a.Month, b.Month),
 		compareInt(a.Day, b.Day),
 		compareInt(a.Series, b.Series),
-		// compareInt(a.Episodes, b.Episodes),
+		compareIntSlice(a.Episodes, b.Episodes),
 		compareTitle(a.Subtitle, b.Subtitle),
 		compareTitle(a.Alt, b.Alt),
 		compareIntString(a.Resolution, b.Resolution),
@@ -822,6 +821,27 @@ func compareInt(a, b int) func() int {
 			return -1
 		case b < a:
 			return 1
+		}
+		return 0
+	}
+}
+
+func compareIntSlice(a, b []int) func() int {
+	return func() int {
+		lenA, lenB := len(a), len(b)
+		if lenA < lenB {
+			return -1
+		}
+		if lenA > lenB {
+			return 1
+		}
+		for k, _ := range a {
+			if a[k] < b[k] {
+				return -1
+			}
+			if a[k] > b[k] {
+				return 1
+			}
 		}
 		return 0
 	}
