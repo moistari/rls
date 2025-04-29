@@ -484,7 +484,7 @@ func (tag Tag) Series() (int, []int) {
 
 	episodeStr := tag.v[2]
 	var episodes []int
-	for _, ep := range strings.Split(episodeStr, "E") {
+	for _, ep := range strings.Split(strings.ToLower(episodeStr), "e") {
 		if num, err := strconv.Atoi(ep); err == nil && num > 0 {
 			episodes = append(episodes, num)
 		}
