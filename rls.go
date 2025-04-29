@@ -826,6 +826,7 @@ func compareInt(a, b int) func() int {
 	}
 }
 
+// compareIntSlice returns a func that compares slices of ints
 func compareIntSlice(a, b []int) func() int {
 	return func() int {
 		lenA, lenB := len(a), len(b)
@@ -835,7 +836,8 @@ func compareIntSlice(a, b []int) func() int {
 		if lenA > lenB {
 			return 1
 		}
-		for k, _ := range a {
+
+		for k := range lenA {
 			if a[k] < b[k] {
 				return -1
 			}

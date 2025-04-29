@@ -911,3 +911,26 @@ func groupInfos() map[string][]*taginfo.Taginfo {
 		"group": groups,
 	}
 }
+
+func TestCompareIntSlice(t *testing.T) {
+	tests := []struct {
+		name string
+		a    []int
+		b    []int
+		want int
+	}{
+		{name: "nil", a: nil, b: nil, want: 0},
+		{name: "one nil", a: nil, b: []int{1}, want: -1},
+		{name: "a>b", a: []int{1, 2, 3}, b: []int{1}, want: 1},
+		{name: "a<b", a: []int{1, 2, 3}, b: []int{1, 3, 4, 6, 9}, want: -1},
+		{name: "equal", a: []int{1, 2, 3}, b: []int{1, 2, 3}, want: 0},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := compareIntSlice(tt.a, tt.b)
+			if got() != tt.want {
+				t.Errorf("expected: %d :: got: %d", got(), tt.want)
+			}
+		})
+	}
+}
