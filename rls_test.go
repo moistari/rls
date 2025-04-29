@@ -418,7 +418,7 @@ func TestExport_tests(t *testing.T) {
 			compareInt(a.Month, b.Month),
 			compareInt(a.Day, b.Day),
 			compareInt(a.Series, b.Series),
-			compareInt(a.Episode, b.Episode),
+			compareIntSlice(a.Episodes, b.Episodes),
 			compareTitle(a.Subtitle, b.Subtitle),
 			compareTitle(a.Alt, b.Alt),
 			compareIntString(a.Resolution, b.Resolution),
@@ -717,10 +717,10 @@ type rls struct {
 	Month int
 	Day   int
 
-	Series  int
-	Episode int
-	Version string
-	Disc    string
+	Series   int
+	Episodes []int
+	Version  string
+	Disc     string
 
 	Codec    string
 	HDR      string
@@ -771,10 +771,10 @@ func buildRls(r Release) rls {
 		Month: r.Month,
 		Day:   r.Day,
 
-		Series:  r.Series,
-		Episode: r.Episode,
-		Version: r.Version,
-		Disc:    r.Disc,
+		Series:   r.Series,
+		Episodes: r.Episodes,
+		Version:  r.Version,
+		Disc:     r.Disc,
 
 		Codec:    strings.Join(r.Codec, " "),
 		HDR:      strings.Join(r.HDR, " "),
@@ -852,6 +852,23 @@ func rlsTests(tb testing.TB) []rlsTest {
 					tb.Fatalf("unable to unquote string for %s on line %d: %v", name, count, err)
 				}
 				f.SetString(s)
+			case reflect.Slice:
+				eps := []int{}
+				for _, epStr := range strings.Split(string(line[n+2:]), ",") {
+					epStr = strings.ReplaceAll(epStr, "[", "")
+					epStr = strings.ReplaceAll(epStr, "]", "")
+					epStr = strings.TrimSpace(epStr)
+					ep, err := strconv.ParseInt(epStr, 10, 64)
+					if err != nil {
+						tb.Fatalf("unable to convert int for %s on line %d: %v", name, count, err)
+					}
+					eps = append(eps, int(ep))
+				}
+				val := reflect.ValueOf(eps)
+				if !val.Type().AssignableTo(f.Type()) {
+					tb.Fatalf("expected slice of ints for %s on line %d: %v", name, count, err)
+				}
+				f.Set(val)
 			}
 		case bytes.HasPrefix(line, []byte(`#`)):
 		default:
@@ -892,5 +909,28 @@ func groupInfos() map[string][]*taginfo.Taginfo {
 	}
 	return map[string][]*taginfo.Taginfo{
 		"group": groups,
+	}
+}
+
+func TestCompareIntSlice(t *testing.T) {
+	tests := []struct {
+		name string
+		a    []int
+		b    []int
+		want int
+	}{
+		{name: "nil", a: nil, b: nil, want: 0},
+		{name: "one nil", a: nil, b: []int{1}, want: -1},
+		{name: "a>b", a: []int{1, 2, 3}, b: []int{1}, want: 1},
+		{name: "a<b", a: []int{1, 2, 3}, b: []int{1, 3, 4, 6, 9}, want: -1},
+		{name: "equal", a: []int{1, 2, 3}, b: []int{1, 2, 3}, want: 0},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := compareIntSlice(tt.a, tt.b)
+			if got() != tt.want {
+				t.Errorf("expected: %d :: got: %d", got(), tt.want)
+			}
+		})
 	}
 }

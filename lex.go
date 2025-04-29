@@ -69,8 +69,8 @@ func DefaultLexers() []Lexer {
 		NewRegexpLexer(TagTypeResolution, true),
 		NewRegexpSourceLexer(TagTypeCollection, true),
 		NewSeriesLexer(
-			// s02, S01E01
-			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]?(?:e(?P<e>\d{1,5}))?\b`,
+			// s02, S01E01, S01E23E24
+			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]?(?:e(?P<e>\d{1,5}(?:[Ee]\d{1,5})*))?\b`,
 			// S01S02S03
 			`(?i)^(?P<S>(?:s[0-8]?\d){2,4})\b`,
 			// 2x1, 1x01
@@ -236,13 +236,13 @@ func NewSeriesLexer(strs ...string) Lexer {
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if s, v, i, n, ok := lexer(src, buf, i, n); ok {
 				// collect series, episode, version
-				var series, episode, version, disc, many []byte
+				var series, episodeStr, version, disc, many []byte
 				for l := 0; l < len(v); l += 2 {
 					switch string(v[l]) {
 					case "s":
 						series = v[l+1]
 					case "e":
-						episode = v[l+1]
+						episodeStr = v[l+1]
 					case "v":
 						version = v[l+1]
 					case "d":
@@ -254,14 +254,14 @@ func NewSeriesLexer(strs ...string) Lexer {
 					}
 				}
 				var tags []Tag
-				if len(series) != 0 || len(episode) != 0 {
+				if len(series) != 0 || len(episodeStr) != 0 {
 					if len(version) != 0 {
 						s = bytes.TrimSuffix(s, version)
 					}
 					if len(disc) != 0 {
 						s = bytes.TrimSuffix(s, disc)
 					}
-					tags = append(tags, NewTag(TagTypeSeries, nil, s, series, episode))
+					tags = append(tags, NewTag(TagTypeSeries, nil, s, series, episodeStr))
 				}
 				if len(version) != 0 {
 					tags = append(tags, NewTag(TagTypeVersion, nil, version, version))
