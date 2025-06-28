@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math"
 	"regexp"
+	"sort"
 	"strconv"
 	"strings"
 	"unicode"
@@ -119,6 +120,41 @@ func (r Release) String() string {
 // Tags returns all tags.
 func (r Release) Tags() []Tag {
 	return r.tags
+}
+
+// SeriesEpisodes returns all series and episodes.
+func (r Release) SeriesEpisodes() [][]int {
+	var v [][]int
+	last := -1
+	for i, tag := range r.tags {
+		if !tag.Is(TagTypeSeries) {
+			continue
+		}
+		series, _ := tag.Series()
+		for _, episode := range tag.Episodes() {
+			s := series
+			if s == 0 && last != -1 {
+				var lastEp int
+				s, lastEp = r.tags[last].Series()
+				if 0 < i && fmt.Sprintf("%o", r.tags[i-1]) == "-" {
+					for j := lastEp + 1; j < episode; j++ {
+						v = append(v, []int{s, j})
+					}
+				}
+			}
+			v = append(v, []int{s, episode})
+		}
+		if series != 0 {
+			last = i
+		}
+	}
+	sort.Slice(v, func(i, j int) bool {
+		if v[i][0] == v[j][0] {
+			return v[i][1] < v[j][1]
+		}
+		return v[i][0] < v[j][0]
+	})
+	return v
 }
 
 // Unused returns text tags not used in titles.
@@ -479,6 +515,17 @@ func (tag Tag) Series() (int, int) {
 	series, _ := strconv.Atoi(tag.v[1])
 	episode, _ := strconv.Atoi(tag.v[2])
 	return series, episode
+}
+
+// Episodes normalizes the episodes value.
+func (tag Tag) Episodes() []int {
+	var v []int
+	for _, b := range tag.v[2:] {
+		if episode, _ := strconv.Atoi(b); episode != 0 {
+			v = append(v, episode)
+		}
+	}
+	return v
 }
 
 // Version normalizes the version value.

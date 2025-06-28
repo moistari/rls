@@ -71,6 +71,8 @@ func DefaultLexers() []Lexer {
 		NewSeriesLexer(
 			// s02, S01E01
 			`(?i)^s(?P<s>[0-8]?\d)[\-\._ ]?(?:e(?P<e>\d{1,5}))?\b`,
+			// S01E02E03, S01E02-E03, S01E03.E04.E05
+			`(?i)^s(?P<s>[0-8]?\d)(?P<m>(?:[\-\._ ]?e\d{1,5}){1,5})\b`,
 			// S01S02S03
 			`(?i)^(?P<S>(?:s[0-8]?\d){2,4})\b`,
 			// 2x1, 1x01
@@ -228,7 +230,10 @@ func NewDateLexer(strs ...string) Lexer {
 // NewSeriesLexer creates a tag lexer for a series.
 func NewSeriesLexer(strs ...string) Lexer {
 	var sourcef taginfo.FindFunc
-	lexer, re, typ := NamedCaptureLexer(strs...), regexp.MustCompile(`(?i)s(\d?\d)`), regexp.MustCompile(`(?i)^disc|disk|dvd|d`)
+	lexer := NamedCaptureLexer(strs...)
+	mlt := regexp.MustCompile(`(?i)s(\d?\d)`)
+	mny := regexp.MustCompile(`(?i)[\-\._ ]?e(\d{1,5})`)
+	dsc := regexp.MustCompile(`(?i)^disc|disk|dvd|d`)
 	return TagLexer{
 		Init: func(infos map[string][]*taginfo.Taginfo, _ *regexp.Regexp, _ map[string]bool) {
 			sourcef = taginfo.Find(infos["source"]...)
@@ -236,7 +241,7 @@ func NewSeriesLexer(strs ...string) Lexer {
 		Lex: func(src, buf []byte, start, end []Tag, i, n int) ([]Tag, []Tag, int, int, bool) {
 			if s, v, i, n, ok := lexer(src, buf, i, n); ok {
 				// collect series, episode, version
-				var series, episode, version, disc, many []byte
+				var series, episode, version, disc, multi, many []byte
 				for l := 0; l < len(v); l += 2 {
 					switch string(v[l]) {
 					case "s":
@@ -248,6 +253,8 @@ func NewSeriesLexer(strs ...string) Lexer {
 					case "d":
 						disc = v[l+1]
 					case "S":
+						multi = []byte(v[l+1])
+					case "m":
 						many = []byte(v[l+1])
 					default:
 						panic(fmt.Errorf("unknown capture group %q", v[l]))
@@ -261,13 +268,22 @@ func NewSeriesLexer(strs ...string) Lexer {
 					if len(disc) != 0 {
 						s = bytes.TrimSuffix(s, disc)
 					}
-					tags = append(tags, NewTag(TagTypeSeries, nil, s, series, episode))
+					l := [][]byte{s, series}
+					switch {
+					case len(many) == 0:
+						l = append(l, episode)
+					default:
+						for _, m := range mny.FindAllSubmatch(many, -1) {
+							l = append(l, m[1])
+						}
+					}
+					tags = append(tags, NewTag(TagTypeSeries, nil, l...))
 				}
 				if len(version) != 0 {
 					tags = append(tags, NewTag(TagTypeVersion, nil, version, version))
 				}
 				if len(disc) != 0 {
-					disctyp := bytes.ToUpper(disc[:len(typ.FindSubmatch(disc)[0])])
+					disctyp := bytes.ToUpper(disc[:len(dsc.FindSubmatch(disc)[0])])
 					num := bytes.TrimSpace(disc[len(disctyp):])
 					switch string(disctyp) {
 					case "DVD":
@@ -281,7 +297,7 @@ func NewSeriesLexer(strs ...string) Lexer {
 					}
 				}
 				// S01S02S03 ...
-				if m := re.FindAllSubmatch(many, -1); m != nil {
+				if m := mlt.FindAllSubmatch(multi, -1); m != nil {
 					for j := 0; j < len(m); j++ {
 						tags = append(tags, NewTag(TagTypeSeries, nil, append(m[j], nil)...))
 					}
@@ -330,7 +346,7 @@ func NewEpisodeLexer() Lexer {
 			// compare against src, and match "lookbehind"
 			if lb.Match(src[:i]) {
 				if m := re.FindSubmatch(src[i:n]); m != nil && !bytes.HasPrefix(src[i+len(m[1]):], []byte{','}) {
-					tags := []Tag{NewTag(TagTypeSeries, nil, m[1], nil, m[1], nil)}
+					tags := []Tag{NewTag(TagTypeSeries, nil, m[1], nil, m[1])}
 					if len(m[2]) != 0 {
 						tags = append(tags, NewTag(TagTypeDelim, nil, m[2], m[2]))
 					}

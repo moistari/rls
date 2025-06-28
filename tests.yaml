@@ -1909,6 +1909,32 @@
   subtitle: "Breaker of Chains"
   series: 4
   episode: 3
+"Ghost Force S01E23E24 1080p HULU WEB-DL DDP 5.1 H.264-LAZY":
+  type: "episode"
+  title: "Ghost Force"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "HULU"
+  series: 1
+  episode: 23
+  seriesEpisodes: "S01E23 S01E24"
+  codec: "H.264"
+  audio: "DDP"
+  channels: "5.1"
+  group: "LAZY"
+"Ghost Force S01E24E20 1080p HULU WEB-DL DDP 5.1 H.264-LAZY":
+  type: "episode"
+  title: "Ghost Force"
+  source: "WEB-DL"
+  resolution: "1080p"
+  collection: "HULU"
+  series: 1
+  episode: 24
+  seriesEpisodes: "S01E20 S01E24"
+  codec: "H.264"
+  audio: "DDP"
+  channels: "5.1"
+  group: "LAZY"
 "Gotham.S01E05.Viper.WEB-DL.x264.AAC":
   type: "episode"
   title: "Gotham"
@@ -2548,6 +2574,17 @@
   resolution: "1080p"
   series: 1
   episode: 1
+  seriesEpisodes: "S01E01 S01E02 S01E03"
+  codec: "HEVC x265"
+"The.X-Files.S01E01E03.DKsubs.1080p.BluRay.HEVC.x265":
+  type: "episode"
+  title: "The X-Files"
+  subtitle: "DKsubs"
+  source: "BluRay"
+  resolution: "1080p"
+  series: 1
+  episode: 1
+  seriesEpisodes: "S01E01 S01E03"
   codec: "HEVC x265"
 "thomas.and.friends.s19e09_s20e14.convert.hdtv.x264-w4f[eztv].mkv":
   type: "episode"
@@ -2556,6 +2593,7 @@
   source: "HDTV"
   series: 19
   episode: 9
+  seriesEpisodes: "S19E09 S20E14"
   codec: "x264"
   group: "w4f"
   site: "eztv"

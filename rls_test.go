@@ -29,6 +29,7 @@ func TestParseRelease(t *testing.T) {
 			name = "unknown" + name
 		}
 		t.Run(name, func(t *testing.T) {
+			t.Logf("%q", test.s)
 			if _, ok := m[test.s]; ok {
 				t.Fatalf("test %d %q is a duplicate!", i, test.s)
 			}
@@ -440,6 +441,10 @@ func TestExport_tests(t *testing.T) {
 		v := reflect.ValueOf(m[key])
 		for j := 0; j < v.Type().NumField(); j++ {
 			name := strings.ToLower(v.Type().Field(j).Name)
+			switch name {
+			case "seriesepisodes":
+				name = "seriesEpisodes"
+			}
 			switch v.Field(j).Kind() {
 			case reflect.Int:
 				if i := v.Field(j).Int(); i != 0 {
@@ -717,10 +722,11 @@ type rls struct {
 	Month int
 	Day   int
 
-	Series  int
-	Episode int
-	Version string
-	Disc    string
+	Series         int
+	Episode        int
+	SeriesEpisodes string
+	Version        string
+	Disc           string
 
 	Codec    string
 	HDR      string
@@ -752,6 +758,12 @@ func buildRls(r Release) rls {
 	if r.Req {
 		req = 1
 	}
+	var seriesEpisodes []string
+	if eps := r.SeriesEpisodes(); len(eps) > 1 {
+		for _, ep := range eps {
+			seriesEpisodes = append(seriesEpisodes, fmt.Sprintf("S%02dE%02d", ep[0], ep[1]))
+		}
+	}
 	return rls{
 		Type: r.Type.String(),
 
@@ -771,10 +783,11 @@ func buildRls(r Release) rls {
 		Month: r.Month,
 		Day:   r.Day,
 
-		Series:  r.Series,
-		Episode: r.Episode,
-		Version: r.Version,
-		Disc:    r.Disc,
+		Series:         r.Series,
+		Episode:        r.Episode,
+		SeriesEpisodes: strings.Join(seriesEpisodes, " "),
+		Version:        r.Version,
+		Disc:           r.Disc,
 
 		Codec:    strings.Join(r.Codec, " "),
 		HDR:      strings.Join(r.HDR, " "),
